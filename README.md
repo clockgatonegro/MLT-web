@@ -39,9 +39,12 @@ Las rutas de los scripts apuntan a una carpeta `salida/`; ajústelas si los ejec
 
 ## Publicación e indexación
 
-La página está pensada para GitHub Pages (Settings → Pages → rama `master`, carpeta raíz): `https://clockgatonegro.github.io/MLT-web/`.
+Sitio: **https://mlt.cactus.com.co/** (GitHub Pages con dominio propio).
 
-- `index.html` incluye descripción, URL canónica, etiquetas para redes sociales (Open Graph) y datos estructurados `Dataset` de schema.org, que permiten que las bases aparezcan en Google Dataset Search.
+1. En GitHub: Settings → Pages → *Deploy from a branch*, rama `master`, carpeta raíz. En *Custom domain* debe aparecer `mlt.cactus.com.co` (lo toma del archivo `CNAME`). Active *Enforce HTTPS* cuando GitHub emita el certificado.
+2. En el DNS de cactus.com.co: registro `CNAME` con nombre `mlt` y valor `clockgatonegro.github.io`.
+3. En Google Search Console: agregue la propiedad `https://mlt.cactus.com.co/`, pegue la etiqueta de verificación donde lo indica el comentario en `index.html` y envíe `sitemap.xml`.
+
+- `index.html` incluye descripción, URL canónica, etiquetas Open Graph y datos estructurados `Dataset` de schema.org (Google Dataset Search).
 - `og-image.png` es la imagen que se muestra al compartir el enlace.
-- `sitemap.xml` se envía en Google Search Console. Pegue la etiqueta de verificación de Search Console donde lo indica el comentario en `index.html`.
-- `robots.txt` solo tiene efecto en la raíz del dominio (`clockgatonegro.github.io/robots.txt`), es decir, en un repositorio `clockgatonegro.github.io`. En este repositorio sirve como referencia: GitHub Pages permite indexar por defecto.
+- `robots.txt` y `sitemap.xml` quedan en la raíz del dominio.

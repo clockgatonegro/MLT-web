@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clockgatonegro.github.io/MLT-web/sitemap.xml
+Sitemap: https://mlt.cactus.com.co/sitemap.xml

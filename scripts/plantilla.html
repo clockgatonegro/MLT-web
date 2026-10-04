@@ -1,0 +1,538 @@
+<title>Redes de La Tertulia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: aplicación de una pantalla — vistas en pestañas, lienzo al centro, ficha a la derecha, línea de tiempo por periodos abajo.
+   Color: se conserva el vocabulario de las gráficas del proyecto (individual verde azulado, colectiva salmón; artistas verde,
+   curadores rojo, presentadores naranja, auspiciadores violeta), ajustado para fondo claro y oscuro. */
+:root{
+  --bg:#eceeea; --surface:#f7f8f5; --fg:#1b2422; --muted:#5d6b67; --line:#cfd6d2; --band:#e2e6e1;
+  --ind:#1b9a9a; --col:#e2725b; --nd:#9aa3a0;
+  --artista:#4f9a2c; --curador:#c8323c; --presentador:#e08a1e; --apoyo:#7a5fc0; --curart:#8a4fb8;
+  --edge:27,36,34; --focus:#1b2422;
+  --f-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121816; --surface:#19211f; --fg:#e4ebe7; --muted:#93a39e; --line:#2c3835; --band:#1f2826;
+  --ind:#3cc2c0; --col:#f08a72; --nd:#6f7a77;
+  --artista:#7cc552; --curador:#ef5a62; --presentador:#f2a443; --apoyo:#a08ae0; --curart:#b980e6;
+  --edge:228,235,231; --focus:#e4ebe7; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121816; --surface:#19211f; --fg:#e4ebe7; --muted:#93a39e; --line:#2c3835; --band:#1f2826;
+  --ind:#3cc2c0; --col:#f08a72; --nd:#6f7a77;
+  --artista:#7cc552; --curador:#ef5a62; --presentador:#f2a443; --apoyo:#a08ae0; --curart:#b980e6;
+  --edge:228,235,231; --focus:#e4ebe7; color-scheme:dark}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font:14px/1.45 var(--f-body);margin:0}
+.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto auto minmax(0,1fr) auto;padding-inline:16px;padding-block:12px;gap:10px;box-sizing:border-box}
+header{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:end;gap:10px 28px}
+h1{font:700 26px/1 var(--f-display);letter-spacing:-.01em;margin:0}
+h1 small{display:block;font:500 11px/1.4 var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--line)}
+.tabs button{border:0;background:none;border-bottom:2px solid transparent;border-radius:0;padding:6px 12px;font:600 13.5px var(--f-body);color:var(--muted)}
+.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--fg)}
+.ctl{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;min-height:30px}
+.grp{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.lbl{font:500 10.5px var(--f-data);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;padding:3px 9px;cursor:pointer;background:var(--surface);font-size:12.5px;user-select:none;position:relative}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.sq{width:9px;height:9px;display:inline-block;flex:none}
+.chip:has(input:not(:checked)){opacity:.45}
+.chip:has(input:not(:checked)) .dot{background:transparent!important;box-shadow:inset 0 0 0 1.5px var(--muted)}
+.chip:has(input:focus-visible),button:focus-visible,select:focus-visible,input[type=search]:focus-visible,input[type=range]:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+select,input[type=search],button{font:inherit;font-size:12.5px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+button{cursor:pointer}
+.seg{display:inline-flex;flex-wrap:wrap}.seg button{border-radius:0;margin-left:-1px}.seg button:first-child{border-radius:6px 0 0 6px;margin-left:0}.seg button:last-child{border-radius:0 6px 6px 0}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg);position:relative}
+input[type=search]{width:200px}
+.range{font:12px var(--f-data);font-variant-numeric:tabular-nums}
+.stage{grid-column:1;position:relative;min-height:0;border:1px solid var(--line);background:var(--surface);border-radius:4px;overflow:hidden}
+canvas{display:block;width:100%;height:100%}
+#dur{position:absolute;inset:0;width:100%;height:100%;display:block}
+canvas{cursor:grab} canvas.hov{cursor:pointer}
+#dur text{fill:var(--muted);font:10.5px var(--f-data)} #dur .axis line,#dur .axis path{stroke:var(--line)} #dur .grid line{stroke:var(--line);stroke-opacity:.6}
+.stat{position:absolute;left:10px;top:8px;font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums;pointer-events:none;background:color-mix(in srgb,var(--surface) 80%,transparent);padding:2px 4px}
+.legend-float{position:absolute;left:10px;bottom:8px;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;max-width:70%;background:color-mix(in srgb,var(--surface) 85%,transparent);padding:4px 6px;border-radius:4px;pointer-events:none}
+.legend-float span{display:inline-flex;align-items:center;gap:5px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:4px 8px;border-radius:4px;max-width:300px;transform:translate(10px,10px);z-index:3}
+.zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:4px}
+.zoom button{width:28px;height:28px;padding:0}
+aside{grid-row:3/5;grid-column:2;min-height:0;overflow:auto;border-left:1px solid var(--line);padding-left:14px}
+aside h2{font:700 21px/1.15 var(--f-display);margin:2px 0 6px;text-wrap:balance}
+.kind{font:500 10.5px var(--f-data);letter-spacing:.08em;text-transform:uppercase}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13px;margin:10px 0}
+.meta dt{color:var(--muted)}.meta dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.pill{display:inline-flex;align-items:center;gap:5px;font:500 11px var(--f-data);padding:1px 7px;border-radius:999px;border:1px solid var(--line)}
+aside h3{font:500 10.5px var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px;border-top:1px solid var(--line);padding-top:10px}
+aside ul{list-style:none;margin:0;padding:0}
+aside li{display:flex;gap:8px;align-items:baseline;padding:3px 0;border-bottom:1px dotted var(--line)}
+aside li a{color:var(--fg);text-decoration:none;cursor:pointer;min-width:0;flex:1}
+aside li a:hover{text-decoration:underline}
+aside li .y{font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums;min-width:34px}
+aside li .n{font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+aside p{margin:6px 0;max-width:62ch}
+.dls{display:flex;flex-wrap:wrap;gap:6px}.dls button{font:500 12px var(--f-data)}.dls .msg{font-size:12px;color:var(--muted);width:100%}
+aside code{font:12px var(--f-data)}
+aside .src{font-size:12.5px;color:var(--muted)} aside .src a{color:inherit}
+table.m{width:100%;border-collapse:collapse;font-size:12.5px} table.m th{font:500 10px var(--f-data);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:right;padding:2px 3px}
+table.m th:first-child,table.m td:first-child{text-align:left} table.m td{padding:3px;border-bottom:1px dotted var(--line);text-align:right;font-variant-numeric:tabular-nums}
+table.m td a{color:var(--fg);cursor:pointer;text-decoration:none} table.m td a:hover{text-decoration:underline}
+.timeline{grid-column:1;height:118px;position:relative}
+.timeline svg{width:100%;height:100%;display:block}
+.timeline text{fill:var(--muted);font:10.5px var(--f-data)}
+.timeline .per text{fill:var(--fg);font:600 10.5px var(--f-body)}
+.timeline .hito text{fill:var(--muted);font:10px var(--f-body)}
+.timeline .axis line,.timeline .axis path{stroke:var(--line)}
+.timeline .selection{fill:var(--fg);fill-opacity:.07;stroke:var(--fg);stroke-opacity:.45}
+@media (max-width:860px){
+  .app{height:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto 62vh auto auto}
+  .stage{height:62vh}
+  aside{grid-row:auto;grid-column:1;border-left:0;border-top:1px solid var(--line);padding:12px 0 0}
+  input[type=search]{width:100%}
+  .timeline{height:130px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="app">
+<header>
+  <h1>Redes de La Tertulia<small>Exposiciones, artistas y curadores · Museo La Tertulia, Cali · <span id="yrs">1956–2026</span> · Juan Fernando Correa y Carlos Dussán</small></h1>
+  <div class="tabs" role="tablist" aria-label="Vistas">
+    <button role="tab" id="t-red" aria-selected="true">Red de exposiciones</button>
+    <button role="tab" id="t-pro" aria-selected="false">Curadores → artistas</button>
+    <button role="tab" id="t-dur" aria-selected="false">Duración</button>
+  </div>
+</header>
+
+<div class="ctl">
+  <div class="grp v-red" role="group" aria-label="Roles">
+    <span class="lbl">Roles</span>
+    <label class="chip"><input type="checkbox" id="r0" checked><span class="dot" style="background:var(--artista)"></span>Artistas</label>
+    <label class="chip"><input type="checkbox" id="r1" checked><span class="dot" style="background:var(--curador)"></span>Curadores</label>
+    <label class="chip"><input type="checkbox" id="r2" checked><span class="dot" style="background:var(--presentador)"></span>Presentadores</label>
+    <label class="chip"><input type="checkbox" id="r3"><span class="dot" style="background:var(--apoyo)"></span>Auspiciadores</label>
+  </div>
+  <div class="grp v-red v-dur" role="group" aria-label="Modalidad">
+    <span class="lbl">Exposiciones</span>
+    <label class="chip"><input type="checkbox" id="m0" checked><span class="sq" style="background:var(--ind)"></span>Individuales</label>
+    <label class="chip"><input type="checkbox" id="m1" checked><span class="sq" style="background:var(--col)"></span>Colectivas</label>
+    <label class="chip"><input type="checkbox" id="m2" checked><span class="sq" style="background:var(--nd)"></span>n/d</label>
+  </div>
+  <div class="grp v-red"><label class="lbl" for="mindeg">Agentes con ≥</label>
+    <input type="range" id="mindeg" min="1" max="10" value="2"><span id="mindegv" class="range">2 expos</span></div>
+  <div class="grp v-red v-pro"><span class="lbl">Disposición</span>
+    <div class="seg"><button id="lay-f" aria-pressed="true">Fuerzas</button><button id="lay-t" aria-pressed="false">Cronológica</button></div></div>
+  <div class="grp v-pro"><span class="lbl">Periodo</span><div class="seg" id="pers"></div></div>
+  <div class="grp v-pro"><span class="lbl">Color</span>
+    <div class="seg"><button id="c-rol" aria-pressed="true">Rol</button><button id="c-com" aria-pressed="false">Comunidad</button></div></div>
+  <div class="grp"><label class="lbl" for="q">Buscar</label>
+    <input type="search" id="q" list="names" placeholder="Artista, curador, exposición…" autocomplete="off"><datalist id="names"></datalist></div>
+</div>
+
+<div class="stage" id="stage">
+  <canvas id="cv" aria-label="Red"></canvas>
+  <svg id="dur" hidden role="img" aria-label="Duración de las exposiciones por año"></svg>
+  <div class="stat" id="stat"></div>
+  <div class="legend-float" id="leg"></div>
+  <div class="zoom" id="zoomctl"><button id="zin" aria-label="Acercar">+</button><button id="zout" aria-label="Alejar">−</button><button id="zfit" aria-label="Encuadrar">⤢</button></div>
+  <div class="tip" id="tip" hidden></div>
+</div>
+
+<aside id="panel" aria-live="polite"></aside>
+
+<div class="timeline" id="tl"><svg id="tlsvg" role="img" aria-label="Exposiciones por año, individuales y colectivas; arrastre para acotar el periodo"></svg></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const RAW = /*DATA*/null;
+const ROLES=['artista','curador','presentador','auspiciador'];
+const ROLE_LBL=['Artistas','Curadores','Presentadores','Auspiciadores'];
+const MODS=['individual','colectiva','n/d'];
+const CLASE=['exposición','persona','organización','agente sin catalogar'];
+const PER_NAMES=[['San Antonio',1956,1968,'San Antonio: Club Cultural La Tertulia'],['Nueva sede',1968,1982,'Nueva sede: Museo de Arte Moderno La Tertulia'],['Miguel González',1982,2006,'Miguel González'],['Museo La Tertulia',2006,2026,'Museo La Tertulia']];
+const HITOS=[[1971,'Sala Subterránea'],[1975,'Cinemateca'],[1982,'Taller de Grabado'],[2002,'Edificio de la colección'],[2007,'Remodelación'],[2015,'Casa Obeso']];
+
+// ---------- modelo ----------
+const N=RAW.n.map((r,i)=>r[2]===0
+  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],adj:[]}
+  :{i,id:r[0],label:r[1],t:r[2],nac:r[3],ocu:r[4],nace:r[5],muere:r[6],adj:[]});
+const E=RAW.e.map(([s,t,r],k)=>({s,t,r,k}));
+E.forEach(e=>{N[e.s].adj.push(e.k);N[e.t].adj.push(e.k)});
+const EXPOS=N.filter(n=>n.t===0), AGENTS=N.filter(n=>n.t>0);
+const Y0=d3.min(EXPOS,n=>n.year), Y1=d3.max(EXPOS,n=>n.year);
+document.getElementById('yrs').textContent=`${Y0}–${Y1}`;
+const PERS=RAW.per.map(([a,b])=>({a,b,key:`${a}-${b}`,label:a===Y0&&b===Y1?'Todo':`${a}–${String(b).slice(2)}`}));
+const COMM={};for(const k in RAW.comm){const m=new Map(RAW.comm[k]);COMM[k]=m}
+
+const state={view:'red',roles:[1,1,1,0],mods:[1,1,1],mindeg:2,range:[Y0,Y1],layout:'f',sel:null,hover:null,per:PERS.length-1,color:'rol'};
+
+// buscador
+const dl=document.getElementById('names'),byLabel=new Map();
+N.forEach(n=>{if(!byLabel.has(n.label))byLabel.set(n.label,n)});
+[...byLabel.keys()].sort((a,b)=>a.localeCompare(b,'es')).forEach(l=>{const o=document.createElement('option');o.value=l;dl.append(o)});
+
+// ---------- colores ----------
+let C={};const CAT=['#2f7fc1','#d1495b','#3b9b5f','#e28f2b','#8c5bb5','#159a9c','#b5651d','#c0458b','#6b8e23','#4a5fc1'];
+function readColors(){const cs=getComputedStyle(document.documentElement),g=v=>cs.getPropertyValue(v).trim();
+  C={bg:g('--surface'),fg:g('--fg'),muted:g('--muted'),edge:g('--edge'),line:g('--line'),band:g('--band'),
+     mod:[g('--ind'),g('--col'),g('--nd')],role:[g('--artista'),g('--curador'),g('--presentador'),g('--apoyo')],curart:g('--curart')};}
+readColors();
+const redraw=()=>{readColors();render();drawTimeline()};
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',redraw);
+new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+// ---------- filtros comunes ----------
+function expoOk(n){
+  if(!state.mods[n.mod])return false;
+  if(n.year){if(n.year<state.range[0]||n.year>state.range[1])return false}
+  else if(state.range[0]!==Y0||state.range[1]!==Y1)return false;
+  return true;
+}
+
+// ---------- vista 1: red bipartita ----------
+let VN=[],VE=[],VEset=new Set(),vis=new Uint8Array(N.length),deg=new Uint16Array(N.length),agentRole=new Int8Array(N.length);
+function filterRed(){
+  vis.fill(0);deg.fill(0);
+  const eok=new Uint8Array(N.length);EXPOS.forEach(n=>{if(expoOk(n))eok[n.i]=1});
+  const cand=E.filter(e=>state.roles[e.r]&&eok[e.s]);
+  cand.forEach(e=>deg[e.t]++);
+  VE=cand.filter(e=>deg[e.t]>=state.mindeg);
+  deg.fill(0);agentRole.fill(-1);const rc=new Map();
+  VE.forEach(e=>{deg[e.s]++;deg[e.t]++;vis[e.s]=1;vis[e.t]=1;const m=rc.get(e.t)||[0,0,0,0];m[e.r]++;rc.set(e.t,m)});
+  rc.forEach((m,k)=>{agentRole[k]=m.indexOf(Math.max(...m))});
+  VEset=new Set(VE.map(e=>e.k));
+  VN=N.filter(n=>vis[n.i]);
+  const ne=VN.filter(n=>n.t===0).length;
+  setStat(`${fmt(ne)} exposiciones · ${fmt(VN.length-ne)} agentes · ${fmt(VE.length)} vínculos`);
+}
+const fmt=x=>x.toLocaleString('es-CO');
+function setStat(s){document.getElementById('stat').textContent=s}
+
+// ---------- vista 2: proyección curador/presentador → artista ----------
+let PN=[],PL=[],pOut=new Map(),pIn=new Map(),pRole=new Map(),pComm=null,pYear=new Map();
+function filterPro(){
+  const pairs=new Map();pOut=new Map();pIn=new Map();
+  const byExpo=new Map();
+  for(const e of E){if(e.r===3)continue;const x=N[e.s];if(!x.year||x.year<state.range[0]||x.year>state.range[1])continue;
+    let L=byExpo.get(e.s);if(!L){L=[[],[],[]];byExpo.set(e.s,L)}L[e.r].push(e.t)}
+  const asCur=new Map(),asPre=new Map(),asArt=new Set();const ysum=new Map();
+  byExpo.forEach((L,x)=>{const y=N[x].year;L.flat().forEach(a=>{const s=ysum.get(a)||[0,0];s[0]+=y;s[1]++;ysum.set(a,s)})});
+  pYear=new Map([...ysum].map(([a,[s,c]])=>[a,s/c]));
+  byExpo.forEach(L=>{L[0].forEach(a=>asArt.add(a));
+    for(const r of [1,2])for(const c of L[r]){(r===1?asCur:asPre).set(c,1);for(const a of L[0]){if(a===c)continue;const k=c+'>'+a;pairs.set(k,(pairs.get(k)||0)+1)}}});
+  const nodes=new Set();PL=[];
+  pairs.forEach((w,k)=>{const [s,t]=k.split('>').map(Number);nodes.add(s);nodes.add(t);PL.push({s,t,w});
+    pOut.set(s,(pOut.get(s)||[]).concat([[t,w]]));pIn.set(t,(pIn.get(t)||[]).concat([[s,w]]))});
+  pRole=new Map();nodes.forEach(n=>{const c=asCur.has(n),p=asPre.has(n),a=asArt.has(n)&&pIn.has(n);
+    pRole.set(n,c?(a?'curador-artista':'curador'):p?(a?'presentador-artista':'presentador'):'artista')});
+  PN=[...nodes].map(i=>N[i]);
+  const key=`${state.range[0]}-${state.range[1]}`;pComm=COMM[key]||null;
+  document.getElementById('c-com').disabled=!pComm;
+  if(!pComm&&state.color==='com')setColor('rol');
+  const nc=pComm?new Set([...pComm.values()]).size:null;
+  setStat(`${fmt(PN.length)} agentes · ${fmt(PL.length)} vínculos curador → artista${nc?` · ${nc} comunidades`:''}`);
+}
+const PROLE_COL=r=>r==='artista'?C.role[0]:r==='curador'?C.role[1]:r==='presentador'?C.role[2]:r==='curador-artista'?C.curart:'#b07a3a';
+function pdeg(i){return ((pOut.get(i)||[]).length+(pIn.get(i)||[]).length)}
+
+// ---------- lienzo y simulación ----------
+const stage=document.getElementById('stage'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+let W=0,H=0,dpr=1,T=d3.zoomIdentity;
+function resize(){const r=stage.getBoundingClientRect();W=r.width;H=r.height;dpr=window.devicePixelRatio||1;cv.width=W*dpr;cv.height=H*dpr;render();if(state.view==='dur')drawDur()}
+new ResizeObserver(resize).observe(stage);
+const xYear=d3.scaleLinear();
+const sim=d3.forceSimulation().alphaDecay(0.035).velocityDecay(0.45).on('tick',render);
+const pos={red:new Map(),pro:new Map()}; // posiciones por vista
+function meanYear(n){let s=0,c=0;for(const k of n.adj){if(!VEset.has(k))continue;const y=N[E[k].s].year;if(y){s+=y;c++}}return c?s/c:(Y0+Y1)/2}
+function radius(n){if(state.view==='pro'){return 2+Math.sqrt(pdeg(n.i))*1.3}return n.t===0?2+Math.sqrt(deg[n.i])*0.9:1.6+Math.sqrt(deg[n.i])*1.25}
+function color(n){
+  if(state.view==='pro'){if(state.color==='com'&&pComm){const c=pComm.get(n.i);return c!=null&&c<CAT.length?CAT[c]:C.mod[2]}return PROLE_COL(pRole.get(n.i))}
+  return n.t===0?C.mod[n.mod]:C.role[agentRole[n.i]<0?0:agentRole[n.i]]}
+function useNodes(list,store){list.forEach(n=>{const p=store.get(n.i);if(p){n.x=p.x;n.y=p.y}else if(n.x==null){n.x=(Math.random()-.5)*W;n.y=(Math.random()-.5)*H}})}
+function saveNodes(store){sim.nodes().forEach(n=>store.set(n.i,{x:n.x,y:n.y}))}
+function rebuild(reheat=1){
+  sim.stop();
+  if(state.view==='dur'){render();drawDur();updatePanel();drawTimeline();return}
+  if(state.view==='red'){
+    filterRed();useNodes(VN,pos.red);
+    const links=VE.map(e=>({source:N[e.s],target:N[e.t]}));
+    sim.nodes(VN).force('link',d3.forceLink(links).distance(l=>12+Math.sqrt(deg[l.source.i])*1.2).strength(l=>1/Math.min(deg[l.source.i],deg[l.target.i])))
+      .force('charge',d3.forceManyBody().strength(n=>-12-deg[n.i]*1.6).theta(1.1).distanceMax(420))
+      .force('collide',d3.forceCollide(n=>radius(n)+.8).iterations(1));
+    if(state.layout==='t'){const span=Math.max(600,W*1.6);xYear.domain([Y0,Y1]).range([-span/2,span/2]);
+      sim.force('x',d3.forceX(n=>n.t===0?(n.year?xYear(n.year):xYear.range()[1]+60):xYear(meanYear(n))).strength(n=>n.t===0?(n.year?.9:.3):.25)).force('y',d3.forceY(0).strength(.04));}
+    else sim.force('x',d3.forceX(0).strength(.03)).force('y',d3.forceY(0).strength(.03));
+  } else {
+    filterPro();useNodes(PN,pos.pro);
+    const links=PL.map(l=>({source:N[l.s],target:N[l.t]}));
+    sim.nodes(PN).force('link',d3.forceLink(links).distance(18).strength(l=>1/Math.min(pdeg(l.source.i),pdeg(l.target.i))))
+      .force('charge',d3.forceManyBody().strength(n=>-18-pdeg(n.i)*1.2).theta(1.1).distanceMax(380))
+      .force('collide',d3.forceCollide(n=>radius(n)+1).iterations(1))
+      .force('x',d3.forceX(0).strength(.035)).force('y',d3.forceY(0).strength(.035));
+    if(state.layout==='t'){const a=state.range[0],b=state.range[1],span=Math.max(600,W*1.4);xYear.domain([a,Math.max(b,a+1)]).range([-span/2,span/2]);
+      sim.force('x',d3.forceX(n=>xYear(pYear.get(n.i)??(a+b)/2)).strength(.5)).force('y',d3.forceY(0).strength(.05));}
+  }
+  sim.alpha(reheat).restart();
+  legend();updatePanel();drawTimeline();
+}
+setInterval(()=>{if(state.view==='red')saveNodes(pos.red);else if(state.view==='pro')saveNodes(pos.pro)},1500);
+
+function render(){
+  if(!W||state.view==='dur')return;
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);
+  ctx.save();ctx.translate(W/2+T.x,H/2+T.y);ctx.scale(T.k,T.k);
+  const focus=state.hover??state.sel;
+  const pro=state.view==='pro';
+  const nodes=pro?PN:VN;
+  const inView=focus!=null&&nodes.some(n=>n.i===focus);
+  const nb=inView?neighbors(focus):null;
+  if(state.layout==='t'){const step=pro&&state.range[1]-state.range[0]<25?(state.range[1]-state.range[0]<12?1:5):10;ctx.strokeStyle=`rgba(${C.edge},.08)`;ctx.fillStyle=C.muted;ctx.lineWidth=1/T.k;ctx.font=`${11/T.k}px "IBM Plex Mono",monospace`;ctx.textAlign='center';
+    for(let y=Math.ceil(xYear.domain()[0]/step)*step;y<=xYear.domain()[1];y+=step){const x=xYear(y);ctx.beginPath();ctx.moveTo(x,-4000);ctx.lineTo(x,4000);ctx.stroke();ctx.fillText(y,x,(-H/2-T.y)/T.k+38/T.k)}}
+  // aristas
+  ctx.lineWidth=.6/T.k;ctx.strokeStyle=`rgba(${C.edge},${nb?.035:(pro?.18:.12)})`;ctx.beginPath();
+  if(pro){for(const l of PL){const a=N[l.s],b=N[l.t];ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)}}
+  else{for(const e of VE){const a=N[e.s],b=N[e.t];ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)}}
+  ctx.stroke();
+  if(pro&&T.k>.9&&!nb){ctx.fillStyle=`rgba(${C.edge},.35)`;for(const l of PL){arrow(N[l.s],N[l.t])}}
+  if(nb){ctx.lineWidth=1.3/T.k;ctx.globalAlpha=.9;
+    if(pro){for(const l of PL){if(l.s!==focus&&l.t!==focus)continue;const a=N[l.s],b=N[l.t];ctx.strokeStyle=l.s===focus?C.role[1]:C.role[0];ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();ctx.fillStyle=ctx.strokeStyle;arrow(a,b)}}
+    else{for(const e of VE){if(e.s!==focus&&e.t!==focus)continue;const a=N[e.s],b=N[e.t];ctx.strokeStyle=C.role[e.r];ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
+    ctx.globalAlpha=1}
+  // nodos
+  for(const n of nodes){const r=radius(n);ctx.globalAlpha=nb&&!nb.has(n.i)?.16:1;ctx.fillStyle=color(n);ctx.beginPath();
+    if(n.t===0)ctx.rect(n.x-r,n.y-r,2*r,2*r);else ctx.arc(n.x,n.y,r,0,7);ctx.fill()}
+  ctx.globalAlpha=1;
+  // etiquetas
+  ctx.textAlign='left';ctx.textBaseline='middle';
+  let lab=[];
+  if(nb)nb.forEach(i=>lab.push(N[i]));
+  else if(pro){const thr=T.k>2?2:T.k>1.2?5:10;lab=nodes.filter(n=>pdeg(n.i)>=thr).sort((a,b)=>pdeg(b.i)-pdeg(a.i))}
+  else{const thr=T.k>2.2?4:T.k>1.3?12:28;lab=nodes.filter(n=>n.t>0&&deg[n.i]>=thr)}
+  for(const n of lab.slice(0,180)){const r=radius(n),me=n.i===focus;ctx.font=`${me?'600 ':''}${(me?12.5:11.5)/T.k}px "IBM Plex Sans",sans-serif`;
+    const s=n.label.length>40?n.label.slice(0,38)+'…':n.label;ctx.lineWidth=3/T.k;ctx.strokeStyle=C.bg;ctx.strokeText(s,n.x+r+3/T.k,n.y);ctx.fillStyle=me?C.fg:C.muted;ctx.fillText(s,n.x+r+3/T.k,n.y)}
+  ctx.restore();
+}
+function arrow(a,b){const r=radius(b)+1.5/T.k,dx=b.x-a.x,dy=b.y-a.y,L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,tx=b.x-ux*r,ty=b.y-uy*r,s=4/T.k;
+  ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx-ux*s-uy*s*.55,ty-uy*s+ux*s*.55);ctx.lineTo(tx-ux*s+uy*s*.55,ty-uy*s-ux*s*.55);ctx.closePath();ctx.fill()}
+function neighbors(i){const s=new Set([i]);
+  if(state.view==='pro'){(pOut.get(i)||[]).forEach(([t])=>s.add(t));(pIn.get(i)||[]).forEach(([t])=>s.add(t));return s}
+  for(const k of N[i].adj){if(!VEset.has(k))continue;s.add(E[k].s);s.add(E[k].t)}return s}
+
+// zoom y puntero
+const zoom=d3.zoom().scaleExtent([.12,12]).on('zoom',ev=>{T=ev.transform;render()});
+d3.select(cv).call(zoom).on('dblclick.zoom',null);
+function toWorld(ev){const r=cv.getBoundingClientRect();return [(ev.clientX-r.left-W/2-T.x)/T.k,(ev.clientY-r.top-H/2-T.y)/T.k]}
+function pick(ev){const [x,y]=toWorld(ev);const n=sim.find(x,y,14/T.k);return n?n.i:null}
+const tip=document.getElementById('tip');
+function showTip(ev,txt){const r=stage.getBoundingClientRect();tip.hidden=false;tip.textContent=txt;tip.style.left=(ev.clientX-r.left)+'px';tip.style.top=(ev.clientY-r.top)+'px'}
+cv.addEventListener('pointermove',ev=>{const i=pick(ev);if(i!==state.hover){state.hover=i;cv.classList.toggle('hov',i!=null);render()}
+  if(i==null){tip.hidden=true;return}const n=N[i];
+  showTip(ev,n.t===0?`${n.label}${n.year?' · '+n.year:''} · ${MODS[n.mod]}`:state.view==='pro'?`${n.label} · ${pRole.get(i)}`:`${n.label} · ${deg[i]} expos`)});
+cv.addEventListener('pointerleave',()=>{state.hover=null;tip.hidden=true;render()});
+cv.addEventListener('click',ev=>select(pick(ev)));
+document.getElementById('zin').onclick=()=>d3.select(cv).transition().duration(250).call(zoom.scaleBy,1.5);
+document.getElementById('zout').onclick=()=>d3.select(cv).transition().duration(250).call(zoom.scaleBy,1/1.5);
+document.getElementById('zfit').onclick=fit;
+function fit(){const nodes=sim.nodes();if(!nodes.length)return;const xs=d3.extent(nodes,n=>n.x),ys=d3.extent(nodes,n=>n.y);
+  const k=Math.min(4,.9*Math.min(W/(xs[1]-xs[0]||1),H/(ys[1]-ys[0]||1)));
+  d3.select(cv).transition().duration(400).call(zoom.transform,d3.zoomIdentity.translate(-k*(xs[0]+xs[1])/2,-k*(ys[0]+ys[1])/2).scale(k))}
+function centerOn(i){const n=N[i];if(n.x==null||!sim.nodes().includes(n))return;const k=Math.max(T.k,1.6);
+  d3.select(cv).transition().duration(450).call(zoom.transform,d3.zoomIdentity.translate(-k*n.x,-k*n.y).scale(k))}
+
+// ---------- leyenda flotante ----------
+function legend(){const L=document.getElementById('leg');
+  if(state.view==='red')L.innerHTML=`<span><span class="sq" style="background:var(--ind)"></span>Individual</span><span><span class="sq" style="background:var(--col)"></span>Colectiva</span><span><span class="sq" style="background:var(--nd)"></span>n/d</span><span><span class="dot" style="background:var(--artista)"></span>Artista</span><span><span class="dot" style="background:var(--curador)"></span>Curador</span><span><span class="dot" style="background:var(--presentador)"></span>Presentador</span><span><span class="dot" style="background:var(--apoyo)"></span>Auspiciador</span>`;
+  else if(state.view==='pro'&&state.color==='rol')L.innerHTML=`<span><span class="dot" style="background:var(--artista)"></span>Artista</span><span><span class="dot" style="background:var(--curador)"></span>Curador</span><span><span class="dot" style="background:var(--curart)"></span>Curador-artista</span><span><span class="dot" style="background:var(--presentador)"></span>Presentador</span><span><span class="dot" style="background:#b07a3a"></span>Presentador-artista</span><span>→ dirección: quien cura hacia quien expone</span>`;
+  else if(state.view==='pro')L.innerHTML=`<span>Color: comunidades detectadas (Louvain) en el periodo; gris: comunidades pequeñas</span>`;
+  else L.innerHTML=`<span><span class="dot" style="background:var(--ind)"></span>Individual</span><span><span class="dot" style="background:var(--col)"></span>Colectiva</span><span><span class="dot" style="background:var(--nd)"></span>n/d</span>`;
+}
+
+// ---------- vista 3: duración ----------
+const dsv=d3.select('#dur');
+function drawDur(){
+  const box=stage.getBoundingClientRect(),w=box.width,h=box.height,m={l:52,r:16,t:40,b:62};
+  dsv.selectAll('*').remove();dsv.attr('viewBox',`0 0 ${w} ${h}`);
+  const pts=EXPOS.filter(n=>n.dur!=null&&expoOk(n));
+  const x=d3.scaleLinear().domain([Y0-1,Y1+1]).range([m.l,w-m.r]);
+  const ymax=Math.min(420,d3.max(pts,n=>n.dur)||100);
+  const y=d3.scaleLinear().domain([0,ymax]).nice().range([h-m.b,m.t]);
+  dsv.append('g').attr('class','grid').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(w-m.l-m.r)).tickFormat('')).select('.domain').remove();
+  dsv.append('g').attr('class','axis').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).ticks(Math.min(14,w/70)).tickFormat(d3.format('d')));
+  dsv.append('g').attr('class','axis').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6));
+  dsv.append('text').attr('x',m.l).attr('y',m.t-14).text('Duración en días de cada exposición con fechas completas');
+  const jit=n=>((n.i*9301+49297)%233280)/233280-.5;
+  const over=pts.filter(n=>n.dur>ymax);
+  dsv.append('g').selectAll('circle').data(pts.filter(n=>n.dur<=ymax)).join('circle')
+    .attr('cx',n=>x(n.year+jit(n)*.7)).attr('cy',n=>y(n.dur)).attr('r',n=>n.i===state.sel?6:3.4)
+    .attr('fill',n=>C.mod[n.mod]).attr('fill-opacity',.85).attr('stroke',n=>n.i===state.sel?C.fg:'none').attr('stroke-width',2)
+    .style('cursor','pointer')
+    .on('pointermove',(ev,n)=>showTip(ev,`${n.label} · ${n.year} · ${n.dur} días · ${MODS[n.mod]}`)).on('pointerleave',()=>tip.hidden=true)
+    .on('click',(ev,n)=>select(n.i));
+  // mediana por década
+  const dec=d3.rollups(pts,v=>d3.median(v,n=>n.dur),n=>Math.floor(n.year/10)*10).sort((a,b)=>a[0]-b[0]);
+  dsv.append('g').selectAll('line').data(dec).join('line').attr('x1',d=>x(Math.max(d[0],Y0-.5))).attr('x2',d=>x(Math.min(d[0]+9.9,Y1+.5))).attr('y1',d=>y(d[1])).attr('y2',d=>y(d[1])).attr('stroke',C.fg).attr('stroke-width',1.5).attr('stroke-dasharray','4 3');
+  dsv.append('text').attr('x',w-m.r).attr('y',m.t-14).attr('text-anchor','end').text(`línea punteada: mediana por década · ${pts.length} exposiciones${over.length?` · ${over.length} superan ${ymax} días`:''}`);
+  setStat('');
+}
+
+// ---------- descargas ----------
+const FILES=/*FILES*/null;let DL=null;
+(async()=>{try{DL=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(e){DL=null}renderDownloads()})();
+function renderDownloads(){const box=document.getElementById('dls');if(!box)return;
+  if(!DL){box.innerHTML='<span class="msg">La descarga directa no está disponible en esta vista; use el enlace a GitHub.</span>';return}
+  box.innerHTML=Object.keys(FILES).map(f=>`<button data-f="${f}">${f}</button>`).join('')+'<span class="msg" id="dlmsg"></span>';
+  box.querySelectorAll('button').forEach(b=>b.onclick=async()=>{const m=document.getElementById('dlmsg');
+    try{await DL.save({filename:b.dataset.f,data:FILES[b.dataset.f]});m.textContent='Archivo entregado: '+b.dataset.f}
+    catch(e){m.textContent=e&&e.code==='declined'?'Descarga cancelada.':e&&e.code==='rate_limited'?'Hay otra descarga pendiente; intente en un momento.':'No se pudo descargar aquí; use el enlace a GitHub.'}})}
+
+// ---------- ficha ----------
+const panel=document.getElementById('panel');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function fecha(n){if(n.fi&&n.ff)return `${n.fi} → ${n.ff}`;return n.fi||(n.year?String(n.year):'sin fecha')}
+const modPill=m=>`<span class="pill"><span class="sq" style="background:${C.mod[m]}"></span>${MODS[m]}</span>`;
+function updatePanel(){if(state.sel!=null)select(state.sel,false,true);else intro()}
+function intro(){
+  if(state.view==='pro'){const key=`${state.range[0]}-${state.range[1]}`,M=RAW.met[key];
+    panel.innerHTML=`<div class="kind" style="color:var(--muted)">Curadores → artistas</div><h2>${state.range[0]}–${state.range[1]}</h2>
+     <p>Una flecha va de quien curó o presentó una exposición hacia cada artista de esa exposición. Es la proyección que el proyecto usó para leer los cortes temporales: el paso del presentador al curador, la centralidad de Miguel González entre 1982 y 2006, y el auge del curador-artista.</p>
+     ${M?`<h3>Mejores intermediarios</h3><p class="src">Centralidad de intermediación: cuántas veces el agente está en el camino más corto entre otros dos.</p>
+     <table class="m"><thead><tr><th>Agente</th><th>Interm.</th><th>Entra</th><th>Sale</th></tr></thead><tbody>${M.bt.slice(0,10).map(([i,b,din,dout])=>`<tr><td><a data-i="${i}">${esc(N[i].label)}</a></td><td>${fmt(b)}</td><td>${din}</td><td>${dout}</td></tr>`).join('')}</tbody></table>
+     <h3>Curadores con más artistas</h3><ul>${M.out.map(([i,d])=>`<li><a data-i="${i}">${esc(N[i].label)}</a><span class="n">${d} artistas</span></li>`).join('')}</ul>`
+     :`<p class="src">Periodo personalizado: las métricas y comunidades están calculadas para los cortes del proyecto. Elija uno en "Periodo".</p>`}
+     <p class="src">Los cortes 1956–1968 a 2007–2016 son los del proyecto; 2017–2026 se agrega con los datos nuevos.</p>`;
+    return}
+  if(state.view==='dur'){const pts=EXPOS.filter(n=>n.dur!=null);
+    panel.innerHTML=`<div class="kind" style="color:var(--muted)">Duración</div><h2>¿Cuánto duraban las exposiciones?</h2>
+     <p>Cada punto es una exposición con fecha de apertura y cierre completas (${fmt(pts.length)} de ${fmt(EXPOS.length)}). Retoma la gráfica "Duración de las exposiciones por año" del proyecto y la extiende hasta hoy.</p>
+     <p>Haga clic en un punto para ver la ficha de la exposición.</p>`;return}
+  const counts=[0,1,2].map(m=>EXPOS.filter(n=>n.mod===m).length);
+  panel.innerHTML=`<div class="kind" style="color:var(--muted)">Cómo leer la red</div>
+  <h2>${fmt(EXPOS.length)} exposiciones, ${fmt(AGENTS.length)} agentes</h2>
+  <p>Cada cuadrado es una exposición y cada círculo un agente. Las exposiciones se colorean según sean individuales (un artista) o colectivas (dos o más); n/d indica que no hay artistas nombrados, por ejemplo "Varios". Los agentes toman el color del rol que más ejercen.</p>
+  <dl class="meta"><dt>${modPill(0)}</dt><dd>${fmt(counts[0])}</dd><dt>${modPill(1)}</dt><dd>${fmt(counts[1])}</dd><dt>${modPill(2)}</dt><dd>${fmt(counts[2])}</dd></dl>
+  <p>Arrastre sobre la línea de tiempo para acotar un periodo. Un agente aparece solo si cumple el mínimo de exposiciones; bájelo a 1 para ver la red completa.</p>
+  <h3>Más conectados en la vista</h3><ul id="top"></ul>
+  <p class="src">Fuentes: base MLT 07/2016; capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com; piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021); web actual consultada el 3 de octubre de 2026.</p><h3>Datos abiertos</h3><p>Las bases actualizadas están en formato CSV, compatibles con Gephi.</p><div id="dls" class="dls"></div>
+  <p class="src">También se pueden descargar desde el repositorio del proyecto: <a href="https://github.com/clockgatonegro/MLT-web/tree/master/data" target="_blank" rel="noopener">github.com/clockgatonegro/MLT-web</a> (carpeta <code>data</code>).</p>
+  <h3>Créditos</h3><p>Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>.<br>Juan Fernando Correa · Carlos Dussán.</p>`;
+  renderDownloads();
+  const top=VN.filter(n=>n.t>0).sort((a,b)=>deg[b.i]-deg[a.i]).slice(0,12);
+  document.getElementById('top').innerHTML=top.map(n=>`<li><a data-i="${n.i}">${esc(n.label)}</a><span class="n">${deg[n.i]}</span></li>`).join('');
+}
+function select(i,center=false,quiet=false){
+  state.sel=i;render();if(state.view==='dur'&&!quiet)drawDur();
+  if(i==null){intro();return}
+  const n=N[i];if(center)centerOn(i);
+  if(n.t===0){
+    const by=[[],[],[],[]];n.adj.forEach(k=>{const e=E[k];by[e.r].push(N[e.t])});
+    const src=n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${n.url.includes('web.archive.org')?'página archivada':'web del museo'}</a>`:'';
+    panel.innerHTML=`<div class="kind" style="color:${C.mod[n.mod]}">Exposición · ${esc(n.id)}</div><h2>${esc(n.label)}</h2>
+     <dl class="meta"><dt>Fechas</dt><dd>${esc(fecha(n))}${n.dur!=null?` · ${n.dur} días`:''}</dd><dt>Modalidad</dt><dd>${modPill(n.mod)}</dd><dt>Espacio</dt><dd>${esc(n.esp||'—')}</dd>${n.tipo?`<dt>Tipo</dt><dd>${esc(n.tipo)}</dd>`:''}</dl>
+     ${src||n.pieza?`<p class="src">Fuente: ${src}${src&&n.pieza?' · ':''}${n.pieza?'pieza de Cactus: '+esc(n.pieza):''}</p>`:''}
+     ${by.map((l,r)=>l.length?`<h3>${ROLE_LBL[r]} · ${l.length}</h3><ul>${l.sort((a,b)=>a.label.localeCompare(b.label,'es')).map(a=>`<li><a data-i="${a.i}">${esc(a.label)}</a><span class="n">${a.adj.length}</span></li>`).join('')}</ul>`:'').join('')}
+     ${n.adj.length?'':'<p class="src">Sin agentes registrados.</p>'}`;
+  } else if(state.view==='pro'&&pRole.has(i)){
+    const out=(pOut.get(i)||[]).sort((a,b)=>b[1]-a[1]),inn=(pIn.get(i)||[]).sort((a,b)=>b[1]-a[1]);
+    const c=pComm?pComm.get(i):null;const mates=c!=null?PN.filter(m=>pComm.get(m.i)===c&&m.i!==i).sort((a,b)=>pdeg(b.i)-pdeg(a.i)).slice(0,10):[];
+    panel.innerHTML=`<div class="kind" style="color:${PROLE_COL(pRole.get(i))}">${esc(pRole.get(i))} · ${state.range[0]}–${state.range[1]}</div><h2>${esc(n.label)}</h2>
+     <dl class="meta"><dt>Curó o presentó a</dt><dd>${out.length} artistas</dd><dt>Fue curado por</dt><dd>${inn.length} agentes</dd>${c!=null?`<dt>Comunidad</dt><dd>${c+1} de ${new Set(pComm.values()).size}</dd>`:''}</dl>
+     ${out.length?`<h3>Artistas que curó o presentó</h3><ul>${out.slice(0,40).map(([t,w])=>`<li><a data-i="${t}">${esc(N[t].label)}</a><span class="n">${w} expo${w>1?'s':''}</span></li>`).join('')}</ul>`:''}
+     ${inn.length?`<h3>Curado o presentado por</h3><ul>${inn.map(([t,w])=>`<li><a data-i="${t}">${esc(N[t].label)}</a><span class="n">${w} expo${w>1?'s':''}</span></li>`).join('')}</ul>`:''}
+     ${mates.length?`<h3>Comparte comunidad con</h3><ul>${mates.map(m=>`<li><a data-i="${m.i}">${esc(m.label)}</a><span class="n">${esc(pRole.get(m.i))}</span></li>`).join('')}</ul>`:''}`;
+  } else {
+    const ex=n.adj.map(k=>({e:E[k],x:N[E[k].s]})).sort((a,b)=>(a.x.year||9999)-(b.x.year||9999));
+    const roles=[0,0,0,0];ex.forEach(o=>roles[o.e.r]++);
+    const co=new Map();ex.forEach(o=>o.x.adj.forEach(k=>{const t=E[k].t;if(t!==i&&E[k].r!==3&&N[t].t!==2)co.set(t,(co.get(t)||0)+1)}));
+    const cot=[...co].filter(([,c])=>c>1).sort((a,b)=>b[1]-a[1]).slice(0,10);
+    const ys=ex.map(o=>o.x.year).filter(Boolean),vida=[n.nace,n.muere].filter(Boolean).join('–');
+    const mu=new Map();ex.forEach(o=>{const v=mu.get(o.x)||[];v.push(ROLES[o.e.r]);mu.set(o.x,v)});
+    const ind=[...mu.keys()].filter(x=>x.mod===0).length,col=[...mu.keys()].filter(x=>x.mod===1).length;
+    const main=roles.indexOf(Math.max(...roles));
+    panel.innerHTML=`<div class="kind" style="color:${C.role[main]}">${esc(CLASE[n.t])} · ${esc(n.id)}</div><h2>${esc(n.label)}</h2>
+     <dl class="meta">${n.nac?`<dt>Nacionalidad</dt><dd>${esc(n.nac)}</dd>`:''}${vida?`<dt>Años</dt><dd>${esc(vida)}</dd>`:''}${n.ocu?`<dt>Ocupación</dt><dd>${esc(n.ocu)}</dd>`:''}
+     <dt>Participación</dt><dd>${roles.map((c,r)=>c?`${c} como ${ROLES[r]}`:'').filter(Boolean).join(', ')}</dd>
+     ${roles[0]?`<dt>Exposiciones</dt><dd>${ind} individuales, ${col} colectivas</dd>`:''}
+     ${ys.length?`<dt>Periodo</dt><dd>${d3.min(ys)}–${d3.max(ys)}</dd>`:''}</dl>
+     ${n.t===3?'<p class="src">Agente tomado del archivo web o de las piezas de Cactus; no figura en el catálogo de personas de 2016.</p>':''}
+     ${cot.length?`<h3>Coincide con más frecuencia</h3><ul>${cot.map(([t,c])=>`<li><a data-i="${t}">${esc(N[t].label)}</a><span class="n">${c} expos</span></li>`).join('')}</ul>`:''}
+     <h3>Exposiciones · ${mu.size}</h3><ul>${[...mu].map(([x,rs])=>`<li><span class="y">${x.year||'s/f'}</span><a data-i="${x.i}">${esc(x.label)}</a><span class="n">${rs.join(', ')}</span></li>`).join('')}</ul>`;
+  }
+  panel.scrollTop=0;
+}
+panel.addEventListener('click',ev=>{const a=ev.target.closest('a[data-i]');if(!a)return;ev.preventDefault();const i=+a.dataset.i;
+  if(state.view==='red'&&!vis[i]){state.mindeg=1;md.value=1;mdv();rebuild(.5)}
+  select(i,true)});
+
+// ---------- línea de tiempo con periodos ----------
+const tl=d3.select('#tlsvg');let xT;
+function drawTimeline(){
+  const box=document.getElementById('tl').getBoundingClientRect(),w=box.width,h=box.height,m={l:28,r:8,t:30,b:18};
+  if(!w)return;tl.selectAll('*').remove();
+  xT=d3.scaleLinear().domain([Y0-.5,Y1+.5]).range([m.l,w-m.r]);
+  const ys=d3.range(Y0,Y1+1);
+  const cnt=new Map(ys.map(y=>[y,[0,0,0]]));EXPOS.forEach(n=>{if(n.year&&state.mods[n.mod])cnt.get(n.year)[n.mod]++});
+  const yMax=d3.max(ys,y=>d3.sum(cnt.get(y)))||1;
+  const yT=d3.scaleLinear().domain([0,yMax]).range([h-m.b,m.t]);
+  // bandas de periodo
+  const pg=tl.append('g').attr('class','per');
+  PER_NAMES.forEach(([name,a,b,full],k)=>{const x0=xT(a-.5+(k?.5:0)),x1=xT(Math.min(b,Y1)+.5-(k<PER_NAMES.length-1?.5:0));
+    pg.append('rect').attr('x',x0).attr('y',m.t-26).attr('width',Math.max(0,x1-x0)).attr('height',h-m.b-m.t+26).attr('fill',k%2?C.band:'transparent');
+    const tx=pg.append('text').attr('x',x0+4).attr('y',m.t-15).text(x1-x0>name.length*6.5+8?name:'');tx.append('title').text(full);
+    if(k)tl.append('line').attr('x1',x0).attr('x2',x0).attr('y1',m.t-26).attr('y2',h-m.b).attr('stroke',C.muted).attr('stroke-dasharray','2 3')});
+  const bw=Math.max(1,(xT(1)-xT(0))*.82);
+  const stk=d3.stack().keys([0,1,2]).value((y,k)=>cnt.get(y)[k])(ys);
+  stk.forEach((layer,k)=>tl.append('g').selectAll('rect').data(layer).join('rect').attr('x',d=>xT(d.data)-bw/2).attr('width',bw)
+    .attr('y',d=>yT(d[1])).attr('height',d=>yT(d[0])-yT(d[1])).attr('fill',C.mod[k]));
+  // hitos
+  const hg=tl.append('g').attr('class','hito');
+  HITOS.forEach(([y,t])=>{const tot=d3.sum(cnt.get(y)||[0]);const g=hg.append('g').attr('transform',`translate(${xT(y)},${yT(tot)-3})`);
+    g.append('text').attr('text-anchor','middle').text('‡');g.append('title').text(`${t} (${y}, según la gráfica "división temporal" del proyecto)`);
+    if(w>1000)g.append('text').attr('x',4).attr('y',-1-(HITOS.findIndex(h=>h[0]===y)%2)*11).text(t)});
+  tl.append('g').attr('class','axis').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(xT).tickValues(d3.range(Math.ceil(Y0/10)*10,Y1+1,10)).tickFormat(d3.format('d')).tickSizeOuter(0));
+  tl.append('g').attr('class','axis').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(yT).ticks(3).tickSizeOuter(0));
+  const brush=d3.brushX().extent([[m.l,m.t-26],[w-m.r,h-m.b]]).on('end',ev=>{
+    if(!ev.sourceEvent)return;let r=ev.selection?ev.selection.map(xT.invert).map(Math.round):[Y0,Y1];if(r[0]===r[1])r=[Y0,Y1];
+    state.range=[Math.max(Y0,r[0]),Math.min(Y1,r[1])];
+    const p=PERS.findIndex(p=>p.a===state.range[0]&&p.b===state.range[1]);state.per=p;segPer();
+    rebuild(.6)});
+  const g=tl.append('g').call(brush);
+  if(state.range[0]!==Y0||state.range[1]!==Y1)g.call(brush.move,[xT(state.range[0]-.5),xT(state.range[1]+.5)]);
+}
+new ResizeObserver(()=>drawTimeline()).observe(document.getElementById('tl'));
+
+// ---------- controles ----------
+function show(){document.querySelectorAll('.v-red,.v-pro,.v-dur').forEach(el=>{el.hidden=!el.classList.contains('v-'+state.view)});document.getElementById('lay-f').disabled=false;
+  cv.hidden=state.view==='dur';document.getElementById('dur').toggleAttribute('hidden',state.view!=='dur');document.getElementById('zoomctl').hidden=state.view==='dur';
+  ['red','pro','dur'].forEach(v=>document.getElementById('t-'+v).setAttribute('aria-selected',state.view===v))}
+function setView(v){if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
+  state.view=v;state.hover=null;
+  if(v==='pro'&&state.per<0&&!(state.range[0]===Y0&&state.range[1]===Y1)){}
+  show();rebuild(v==='dur'?0:.8);if(v!=='dur')setTimeout(fit,v==='pro'?1400:900);legend()}
+['red','pro','dur'].forEach(v=>document.getElementById('t-'+v).onclick=()=>setView(v));
+const persEl=document.getElementById('pers');
+PERS.forEach((p,k)=>{const b=document.createElement('button');b.textContent=p.label;b.onclick=()=>{state.per=k;state.range=[p.a,p.b];segPer();rebuild(.9);setTimeout(fit,1300)};persEl.append(b)});
+function segPer(){[...persEl.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===state.per))}
+function setColor(c){state.color=c;document.getElementById('c-rol').setAttribute('aria-pressed',c==='rol');document.getElementById('c-com').setAttribute('aria-pressed',c==='com');legend();render()}
+document.getElementById('c-rol').onclick=()=>setColor('rol');document.getElementById('c-com').onclick=()=>setColor('com');
+[0,1,2,3].forEach(r=>document.getElementById('r'+r).addEventListener('change',ev=>{state.roles[r]=ev.target.checked?1:0;rebuild(.5)}));
+[0,1,2].forEach(m=>document.getElementById('m'+m).addEventListener('change',ev=>{state.mods[m]=ev.target.checked?1:0;rebuild(.5)}));
+const md=document.getElementById('mindeg'),mdv=()=>document.getElementById('mindegv').textContent=md.value+(md.value==='1'?' expo':' expos');
+md.addEventListener('input',mdv);md.addEventListener('change',()=>{state.mindeg=+md.value;rebuild(.5)});
+function setLayout(l){state.layout=l;document.getElementById('lay-f').setAttribute('aria-pressed',l==='f');document.getElementById('lay-t').setAttribute('aria-pressed',l==='t');rebuild(.9);setTimeout(fit,1600)}
+document.getElementById('lay-f').onclick=()=>setLayout('f');document.getElementById('lay-t').onclick=()=>setLayout('t');
+document.getElementById('q').addEventListener('change',ev=>{const n=byLabel.get(ev.target.value);if(!n)return;
+  if(state.view==='red'&&!vis[n.i]){state.mindeg=1;md.value=1;mdv();state.range=[Y0,Y1];state.per=PERS.length-1;segPer();state.mods=[1,1,1];[0,1,2].forEach(m=>document.getElementById('m'+m).checked=true);rebuild(.5)}
+  if(state.view==='pro'&&!pRole.has(n.i)){state.range=[Y0,Y1];state.per=PERS.length-1;segPer();rebuild(.5)}
+  setTimeout(()=>select(n.i,true),300)});
+addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null)});
+
+// arranque
+segPer();show();resize();rebuild(1);
+sim.stop();for(let k=0;k<120;k++)sim.tick();sim.alpha(.3).restart();setTimeout(fit,50);setTimeout(fit,2200);
+</script>

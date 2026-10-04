@@ -76,7 +76,7 @@ aside li a:hover{text-decoration:underline}
 aside li .y{font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums;min-width:34px}
 aside li .n{font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 aside p{margin:6px 0;max-width:62ch}
-.dls{display:flex;flex-wrap:wrap;gap:6px}.dls button{font:500 12px var(--f-data)}.dls .msg{font-size:12px;color:var(--muted);width:100%}
+.dls{display:flex;flex-wrap:wrap;gap:6px}.dls .ghl{width:100%;margin-top:4px}.dls button{font:500 12px var(--f-data)}.dls .msg{font-size:12px;color:var(--muted);width:100%}
 aside code{font:12px var(--f-data)}
 aside .src{font-size:12.5px;color:var(--muted)} aside .src a{color:inherit}
 table.m{width:100%;border-collapse:collapse;font-size:12.5px} table.m th{font:500 10px var(--f-data);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:right;padding:2px 3px}
@@ -385,8 +385,10 @@ function drawDur(){
 const FILES=/*FILES*/null;let DL=null;
 (async()=>{try{DL=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(e){DL=null}renderDownloads()})();
 function renderDownloads(){const box=document.getElementById('dls');if(!box)return;
-  if(!DL){box.innerHTML='<span class="msg">La descarga directa no está disponible en esta vista; use el enlace a GitHub.</span>';return}
-  box.innerHTML=Object.keys(FILES).map(f=>`<button data-f="${f}">${f}</button>`).join('')+'<span class="msg" id="dlmsg"></span>';
+  const GH='https://github.com/clockgatonegro/MLT-web/blob/master/data/';
+  const links='<ul class="ghl">'+Object.keys(FILES).map(f=>`<li><a href="${GH}${f}" target="_blank" rel="noopener">${f}</a><span class="n">GitHub</span></li>`).join('')+'</ul>';
+  if(!DL){box.innerHTML=links;return}
+  box.innerHTML=Object.keys(FILES).map(f=>`<button data-f="${f}">${f}</button>`).join('')+'<span class="msg" id="dlmsg"></span>'+links;
   box.querySelectorAll('button').forEach(b=>b.onclick=async()=>{const m=document.getElementById('dlmsg');
     try{await DL.save({filename:b.dataset.f,data:FILES[b.dataset.f]});m.textContent='Archivo entregado: '+b.dataset.f}
     catch(e){m.textContent=e&&e.code==='declined'?'Descarga cancelada.':e&&e.code==='rate_limited'?'Hay otra descarga pendiente; intente en un momento.':'No se pudo descargar aquí; use el enlace a GitHub.'}})}
@@ -418,7 +420,7 @@ function intro(){
   <dl class="meta"><dt>${modPill(0)}</dt><dd>${fmt(counts[0])}</dd><dt>${modPill(1)}</dt><dd>${fmt(counts[1])}</dd><dt>${modPill(2)}</dt><dd>${fmt(counts[2])}</dd></dl>
   <p>Arrastre sobre la línea de tiempo para acotar un periodo. Un agente aparece solo si cumple el mínimo de exposiciones; bájelo a 1 para ver la red completa.</p>
   <h3>Más conectados en la vista</h3><ul id="top"></ul>
-  <p class="src">Fuentes: base MLT 07/2016; capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com; piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021); web actual consultada el 3 de octubre de 2026.</p><h3>Datos abiertos</h3><p>Las bases actualizadas están en formato CSV, compatibles con Gephi.</p><div id="dls" class="dls"></div>
+  <p class="src">Fuentes: base MLT 07/2016; capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com; piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021); web actual consultada el 3 de octubre de 2026.</p><h3>Datos abiertos</h3><p>Las bases actualizadas están en formato CSV, compatibles con Gephi. Descárguelas aquí o desde el repositorio.</p><div id="dls" class="dls"></div>
   <p class="src">También se pueden descargar desde el repositorio del proyecto: <a href="https://github.com/clockgatonegro/MLT-web/tree/master/data" target="_blank" rel="noopener">github.com/clockgatonegro/MLT-web</a> (carpeta <code>data</code>).</p>
   <h3>Créditos</h3><p>Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>.<br>Juan Fernando Correa · Carlos Dussán.</p>`;
   renderDownloads();

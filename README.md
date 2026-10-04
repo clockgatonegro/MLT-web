@@ -1,4 +1,4 @@
-# Redes de La Tertulia
+# Red del Museo La Tertulia
 
 Red de exposiciones y agentes del Museo La Tertulia (Cali), 1956–2026. Parte del proyecto *Cartografiar redes del arte. 60 años del Museo La Tertulia*.
 
@@ -36,3 +36,12 @@ python3 scripts/normalizar.py MLT_DB_07_2016.xlsx
 python3 scripts/datos_web.py          # requiere networkx
 ```
 Las rutas de los scripts apuntan a una carpeta `salida/`; ajústelas si los ejecuta desde el repositorio.
+
+## Publicación e indexación
+
+La página está pensada para GitHub Pages (Settings → Pages → rama `master`, carpeta raíz): `https://clockgatonegro.github.io/MLT-web/`.
+
+- `index.html` incluye descripción, URL canónica, etiquetas para redes sociales (Open Graph) y datos estructurados `Dataset` de schema.org, que permiten que las bases aparezcan en Google Dataset Search.
+- `og-image.png` es la imagen que se muestra al compartir el enlace.
+- `sitemap.xml` se envía en Google Search Console. Pegue la etiqueta de verificación de Search Console donde lo indica el comentario en `index.html`.
+- `robots.txt` solo tiene efecto en la raíz del dominio (`clockgatonegro.github.io/robots.txt`), es decir, en un repositorio `clockgatonegro.github.io`. En este repositorio sirve como referencia: GitHub Pages permite indexar por defecto.

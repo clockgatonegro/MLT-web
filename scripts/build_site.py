@@ -30,13 +30,15 @@ head=f'''<!doctype html>
 <meta property="og:title" content="Red del Museo La Tertulia · Cali, 1956–2026">
 <meta property="og:description" content="{DESC}">
 <meta property="og:url" content="{URL}">
-<meta property="og:image" content="{URL}og-image.png">
+<meta property="og:image" content="{URL}og-image.jpg">
+<meta property="og:image:secure_url" content="{URL}og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Red de exposiciones y agentes del Museo La Tertulia">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Red del Museo La Tertulia · Cali, 1956–2026">
 <meta name="twitter:description" content="{DESC}">
-<meta name="twitter:image" content="{URL}og-image.png">
+<meta name="twitter:image" content="{URL}og-image.jpg">
 <!-- Verificación de Google Search Console: pegue aquí la etiqueta que le entregue Search Console -->
 <!-- <meta name="google-site-verification" content="CÓDIGO"> -->
 <!-- Google Analytics 4 con modo de consentimiento: sin cookies hasta que la persona acepte -->
@@ -47,6 +49,11 @@ gtag('consent','default',{{analytics_storage:_c==='si'?'granted':'denied',ad_sto
 gtag('js',new Date());gtag('config','G-SYWHRKMC3T',{{anonymize_ip:true}});
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYWHRKMC3T"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#141b19">
 <link rel="sitemap" type="application/xml" href="{URL}sitemap.xml">
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>
 <style>[hidden]{{display:none!important}}body{{margin:0}}</style>

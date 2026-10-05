@@ -46,7 +46,7 @@ Sitio: **https://mlt.cactus.com.co/** (GitHub Pages con dominio propio).
 3. En Google Search Console: agregue la propiedad `https://mlt.cactus.com.co/`, pegue la etiqueta de verificación donde lo indica el comentario en `index.html` y envíe `sitemap.xml`.
 
 - `index.html` incluye descripción, URL canónica, etiquetas Open Graph y datos estructurados `Dataset` de schema.org (Google Dataset Search).
-- `og-image.png` es la imagen que se muestra al compartir el enlace.
+- `og-image.jpg` es la miniatura al compartir el enlace (WhatsApp, redes). `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` y `site.webmanifest` son los íconos. Se regeneran con `scripts/marca/`.
 - `robots.txt` y `sitemap.xml` quedan en la raíz del dominio.
 
 ## Analítica

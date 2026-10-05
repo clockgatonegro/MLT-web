@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:"Bricolage Grotesque";font-weight:700;src:url(../node_modules/@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-700-normal.woff2)}
+@font-face{font-family:"IBM Plex Sans";font-weight:400;src:url(../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2)}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;src:url(../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2)}
+html,body{margin:0;background:#121816}canvas{display:block}</style></head><body>
+<canvas id="c" width="2400" height="1260" style="width:1200px;height:630px"></canvas>
+<script src="../node_modules/d3/dist/d3.min.js"></script>
+<script>
+(async()=>{
+await Promise.all(['700 74px "Bricolage Grotesque"','400 27px "IBM Plex Sans"','500 22px "IBM Plex Mono"'].map(f=>document.fonts.load(f)));
+const R=await (await fetch('../datos_web.json')).json();
+const N=R.n.map((r,i)=>({i,t:r[2],label:r[1],year:r[3],mod:r[2]===0?r[7]:null}));
+const E=R.e.filter(e=>e[2]!==3);
+const deg=new Uint16Array(N.length);E.forEach(([s,t])=>{deg[t]++});
+const keep=E.filter(([s,t])=>deg[t]>=3);
+const used=new Set();keep.forEach(([s,t])=>{used.add(s);used.add(t)});
+const nodes=[...used].map(i=>N[i]);const d2=new Uint16Array(N.length);keep.forEach(([s,t])=>{d2[s]++;d2[t]++});
+const role=new Int8Array(N.length).fill(0);E.forEach(([s,t,r])=>{if(r===1)role[t]=1});
+const links=keep.map(([s,t])=>({source:N[s],target:N[t]}));
+const sim=d3.forceSimulation(nodes).force('link',d3.forceLink(links).distance(14).strength(l=>1/Math.min(d2[l.source.i],d2[l.target.i])))
+ .force('charge',d3.forceManyBody().strength(n=>-14-d2[n.i]*1.5).theta(1.2).distanceMax(400)).force('x',d3.forceX(0).strength(.04)).force('y',d3.forceY(0).strength(.04)).stop();
+for(let k=0;k<320;k++)sim.tick();
+const c=document.getElementById('c').getContext('2d');c.scale(2,2);
+c.fillStyle='#121816';c.fillRect(0,0,1200,630);
+// encuadre a la derecha
+const xs=d3.extent(nodes,n=>n.x),ys=d3.extent(nodes,n=>n.y);
+const k=Math.min(700/(xs[1]-xs[0]),760/(ys[1]-ys[0]));const ox=830-k*(xs[0]+xs[1])/2,oy=315-k*(ys[0]+ys[1])/2;
+const P=n=>[ox+k*n.x,oy+k*n.y];
+const MOD=['#3cc2c0','#f08a72','#6f7a77'];
+c.lineWidth=.6;c.strokeStyle='rgba(228,235,231,.07)';c.beginPath();links.forEach(l=>{const a=P(l.source),b=P(l.target);c.moveTo(...a);c.lineTo(...b)});c.stroke();
+const mg=nodes.reduce((a,b)=>d2[b.i]>d2[a.i]?b:a);
+c.lineWidth=1.4;links.forEach(l=>{if(l.target!==mg&&l.source!==mg)return;const a=P(l.source),b=P(l.target);c.strokeStyle='rgba(239,90,98,.55)';c.beginPath();c.moveTo(...a);c.lineTo(...b);c.stroke()});
+nodes.forEach(n=>{const [x,y]=P(n);if(n.t===0){const r=1.4+Math.sqrt(d2[n.i])*.8;c.fillStyle=MOD[n.mod];c.globalAlpha=.85;c.fillRect(x-r,y-r,2*r,2*r)}else{const r=1.2+Math.sqrt(d2[n.i])*1.1;c.fillStyle=role[n.i]?'#ef5a62':'#7cc552';c.globalAlpha=role[n.i]?.95:.8;c.beginPath();c.arc(x,y,r,0,7);c.fill()}});
+c.globalAlpha=1;
+// degradado para el texto
+const g=c.createLinearGradient(0,0,620,0);g.addColorStop(0,'rgba(18,24,22,1)');g.addColorStop(.75,'rgba(18,24,22,.92)');g.addColorStop(1,'rgba(18,24,22,0)');c.fillStyle=g;c.fillRect(0,0,640,630);
+c.fillStyle='#93a39e';c.font='500 20px "IBM Plex Mono", monospace';c.fillText('CALI · 1956–2026',64,150);
+c.fillStyle='#e4ebe7';c.font='700 74px "Bricolage Grotesque", sans-serif';c.fillText('Red del Museo',60,240);c.fillText('La Tertulia',60,322);
+c.fillStyle='#c7d2ce';c.font='400 27px "IBM Plex Sans", sans-serif';c.fillText('932 exposiciones · 3.574 artistas,',64,392);c.fillText('curadores y auspiciadores',64,428);
+// leyenda
+const L=[['#3cc2c0','sq','individual'],['#f08a72','sq','colectiva'],['#7cc552','c','artista'],['#ef5a62','c','curador']];let x=64;
+c.font='400 19px "IBM Plex Sans", sans-serif';L.forEach(([col,s,t])=>{c.fillStyle=col;if(s==='sq')c.fillRect(x,483,13,13);else{c.beginPath();c.arc(x+7,490,7,0,7);c.fill()}c.fillStyle='#93a39e';c.fillText(t,x+21,496);x+=c.measureText(t).width+50});
+c.fillStyle='#e4ebe7';c.font='500 22px "IBM Plex Mono", monospace';c.fillText('mlt.cactus.com.co',64,566);
+document.title='listo';
+})();
+</script></body></html>

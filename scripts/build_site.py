@@ -39,6 +39,14 @@ head=f'''<!doctype html>
 <meta name="twitter:image" content="{URL}og-image.png">
 <!-- Verificación de Google Search Console: pegue aquí la etiqueta que le entregue Search Console -->
 <!-- <meta name="google-site-verification" content="CÓDIGO"> -->
+<!-- Google Analytics 4 con modo de consentimiento: sin cookies hasta que la persona acepte -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+var _c=null;try{{_c=localStorage.getItem('mlt_consent')}}catch(e){{}}
+gtag('consent','default',{{analytics_storage:_c==='si'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}});
+gtag('js',new Date());gtag('config','G-SYWHRKMC3T',{{anonymize_ip:true}});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYWHRKMC3T"></script>
 <link rel="sitemap" type="application/xml" href="{URL}sitemap.xml">
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>
 <style>[hidden]{{display:none!important}}body{{margin:0}}</style>
@@ -51,7 +59,8 @@ head=f'''<!doctype html>
 <p>Esta visualización necesita JavaScript. Las bases de datos están en <a href="{GH}/tree/master/data">{GH}/tree/master/data</a>.</p>
 </main></noscript>
 '''
-open('/home/claude/mlt-web/index.html','w').write(head+page+'\n</body>\n</html>\n')
+BANNER='<div id="ck" hidden style="position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;z-index:50;background:#1b2422;color:#eef0ec;font:13px/1.45 \'IBM Plex Sans\',Arial,sans-serif;padding:12px 14px;border-radius:6px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,.25)">\n<span style="flex:1 1 260px">Usamos Google Analytics para saber cómo se usa esta visualización. Las cookies de medición solo se activan si las acepta.</span>\n<span style="display:flex;gap:8px"><button id="ck-no" style="font:inherit;background:transparent;color:inherit;border:1px solid #93a39e;border-radius:4px;padding:4px 10px;cursor:pointer">Rechazar</button><button id="ck-si" style="font:inherit;background:#eef0ec;color:#1b2422;border:0;border-radius:4px;padding:5px 12px;cursor:pointer;font-weight:600">Aceptar</button></span>\n</div>\n<script>\n(function(){var b=document.getElementById(\'ck\'),c=null;try{c=localStorage.getItem(\'mlt_consent\')}catch(e){}\nif(!c)b.hidden=false;\nfunction set(v){try{localStorage.setItem(\'mlt_consent\',v)}catch(e){}if(v===\'si\')gtag(\'consent\',\'update\',{analytics_storage:\'granted\'});b.hidden=true}\ndocument.getElementById(\'ck-si\').onclick=function(){set(\'si\')};document.getElementById(\'ck-no\').onclick=function(){set(\'no\')};})();\n</script>\n'
+open('/home/claude/mlt-web/index.html','w').write(head+page+BANNER+'\n</body>\n</html>\n')
 open('/home/claude/mlt-web/sitemap.xml','w').write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{URL}</loc><lastmod>{datetime.date.today().isoformat()}</lastmod><changefreq>yearly</changefreq><priority>1.0</priority></url>

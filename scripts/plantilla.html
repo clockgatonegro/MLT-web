@@ -151,6 +151,7 @@ table.m td a{color:var(--fg);cursor:pointer;text-decoration:none} table.m td a:h
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 const RAW = /*DATA*/null;
+const track=(name,params={})=>{try{if(typeof window.gtag==='function')window.gtag('event',name,params)}catch(e){}};
 const ROLES=['artista','curador','presentador','auspiciador'];
 const ROLE_LBL=['Artistas','Curadores','Presentadores','Auspiciadores'];
 const MODS=['individual','colectiva','n/d'];
@@ -386,11 +387,12 @@ const FILES=/*FILES*/null;let DL=null;
 (async()=>{try{DL=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(e){DL=null}renderDownloads()})();
 function renderDownloads(){const box=document.getElementById('dls');if(!box)return;
   const GH='https://github.com/clockgatonegro/MLT-web/blob/master/data/';
-  const links='<ul class="ghl">'+Object.keys(FILES).map(f=>`<li><a href="${GH}${f}" target="_blank" rel="noopener">${f}</a><span class="n">GitHub</span></li>`).join('')+'</ul>';
+  const links='<ul class="ghl">'+Object.keys(FILES).map(f=>`<li><a href="${GH}${f}" target="_blank" rel="noopener" data-track="${f}">${f}</a><span class="n">GitHub</span></li>`).join('')+'</ul>';
+  box.onclick=ev=>{const a=ev.target.closest('a[data-track]');if(a)track('file_download',{file_name:a.dataset.track,origen:'github'})};
   if(!DL){box.innerHTML=links;return}
   box.innerHTML=Object.keys(FILES).map(f=>`<button data-f="${f}">${f}</button>`).join('')+'<span class="msg" id="dlmsg"></span>'+links;
   box.querySelectorAll('button').forEach(b=>b.onclick=async()=>{const m=document.getElementById('dlmsg');
-    try{await DL.save({filename:b.dataset.f,data:FILES[b.dataset.f]});m.textContent='Archivo entregado: '+b.dataset.f}
+    try{await DL.save({filename:b.dataset.f,data:FILES[b.dataset.f]});track('file_download',{file_name:b.dataset.f,origen:'pagina'});m.textContent='Archivo entregado: '+b.dataset.f}
     catch(e){m.textContent=e&&e.code==='declined'?'Descarga cancelada.':e&&e.code==='rate_limited'?'Hay otra descarga pendiente; intente en un momento.':'No se pudo descargar aquí; use el enlace a GitHub.'}})}
 
 // ---------- ficha ----------
@@ -427,7 +429,7 @@ function intro(){
   const top=VN.filter(n=>n.t>0).sort((a,b)=>deg[b.i]-deg[a.i]).slice(0,12);
   document.getElementById('top').innerHTML=top.map(n=>`<li><a data-i="${n.i}">${esc(n.label)}</a><span class="n">${deg[n.i]}</span></li>`).join('');
 }
-function select(i,center=false,quiet=false){
+function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)track('ver_ficha',{nombre:N[i].label,tipo:N[i].t===0?'exposicion':'agente',vista:state.view});
   state.sel=i;render();if(state.view==='dur'&&!quiet)drawDur();
   if(i==null){intro();return}
   const n=N[i];if(center)centerOn(i);
@@ -512,23 +514,23 @@ new ResizeObserver(()=>drawTimeline()).observe(document.getElementById('tl'));
 function show(){document.querySelectorAll('.v-red,.v-pro,.v-dur').forEach(el=>{el.hidden=!el.classList.contains('v-'+state.view)});document.getElementById('lay-f').disabled=false;
   cv.hidden=state.view==='dur';document.getElementById('dur').toggleAttribute('hidden',state.view!=='dur');document.getElementById('zoomctl').hidden=state.view==='dur';
   ['red','pro','dur'].forEach(v=>document.getElementById('t-'+v).setAttribute('aria-selected',state.view===v))}
-function setView(v){if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
+function setView(v){track('cambiar_vista',{vista:v});if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
   state.view=v;state.hover=null;
   if(v==='pro'&&state.per<0&&!(state.range[0]===Y0&&state.range[1]===Y1)){}
   show();rebuild(v==='dur'?0:.8);if(v!=='dur')setTimeout(fit,v==='pro'?1400:900);legend()}
 ['red','pro','dur'].forEach(v=>document.getElementById('t-'+v).onclick=()=>setView(v));
 const persEl=document.getElementById('pers');
-PERS.forEach((p,k)=>{const b=document.createElement('button');b.textContent=p.label;b.onclick=()=>{state.per=k;state.range=[p.a,p.b];segPer();rebuild(.9);setTimeout(fit,1300)};persEl.append(b)});
+PERS.forEach((p,k)=>{const b=document.createElement('button');b.textContent=p.label;b.onclick=()=>{track('elegir_periodo',{periodo:p.key});state.per=k;state.range=[p.a,p.b];segPer();rebuild(.9);setTimeout(fit,1300)};persEl.append(b)});
 function segPer(){[...persEl.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===state.per))}
-function setColor(c){state.color=c;document.getElementById('c-rol').setAttribute('aria-pressed',c==='rol');document.getElementById('c-com').setAttribute('aria-pressed',c==='com');legend();render()}
+function setColor(c){track('cambiar_color',{color:c});state.color=c;document.getElementById('c-rol').setAttribute('aria-pressed',c==='rol');document.getElementById('c-com').setAttribute('aria-pressed',c==='com');legend();render()}
 document.getElementById('c-rol').onclick=()=>setColor('rol');document.getElementById('c-com').onclick=()=>setColor('com');
 [0,1,2,3].forEach(r=>document.getElementById('r'+r).addEventListener('change',ev=>{state.roles[r]=ev.target.checked?1:0;rebuild(.5)}));
 [0,1,2].forEach(m=>document.getElementById('m'+m).addEventListener('change',ev=>{state.mods[m]=ev.target.checked?1:0;rebuild(.5)}));
 const md=document.getElementById('mindeg'),mdv=()=>document.getElementById('mindegv').textContent=md.value+(md.value==='1'?' expo':' expos');
 md.addEventListener('input',mdv);md.addEventListener('change',()=>{state.mindeg=+md.value;rebuild(.5)});
-function setLayout(l){state.layout=l;document.getElementById('lay-f').setAttribute('aria-pressed',l==='f');document.getElementById('lay-t').setAttribute('aria-pressed',l==='t');rebuild(.9);setTimeout(fit,1600)}
+function setLayout(l){track('cambiar_disposicion',{disposicion:l==='t'?'cronologica':'fuerzas'});state.layout=l;document.getElementById('lay-f').setAttribute('aria-pressed',l==='f');document.getElementById('lay-t').setAttribute('aria-pressed',l==='t');rebuild(.9);setTimeout(fit,1600)}
 document.getElementById('lay-f').onclick=()=>setLayout('f');document.getElementById('lay-t').onclick=()=>setLayout('t');
-document.getElementById('q').addEventListener('change',ev=>{const n=byLabel.get(ev.target.value);if(!n)return;
+document.getElementById('q').addEventListener('change',ev=>{const n=byLabel.get(ev.target.value);if(!n)return;track('search',{search_term:n.label,tipo:n.t===0?'exposicion':'agente'});
   if(state.view==='red'&&!vis[n.i]){state.mindeg=1;md.value=1;mdv();state.range=[Y0,Y1];state.per=PERS.length-1;segPer();state.mods=[1,1,1];[0,1,2].forEach(m=>document.getElementById('m'+m).checked=true);rebuild(.5)}
   if(state.view==='pro'&&!pRole.has(n.i)){state.range=[Y0,Y1];state.per=PERS.length-1;segPer();rebuild(.5)}
   setTimeout(()=>select(n.i,true),300)});

@@ -48,3 +48,21 @@ Sitio: **https://mlt.cactus.com.co/** (GitHub Pages con dominio propio).
 - `index.html` incluye descripción, URL canónica, etiquetas Open Graph y datos estructurados `Dataset` de schema.org (Google Dataset Search).
 - `og-image.png` es la imagen que se muestra al compartir el enlace.
 - `robots.txt` y `sitemap.xml` quedan en la raíz del dominio.
+
+## Analítica
+
+Google Analytics 4 (ID `G-SYWHRKMC3T`) con modo de consentimiento: mientras la persona no acepte el aviso, GA4 solo recibe señales sin cookies. La decisión se guarda en el navegador (`localStorage`, clave `mlt_consent`).
+
+Eventos propios de la visualización:
+
+| Evento | Parámetros | Cuándo |
+|---|---|---|
+| `cambiar_vista` | `vista` (red, pro, dur) | Cambio de pestaña |
+| `elegir_periodo` | `periodo` (p. ej. 1983-1992) | Botón de periodo en curadores → artistas |
+| `cambiar_disposicion` | `disposicion` (fuerzas, cronologica) | Botones de disposición |
+| `cambiar_color` | `color` (rol, com) | Color por rol o comunidad |
+| `search` | `search_term`, `tipo` | Búsqueda de un agente o exposición |
+| `ver_ficha` | `nombre`, `tipo`, `vista` | Apertura de una ficha |
+| `file_download` | `file_name`, `origen` (pagina, github) | Descarga de una base |
+
+Para ver `nombre`, `periodo`, `vista` y los demás parámetros en los informes, regístrelos en GA4 en Administrar → Definiciones personalizadas → Dimensiones personalizadas (alcance: evento).

@@ -297,6 +297,7 @@ footer.f a{color:inherit}
       <h3>Qué muestra cada vista</h3>
       <p><b>Red de exposiciones.</b> Red bipartita: los cuadrados son exposiciones y los círculos, agentes. Un vínculo indica que el agente participó en la exposición con un rol (artista, curador, presentador o auspiciador).</p>
       <p><b>Curadores → artistas.</b> Proyección dirigida: una flecha va de quien curó o presentó una exposición hacia cada artista que participó en ella. Las comunidades se detectan con el algoritmo de Louvain y la intermediación mide cuántas veces un agente está en el camino más corto entre otros dos. Los cortes 1956–1968 a 2007–2016 son los del proyecto; 2017–2026 se agrega con los datos nuevos.</p>
+      <p><b>Vector propio.</b> Mide qué tan conectado está un agente con otros agentes muy conectados; en palabras del proyecto, responde a «¿quién es el mejor conectado?», mientras el grado responde a «¿quién es el más conectado?». Se calcula en cada periodo sobre la red curador–artista sin dirección, ponderada por el número de exposiciones compartidas y en su componente principal. Para probar si anticipa la centralidad, comparamos con correlación de rangos (Spearman) el vector propio y el grado de cada agente con su grado en el periodo siguiente: <span id="predtxt"></span></p>
       <p><b>Duración.</b> Solo exposiciones con fecha de apertura y de cierre completas.</p>
       <h3>Individuales y colectivas</h3>
       <p>Una exposición es individual si tiene un artista registrado y colectiva si tiene dos o más; sin artistas nombrados (por ejemplo, «Varios») queda como n/d. Es una regla sobre los datos, no sobre el catálogo: Aguilera y Gómez, que clasificaron cada muestra con los boletines del museo, contaron 374 individuales y 346 colectivas entre las 723 exposiciones de 1956 a 2006. Las dos cifras no son comparables una a una.</p>
@@ -369,6 +370,8 @@ const Y0=d3.min(EXPOS,n=>n.year), Y1=d3.max(EXPOS,n=>n.year);
 document.querySelectorAll('#yrs,.yrs').forEach(el=>el.textContent=`${Y0}–${Y1}`);
 const PERS=RAW.per.map(([a,b])=>({a,b,key:`${a}-${b}`,label:a===Y0&&b===Y1?'Todo':`${a}–${String(b).slice(2)}`}));
 const COMM={};for(const k in RAW.comm){const m=new Map(RAW.comm[k]);COMM[k]=m}
+const EVC={};for(const k in RAW.met){const L=(RAW.met[k].evall||[]).slice().sort((a,b)=>b[1]-a[1]);EVC[k]={v:new Map(L),rk:new Map(L.map(([n],i)=>[n,i+1])),n:RAW.met[k].n}}
+const ARTSET=new Set(RAW.e.filter(e=>e[2]===0).map(e=>e[1]));
 
 const state={view:'red',roles:[1,1,1,0],mods:[1,1,1],mindeg:2,range:[Y0,Y1],layout:'f',sel:null,hover:null,per:PERS.length-1,color:'rol'};
 
@@ -412,6 +415,7 @@ function filterRed(){
   setStat(`${fmt(ne)} exposiciones · ${fmt(VN.length-ne)} agentes · ${fmt(VE.length)} vínculos`);
 }
 const fmt=x=>x.toLocaleString('es-CO');
+const dn=(x,k)=>Number(x).toLocaleString('es-CO',{minimumFractionDigits:k,maximumFractionDigits:k});
 function setStat(s){document.getElementById('stat').textContent=s}
 
 // ---------- vista 2: proyección curador/presentador → artista ----------
@@ -615,6 +619,9 @@ function intro(){
      <p>Una flecha va de quien curó o presentó una exposición hacia cada artista de esa exposición. Es la proyección que el proyecto usó para leer los cortes temporales: el paso del presentador al curador, la centralidad de Miguel González entre 1982 y 2006, y el auge del curador-artista.</p>
      ${M?`<h3>Mejores intermediarios</h3><p class="src">Centralidad de intermediación: cuántas veces el agente está en el camino más corto entre otros dos.</p>
      <table class="m"><thead><tr><th>Agente</th><th>Interm.</th><th>Entra</th><th>Sale</th></tr></thead><tbody>${M.bt.slice(0,10).map(([i,b,din,dout])=>`<tr><td><a data-i="${i}">${esc(N[i].label)}</a></td><td>${fmt(b)}</td><td>${din}</td><td>${dout}</td></tr>`).join('')}</tbody></table>
+     ${M.ev&&M.ev.length?`<h3>Mejor conectados</h3><p class="src">Centralidad de vector propio: puntúa alto a quien está conectado con otros agentes muy conectados. CA: curador o presentador que también expone en el museo.</p>
+     <table class="m"><thead><tr><th>Agente</th><th>Vector propio</th></tr></thead><tbody>${M.ev.slice(0,10).map(([i,v])=>`<tr><td><a data-i="${i}">${esc(N[i].label)}</a>${pRole.get(i)&&ARTSET.has(i)&&/curador|presentador/.test(pRole.get(i))?' <span class="pill">CA</span>':''}</td><td>${dn(v,3)}</td></tr>`).join('')}</tbody></table>
+     ${M.evrol&&M.evrol[1]!=null&&M.evrol[3]!=null?`<p class="src">Promedio del vector propio: ${M.evrol[0]} curadores que también exponen, ${dn(M.evrol[1],3)}; ${M.evrol[2]} curadores que no exponen, ${dn(M.evrol[3],3)}.</p>`:''}`:''}
      <h3>Curadores con más artistas</h3><ul>${M.out.map(([i,d])=>`<li><a data-i="${i}">${esc(N[i].label)}</a><span class="n">${d} artistas</span></li>`).join('')}</ul>`
      :`<p class="src">Periodo personalizado: las métricas y comunidades están calculadas para los cortes del proyecto. Elija uno en "Periodo".</p>`}
      <p class="src">Los cortes 1956–1968 a 2007–2016 son los del proyecto; 2017–2026 se agrega con los datos nuevos.</p>`;
@@ -650,7 +657,7 @@ function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)tr
     const out=(pOut.get(i)||[]).sort((a,b)=>b[1]-a[1]),inn=(pIn.get(i)||[]).sort((a,b)=>b[1]-a[1]);
     const c=pComm?pComm.get(i):null;const mates=c!=null?PN.filter(m=>pComm.get(m.i)===c&&m.i!==i).sort((a,b)=>pdeg(b.i)-pdeg(a.i)).slice(0,10):[];
     panel.innerHTML=`<div class="kind" style="color:${PROLE_COL(pRole.get(i))}">${esc(pRole.get(i))} · ${state.range[0]}–${state.range[1]}</div><h2>${esc(n.label)}</h2>
-     <dl class="meta"><dt>Curó o presentó a</dt><dd>${out.length} artistas</dd><dt>Fue curado por</dt><dd>${inn.length} agentes</dd>${c!=null?`<dt>Comunidad</dt><dd>${c+1} de ${new Set(pComm.values()).size}</dd>`:''}</dl>
+     <dl class="meta"><dt>Curó o presentó a</dt><dd>${out.length} artistas</dd><dt>Fue curado por</dt><dd>${inn.length} agentes</dd>${(()=>{const X=EVC[`${state.range[0]}-${state.range[1]}`];if(!X)return '';const v=X.v.get(i);return `<dt>Vector propio</dt><dd>${v?`${dn(v,3)} · puesto ${X.rk.get(i)} de ${fmt(X.n)}`:'fuera del componente principal'}</dd>`})()}${c!=null?`<dt>Comunidad</dt><dd>${c+1} de ${new Set(pComm.values()).size}</dd>`:''}</dl>
      ${out.length?`<h3>Artistas que curó o presentó</h3><ul>${out.slice(0,40).map(([t,w])=>`<li><a data-i="${t}">${esc(N[t].label)}</a><span class="n">${w} expo${w>1?'s':''}</span></li>`).join('')}</ul>`:''}
      ${inn.length?`<h3>Curado o presentado por</h3><ul>${inn.map(([t,w])=>`<li><a data-i="${t}">${esc(N[t].label)}</a><span class="n">${w} expo${w>1?'s':''}</span></li>`).join('')}</ul>`:''}
      ${mates.length?`<h3>Comparte comunidad con</h3><ul>${mates.map(m=>`<li><a data-i="${m.i}">${esc(m.label)}</a><span class="n">${esc(pRole.get(m.i))}</span></li>`).join('')}</ul>`:''}`;
@@ -856,12 +863,20 @@ const EXPS=[
   src:'<b>Fuentes:</b> Aguilera Toro y Gómez García (2007); <em>Cartografiar mundos del arte</em> (artículo del proyecto); base MLT 2016.',
   go:{label:'Ver a Miguel González, 1993–2006',o:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}}},
  {id:'expansion',k:'2007–2026 · Expansión',t:'Curadores que también exponen',
-  body(){return `<p>Para la etapa más reciente, el proyecto señaló la remodelación del edificio de la colección, la llegada de nuevos curadores y la supresión de «arte moderno» del nombre del museo. A esto se suma la apertura de la Casa Obeso en 2015.</p>
-   <p>En la red, el cambio se busca en un rol mixto: personas que curan exposiciones y que también exponen como artistas en el mismo museo. Entre 2007 y 2016 son cerca de una cuarta parte de los curadores, la proporción más alta de la serie. En el último decenio baja, pero ahí los registros son más incompletos.</p>
-   <p class="inf">Lectura nuestra: los datos apoyan el auge del curador-artista que señaló el proyecto, aunque de forma moderada; en los setenta ya había casos. Más que una ruptura, es una figura que gana peso cuando deja de haber un curador central.</p>`},
-  fig(){const P=[[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],art=new Set();E.forEach(e=>{if(e.r===0)art.add(e.t)});
-   return `<div class="cap">Curadores de cada periodo que también aparecen como artistas en alguna exposición del museo</div>${list(P.map(([a,b])=>{const cur=new Set();exIn(a,b).forEach(x=>rolesOf(x)[1].forEach(t=>cur.add(t)));const ca=[...cur].filter(t=>art.has(t)).length;return [`${a}–${b}`,`${ca} de ${cur.size} · ${pct(ca,cur.size)} %`]}))}`},
-  src:'<b>Fuentes:</b> <em>Cartografiar mundos del arte</em> (artículo del proyecto); archivo web del museo 2015–2025; base MLT 2016.',
+  body(){const m=RAW.met['2007-2016'],m2=RAW.met['2017-2026'],r=m.evrol,pr=RAW.pred,X=EVC['2017-2026'],sam=AGENTS.find(n=>n.label==='Johan Samboní');
+   const win=pr.filter(p=>p[2]>p[3]);const cur=new Set();exIn(2007,2016).forEach(x=>{const L=rolesOf(x);L[1].concat(L[2]).forEach(t=>cur.add(t))});const top10=m.ev.slice(0,10).filter(([i])=>cur.has(i)&&ARTSET.has(i)).length;
+   return `<p>Para la etapa más reciente, el proyecto señaló la remodelación del edificio de la colección, la llegada de nuevos curadores y la supresión de «arte moderno» del nombre del museo. A esto se suma la apertura de la Casa Obeso en 2015.</p>
+   <p>En la red, el cambio se ve en un rol mixto: personas que curan exposiciones y que también exponen como artistas en el museo. Entre 2007 y 2016 son cerca de una cuarta parte de los curadores, la proporción más alta de la serie, y son los mejor conectados. La centralidad de vector propio, que puntúa alto a quien está unido a otros agentes muy conectados, da a los curadores-artistas un promedio de ${dn(r[1],3)}, frente a ${dn(r[3],3)} de los curadores que no exponen: ${dn((r[1]/r[3]),1)} veces más. ${top10} de los 10 agentes con mayor vector propio del periodo son curadores que también exponen. En 2017–2026 la diferencia se mantiene (${dn(m2.evrol[1],3)} frente a ${dn(m2.evrol[3],3)}).</p>
+   <p>La medida también anticipa quién será central. En ${win.length} de los ${pr.length} cambios de periodo, el vector propio de un agente predice mejor su número de vínculos en el periodo siguiente que su número de vínculos actual; la mayor diferencia está entre 1983–1992 y 1993–2006 (correlación de ${dn(pr[2][2],2)} frente a ${dn(pr[2][3],2)}).</p>
+   ${sam?`<p>Johan Samboní es un caso para seguir. En la base figura como curador de la exposición de ganadores de BLOC 2018 (2019) y como artista en dos exposiciones de 2021; en 2017–2026 ocupa el puesto ${X.rk.get(sam.i)||'—'} de ${X.n} por vector propio. El último decenio es el más incompleto de la base, así que todavía no alcanza para confirmar si se vuelve central.</p>`:''}
+   <p class="inf">Lectura nuestra: el curador-artista acorta la distancia entre quien produce y quien selecciona, y por eso queda en contacto con los nodos más conectados. Más que una ruptura, es una figura que gana peso cuando deja de haber un curador central; en los setenta ya había casos.</p>`},
+  fig(){const ks=['1993-2006','2007-2016','2017-2026'],W=320,H=130,mx=d3.max(ks,k=>RAW.met[k].evrol[1])*1.1,bw=W/ks.length;let g='';
+   ks.forEach((k,i)=>{const r=RAW.met[k].evrol;[[r[1],C.curart],[r[3],C.role[1]]].forEach(([v,c],j)=>{const h=(H-34)*v/mx,x=i*bw+bw*.18+j*bw*.33;g+=`<rect x="${x}" y="${H-18-h}" width="${bw*.3}" height="${h}" fill="${c}"/><text x="${x+bw*.15}" y="${H-22-h}" text-anchor="middle">${dn(v,3)}</text>`});
+     g+=`<text x="${i*bw+bw/2}" y="${H-4}" text-anchor="middle">${k.replace('-','–')}</text>`});
+   const P=[[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],art=ARTSET;
+   return `<div class="cap">Vector propio promedio: curadores que también exponen <span class="dot" style="background:var(--curart)"></span> y curadores que no <span class="dot" style="background:var(--curador)"></span></div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>
+   <div class="cap" style="margin-top:14px">Curadores de cada periodo que también aparecen como artistas en alguna exposición del museo</div>${list(P.map(([a,b])=>{const cur=new Set();exIn(a,b).forEach(x=>rolesOf(x)[1].forEach(t=>cur.add(t)));const ca=[...cur].filter(t=>art.has(t)).length;return [`${a}–${b}`,`${ca} de ${cur.size} · ${pct(ca,cur.size)} %`]}))}`},
+  src:'<b>Fuentes:</b> <em>Cartografiar mundos del arte</em> (artículo del proyecto); archivo web del museo 2015–2025; base MLT 2016. Vector propio calculado sobre la red curador–artista de cada periodo, sin dirección y ponderada.',
   go:{label:'Ver curadores-artistas, 2007–2016',o:{view:'pro',a:2007,b:2016,color:'rol'}}}
 ];
 function renderExps(){document.getElementById('exps').innerHTML=EXPS.map((x,i)=>`<article class="exp" id="exp-${x.id}"><div><span class="k">${String(i+1).padStart(2,'0')} · ${x.k}</span><h3>${x.t}</h3>${x.body()}<p class="go"><button class="btn" data-exp="${i}">${x.go.label} →</button></p></div><div><div class="fig">${x.fig()}</div><p class="src">${x.src}</p></div></article>`).join('')}
@@ -904,6 +919,7 @@ document.getElementById('idx').addEventListener('keydown',ev=>{if(ev.key==='Ente
   `${fmt(sinAg)} exposiciones no tienen agentes nombrados (por ejemplo, «Varios»).`,
   'El catálogo de personas termina en 2016: los agentes nuevos no tienen nacionalidad, ocupación ni fechas.'].map(t=>`<li>${t}</li>`).join('')}
 renderDownloads();
+document.getElementById('predtxt').textContent=RAW.pred.map(([a,b,re,rd])=>`${a[0]}–${a[1]} → ${b[0]}–${b[1]}: ${dn(re,2)} frente a ${dn(rd,2)}`).join('; ')+'. Los agentes que no siguen en el periodo siguiente cuentan con grado cero.';
 
 // aviso en el celular
 {const mv=document.getElementById('movil');let seen=null;try{seen=sessionStorage.getItem('mlt_movil')}catch(e){}

@@ -24,8 +24,10 @@ PER=[[1956,1968],[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,2026],[19
 year={idx[e['Id']]:(int(e['ano']) if e['ano'] else None) for e in E}
 byexpo=collections.defaultdict(lambda:[[],[],[],[]])
 for s,t,r in edges: byexpo[s][r].append(t)
-comm={};met={}
+comm={};met={};EV={}
+ART=set(t for s_,t,r in edges if r==0)
 for a,b in PER:
+    a,b=a,b
     G=nx.DiGraph()
     for x,L in byexpo.items():
         y=year[x]
@@ -40,12 +42,32 @@ for a,b in PER:
     cs=sorted(cs,key=len,reverse=True)
     cm={n:i for i,c in enumerate(cs) for n in c}
     bt=nx.betweenness_centrality(G,normalized=False) if G.number_of_nodes()<4000 else {}
+    # vector propio (no dirigido, ponderado, componente gigante; fuera de ella vale 0)
+    ev={}
+    if U.number_of_nodes():
+        Uw=nx.Graph()
+        for u,v,d in G.edges(data=True):
+            w=d['weight']+(Uw[u][v]['weight'] if Uw.has_edge(u,v) else 0);Uw.add_edge(u,v,weight=w)
+        gc=Uw.subgraph(max(nx.connected_components(Uw),key=len))
+        if gc.number_of_nodes()>2: ev=nx.eigenvector_centrality_numpy(gc,weight='weight')
+    EV[(a,b)]=(ev,dict(G.to_undirected().degree()),set(n for x,L in byexpo.items() if year[x] and a<=year[x]<=b for n in L[1]+L[2]))
     key=f'{a}-{b}'
     comm[key]=[[n,cm[n]] for n in G.nodes()]
     top=sorted(G.nodes(),key=lambda n:-bt.get(n,0))[:15]
     met[key]={'n':G.number_of_nodes(),'e':G.number_of_edges(),'ncom':len(cs),
               'bt':[[n,round(bt.get(n,0),1),G.in_degree(n),G.out_degree(n)] for n in top if bt.get(n,0)>0],
-              'out':[[n,G.out_degree(n)] for n in sorted(G.nodes(),key=lambda n:-G.out_degree(n))[:10]]}
+              'out':[[n,G.out_degree(n)] for n in sorted(G.nodes(),key=lambda n:-G.out_degree(n))[:10]],
+              'ev':[[n,round(ev[n],3)] for n in sorted(ev,key=lambda n:-ev[n])[:15]],
+              'evall':[[n,round(v,4)] for n,v in ev.items() if v>=0.0005]}
+    cur=EV[(a,b)][2];ca=[ev.get(n,0) for n in cur if n in G and n in ART];co=[ev.get(n,0) for n in cur if n in G and n not in ART]
+    met[key]['evrol']=[len(ca),round(sum(ca)/len(ca),4) if ca else None,len(co),round(sum(co)/len(co),4) if co else None]
     print(key,G.number_of_nodes(),G.number_of_edges(),len(cs),[len(c) for c in cs[:8]])
-json.dump({'n':nodes,'e':edges,'per':PER,'comm':comm,'met':met},open('datos_web.json','w'),ensure_ascii=False,separators=(',',':'))
+from scipy.stats import spearmanr
+pred=[]
+for i in range(len(PER)-2):
+    (ev,dg,_),(ev2,dg2,_)=EV[tuple(PER[i])],EV[tuple(PER[i+1])]
+    ns=list(dg);nxt=[dg2.get(n,0) for n in ns]
+    pred.append([PER[i],PER[i+1],round(spearmanr([ev.get(n,0) for n in ns],nxt).correlation,2),round(spearmanr([dg[n] for n in ns],nxt).correlation,2),len(ns),sum(1 for v in nxt if v)])
+print(pred)
+json.dump({'n':nodes,'e':edges,'per':PER,'comm':comm,'met':met,'pred':pred},open('datos_web.json','w'),ensure_ascii=False,separators=(',',':'))
 import os;print(os.path.getsize('datos_web.json'))

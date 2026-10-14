@@ -26,12 +26,12 @@
   --artista:#7cc552; --curador:#ef5a62; --presentador:#f2a443; --apoyo:#a08ae0; --curart:#b980e6;
   --edge:228,235,231; --focus:#e4ebe7; color-scheme:dark}
 [hidden]{display:none!important}
-html,body{height:100%}
+html{scroll-behavior:smooth;scroll-padding-top:50px}
 body{background:var(--bg);color:var(--fg);font:14px/1.45 var(--f-body);margin:0}
-.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto auto minmax(0,1fr) auto;padding-inline:16px;padding-block:12px;gap:10px;box-sizing:border-box}
-header{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:end;gap:10px 28px}
-h1{font:700 26px/1 var(--f-display);letter-spacing:-.01em;margin:0}
-h1 small{display:block;font:500 11px/1.4 var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.app{height:calc(100vh - 46px);min-height:640px;display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto auto minmax(0,1fr) auto;padding-inline:16px;padding-block:12px;gap:10px;box-sizing:border-box}
+#explorar header{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:end;gap:10px 28px}
+#explorar h2.xt{font:700 26px/1 var(--f-display);letter-spacing:-.01em;margin:0}
+#explorar h2.xt small{display:block;font:500 11px/1.4 var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .tabs{display:flex;gap:0;border-bottom:1px solid var(--line)}
 .tabs button{border:0;background:none;border-bottom:2px solid transparent;border-radius:0;padding:6px 12px;font:600 13.5px var(--f-body);color:var(--muted)}
 .tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--fg)}
@@ -59,7 +59,9 @@ canvas{cursor:grab} canvas.hov{cursor:pointer}
 .stat{position:absolute;left:10px;top:8px;font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums;pointer-events:none;background:color-mix(in srgb,var(--surface) 80%,transparent);padding:2px 4px}
 .legend-float{position:absolute;left:10px;bottom:8px;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;max-width:70%;background:color-mix(in srgb,var(--surface) 85%,transparent);padding:4px 6px;border-radius:4px;pointer-events:none}
 .legend-float span{display:inline-flex;align-items:center;gap:5px}
-.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:4px 8px;border-radius:4px;max-width:300px;transform:translate(10px,10px);z-index:3}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:4px 8px;border-radius:4px;max-width:300px;z-index:3}
+.wheelhint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--fg);color:var(--bg);font-size:13px;padding:8px 12px;border-radius:6px;pointer-events:none;opacity:0;transition:opacity .25s;z-index:4}
+.wheelhint.on{opacity:.92}
 .zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:4px}
 .zoom button{width:28px;height:28px;padding:0}
 aside{grid-row:3/5;grid-column:2;min-height:0;overflow:auto;border-left:1px solid var(--line);padding-left:14px}
@@ -82,26 +84,162 @@ aside .src{font-size:12.5px;color:var(--muted)} aside .src a{color:inherit}
 table.m{width:100%;border-collapse:collapse;font-size:12.5px} table.m th{font:500 10px var(--f-data);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:right;padding:2px 3px}
 table.m th:first-child,table.m td:first-child{text-align:left} table.m td{padding:3px;border-bottom:1px dotted var(--line);text-align:right;font-variant-numeric:tabular-nums}
 table.m td a{color:var(--fg);cursor:pointer;text-decoration:none} table.m td a:hover{text-decoration:underline}
-.timeline{grid-column:1;height:118px;position:relative}
+.timeline{grid-column:1;height:132px;position:relative}
 .timeline svg{width:100%;height:100%;display:block}
 .timeline text{fill:var(--muted);font:10.5px var(--f-data)}
 .timeline .per text{fill:var(--fg);font:600 10.5px var(--f-body)}
-.timeline .hito text{fill:var(--muted);font:10px var(--f-body)}
+.timeline .hito text{fill:var(--muted);font:10px var(--f-body);paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.timeline .hito line{stroke:var(--muted);stroke-opacity:.6}
 .timeline .axis line,.timeline .axis path{stroke:var(--line)}
 .timeline .selection{fill:var(--fg);fill-opacity:.07;stroke:var(--fg);stroke-opacity:.45}
 @media (max-width:860px){
-  .app{height:auto;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto 62vh auto auto}
+  .app{height:auto;min-height:0;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto 62vh auto auto}
   .stage{height:62vh}
   aside{grid-row:auto;grid-column:1;border-left:0;border-top:1px solid var(--line);padding:12px 0 0}
   input[type=search]{width:100%}
-  .timeline{height:130px}
+  .timeline{height:140px}
+}
+/* ---------- sitio: navegación, portada y secciones ---------- */
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:4px 18px;flex-wrap:wrap;padding:8px 16px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);min-height:29px}
+.nav b{font:700 15px var(--f-display);margin-right:auto;color:var(--fg);text-decoration:none}
+.nav a{color:var(--muted);text-decoration:none;font:500 13px var(--f-body)}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--fg)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+section.s{padding:64px 0 24px}
+.eyebrow{font:500 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+section.s h2{font:700 clamp(26px,3.6vw,38px)/1.05 var(--f-display);letter-spacing:-.015em;margin:0 0 12px;text-wrap:balance}
+.lede{font-size:17px;line-height:1.55;max-width:64ch;margin:0 0 18px}
+.hero{position:relative;min-height:calc(100vh - 46px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;cursor:default}
+.hero .wrap{position:relative;width:100%;padding-bottom:40px;padding-top:80px;background:linear-gradient(to top,var(--bg) 35%,color-mix(in srgb,var(--bg) 70%,transparent) 70%,transparent)}
+.hero h1{font:700 clamp(40px,7vw,88px)/.95 var(--f-display);letter-spacing:-.025em;margin:0 0 14px;max-width:12ch}
+.hero .by{font:500 12px var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+.nums{display:flex;flex-wrap:wrap;gap:12px 36px;margin:22px 0}
+.nums b{display:block;font:700 clamp(28px,4vw,44px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.nums span{display:block;font:500 11px var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.perbar{display:flex;width:100%;gap:3px;margin:8px 0 6px}
+.perbar button{all:unset;cursor:pointer;box-sizing:border-box;min-width:0;padding:8px 8px 10px;background:var(--surface);border:1px solid var(--line);border-radius:4px;position:relative;overflow:hidden}
+.perbar button:hover{border-color:var(--fg)}
+.perbar button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.perbar .pn{display:block;font:600 13px var(--f-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.perbar .py{display:block;font:11px var(--f-data);color:var(--muted);white-space:nowrap}
+.perbar .pc{display:block;font:600 18px var(--f-display);margin-top:4px;font-variant-numeric:tabular-nums}
+.perbar .mx{position:absolute;left:0;right:0;bottom:0;height:4px;display:flex}
+.perbar .mx i{display:block;height:100%}
+.hint{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:6px;font:600 14px var(--f-body);padding:9px 16px;border-radius:999px;border:1px solid var(--fg);background:var(--fg);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--fg)}
+.draft{font-size:13px;color:var(--muted);border-left:3px solid var(--presentador);padding:4px 10px;margin:0 0 24px;max-width:70ch}
+.exps{display:grid;gap:18px}
+.exp{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px 36px;border-top:1px solid var(--line);padding:26px 0}
+.exp h3{font:700 24px/1.1 var(--f-display);margin:2px 0 12px;text-wrap:balance}
+.exp p{margin:0 0 10px;max-width:62ch;line-height:1.55}
+.exp .k{font:500 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.exp .fig{align-self:start;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px}
+.exp .fig .big{font:700 40px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.exp .fig .cap{font-size:12.5px;color:var(--muted);margin:6px 0 10px}
+.exp .fig ol,.exp .fig ul{margin:0;padding:0;list-style:none;font-size:13px}
+.exp .fig li{display:flex;gap:8px;justify-content:space-between;border-bottom:1px dotted var(--line);padding:3px 0}
+.exp .fig li span:last-child{font:12px var(--f-data);color:var(--muted);font-variant-numeric:tabular-nums}
+.exp .fig svg{width:100%;height:auto;display:block}
+.exp .fig svg text{fill:var(--muted);font:10px var(--f-data)}
+.exp .src{font-size:12.5px;color:var(--muted);margin-top:12px}
+.exp .src b{font-weight:600;color:var(--fg)}
+.inf{font-size:13.5px;color:var(--muted);font-style:italic}
+.go{margin-top:6px}
+.idx-ctl{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:10px 0 14px}
+.idx{list-style:none;margin:0;padding:0;counter-reset:r}
+.idx li{display:grid;grid-template-columns:30px minmax(0,1.4fr) minmax(0,1fr) 108px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dotted var(--line);cursor:pointer}
+.idx li:hover{background:var(--surface)}
+.idx .rk{font:12px var(--f-data);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.idx .nm{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.idx .nm small{display:block;font:400 11.5px var(--f-body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.idx .bc{display:flex;align-items:center;gap:6px;min-width:0}.idx .bc .hint{margin:0}
+.idx .bar{flex:none;height:10px;display:flex;background:var(--band);border-radius:2px;overflow:hidden}
+.idx .bar i{display:block;height:100%}
+.idx .dec{display:grid;grid-template-columns:repeat(8,1fr);gap:2px}
+.idx .dec i{display:block;height:14px;border-radius:1px;background:var(--fg)}
+.idx-head{display:grid;grid-template-columns:30px minmax(0,1.4fr) minmax(0,1fr) 108px;gap:10px;font:500 10px var(--f-data);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:4px;border-bottom:1px solid var(--line)}
+.idx-head .dl{display:grid;grid-template-columns:repeat(8,1fr);gap:2px;text-align:center}
+.cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px 40px}
+.cols2 h3{font:500 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px;border-top:1px solid var(--line);padding-top:12px}
+.cols2 p,.cols2 li{line-height:1.55;max-width:64ch}
+.cols2 ul{padding-left:18px;margin:6px 0}
+.bib li{margin-bottom:6px;font-size:13.5px}
+.mk{font-family:var(--f-data)}
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;margin-top:28px}
+.ask h3{border:0!important;margin-top:0!important;padding-top:0!important}
+footer.f{border-top:1px solid var(--line);margin-top:40px;padding:22px 0 60px;font-size:12.5px;color:var(--muted)}
+footer.f a{color:inherit}
+#movil{position:fixed;inset:auto 12px calc(12px + env(safe-area-inset-bottom,0px)) 12px;z-index:60;background:var(--fg);color:var(--bg);border-radius:10px;padding:16px;box-shadow:0 6px 24px rgba(0,0,0,.3);font-size:14px}
+#movil b{display:block;font:700 18px var(--f-display);margin-bottom:6px}
+#movil .row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+#movil button{font:600 13px var(--f-body);border-radius:999px;padding:7px 14px;border:1px solid var(--bg);background:transparent;color:var(--bg)}
+#movil button.p{background:var(--bg);color:var(--fg)}
+@media (max-width:760px){
+  .exp{grid-template-columns:minmax(0,1fr)}
+  .perbar{flex-direction:column}
+  .perbar button{width:100%!important}
+  .idx li,.idx-head{grid-template-columns:24px minmax(0,1fr) 96px}
+  .idx-head>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .idx .dec,.idx-head .dl{display:none}
+  .nav{flex-wrap:nowrap;gap:14px;overflow-x:auto;white-space:nowrap}
+  .nav a.opt{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
+<nav class="nav" aria-label="Secciones">
+  <b>Red MLT</b>
+  <a href="#expedientes">Expedientes</a>
+  <a href="#quien">Quién conecta</a>
+  <a href="#explorar">Explorar la red</a>
+  <a href="#metodo" class="opt">Método y fuentes</a>
+</nav>
+
+<header class="hero" id="inicio">
+  <canvas id="herocv" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Cali · <span class="yrs">1956–2026</span></p>
+    <h1>Red del Museo La Tertulia</h1>
+    <p class="by">Juan Fernando Correa · Carlos Dussán</p>
+    <p class="lede">Setenta años de exposiciones leídos como una red: quién expuso, quién curó, quién presentó y con quién coincidió. Cada exposición une a las personas que la hicieron posible; juntas dibujan la historia de un museo y de una ciudad.</p>
+    <div class="nums" id="nums"></div>
+    <p class="eyebrow">Exposiciones por periodo</p>
+    <div class="perbar" id="perbar"></div>
+    <p class="hint">Haga clic en un periodo para verlo en la red. El color inferior indica la proporción de exposiciones individuales, colectivas y sin artistas nombrados.</p>
+    <div class="cta"><a class="btn" href="#expedientes">Leer los expedientes</a><a class="btn ghost" href="#explorar">Explorar la red</a></div>
+  </div>
+</header>
+
+<main>
+<section class="s wrap" id="expedientes">
+  <p class="eyebrow">Expedientes</p>
+  <h2>Cinco lecturas de la red</h2>
+  <p class="lede">Cada expediente cruza lo que dice la red con lo que han escrito quienes estudiaron el museo. Las cifras se calculan en vivo sobre la base de datos; el botón abre la red con el filtro correspondiente.</p>
+  <p class="draft">Textos en borrador para revisión de los autores. Las cifras salen de la base; las frases marcadas como lectura nuestra son interpretación y no dato.</p>
+  <div class="exps" id="exps"></div>
+</section>
+
+<section class="s wrap" id="quien">
+  <p class="eyebrow">Índice</p>
+  <h2>Quién conecta</h2>
+  <p class="lede">Las personas y organizaciones con más exposiciones en el museo. La barra separa sus roles; la franja de la derecha muestra en qué décadas aparecen. Haga clic en un nombre para verlo en la red. «Todos» suma artistas, curadores y presentadores; las entidades que auspician tienen su propio filtro.</p>
+  <div class="idx-ctl">
+    <div class="grp"><span class="lbl">Rol</span><div class="seg" id="ix-rol"></div></div>
+    <div class="grp"><span class="lbl">Década</span><div class="seg" id="ix-dec"></div></div>
+  </div>
+  <div class="idx-head"><span></span><span>Nombre</span><span>Exposiciones por rol</span><span class="dl"><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>00</span><span>10</span><span>20</span></span></div>
+  <ol class="idx" id="idx"></ol>
+  <p><button id="ix-mas">Mostrar más</button> <span class="hint" id="ix-n"></span></p>
+</section>
+</main>
+
+<section id="explorar">
 <div class="app">
 <header>
-  <h1>Red del Museo La Tertulia<small>Exposiciones, artistas y curadores · Cali · <span id="yrs">1956–2026</span> · Juan Fernando Correa y Carlos Dussán</small></h1>
+  <h2 class="xt">Explorar la red<small>Exposiciones, artistas y curadores · Cali · <span id="yrs">1956–2026</span> · Use Ctrl o ⌘ + rueda para acercar</small></h2>
   <div class="tabs" role="tablist" aria-label="Vistas">
     <button role="tab" id="t-red" aria-selected="true">Red de exposiciones</button>
     <button role="tab" id="t-pro" aria-selected="false">Curadores → artistas</button>
@@ -141,11 +279,72 @@ table.m td a{color:var(--fg);cursor:pointer;text-decoration:none} table.m td a:h
   <div class="legend-float" id="leg"></div>
   <div class="zoom" id="zoomctl"><button id="zin" aria-label="Acercar">+</button><button id="zout" aria-label="Alejar">−</button><button id="zfit" aria-label="Encuadrar">⤢</button></div>
   <div class="tip" id="tip" hidden></div>
+  <div class="wheelhint" id="wheelhint">Use Ctrl o ⌘ + rueda para acercar, o los botones + y −</div>
 </div>
 
 <aside id="panel" aria-live="polite"></aside>
 
 <div class="timeline" id="tl"><svg id="tlsvg" role="img" aria-label="Exposiciones por año, individuales y colectivas; arrastre para acotar el periodo"></svg></div>
+</div>
+</section>
+
+<section class="s wrap" id="metodo">
+  <p class="eyebrow">Método y fuentes</p>
+  <h2>Cómo se hizo esta red</h2>
+  <p class="lede">Una exposición es un punto de encuentro: reúne artistas, curadores, presentadores y entidades que la apoyan. La red une cada exposición con esas personas y organizaciones; de ahí salen las demás vistas.</p>
+  <div class="cols2">
+    <div>
+      <h3>Qué muestra cada vista</h3>
+      <p><b>Red de exposiciones.</b> Red bipartita: los cuadrados son exposiciones y los círculos, agentes. Un vínculo indica que el agente participó en la exposición con un rol (artista, curador, presentador o auspiciador).</p>
+      <p><b>Curadores → artistas.</b> Proyección dirigida: una flecha va de quien curó o presentó una exposición hacia cada artista que participó en ella. Las comunidades se detectan con el algoritmo de Louvain y la intermediación mide cuántas veces un agente está en el camino más corto entre otros dos. Los cortes 1956–1968 a 2007–2016 son los del proyecto; 2017–2026 se agrega con los datos nuevos.</p>
+      <p><b>Duración.</b> Solo exposiciones con fecha de apertura y de cierre completas.</p>
+      <h3>Individuales y colectivas</h3>
+      <p>Una exposición es individual si tiene un artista registrado y colectiva si tiene dos o más; sin artistas nombrados (por ejemplo, «Varios») queda como n/d. Es una regla sobre los datos, no sobre el catálogo: Aguilera y Gómez, que clasificaron cada muestra con los boletines del museo, contaron 374 individuales y 346 colectivas entre las 723 exposiciones de 1956 a 2006. Las dos cifras no son comparables una a una.</p>
+      <h3>Qué tan segura es cada ficha</h3>
+      <p id="conf"></p>
+      <h3>Vacíos conocidos</h3>
+      <ul id="vacios"></ul>
+    </div>
+    <div>
+      <h3>Fuentes</h3>
+      <ul>
+        <li>Base de datos MLT (julio de 2016), construida en el proyecto de investigación-creación <em>Visualización de datos de las exposiciones del Museo La Tertulia (1956–2016)</em>, Pontificia Universidad Javeriana Cali.</li>
+        <li>Capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com (2015–2025), con la dirección de cada captura en la ficha.</li>
+        <li>Piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021).</li>
+        <li>Web actual del museo, consultada el 3 de octubre de 2026.</li>
+      </ul>
+      <h3>Lecturas</h3>
+      <ul class="bib">
+        <li>Aguilera Toro, Camilo y Ana María Gómez García. 2007. <em>Creación de base de datos de las exposiciones de artes visuales programadas en el Museo de Arte Moderno La Tertulia (1956–2006)</em>. Informe. Cali: Museo de Arte Moderno La Tertulia, Área de Conservación y Restauración Preventiva.</li>
+        <li>González Martínez, Katia. 2015. <em>Cali, ciudad abierta. Arte y cinefilia en los años setenta</em>. 2.ª ed. Bogotá: Universidad de los Andes; Ministerio de Cultura. Primera edición: Cali, Ministerio de Cultura, 2012.</li>
+        <li>Castellanos Olmedo, Adriana. «Cali, ciudad de la gráfica: las Bienales Americanas de Artes Gráficas del Museo La Tertulia y Cartón de Colombia (1970–1976)». <em>Caiana</em>. <a href="http://caiana.caia.org.ar/resources/uploads/8-pdf/CASTELLANO%20OLMEDO%20II%20PDF%20FINAL.pdf" target="_blank" rel="noopener">PDF</a>.</li>
+        <li>Gómez, Ana María. <em>Museo de Arte Moderno La Tertulia 1968–1990</em>.</li>
+        <li>Heim, Elías. <em>Museo La Tertulia 54 años de historia</em>. Catálogo de exposición.</li>
+        <li>Jaramillo, Carmen María. «Cali, la gráfica y el nuevo panorama del arte». En <em>Fisuras del arte moderno en Colombia</em>.</li>
+        <li>Azam, M. y A. de Federico. 2014. «Sociología del arte y análisis de redes sociales». <em>Redes</em> 25 (2): 1–22.</li>
+        <li>Becker, Howard S. 1982. <em>Art Worlds</em>. Berkeley: University of California Press.</li>
+        <li>Barabási, Albert-László. 2009. «Scale-free networks: a decade and beyond». <em>Science</em> 325 (5939): 412–413.</li>
+        <li>Granovetter, Mark S. 1973. «The strength of weak ties». <em>American Journal of Sociology</em> 78 (6): 1360–1380.</li>
+      </ul>
+      <h3>Datos abiertos</h3>
+      <p>Las bases actualizadas están en CSV, compatibles con Gephi: <code>nodos.csv</code> y <code>aristas.csv</code> para la red, <code>exposiciones.csv</code> y <code>agentes.csv</code> como tablas.</p>
+      <div id="dls" class="dls"></div>
+      <p class="hint">Repositorio: <a href="https://github.com/clockgatonegro/MLT-web/tree/master/data" target="_blank" rel="noopener">github.com/clockgatonegro/MLT-web</a> (carpeta <code>data</code>).</p>
+    </div>
+  </div>
+  <div class="ask" id="falta">
+    <h3>¿Falta algo?</h3>
+    <p>Si participó en una exposición que no aparece, encuentra una fecha equivocada o tiene un programa de mano que complete un vacío, cuéntenos. Cada corrección queda registrada en el repositorio con su fuente.</p>
+    <p><a class="btn" id="falta-link" href="https://github.com/clockgatonegro/MLT-web/issues/new?title=Correcci%C3%B3n%3A%20&body=Exposici%C3%B3n%20o%20agente%3A%0AQu%C3%A9%20falta%20o%20est%C3%A1%20mal%3A%0AFuente%20(programa%20de%20mano%2C%20cat%C3%A1logo%2C%20enlace)%3A%0A" target="_blank" rel="noopener">Proponer una corrección</a></p>
+    <p class="hint">Se abre un formulario en GitHub; necesita una cuenta gratuita.</p>
+  </div>
+  <footer class="f">Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em> · Juan Fernando Correa y Carlos Dussán · Datos actualizados en octubre de 2026 · Código y datos en <a href="https://github.com/clockgatonegro/MLT-web" target="_blank" rel="noopener">GitHub</a></footer>
+</section>
+
+<div id="movil" hidden role="dialog" aria-labelledby="movil-t">
+  <b id="movil-t">Hay más en una pantalla grande</b>
+  La red completa se explora mejor en un computador. En el celular puede leer los expedientes y el índice.
+  <div class="row"><button class="p" id="movil-ok">Seguir en el celular</button><button id="movil-copy">Copiar enlace</button></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
@@ -156,18 +355,18 @@ const ROLES=['artista','curador','presentador','auspiciador'];
 const ROLE_LBL=['Artistas','Curadores','Presentadores','Auspiciadores'];
 const MODS=['individual','colectiva','n/d'];
 const CLASE=['exposición','persona','organización','agente sin catalogar'];
-const PER_NAMES=[['San Antonio',1956,1968,'San Antonio: Club Cultural La Tertulia'],['Nueva sede',1968,1982,'Nueva sede: Museo de Arte Moderno La Tertulia'],['Miguel González',1982,2006,'Miguel González'],['Museo La Tertulia',2006,2026,'Museo La Tertulia']];
+const PER_NAMES=[['San Antonio',1956,1968,'San Antonio: Club Cultural La Tertulia'],['Nueva sede',1968,1982,'Nueva sede: Museo de Arte Moderno La Tertulia'],['Miguel González',1982,2006,'Miguel González'],['Expansión',2006,2026,'Expansión: remodelación, nuevos curadores y Casa Obeso']];
 const HITOS=[[1971,'Sala Subterránea'],[1975,'Cinemateca'],[1982,'Taller de Grabado'],[2002,'Edificio de la colección'],[2007,'Remodelación'],[2015,'Casa Obeso']];
 
 // ---------- modelo ----------
 const N=RAW.n.map((r,i)=>r[2]===0
-  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],adj:[]}
+  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],conf:r[12]||0,adj:[]}
   :{i,id:r[0],label:r[1],t:r[2],nac:r[3],ocu:r[4],nace:r[5],muere:r[6],adj:[]});
 const E=RAW.e.map(([s,t,r],k)=>({s,t,r,k}));
 E.forEach(e=>{N[e.s].adj.push(e.k);N[e.t].adj.push(e.k)});
 const EXPOS=N.filter(n=>n.t===0), AGENTS=N.filter(n=>n.t>0);
 const Y0=d3.min(EXPOS,n=>n.year), Y1=d3.max(EXPOS,n=>n.year);
-document.getElementById('yrs').textContent=`${Y0}–${Y1}`;
+document.querySelectorAll('#yrs,.yrs').forEach(el=>el.textContent=`${Y0}–${Y1}`);
 const PERS=RAW.per.map(([a,b])=>({a,b,key:`${a}-${b}`,label:a===Y0&&b===Y1?'Todo':`${a}–${String(b).slice(2)}`}));
 const COMM={};for(const k in RAW.comm){const m=new Map(RAW.comm[k]);COMM[k]=m}
 
@@ -184,7 +383,7 @@ function readColors(){const cs=getComputedStyle(document.documentElement),g=v=>c
   C={bg:g('--surface'),fg:g('--fg'),muted:g('--muted'),edge:g('--edge'),line:g('--line'),band:g('--band'),
      mod:[g('--ind'),g('--col'),g('--nd')],role:[g('--artista'),g('--curador'),g('--presentador'),g('--apoyo')],curart:g('--curart')};}
 readColors();
-const redraw=()=>{readColors();render();drawTimeline()};
+const redraw=()=>{readColors();render();drawTimeline();dispatchEvent(new Event('mlt-theme'));if(typeof renderExps==='function'){renderExps();renderIdx()}};
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',redraw);
 new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 
@@ -326,12 +525,21 @@ function neighbors(i){const s=new Set([i]);
   for(const k of N[i].adj){if(!VEset.has(k))continue;s.add(E[k].s);s.add(E[k].t)}return s}
 
 // zoom y puntero
-const zoom=d3.zoom().scaleExtent([.12,12]).on('zoom',ev=>{T=ev.transform;render()});
+const wh=document.getElementById('wheelhint');let whT=0;
+const zoom=d3.zoom().scaleExtent([.12,12]).filter(ev=>{
+    if(ev.type==='wheel'){if(ev.ctrlKey||ev.metaKey)return true;wh.classList.add('on');clearTimeout(whT);whT=setTimeout(()=>wh.classList.remove('on'),1200);return false}
+    return (!ev.ctrlKey||ev.type==='wheel')&&!ev.button})
+  .on('zoom',ev=>{T=ev.transform;render()});
 d3.select(cv).call(zoom).on('dblclick.zoom',null);
 function toWorld(ev){const r=cv.getBoundingClientRect();return [(ev.clientX-r.left-W/2-T.x)/T.k,(ev.clientY-r.top-H/2-T.y)/T.k]}
 function pick(ev){const [x,y]=toWorld(ev);const n=sim.find(x,y,14/T.k);return n?n.i:null}
 const tip=document.getElementById('tip');
-function showTip(ev,txt){const r=stage.getBoundingClientRect();tip.hidden=false;tip.textContent=txt;tip.style.left=(ev.clientX-r.left)+'px';tip.style.top=(ev.clientY-r.top)+'px'}
+function showTip(ev,txt){const r=stage.getBoundingClientRect();tip.hidden=false;tip.textContent=txt;
+  const x=ev.clientX-r.left,y=ev.clientY-r.top,tw=tip.offsetWidth,th=tip.offsetHeight;
+  // a la izquierda del puntero cuando no cabe a la derecha; nunca por fuera del lienzo
+  let L=x+12;if(L+tw>r.width-6)L=x-12-tw;L=Math.max(4,L);
+  let Tp=y+12;if(Tp+th>r.height-6)Tp=y-12-th;Tp=Math.max(4,Tp);
+  tip.style.left=L+'px';tip.style.top=Tp+'px'}
 cv.addEventListener('pointermove',ev=>{const i=pick(ev);if(i!==state.hover){state.hover=i;cv.classList.toggle('hov',i!=null);render()}
   if(i==null){tip.hidden=true;return}const n=N[i];
   showTip(ev,n.t===0?`${n.label}${n.year?' · '+n.year:''} · ${MODS[n.mod]}`:state.view==='pro'?`${n.label} · ${pRole.get(i)}`:`${n.label} · ${deg[i]} expos`)});
@@ -422,10 +630,7 @@ function intro(){
   <dl class="meta"><dt>${modPill(0)}</dt><dd>${fmt(counts[0])}</dd><dt>${modPill(1)}</dt><dd>${fmt(counts[1])}</dd><dt>${modPill(2)}</dt><dd>${fmt(counts[2])}</dd></dl>
   <p>Arrastre sobre la línea de tiempo para acotar un periodo. Un agente aparece solo si cumple el mínimo de exposiciones; bájelo a 1 para ver la red completa.</p>
   <h3>Más conectados en la vista</h3><ul id="top"></ul>
-  <p class="src">Fuentes: base MLT 07/2016; capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com; piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021); web actual consultada el 3 de octubre de 2026.</p><h3>Datos abiertos</h3><p>Las bases actualizadas están en formato CSV, compatibles con Gephi. Descárguelas aquí o desde el repositorio.</p><div id="dls" class="dls"></div>
-  <p class="src">También se pueden descargar desde el repositorio del proyecto: <a href="https://github.com/clockgatonegro/MLT-web/tree/master/data" target="_blank" rel="noopener">github.com/clockgatonegro/MLT-web</a> (carpeta <code>data</code>).</p>
-  <h3>Créditos</h3><p>Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>.<br>Juan Fernando Correa · Carlos Dussán.</p>`;
-  renderDownloads();
+  <p class="src">Fuentes, método y datos abiertos: <a href="#metodo">ver más abajo</a>.</p>`;
   const top=VN.filter(n=>n.t>0).sort((a,b)=>deg[b.i]-deg[a.i]).slice(0,12);
   document.getElementById('top').innerHTML=top.map(n=>`<li><a data-i="${n.i}">${esc(n.label)}</a><span class="n">${deg[n.i]}</span></li>`).join('');
 }
@@ -437,7 +642,7 @@ function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)tr
     const by=[[],[],[],[]];n.adj.forEach(k=>{const e=E[k];by[e.r].push(N[e.t])});
     const src=n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${n.url.includes('web.archive.org')?'página archivada':'web del museo'}</a>`:'';
     panel.innerHTML=`<div class="kind" style="color:${C.mod[n.mod]}">Exposición · ${esc(n.id)}</div><h2>${esc(n.label)}</h2>
-     <dl class="meta"><dt>Fechas</dt><dd>${esc(fecha(n))}${n.dur!=null?` · ${n.dur} días`:''}</dd><dt>Modalidad</dt><dd>${modPill(n.mod)}</dd><dt>Espacio</dt><dd>${esc(n.esp||'—')}</dd>${n.tipo?`<dt>Tipo</dt><dd>${esc(n.tipo)}</dd>`:''}</dl>
+     <dl class="meta"><dt>Fechas</dt><dd>${esc(fecha(n))}${n.dur!=null?` · ${n.dur} días`:''}</dd><dt>Modalidad</dt><dd>${modPill(n.mod)}</dd><dt>Registro</dt><dd><span class="mk">${n.conf?'○':'●'}</span> ${n.conf?'reconstruido con datos parciales':'documentado'}</dd><dt>Espacio</dt><dd>${esc(n.esp||'—')}</dd>${n.tipo?`<dt>Tipo</dt><dd>${esc(n.tipo)}</dd>`:''}</dl>
      ${src||n.pieza?`<p class="src">Fuente: ${src}${src&&n.pieza?' · ':''}${n.pieza?'pieza de Cactus: '+esc(n.pieza):''}</p>`:''}
      ${by.map((l,r)=>l.length?`<h3>${ROLE_LBL[r]} · ${l.length}</h3><ul>${l.sort((a,b)=>a.label.localeCompare(b.label,'es')).map(a=>`<li><a data-i="${a.i}">${esc(a.label)}</a><span class="n">${a.adj.length}</span></li>`).join('')}</ul>`:'').join('')}
      ${n.adj.length?'':'<p class="src">Sin agentes registrados.</p>'}`;
@@ -494,10 +699,17 @@ function drawTimeline(){
   stk.forEach((layer,k)=>tl.append('g').selectAll('rect').data(layer).join('rect').attr('x',d=>xT(d.data)-bw/2).attr('width',bw)
     .attr('y',d=>yT(d[1])).attr('height',d=>yT(d[0])-yT(d[1])).attr('fill',C.mod[k]));
   // hitos
-  const hg=tl.append('g').attr('class','hito');
-  HITOS.forEach(([y,t])=>{const tot=d3.sum(cnt.get(y)||[0]);const g=hg.append('g').attr('transform',`translate(${xT(y)},${yT(tot)-3})`);
-    g.append('text').attr('text-anchor','middle').text('‡');g.append('title').text(`${t} (${y}, según la gráfica "división temporal" del proyecto)`);
-    if(w>1000)g.append('text').attr('x',4).attr('y',-1-(HITOS.findIndex(h=>h[0]===y)%2)*11).text(t)});
+  // hitos: la marca va sobre la barra de su año y la etiqueta se ubica en la primera fila libre, con una línea guía
+  const hg=tl.append('g').attr('class','hito');const rows=[[],[],[]],rowY=k=>m.t+4+k*12;
+  const cw=5.6;// ancho aproximado por carácter a 10px
+  HITOS.forEach(([y,t])=>{const tot=d3.sum(cnt.get(y)||[0]),x=xT(y),yb=yT(tot)-3;
+    const g=hg.append('g');g.append('title').text(`${t} (${y}, según la gráfica "división temporal" del proyecto)`);
+    g.append('text').attr('x',x).attr('y',yb).attr('text-anchor','middle').text('‡');
+    if(w<640)return;
+    const lw=t.length*cw+4;let x0=x+3,anchor='start';if(x0+lw>w-m.r){x0=x-3-lw;anchor='end'}
+    const k=rows.findIndex(r=>r.every(([a,b])=>x0+lw<a-6||x0>b+6));if(k<0)return;rows[k].push([x0,x0+lw]);
+    const ty=rowY(k);if(yb-9>ty+2)g.append('line').attr('x1',x).attr('x2',x).attr('y1',ty+2).attr('y2',yb-9);
+    g.append('text').attr('x',anchor==='start'?x+3:x-3).attr('y',ty).attr('text-anchor',anchor).text(t)});
   tl.append('g').attr('class','axis').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(xT).tickValues(d3.range(Math.ceil(Y0/10)*10,Y1+1,10)).tickFormat(d3.format('d')).tickSizeOuter(0));
   tl.append('g').attr('class','axis').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(yT).ticks(3).tickSizeOuter(0));
   const brush=d3.brushX().extent([[m.l,m.t-26],[w-m.r,h-m.b]]).on('end',ev=>{
@@ -539,4 +751,172 @@ addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null)});
 // arranque
 segPer();show();resize();rebuild(1);
 sim.stop();for(let k=0;k<120;k++)sim.tick();sim.alpha(.3).restart();setTimeout(fit,50);setTimeout(fit,2200);
+// ---------- sitio: portada, expedientes, índice, método ----------
+const yrOk=(n,a,b)=>n.year&&n.year>=a&&n.year<=b;
+const exIn=(a,b)=>EXPOS.filter(n=>yrOk(n,a,b));
+const pct=(a,b)=>b?Math.round(100*a/b):0;
+const rolesOf=x=>{const L=[[],[],[],[]];x.adj.forEach(k=>L[E[k].r].push(E[k].t));return L};
+const MG=AGENTS.find(n=>n.label==='Miguel González'&&n.t===1);
+
+// enlaces profundos: #red?v=pro&a=1993&b=2006&sel=p.3219&r=1110&md=1&l=t&c=rol
+function hashOf(o){const q=new URLSearchParams();q.set('v',o.view||'red');if(o.a)q.set('a',o.a);if(o.b)q.set('b',o.b);if(o.sel)q.set('sel',o.sel);
+  if(o.roles)q.set('r',o.roles.join(''));if(o.mindeg)q.set('md',o.mindeg);if(o.layout)q.set('l',o.layout);if(o.color)q.set('c',o.color);return '#red?'+q}
+function parseHash(h){if(!h.startsWith('#red?'))return null;const q=new URLSearchParams(h.slice(5)),o={view:q.get('v')||'red'};
+  if(!['red','pro','dur'].includes(o.view))o.view='red';
+  if(q.get('a'))o.a=+q.get('a');if(q.get('b'))o.b=+q.get('b');if(q.get('sel'))o.sel=q.get('sel');
+  if(/^[01]{4}$/.test(q.get('r')||''))o.roles=q.get('r').split('').map(Number);if(q.get('md'))o.mindeg=Math.max(1,Math.min(10,+q.get('md')||2));
+  if(q.get('l')==='t'||q.get('l')==='f')o.layout=q.get('l');if(q.get('c')==='com'||q.get('c')==='rol')o.color=q.get('c');return o}
+function explore(o,scroll=true){
+  if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
+  state.view=o.view||'red';state.hover=null;state.sel=null;
+  const a=Math.max(Y0,o.a||Y0),b=Math.min(Y1,o.b||Y1);state.range=[a,b];state.per=PERS.findIndex(p=>p.a===a&&p.b===b);segPer();
+  state.roles=(o.roles||[1,1,1,0]).slice();[0,1,2,3].forEach(r=>document.getElementById('r'+r).checked=!!state.roles[r]);
+  state.mods=[1,1,1];[0,1,2].forEach(m=>document.getElementById('m'+m).checked=true);
+  state.mindeg=o.mindeg||2;md.value=state.mindeg;mdv();
+  state.layout=o.layout||'f';document.getElementById('lay-f').setAttribute('aria-pressed',state.layout==='f');document.getElementById('lay-t').setAttribute('aria-pressed',state.layout==='t');
+  state.color=o.color||'rol';document.getElementById('c-rol').setAttribute('aria-pressed',state.color==='rol');document.getElementById('c-com').setAttribute('aria-pressed',state.color==='com');
+  const target=o.sel?N.find(n=>n.id===o.sel):null;
+  if(target&&state.view==='red'&&target.t>0){const c=target.adj.filter(k=>state.roles[E[k].r]&&yrOk(N[E[k].s],a,b)).length;if(c<state.mindeg){state.mindeg=1;md.value=1;mdv()}}
+  show();rebuild(.9);legend();
+  try{history.replaceState(null,'',hashOf(o))}catch(e){}
+  if(scroll)document.getElementById('explorar').scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>{if(state.view!=='dur')fit();if(target)setTimeout(()=>select(target.i,true),450)},state.view==='pro'?1400:1000);
+}
+
+// portada
+const HERO_PER=[['San Antonio',1956,1968],['Nueva sede',1969,1981],['Miguel González',1982,2006],['Expansión',2007,Y1]];
+document.getElementById('nums').innerHTML=[[EXPOS.length,'exposiciones'],[AGENTS.length,'artistas, curadores y entidades'],[E.length,'vínculos'],[Y1-Y0,'años']]
+  .map(([v,l])=>`<div><b>${fmt(v)}</b><span>${l}</span></div>`).join('');
+{const box=document.getElementById('perbar');
+  HERO_PER.forEach(([nm,a,b])=>{const L=exIn(a,b),c=[0,1,2].map(m=>L.filter(n=>n.mod===m).length);
+    const bt=document.createElement('button');bt.style.flex=`${L.length} 1 0`;bt.title=`${nm}, ${a}–${b}: ${L.length} exposiciones (${c[0]} individuales, ${c[1]} colectivas, ${c[2]} n/d)`;
+    bt.innerHTML=`<span class="pn">${nm}</span><span class="py">${a}–${b}</span><span class="pc">${fmt(L.length)}</span><span class="mx">${c.map((v,m)=>`<i style="width:${100*v/L.length}%;background:var(${['--ind','--col','--nd'][m]})"></i>`).join('')}</span>`;
+    bt.onclick=()=>{track('abrir_periodo',{periodo:`${a}-${b}`});explore({view:'red',a,b})};box.append(bt)})}
+// red de fondo en la portada: misma simulación, dibujada tenue
+const hcv=document.getElementById('herocv'),hctx=hcv.getContext('2d');let heroN=[],heroE=[],heroLive=true,heroRaf=0;
+function drawHero(){heroRaf=0;const r=hcv.getBoundingClientRect();if(!r.width||!heroN.length)return;const d=window.devicePixelRatio||1;
+  if(hcv.width!==Math.round(r.width*d)){hcv.width=Math.round(r.width*d);hcv.height=Math.round(r.height*d)}
+  const xs=d3.extent(heroN,n=>n.x),ys=d3.extent(heroN,n=>n.y);if(xs[0]==null)return;
+  const k=Math.min(r.width/(xs[1]-xs[0]||1),(r.height*.9)/(ys[1]-ys[0]||1))*1.05,cx=(xs[0]+xs[1])/2,cy=(ys[0]+ys[1])/2;
+  hctx.setTransform(d,0,0,d,0,0);hctx.clearRect(0,0,r.width,r.height);
+  hctx.save();hctx.translate(r.width*(r.width>900?.62:.5),r.height*.42);hctx.scale(k,k);hctx.translate(-cx,-cy);
+  hctx.lineWidth=.5/k;hctx.strokeStyle=`rgba(${C.edge},.07)`;hctx.beginPath();for(const e of heroE){const a=N[e.s],b=N[e.t];hctx.moveTo(a.x,a.y);hctx.lineTo(b.x,b.y)}hctx.stroke();
+  hctx.globalAlpha=.55;for(const n of heroN){const rr=radius(n);hctx.fillStyle=color(n);hctx.beginPath();if(n.t===0)hctx.rect(n.x-rr,n.y-rr,2*rr,2*rr);else hctx.arc(n.x,n.y,rr,0,7);hctx.fill()}
+  hctx.restore();hctx.globalAlpha=1}
+const reqHero=()=>{if(!heroRaf)heroRaf=requestAnimationFrame(drawHero)};
+sim.on('tick.hero',()=>{if(heroLive&&state.view==='red')reqHero()});
+new ResizeObserver(reqHero).observe(hcv);
+addEventListener('mlt-theme',reqHero);
+
+// expedientes
+function list(rows){return `<ol>${rows.map(([a,b])=>`<li><span>${a}</span><span>${b}</span></li>`).join('')}</ol>`}
+function topAgents(L,role,k=6){const c=new Map();L.forEach(x=>x.adj.forEach(e=>{if(E[e].r===role)c.set(E[e].t,(c.get(E[e].t)||0)+1)}));return [...c].sort((a,b)=>b[1]-a[1]).slice(0,k)}
+function decBars(series,labels,cols){const W=320,H=120,m={l:22,b:16,t:6},n=labels.length,bw=(W-m.l)/n,mx=d3.max(series.flat())||1,y=v=>H-m.b-(H-m.b-m.t)*v/mx;
+  let g='';labels.forEach((l,i)=>{series.forEach((s,j)=>{const x=m.l+i*bw+bw*.12+j*bw*.38;g+=`<rect x="${x}" y="${y(s[i])}" width="${bw*.36}" height="${H-m.b-y(s[i])}" fill="${cols[j]}"><title>${l}: ${s[i]}</title></rect>`});
+    g+=`<text x="${m.l+i*bw+bw/2}" y="${H-3}" text-anchor="middle">${l}</text>`});
+  g+=`<text x="0" y="${m.t+8}">${mx}</text><line x1="${m.l}" x2="${W}" y1="${H-m.b}" y2="${H-m.b}" stroke="currentColor" stroke-opacity=".25"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`}
+const EXPS=[
+ {id:'san-antonio',k:'1956–1968 · San Antonio',t:'Un club que expone',
+  body(){const L=exIn(1956,1968),ind=L.filter(n=>n.mod===0).length,pres=L.filter(x=>rolesOf(x)[2].length).length,cur=L.filter(x=>rolesOf(x)[1].length).length;
+   return `<p>Antes de ser museo, La Tertulia fue un club cultural que funcionó doce años, de 1956 a 1968, en una casona de la carrera 5 en el barrio San Antonio. Allí se organizaron exposiciones de Alejandro Obregón, Enrique Grau, Beatriz González, Luis Caballero y los hermanos Lucy y Hernando Tejada (González Martínez 2015, 156–157).</p>
+   <p>La base registra ${fmt(L.length)} exposiciones en ese periodo; ${pct(ind,L.length)} % son individuales. ${pres} tienen un presentador registrado y ninguna tiene curador${cur?` salvo ${cur}`:''}. Los nombres que más se repiten como artistas coinciden con los que recuerda la historiografía.</p>
+   <p class="inf">Lectura nuestra: es una red de pocos vínculos por exposición, armada alrededor de un grupo pequeño de artistas que vuelven una y otra vez; todavía no hay intermediarios entre ellos.</p>`},
+  fig(){const L=exIn(1956,1968);return `<div class="cap">Artistas con más exposiciones, 1956–1968</div>${list(topAgents(L,0).map(([i,c])=>[esc(N[i].label),c+' expos']))}`},
+  src:'<b>Fuentes:</b> González Martínez (2015), nota 5 del capítulo «Ciudad Solar»; base MLT 2016.',
+  go:{label:'Ver 1956–1968 en la red',o:{view:'red',a:1956,b:1968,mindeg:1}}},
+ {id:'bienales',k:'1970–1986 · Nueva sede',t:'Las Bienales Americanas de Artes Gráficas',
+  body(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)),A=new Set();B.forEach(x=>rolesOf(x)[0].forEach(t=>A.add(t)));const solo=[...A].filter(t=>N[t].adj.length===1).length;
+   return `<p>En 1968, en el marco del VIII Festival de Arte de Cali, el museo estrenó su edificio con el Salón Austral de Pintura, Dibujo y Grabado. Pedro Alcántara Herrán, desde la junta asesora, promovió la Exposición Panamericana de Artes Gráficas en el X Festival (1970), que un año después se convirtió en la I Bienal Americana de Artes Gráficas (González Martínez 2015, 54–55). Adriana Castellanos Olmedo estudió las bienales entre 1970 y 1976.</p>
+   <p>En la red, las bienales son los nodos más grandes de todo el periodo: cada edición reúne más artistas que cualquier otra exposición del museo. La II Bienal (1973) figura en la base sin artistas: es un vacío de los registros, no del evento.</p>
+   <p>De los ${fmt(A.size)} artistas que pasan por las bienales, ${fmt(solo)} no vuelven a aparecer en ninguna otra exposición del museo.</p>
+   <p class="inf">Lectura nuestra: las bienales funcionan como una puerta: conectan con Cali a cientos de artistas del continente por una sola vez, mientras unos pocos se quedan en la red local.</p>`},
+  fig(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)).sort((a,b)=>a.year-b.year);
+   return `<div class="cap">Artistas registrados por edición</div>${list(B.map(x=>[`${x.year} · ${esc(x.label.replace(/ de Cali$/,''))}`,rolesOf(x)[0].length||'sin datos']))}`},
+  src:'<b>Fuentes:</b> González Martínez (2015); Castellanos Olmedo, «Cali, ciudad de la gráfica»; base MLT 2016.',
+  go:{label:'Ver la I Bienal en la red',o:{view:'red',a:1969,b:1986,mindeg:1,sel:(EXPOS.find(n=>/^I Bienal Americana/.test(n.label))||{}).id}}},
+ {id:'presentador-curador',k:'1956–2026 · Roles',t:'Del presentador al curador',
+  body(){return `<p>En los primeros años las exposiciones se presentaban: una persona escribía o hablaba para introducir al artista. Aguilera y Gómez encontraron que de las 723 exposiciones realizadas entre 1956 y 2006, 177 aparecen en las fuentes bajo la curaduría de alguna persona o entidad; el primer registro es de 1971 y la mayoría se concentra entre los años ochenta y 2000, con un aumento progresivo (Aguilera y Gómez 2007).</p>
+   <p>La base actualizada muestra el mismo cruce: el presentador casi desaparece en los años sesenta y el curador se vuelve la norma desde los ochenta.</p>
+   <p class="inf">Lectura nuestra: el cambio de rol cambia la forma de la red. El presentador avala a un artista; el curador reúne a varios, y por eso empieza a ocupar el centro.</p>`},
+  fig(){const dec=d3.range(1950,2030,10),cur=dec.map(d=>exIn(d,d+9).filter(x=>rolesOf(x)[1].length).length),pre=dec.map(d=>exIn(d,d+9).filter(x=>rolesOf(x)[2].length).length);
+   return `<div class="cap">Exposiciones con presentador <span class="dot" style="background:var(--presentador)"></span> y con curador <span class="dot" style="background:var(--curador)"></span>, por década</div>${decBars([pre,cur],dec.map(d=>String(d).slice(2)),[C.role[2],C.role[1]])}`},
+  src:'<b>Fuentes:</b> Aguilera Toro y Gómez García (2007); base MLT 2016 y complemento 2016–2026.',
+  go:{label:'Ver curadores y presentadores en el tiempo',o:{view:'red',roles:[1,1,1,0],layout:'t',mindeg:2}}},
+ {id:'miguel-gonzalez',k:'1982–2006 · Miguel González',t:'El nodo mayor',
+  body(){const L=exIn(1982,2006),k=L.filter(x=>MG&&x.adj.some(e=>E[e].t===MG.i&&E[e].r===1)).length,all=MG?MG.adj.filter(e=>E[e].r===1):[],ys=all.map(e=>N[E[e].s].year).filter(Boolean);
+   return `<p>Miguel González se vinculó al museo como curador en 1982. Según Aguilera y Gómez, sus relaciones con el mundo del arte nacional e internacional fueron decisivas para muchas de las exposiciones del museo (2007). El proyecto lo identificó como el nodo con mayor centralidad de grado de toda la red.</p>
+   <p>En la base figura como curador de ${fmt(all.length)} exposiciones. Entre 1982 y 2006 aparece en ${fmt(k)} de ${fmt(L.length)}, el ${pct(k,L.length)} %. Su primer registro en la base es de ${d3.min(ys)} y el último de ${d3.max(ys)}; la diferencia con 1982 está por revisar en las fuentes.</p>
+   <p class="inf">Lectura nuestra: durante veinticinco años buena parte de la red pasa por una sola persona. En la vista de curadores se ve como una estrella: un centro con flechas hacia cientos de artistas que entre sí casi no se tocan.</p>`},
+  fig(){const L=exIn(1982,2006),k=L.filter(x=>MG&&x.adj.some(e=>E[e].t===MG.i&&E[e].r===1)).length;
+   const ys=d3.range(1977,2021),c=ys.map(y=>MG?MG.adj.filter(e=>E[e].r===1&&N[E[e].s].year===y).length:0),t=ys.map(y=>exIn(y,y).length),mx=d3.max(t)||1;
+   const W=320,H=90,bw=W/ys.length;let g='';ys.forEach((y,i)=>{g+=`<rect x="${i*bw}" y="${H-14-(H-20)*t[i]/mx}" width="${bw*.8}" height="${(H-20)*t[i]/mx}" fill="var(--band)"/><rect x="${i*bw}" y="${H-14-(H-20)*c[i]/mx}" width="${bw*.8}" height="${(H-20)*c[i]/mx}" fill="var(--curador)"><title>${y}: ${c[i]} de ${t[i]}</title></rect>`});
+   g+=`<text x="0" y="${H-2}">1977</text><text x="${W}" y="${H-2}" text-anchor="end">2020</text>`;
+   return `<div class="big">${pct(k,L.length)} %</div><div class="cap">de las exposiciones entre 1982 y 2006 lo tienen como curador. Abajo, por año: en rojo las suyas, en gris el total.</div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`},
+  src:'<b>Fuentes:</b> Aguilera Toro y Gómez García (2007); <em>Cartografiar mundos del arte</em> (artículo del proyecto); base MLT 2016.',
+  go:{label:'Ver a Miguel González, 1993–2006',o:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}}},
+ {id:'expansion',k:'2007–2026 · Expansión',t:'Curadores que también exponen',
+  body(){return `<p>Para la etapa más reciente, el proyecto señaló la remodelación del edificio de la colección, la llegada de nuevos curadores y la supresión de «arte moderno» del nombre del museo. A esto se suma la apertura de la Casa Obeso en 2015.</p>
+   <p>En la red, el cambio se busca en un rol mixto: personas que curan exposiciones y que también exponen como artistas en el mismo museo. Entre 2007 y 2016 son cerca de una cuarta parte de los curadores, la proporción más alta de la serie. En el último decenio baja, pero ahí los registros son más incompletos.</p>
+   <p class="inf">Lectura nuestra: los datos apoyan el auge del curador-artista que señaló el proyecto, aunque de forma moderada; en los setenta ya había casos. Más que una ruptura, es una figura que gana peso cuando deja de haber un curador central.</p>`},
+  fig(){const P=[[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],art=new Set();E.forEach(e=>{if(e.r===0)art.add(e.t)});
+   return `<div class="cap">Curadores de cada periodo que también aparecen como artistas en alguna exposición del museo</div>${list(P.map(([a,b])=>{const cur=new Set();exIn(a,b).forEach(x=>rolesOf(x)[1].forEach(t=>cur.add(t)));const ca=[...cur].filter(t=>art.has(t)).length;return [`${a}–${b}`,`${ca} de ${cur.size} · ${pct(ca,cur.size)} %`]}))}`},
+  src:'<b>Fuentes:</b> <em>Cartografiar mundos del arte</em> (artículo del proyecto); archivo web del museo 2015–2025; base MLT 2016.',
+  go:{label:'Ver curadores-artistas, 2007–2016',o:{view:'pro',a:2007,b:2016,color:'rol'}}}
+];
+function renderExps(){document.getElementById('exps').innerHTML=EXPS.map((x,i)=>`<article class="exp" id="exp-${x.id}"><div><span class="k">${String(i+1).padStart(2,'0')} · ${x.k}</span><h3>${x.t}</h3>${x.body()}<p class="go"><button class="btn" data-exp="${i}">${x.go.label} →</button></p></div><div><div class="fig">${x.fig()}</div><p class="src">${x.src}</p></div></article>`).join('')}
+renderExps();
+document.getElementById('exps').addEventListener('click',ev=>{const b=ev.target.closest('[data-exp]');if(!b)return;const x=EXPS[+b.dataset.exp];track('abrir_expediente',{expediente:x.id});explore(x.go.o)});
+
+// índice «Quién conecta»
+const DECS=d3.range(1950,2030,10);
+const IX=AGENTS.map(n=>{const r=[0,0,0,0],d=DECS.map(()=>[0,0,0,0]);n.adj.forEach(k=>{const e=E[k],y=N[e.s].year;r[e.r]++;if(y)d[Math.min(7,Math.floor((y-1950)/10))][e.r]++});return {n,r,d}});
+const ix={rol:-1,dec:-1,shown:30};
+function segBtns(id,items,key){const el=document.getElementById(id);el.innerHTML=items.map(([v,l])=>`<button data-v="${v}" aria-pressed="${ix[key]===v}">${l}</button>`).join('');
+  el.onclick=ev=>{const b=ev.target.closest('button');if(!b)return;ix[key]=+b.dataset.v;ix.shown=30;[...el.children].forEach(c=>c.setAttribute('aria-pressed',c===b));renderIdx()}}
+segBtns('ix-rol',[[-1,'Todos'],[0,'Artistas'],[1,'Curadores'],[2,'Presentadores'],[3,'Auspiciadores']],'rol');
+segBtns('ix-dec',[[-1,'Todas'],...DECS.map((d,i)=>[i,`${String(d).slice(2)}s`])],'dec');
+function renderIdx(){
+  const roleCounts=o=>{const src=ix.dec<0?o.r:o.d[ix.dec];return src.map((v,r)=>(ix.rol<0?r<3:r===ix.rol)?v:0)};
+  const L=IX.map(o=>({o,c:roleCounts(o)})).map(x=>({...x,s:d3.sum(x.c)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s||a.o.n.label.localeCompare(b.o.n.label,'es'));
+  const mx=L.length?L[0].s:1;
+  document.getElementById('idx').innerHTML=L.slice(0,ix.shown).map((x,i)=>{const o=x.o,dm=d3.max(o.d,v=>d3.sum(v))||1;
+    const main=o.r.indexOf(Math.max(...o.r)),sub=[o.n.nac,o.n.ocu].filter(Boolean).join(' · ')||CLASE[o.n.t];
+    return `<li data-id="${o.n.id}" tabindex="0"><span class="rk">${i+1}</span><span class="nm">${esc(o.n.label)}<small>${esc(sub)}</small></span>
+      <span class="bc" title="${o.r.map((v,r)=>v?`${v} como ${ROLES[r]}`:'').filter(Boolean).join(', ')}"><span class="bar" style="width:calc(${Math.max(.04,x.s/mx).toFixed(3)} * (100% - 40px))">${x.c.map((v,r)=>v?`<i style="width:${100*v/x.s}%;background:${C.role[r]}"></i>`:'').join('')}</span><span class="hint" style="font-family:var(--f-data)">${x.s}</span></span>
+      <span class="dec">${o.d.map((v,j)=>`<i style="opacity:${d3.sum(v)?.15+.85*d3.sum(v)/dm:.06}" title="${DECS[j]}s: ${d3.sum(v)}"></i>`).join('')}</span></li>`}).join('');
+  document.getElementById('ix-mas').hidden=L.length<=ix.shown;document.getElementById('ix-n').textContent=`${fmt(Math.min(ix.shown,L.length))} de ${fmt(L.length)}`}
+renderIdx();
+document.getElementById('ix-mas').onclick=()=>{ix.shown+=30;renderIdx()};
+function idxGo(li){const n=N.find(m=>m.id===li.dataset.id);track('indice_click',{nombre:n.label});
+  const a=ix.dec<0?Y0:DECS[ix.dec],b=ix.dec<0?Y1:Math.min(Y1,DECS[ix.dec]+9);
+  explore({view:'red',a,b,sel:n.id,roles:ix.rol===3?[1,1,1,1]:[1,1,1,0]})}
+document.getElementById('idx').addEventListener('click',ev=>{const li=ev.target.closest('li[data-id]');if(li)idxGo(li)});
+document.getElementById('idx').addEventListener('keydown',ev=>{if(ev.key==='Enter'){const li=ev.target.closest('li[data-id]');if(li)idxGo(li)}});
+
+// método: confianza y vacíos, calculados sobre la base
+{const ok=EXPOS.filter(n=>!n.conf).length,par=EXPOS.length-ok,sinA=EXPOS.filter(n=>!n.year).length,y19=exIn(2019,2019).length,dur=EXPOS.filter(n=>n.dur!=null).length,sinAg=EXPOS.filter(n=>!n.adj.length).length;
+ document.getElementById('conf').innerHTML=`Cada ficha de exposición lleva una marca. <span class="mk">●</span> <b>Documentada</b> (${fmt(ok)}): viene de la base de 2016 o de una página con fechas y agentes explícitos. <span class="mk">○</span> <b>Reconstruida</b> (${fmt(par)}): falta la fecha, la lista de agentes está incompleta o solo se conoce el título en un listado. Las fichas reconstruidas salen del archivo web del museo y de las piezas gráficas; cada una trae su fuente.`;
+ document.getElementById('vacios').innerHTML=[`${fmt(sinA)} exposiciones no tienen año; no aparecen en la línea de tiempo ni en las vistas por periodo.`,
+  `2019 está casi vacío: ${y19} exposiciones con fecha. Las fichas archivadas de ese año no traen fechas.`,
+  'La II Bienal Americana de Artes Gráficas (1973) está en la base sin artistas.',
+  `Solo ${fmt(dur)} de ${fmt(EXPOS.length)} exposiciones tienen fecha de apertura y de cierre completas.`,
+  `${fmt(sinAg)} exposiciones no tienen agentes nombrados (por ejemplo, «Varios»).`,
+  'El catálogo de personas termina en 2016: los agentes nuevos no tienen nacionalidad, ocupación ni fechas.'].map(t=>`<li>${t}</li>`).join('')}
+renderDownloads();
+
+// aviso en el celular
+{const mv=document.getElementById('movil');let seen=null;try{seen=sessionStorage.getItem('mlt_movil')}catch(e){}
+ if(matchMedia('(max-width:760px)').matches&&!seen)setTimeout(()=>mv.hidden=false,900);
+ const close=()=>{mv.hidden=true;try{sessionStorage.setItem('mlt_movil','1')}catch(e){}};
+ document.getElementById('movil-ok').onclick=close;
+ document.getElementById('movil-copy').onclick=async ev=>{const url=location.href.split('#')[0];
+   try{if(navigator.share){await navigator.share({title:document.title,url});close();return}await navigator.clipboard.writeText(url);ev.target.textContent='Enlace copiado'}catch(e){ev.target.textContent=url}}}
+
+// navegación: sección activa
+{const links=[...document.querySelectorAll('.nav a')],io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+ ['expedientes','quien','explorar','metodo'].forEach(id=>io.observe(document.getElementById(id)))}
+
+heroN=VN.slice();heroE=VE.slice();drawHero();setTimeout(()=>{heroLive=false;drawHero()},9000);
+{const o=parseHash(location.hash);if(o)setTimeout(()=>explore(o,true),300)}
 </script>

@@ -7,6 +7,10 @@ Red de exposiciones y agentes del Museo La Tertulia (Cali), 1956–2026. Parte d
 - `index.html` — visualización interactiva (d3 v7): red de exposiciones (fuerzas o cronológica), proyección curadores → artistas por periodos con comunidades, y duración de las exposiciones. Funciona sola, con los datos incluidos.
 - `eventos-agentes-MLT.html` — primera versión (2016).
 
+## Estructura de la página
+
+Portada con la red de fondo y las cifras por periodo; cinco expedientes (borradores) que abren la red filtrada; índice «Quién conecta»; la red interactiva («Explorar la red»), y método y fuentes. Los filtros de la red se pueden compartir con enlaces del tipo `#red?v=pro&a=1993&b=2006&sel=p.3219` (`v` vista, `a`–`b` años, `sel` id de nodo, `r` roles como 1110, `md` mínimo de exposiciones, `l` f/t, `c` rol/com).
+
 ## Datos (`data/`)
 
 Archivos CSV en UTF-8, listos para Gephi (Laboratorio de datos → Importar hoja de cálculo).
@@ -64,5 +68,8 @@ Eventos propios de la visualización:
 | `search` | `search_term`, `tipo` | Búsqueda de un agente o exposición |
 | `ver_ficha` | `nombre`, `tipo`, `vista` | Apertura de una ficha |
 | `file_download` | `file_name`, `origen` (pagina, github) | Descarga de una base |
+| `abrir_expediente` | `expediente` | Botón «Ver en la red» de un expediente |
+| `abrir_periodo` | `periodo` | Clic en un periodo de la portada |
+| `indice_click` | `nombre` | Clic en un nombre del índice «Quién conecta» |
 
 Para ver `nombre`, `periodo`, `vista` y los demás parámetros en los informes, regístrelos en GA4 en Administrar → Definiciones personalizadas → Dimensiones personalizadas (alcance: evento).

@@ -20,7 +20,6 @@ ex.898,agrega,fecha_fin,2022-10-16,Flickr: https://www.flickr.com/photos/museo-l
 ex.898,agrega,participantes,curadora y artistas,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305363281,"Curaduría: Yohanna M. Roa; artistas y miembros de El Costurero, Costurero Dapa y Costurero Electrónico"
 ex.900,agrega,participantes,curador,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305381163,Curaduría: Eugenio Viola
 ex.892,corrige,fecha_ini,2022-03-31,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305362601,La Base de datos tenía 2022-03
-ex.892,conflicto,fecha_fin,2023-03-31,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305362601,El álbum dice «hasta el 31 de marzo de 2023»; la Base de datos tiene 2023-05-28
 ex.892,agrega,participantes,"curadora, artistas y colectivos",Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305362601,Curaduría: Yolanda Chois Rivera; obras ligadas a Nuquí y Buenaventura
 ex.890,corrige,fecha_ini,2022-02-10,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305377364,«Febrero 10 2022 - Mayo 10 2022»; la Base de datos tenía 2022-02
 ex.890,agrega,fecha_fin,2022-05-10,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305377364,
@@ -31,3 +30,4 @@ ex.935,confirma,existencia,,Flickr: https://www.flickr.com/photos/museo-la-tertu
 ex.936,confirma,existencia,,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720322503830,Curaduría comunitaria de Unión de Vivienda Popular
 ex.937,confirma,existencia,,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720308737751,Laboratorio de fotografía y exposición con la comunidad de Montebello
 ex.937,confirma,existencia,,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720317988581,Álbum del laboratorio: «Sendero de las gatas 2023»
+ex.892,corrige,fecha_fin,2023-05-21,Confirmado por los autores (15/10/2026),"Cierre el 21 de mayo de 2023; la Base de datos tenía 2023-05-28 y el álbum de Flickr, 2023-03-31"

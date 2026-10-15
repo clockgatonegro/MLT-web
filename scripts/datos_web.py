@@ -13,7 +13,7 @@ idx={};nodes=[]
 for e in E:
     idx[e['Id']]=len(nodes)
     src=e['fuente_url'] or ''
-    nodes.append([e['Id'],e['Label'],0,int(e['ano']) if e['ano'] else None,e['fecha_ini'],e['fecha_fin'],e['espacio'],MOD[e['modalidad']],src,1 if (e['pieza_cactus'] or e.get('fuentes_cactus')) else 0,e['tipo_expo'],dias(e['fecha_ini'],e['fecha_fin']),0 if e['confianza'] in ('base_MLT','alta') else 1,1 if e['fuente']=='MLT_DB_07_2016' else 0])
+    nodes.append([e['Id'],e['Label'],0,int(e['ano']) if e['ano'] else None,e['fecha_ini'],e['fecha_fin'],e['espacio'],MOD[e['modalidad']],src,1 if (e['pieza_cactus'] or e.get('fuentes_cactus')) else 0,e['tipo_expo'],dias(e['fecha_ini'],e['fecha_fin']),0 if e['confianza'] in ('base_MLT','alta') else 1,1 if e['fuente']=='MLT_DB_07_2016' else 0,(e.get('fuentes_flickr') or '').split(' | ')[0]])
 cl={'persona':1,'organizacion':2,'sin_catalogar':3}
 for a in A:
     idx[a['Id']]=len(nodes); nodes.append([a['Id'],a['Label'],cl[a['clase']],a['nacionalidad'],a['ocupacion'],a['ano_nacimiento'],a['ano_muerte']])

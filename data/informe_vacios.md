@@ -62,6 +62,15 @@ Resultado: 101 exposiciones con al menos un documento de Cactus y 14 conflictos.
 
 Exposiciones de 2009–2021 que solo vienen de la web y no tienen rastro en el archivo de Cactus: El mundo según Mafalda, UMBRAL adentro, Impulsive Habitat, Cuando nace el sonido, El resplandor del desastre, Proyecciones para el Sereno, Máquina monumental, Subterránea 2020, VI Salón BAT de Arte Popular, Una piedra en el camino, Wilson Díaz. Gusto y conflicto, La esquina del barrio, Hijas del Agua, Transición (Cuarto Salón del Pacífico), Gráfica Subterránea, EOCL, Reimaginando Potrero Grande, Ensayos para un mundo perfecto y Auditum 2020. Varias son ciclos sonoros o virtuales de la pandemia, que no necesitaban pieza impresa.
 
+## Contraste con el Flickr del museo (2021–2025)
+
+El [Flickr del Museo La Tertulia](https://www.flickr.com/photos/museo-la-tertulia/albums) tiene 24 álbumes; se dejaron de lado los de Vacaciones Creativas y la Feria Subterránea. Los 20 álbumes de exposiciones se cruzaron con la Base de datos y el resultado está en `scripts/fuentes/triangulacion_flickr.csv` (fechas, salas, curadurías) y `scripts/fuentes/participantes_flickr.csv` (curadores y artistas, con `fuente = participantes_flickr`). La ficha de cada exposición enlaza su álbum.
+
+- Se precisaron fechas de Espesuras, Entre agua y raíces, Hacer ver, Deshilar, 21 obras en el cambio de tiempo, El aroma en construcción, La esquina del barrio y Fuego.
+- Se agregaron las curadurías de Espesuras (Melissa Aguilar y Carolina Chacón), Hacer ver (Melissa Aguilar, Mónica Restrepo y Nicolás Bonilla), Deshilar (Yohanna M. Roa), Cicatrices (Eugenio Viola), 21 obras en el cambio de tiempo (Yolanda Chois Rivera) y El aroma en construcción (Miguel González), y los artistas de Hacer ver (81), Deshilar y 21 obras en el cambio de tiempo.
+- Las discrepancias quedaron en `conflictos_cactus.csv` sin aplicar: Pasado futurista y ¡A la gráfica! (el álbum trae fechas que no cuadran), Huellas comunes, Huellas de desaparición, Piel es, Cicatrices (2022 en el álbum, 2023 en la Base de datos) y 21 obras en el cambio de tiempo.
+- Cuatro álbumes no corresponden a ninguna exposición de la Base de datos: Cuerpo transgresivo. Rosemberg Sandoval (2025), Barrio Adentro. La unión popular hace los barrios (2024) y los dos de Barrio Adentro, Montebello (2023). Quedan pendientes de confirmación.
+
 ## Vacíos por resolver
 
 1. **Conflictos de fecha con el archivo de Cactus** (14, en `conflictos_cactus.csv`): entre otros, el cierre de Cali 71 (2017 o 2019, por sus rotaciones), El Testigo (17 de noviembre de 2019 o 1 de marzo de 2020), El ruido del silencio, Celeste (marzo o mayo de 2020), el espacio de Le Corbusier (Casa Obeso Mejía o jardines) y el nombre de Catalina o Carolina Torres en ¡Oído pueblo!

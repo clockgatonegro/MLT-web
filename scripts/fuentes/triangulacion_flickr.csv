@@ -1,0 +1,35 @@
+id_expo,accion,campo,valor,documento,nota
+ex.915,conflicto,fecha_ini,2025-06-20,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720331022044,"El álbum dice «Junio 20 2025 – abril 2025», fechas que parecen copiadas de ¡A la gráfica!; la Base de datos tiene 2025-10-23 a 2026-07-19"
+ex.915,confirma,curadores,Julien Petit,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720331022044,Sala Maritza Uribe
+ex.934,confirma,fecha_ini,2025-06-20,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720330152482,"Curaduría de Adriana Castellanos Olmedo y Juan Pablo Fajardo González; Edificio de la Colección, pisos 1 a 3"
+ex.934,conflicto,fecha_fin,2025-04-20,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720330152482,El álbum dice «Junio 20 2025 – abril 20 2025»: el cierre es anterior a la apertura; ¿2026-04-20?
+ex.913,corrige,fecha_ini,2024-10-19,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720327250332,«Octubre 19 2024 - Marzo 16 2025»; la Base de datos tenía 2024-10
+ex.913,corrige,fecha_fin,2025-03-16,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720327250332,La Base de datos tenía 2025-03
+ex.913,agrega,espacio,"Sala Maritza Uribe de Urdinola, Edificio de la Colección",Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720327250332,"«Sala Maritza Uribe de Urdinola, Ed de la Colección - Piso 1 y Piso 2»; en alianza con Parque Explora (Medellín)"
+ex.913,agrega,participantes,2 curadoras,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720327250332,Curaduría: Melissa Aguilar y Carolina Chacón
+ex.914,agrega,fecha_fin,2025-02,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720323506033,«Diciembre 2024 - Febrero 2025»; proyecto ganador del Estímulo para la Creación en Artes Plásticas y Visuales
+ex.912,confirma,fecha_ini,2024-10,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720323485755,"«Octubre 2024 - Marzo 2025»; itinerante del Ministerio de las Culturas y la Biblioteca Nacional, centenario de La vorágine"
+ex.910,confirma,fecha_ini,2024-07-30,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720322503330,"Curaduría María Astrid Ríos, con el artista Diego Henao"
+ex.911,confirma,fecha_ini,2024-07-30,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720322524304,Curaduría Boris Friedewald
+ex.907,conflicto,fecha_ini,2024-01-13,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720319726172,El álbum dice «Enero 13 2024 – Julio 26 2024»; la Base de datos tiene 2024-01-14
+ex.907,conflicto,fecha_fin,2024-07-26,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720319726172,La Base de datos tiene 2024-05; diseño de Colectivo 720 y el equipo del museo
+ex.905,conflicto,fecha_fin,2024-07-26,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720319723296,El álbum dice «Diciembre 14 2023 – Julio 26 2024»; la Base de datos tiene 2024-06-28. Investigación: Comisión de la Verdad y Forensic Architecture
+ex.905,confirma,fecha_ini,2023-12-14,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720319723296,
+ex.903,corrige,fecha_fin,2024-03-12,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720312508940,«Agosto 12 2023 - Marzo 12 2024»; la Base de datos tenía 2024-03
+ex.899,agrega,fecha_fin,2023-05,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305478798,"«Diciembre 15 2022 - Mayo 2023», primer ciclo"
+ex.899,corrige,fecha_ini,2022-12-15,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305478798,La Base de datos tenía 2022-12
+ex.899,agrega,participantes,3 curadores y 81 artistas,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305478798,"Curaduría: Melissa Aguilar, Mónica Restrepo y Nicolás Bonilla"
+ex.897,conflicto,fecha_fin,2022-11-27,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305363476,El álbum dice «Julio 28 2022 - Noviembre 27 2022»; la Base de datos tiene 2022-11-26
+ex.897,confirma,fecha_ini,2022-07-28,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305363476,Artista Andrea Rey; curaduría Yohanna M. Roa
+ex.898,agrega,fecha_fin,2022-10-16,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305363281,«Julio 28 2022 - Octubre 16 2022»
+ex.898,agrega,participantes,curadora y artistas,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305363281,"Curaduría: Yohanna M. Roa; artistas y miembros de El Costurero, Costurero Dapa y Costurero Electrónico"
+ex.900,conflicto,fecha_ini,2022-07-14,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305381163,El álbum dice «Julio 14 2022 - Noviembre 20 2022»; la Base de datos fecha la exposición en 2023
+ex.900,agrega,participantes,curador,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305381163,Curaduría: Eugenio Viola
+ex.892,corrige,fecha_ini,2022-03-31,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305362601,La Base de datos tenía 2022-03
+ex.892,conflicto,fecha_fin,2023-03-31,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305362601,El álbum dice «hasta el 31 de marzo de 2023»; la Base de datos tiene 2023-05-28
+ex.892,agrega,participantes,"curadora, artistas y colectivos",Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305362601,Curaduría: Yolanda Chois Rivera; obras ligadas a Nuquí y Buenaventura
+ex.890,corrige,fecha_ini,2022-02-10,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305377364,«Febrero 10 2022 - Mayo 10 2022»; la Base de datos tenía 2022-02
+ex.890,agrega,fecha_fin,2022-05-10,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305377364,
+ex.890,agrega,participantes,curador,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305377364,Curaduría: Miguel González
+ex.886,corrige,fecha_ini,2021-12-10,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305464962,«Diciembre 10 2021 - Enero 30 2022»; la Base de datos tenía 2021-12
+ex.886,agrega,fecha_fin,2022-01-30,Flickr: https://www.flickr.com/photos/museo-la-tertulia/albums/72177720305464962,

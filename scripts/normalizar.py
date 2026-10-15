@@ -95,11 +95,13 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'lope max diaz': 'p.420', 'hernan braun': 'p.193', 'ed ruscha': 'p.579',
          # confirmados por los autores (15/10/2026)
          'anselmo carrera': 'p.663', 'thom o conor': 'p.252', 'claudia sarria': 'p.2258',  # grafías de la nota de 2009 y de los autores
+         'yolanda chois rivera': 'p.3138', 'fernell franco': 'p.31', 'lorena marin gutierrez': 'p.2914',  # álbumes de Flickr
          'martha granados': 'p.1157', 'fiorella gomez': 'p.3179', 'antonio dorado': 'p.2847',
          'bernardo oritz': 'p.2036'}
 # grafías corregidas con documentos de Cactus (ver fuentes/triangulacion_cactus.csv, campo «nombre»)
 NAMEFIX = {'adriana castellanos olmedos': 'Adriana Castellanos Olmedo',
-           'lina saavedra': 'Lina Saavedra de La Cruz',  # misma persona, confirmado por los autores (15/10/2026)
+           'lina saavedra': 'Lina Saavedra de La Cruz',
+           'maritza sanchez h': 'Maritza Sánchez', 'colectivo nois radio': 'Nois Radio',  # misma persona, confirmado por los autores (15/10/2026)
            'manuel augusto mendes soares': 'Manuel Augusto Soares Mendes'}
 
 def resolver(nombre, preferir):
@@ -209,7 +211,10 @@ if os.path.exists(TRI):
     docs = collections.defaultdict(list)
     dup = {}
     retirar = set()
-    for r in csv.DictReader(open(TRI, encoding='utf-8')):
+    flk = collections.defaultdict(list)
+    TRI_F = os.path.join(os.path.dirname(TRI), 'triangulacion_flickr.csv')
+    filas_tri = list(csv.DictReader(open(TRI, encoding='utf-8'))) + (list(csv.DictReader(open(TRI_F, encoding='utf-8'))) if os.path.exists(TRI_F) else [])
+    for r in filas_tri:
         e = porid.get(r['id_expo'])
         if e is None: continue
         acc, campo, val = r['accion'], r['campo'], r['valor']
@@ -223,8 +228,12 @@ if os.path.exists(TRI):
             dup[r['id_expo']] = campo; continue
         if acc == 'conflicto':
             conflictos.append(dict(id_expo=r['id_expo'], expo=e['Label'], campo=campo, valor_base=e.get(campo, ''),
-                                   valor_cactus=val, documento=r['documento'], nota=r['nota'])); continue
-        if autores: docs.setdefault(r['id_expo'], [])
+                                   valor_fuente=val, documento=r['documento'], nota=r['nota'])); continue
+        if r['documento'].startswith('Flickr: '):
+            u = r['documento'][8:]
+            if u not in flk[r['id_expo']]: flk[r['id_expo']].append(u)
+            docs.setdefault(r['id_expo'], [])
+        elif autores: docs.setdefault(r['id_expo'], [])
         elif r['documento'] and r['documento'] not in docs[r['id_expo']]: docs[r['id_expo']].append(r['documento'])
         if acc == 'corrige' and campo == 'titulo': e['Label'] = val
         if acc in ('corrige', 'agrega') and campo in ('fecha_ini', 'fecha_fin', 'espacio', 'ano'):
@@ -237,6 +246,7 @@ if os.path.exists(TRI):
         if e['fecha_ini'][:4].isdigit(): e['ano'] = int(e['fecha_ini'][:4])
         if e['ano']: e['decada'] = int(e['ano']) // 10 * 10
         e['fuentes_cactus'] = ' | '.join(d)
+        e['fuentes_flickr'] = ' | '.join(flk.get(eid, []))
         if d and not e.get('pieza_cactus'): e['pieza_cactus'] = d[0]
         if e.get('confianza', 'base_MLT') != 'base_MLT': e['confianza'] = 'alta'
     for a in aristas:
@@ -284,9 +294,9 @@ COLECTIVAS = {'ex.765', 'ex.822', 'ex.916', 'ex.745', 'ex.637', 'ex.587', 'ex.36
 cur_mg = {a['Source'] for a in aristas if a['rol'] == 'curador' and agentes.get(a['Target'], {}).get('Label') == 'Miguel González'}
 for e in expos:
     if e['modalidad'] == 'n/d' and (e['Id'] in COLECTIVAS or e['Id'] in cur_mg): e['modalidad'] = 'colectiva'
-CE=['Id','Label','ano','decada','fecha_ini','fecha_fin','espacio','sede','tipo_expo','modalidad','n_artistas','autor_texto','artistas_varios','fuente','confianza','fuente_url','pieza_cactus','fuentes_cactus']
+CE=['Id','Label','ano','decada','fecha_ini','fecha_fin','espacio','sede','tipo_expo','modalidad','n_artistas','autor_texto','artistas_varios','fuente','confianza','fuente_url','pieza_cactus','fuentes_cactus','fuentes_flickr']
 for e in expos:
-    e.setdefault('confianza','base_MLT'); e.setdefault('fuente_url',''); e.setdefault('pieza_cactus',''); e.setdefault('fuentes_cactus','')
+    e.setdefault('confianza','base_MLT'); e.setdefault('fuente_url',''); e.setdefault('pieza_cactus',''); e.setdefault('fuentes_cactus',''); e.setdefault('fuentes_flickr','')
 esc('exposiciones.csv', expos, CE)
 camp_ag = ['Id', 'Label', 'clase', 'roles', 'n_expos', 'ocupacion', 'nacionalidad', 'sexo', 'ano_nacimiento', 'ano_muerte', 'origen']
 esc('agentes.csv', ag_usados, camp_ag)
@@ -296,7 +306,7 @@ nodos = [dict(Id=e['Id'], Label=e['Label'], tipo='exposicion', clase='exposicion
               roles=a['roles'], n_expos=a['n_expos'], fuente=a['origen'], modalidad='') for a in ag_usados]
 esc('nodos.csv', nodos, ['Id', 'Label', 'tipo', 'clase', 'ano', 'decada', 'sede', 'espacio', 'roles', 'n_expos', 'fuente', 'modalidad'])
 esc('aristas.csv', aristas, ['Source', 'Target', 'Type', 'Label', 'rol', 'ano', 'Weight', 'fuente'])
-esc('conflictos_cactus.csv', conflictos, ['id_expo','expo','campo','valor_base','valor_cactus','documento','nota'])
+esc('conflictos_cactus.csv', conflictos, ['id_expo','expo','campo','valor_base','valor_fuente','documento','nota'])
 esc('no_cruzados.csv', no_cruzados, ['id_expo', 'campo', 'texto', 'id_asignado'])
 
 print('exposiciones', len(expos), '| agentes', len(ag_usados), '| aristas', len(aristas))

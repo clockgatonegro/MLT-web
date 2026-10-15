@@ -326,6 +326,7 @@ footer.f a{color:inherit}
         <li>Catálogo de la II Bienal Americana de Artes Gráficas (1973), para la lista de artistas participantes.</li>
         <li>Archivo de Cactus Taller Gráfico, diseñador del museo desde <em>Eros, dolor y muerte</em> (2009) hasta <em>El ataque del presente contra el resto de los tiempos</em> (2021): programas de mano, invitaciones, fichas técnicas, boletines y cuadernillos de programación, entre ellos los de <em>Cali 71, ciudad de América</em> y sus rotaciones. Con ellos se contrastaron una a una las fechas, salas y participantes de 2009–2021: cuando un documento confirma una ficha que solo venía de la web, la ficha pasa a «documentada»; cuando la contradice, el dato no se cambia y queda en la lista de conflictos (<code>conflictos_cactus.csv</code>).</li>
         <li>Web actual del museo, consultada el 3 de octubre de 2026.</li>
+        <li>Álbumes de exposiciones del <a href="https://www.flickr.com/photos/museo-la-tertulia/albums" target="_blank" rel="noopener">Flickr del Museo La Tertulia</a> (2021–2025), consultados el 15 de octubre de 2026, para contrastar fechas, curadurías y artistas.</li>
         <li>Programas de mano y catálogos escaneados por el Centro de Documentación del museo (proyecto <em>Cartografiar redes del arte</em>) y artes finales e invitaciones de Cactus Taller Gráfico, enlazados en la ficha de cada exposición.</li>
       </ul>
       <h3>Lecturas</h3>
@@ -378,7 +379,7 @@ const HITOS=[[1971,'Sala Subterránea'],[1975,'Cinemateca'],[1982,'Taller de Gra
 
 // ---------- modelo ----------
 const N=RAW.n.map((r,i)=>r[2]===0
-  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],conf:r[12]||0,base:r[13]||0,adj:[]}
+  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],conf:r[12]||0,base:r[13]||0,flk:r[14]||'',adj:[]}
   :{i,id:r[0],label:r[1],t:r[2],nac:r[3],ocu:r[4],nace:r[5],muere:r[6],adj:[]});
 const E=RAW.e.map(([s,t,r],k)=>({s,t,r,k}));
 E.forEach(e=>{N[e.s].adj.push(e.k);N[e.t].adj.push(e.k)});
@@ -677,7 +678,7 @@ function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)tr
   const n=N[i];if(center)centerOn(i);
   if(n.t===0){
     const by=[[],[],[],[]];n.adj.forEach(k=>{const e=E[k];by[e.r].push(N[e.t])});
-    const fu=[n.base?'Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>':'',n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Web La Tertulia</a>`:'',n.pieza?'Archivo Cactus Taller Gráfico':''].filter(Boolean);
+    const fu=[n.base?'Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>':'',n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Web La Tertulia</a>`:'',n.pieza?'Archivo Cactus Taller Gráfico':'',n.flk?`<a href="${esc(n.flk)}" target="_blank" rel="noopener">Flickr del museo</a>`:''].filter(Boolean);
     panel.innerHTML=`<div class="kind" style="color:${C.mod[n.mod]}">Exposición · ${esc(n.id)}</div><h2>${esc(n.label)}</h2>
      <dl class="meta"><dt>Fechas</dt><dd>${esc(fecha(n))}${n.dur!=null?` · ${n.dur} días`:''}</dd><dt>Modalidad</dt><dd>${modPill(n.mod)}</dd><dt>Registro</dt><dd><span class="mk">${n.conf?'○':'●'}</span> ${n.conf?'reconstruido con datos parciales':'documentado'}</dd><dt>Espacio</dt><dd>${esc(n.esp||'—')}</dd>${n.tipo?`<dt>Tipo</dt><dd>${esc(n.tipo)}</dd>`:''}</dl>
      ${fu.length?`<p class="src">${fu.length>1?'Fuentes':'Fuente'}: ${fu.join(' · ')}</p>`:''}

@@ -86,6 +86,11 @@ aside p{margin:6px 0;max-width:62ch}
 .dls{display:flex;flex-wrap:wrap;gap:6px}.dls .ghl{width:100%;margin-top:4px}.dls button{font:500 12px var(--f-data)}.dls .msg{font-size:12px;color:var(--muted);width:100%}
 aside code{font:12px var(--f-data)}
 aside .src{font-size:12.5px;color:var(--muted)} aside .src a{color:inherit}
+.pm{display:flex;gap:12px;align-items:flex-start;margin:6px 0 12px}
+.pm img{display:block;width:104px;height:auto;border:1px solid var(--line);background:var(--band)}
+.pm a.cov:hover img,.pm a.cov:focus-visible img{border-color:var(--fg)}
+.pm p{margin:0;font-size:12.5px;color:var(--muted)} .pm p b{display:block;color:var(--fg);font-weight:600;font-size:13.5px}
+.pm p a{color:var(--fg)}
 table.m{width:100%;border-collapse:collapse;font-size:12.5px} table.m th{font:500 10px var(--f-data);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:right;padding:2px 3px}
 table.m th:first-child,table.m td:first-child{text-align:left} table.m td{padding:3px;border-bottom:1px dotted var(--line);text-align:right;font-variant-numeric:tabular-nums}
 table.m td a{color:var(--fg);cursor:pointer;text-decoration:none} table.m td a:hover{text-decoration:underline}
@@ -319,6 +324,7 @@ footer.f a{color:inherit}
         <li>Catálogo de la II Bienal Americana de Artes Gráficas (1973), para la lista de artistas participantes.</li>
         <li>Archivo de Cactus Taller Gráfico, diseñador del museo desde <em>Eros, dolor y muerte</em> (2009) hasta <em>El ataque del presente contra el resto de los tiempos</em> (2021): programas de mano, invitaciones, fichas técnicas, boletines y cuadernillos de programación, entre ellos los de <em>Cali 71, ciudad de América</em> y sus rotaciones. Con ellos se contrastaron una a una las fechas, salas y participantes de 2009–2021: cuando un documento confirma una ficha que solo venía de la web, la ficha pasa a «documentada»; cuando la contradice, el dato no se cambia y queda en la lista de conflictos (<code>conflictos_cactus.csv</code>).</li>
         <li>Web actual del museo, consultada el 3 de octubre de 2026.</li>
+        <li>Programas de mano y catálogos escaneados por el Centro de Documentación del museo (proyecto <em>Cartografiar redes del arte</em>) y artes finales e invitaciones de Cactus Taller Gráfico, enlazados en la ficha de cada exposición.</li>
       </ul>
       <h3>Lecturas</h3>
       <ul class="bib">
@@ -367,7 +373,7 @@ const HITOS=[[1971,'Sala Subterránea'],[1975,'Cinemateca'],[1982,'Taller de Gra
 
 // ---------- modelo ----------
 const N=RAW.n.map((r,i)=>r[2]===0
-  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],conf:r[12]||0,adj:[]}
+  ?{i,id:r[0],label:r[1],t:0,year:r[3],fi:r[4],ff:r[5],esp:r[6],mod:r[7],url:r[8],pieza:r[9],tipo:r[10],dur:r[11],conf:r[12]||0,base:r[13]||0,adj:[]}
   :{i,id:r[0],label:r[1],t:r[2],nac:r[3],ocu:r[4],nace:r[5],muere:r[6],adj:[]});
 const E=RAW.e.map(([s,t,r],k)=>({s,t,r,k}));
 E.forEach(e=>{N[e.s].adj.push(e.k);N[e.t].adj.push(e.k)});
@@ -652,16 +658,25 @@ function intro(){
   const top=VN.filter(n=>n.t>0).sort((a,b)=>deg[b.i]-deg[a.i]).slice(0,12);
   document.getElementById('top').innerHTML=top.map(n=>`<li><a data-i="${n.i}">${esc(n.label)}</a><span class="n">${deg[n.i]}</span></li>`).join('');
 }
+// programas de mano y piezas gráficas (archivos en programas/)
+const PROG=RAW.prog||{};
+function progHtml(n){const l=PROG[n.id];if(!l)return'';const may=s=>s[0].toUpperCase()+s.slice(1),mb=v=>String(v).replace('.',',');
+  const pdfs=l.filter(x=>x[4]==='pdf').length;
+  const tit=pdfs>1?'Programas de mano y catálogos · '+pdfs:pdfs?may(l.find(x=>x[4]==='pdf')[3]):'Pieza gráfica';
+  return `<h3>${tit}</h3>`+l.map(([id,pag,m,tipo,k])=>{const u=k==='pdf'?'programas/pdf/'+id+'.pdf':'programas/piezas/'+id+'.jpg',ext=k==='pdf'?'pdf':'jpg';
+    return `<div class="pm"><a class="cov" href="${u}" target="_blank" rel="noopener" data-pm="${id}.${ext}" title="Abrir"><img src="programas/portadas/${id}.jpg" alt="Portada: ${esc(tipo)} de ${esc(n.label)}" loading="lazy"></a><p><b>${may(tipo)}</b>${k==='pdf'?`${pag} pág. · PDF de ${mb(m)} MB`:`Imagen JPG de ${mb(m)} MB`}<br><a href="${u}" target="_blank" rel="noopener" data-pm="${id}.${ext}">Ver</a> · <a href="${u}" download="${id}.${ext}" data-pm="${id}.${ext}">Descargar</a></p></div>`}).join('')}
+document.addEventListener('click',ev=>{const a=ev.target.closest&&ev.target.closest('a[data-pm]');if(a)track('file_download',{file_name:a.dataset.pm,origen:'programa'})});
 function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)track('ver_ficha',{nombre:N[i].label,tipo:N[i].t===0?'exposicion':'agente',vista:state.view});
   state.sel=i;render();if(state.view==='dur'&&!quiet)drawDur();
   if(i==null){intro();return}
   const n=N[i];if(center)centerOn(i);
   if(n.t===0){
     const by=[[],[],[],[]];n.adj.forEach(k=>{const e=E[k];by[e.r].push(N[e.t])});
-    const src=n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${n.url.includes('web.archive.org')?'página archivada':'web del museo'}</a>`:'';
+    const fu=[n.base?'Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>':'',n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Web La Tertulia</a>`:'',n.pieza?'Archivo Cactus Taller Gráfico':''].filter(Boolean);
     panel.innerHTML=`<div class="kind" style="color:${C.mod[n.mod]}">Exposición · ${esc(n.id)}</div><h2>${esc(n.label)}</h2>
      <dl class="meta"><dt>Fechas</dt><dd>${esc(fecha(n))}${n.dur!=null?` · ${n.dur} días`:''}</dd><dt>Modalidad</dt><dd>${modPill(n.mod)}</dd><dt>Registro</dt><dd><span class="mk">${n.conf?'○':'●'}</span> ${n.conf?'reconstruido con datos parciales':'documentado'}</dd><dt>Espacio</dt><dd>${esc(n.esp||'—')}</dd>${n.tipo?`<dt>Tipo</dt><dd>${esc(n.tipo)}</dd>`:''}</dl>
-     ${src||n.pieza?`<p class="src">Fuente: ${src}${src&&n.pieza?' · ':''}${n.pieza?'pieza de Cactus: '+esc(n.pieza):''}</p>`:''}
+     ${fu.length?`<p class="src">${fu.length>1?'Fuentes':'Fuente'}: ${fu.join(' · ')}</p>`:''}
+     ${progHtml(n)}
      ${by.map((l,r)=>l.length?`<h3>${ROLE_LBL[r]} · ${l.length}</h3><ul>${l.sort((a,b)=>a.label.localeCompare(b.label,'es')).map(a=>`<li><a data-i="${a.i}">${esc(a.label)}</a><span class="n">${a.adj.length}</span></li>`).join('')}</ul>`:'').join('')}
      ${n.adj.length?'':'<p class="src">Sin agentes registrados.</p>'}`;
   } else if(state.view==='pro'&&pRole.has(i)){
@@ -686,7 +701,7 @@ function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)tr
      <dt>Participación</dt><dd>${roles.map((c,r)=>c?`${c} como ${ROLES[r]}`:'').filter(Boolean).join(', ')}</dd>
      ${roles[0]?`<dt>Exposiciones</dt><dd>${ind} individuales, ${col} colectivas</dd>`:''}
      ${ys.length?`<dt>Periodo</dt><dd>${d3.min(ys)}–${d3.max(ys)}</dd>`:''}</dl>
-     ${n.t===3?'<p class="src">Agente tomado del archivo web o de las piezas de Cactus; no figura en el catálogo de personas de 2016.</p>':''}
+     ${n.t===3?'<p class="src">Agente tomado de la web de La Tertulia o del archivo de Cactus Taller Gráfico; no figura en el catálogo de personas de 2016.</p>':''}
      ${cot.length?`<h3>Coincide con más frecuencia</h3><ul>${cot.map(([t,c])=>`<li><a data-i="${t}">${esc(N[t].label)}</a><span class="n">${c} expos</span></li>`).join('')}</ul>`:''}
      <h3>Exposiciones · ${mu.size}</h3><ul>${[...mu].map(([x,rs])=>`<li><span class="y">${x.year||'s/f'}</span><a data-i="${x.i}">${esc(x.label)}</a><span class="n">${rs.join(', ')}</span></li>`).join('')}</ul>`;
   }

@@ -1,0 +1,238 @@
+id_programa,id_expo,exposicion,ano,tipo,paginas,mb,pdf,portada,origen,confianza,archivo_original
+ex13,ex.13,Carlos Correa,1957,programa de mano,4,0.2,programas/pdf/ex13.pdf,programas/portadas/ex13.jpg,escaneado,alta,d2.pdf
+ex16,ex.16,Jornadas de Mayo,1957,programa de mano,4,0.3,programas/pdf/ex16.pdf,programas/portadas/ex16.jpg,escaneado,alta,d1.pdf
+ex19,ex.19,Pinturas de Ómar Rayo,1957,programa de mano,4,0.3,programas/pdf/ex19.pdf,programas/portadas/ex19.jpg,escaneado,alta,d3.pdf
+ex21,ex.21,José de Rokha,1958,programa de mano,4,0.3,programas/pdf/ex21.pdf,programas/portadas/ex21.jpg,escaneado,alta,d4.pdf
+ex23,ex.23,"Exposición de pinturas de Pedro Gross (el mago ""gross"")",1958,programa de mano,4,0.3,programas/pdf/ex23.pdf,programas/portadas/ex23.jpg,escaneado,alta,d6.pdf
+ex24,ex.24,José Luis de Figueroa,1958,programa de mano,2,0.1,programas/pdf/ex24.pdf,programas/portadas/ex24.jpg,escaneado,alta,d5.pdf
+ex35,ex.35,Leandro Velasco,1959,programa de mano,3,0.1,programas/pdf/ex35.pdf,programas/portadas/ex35.jpg,escaneado,media,d13.pdf
+ex36,ex.36,Arboleda,1959,programa de mano,4,0.2,programas/pdf/ex36.pdf,programas/portadas/ex36.jpg,escaneado,alta,d11.pdf
+ex38,ex.38,Alberto Gutiérrez,1960,programa de mano,2,0.2,programas/pdf/ex38.pdf,programas/portadas/ex38.jpg,escaneado,alta,d19.pdf
+ex39,ex.39,Exposición de Acuarelas,1960,programa de mano,2,0.2,programas/pdf/ex39.pdf,programas/portadas/ex39.jpg,escaneado,alta,d16.pdf
+ex40,ex.40,16 pinturas de Juan Antonio Roda,1960,programa de mano,3,0.1,programas/pdf/ex40.pdf,programas/portadas/ex40.jpg,escaneado,alta,d31.pdf
+ex41,ex.41,David Manzur,1960,programa de mano,4,0.2,programas/pdf/ex41.pdf,programas/portadas/ex41.jpg,escaneado,alta,d12.pdf
+ex42,ex.42,A. Rivera G.,1960,programa de mano,3,0.1,programas/pdf/ex42.pdf,programas/portadas/ex42.jpg,escaneado,alta,d14.pdf
+ex43,ex.43,Oleos recientes de Marielle Muheim,1960,programa de mano,2,0.2,programas/pdf/ex43.pdf,programas/portadas/ex43.jpg,escaneado,alta,d18.pdf
+ex45,ex.45,Jan Palmer y S. Crawford,1960,programa de mano,2,0.1,programas/pdf/ex45.pdf,programas/portadas/ex45.jpg,escaneado,alta,d15.pdf
+ex46,ex.46,Sessano,1960,programa de mano,4,0.4,programas/pdf/ex46.pdf,programas/portadas/ex46.jpg,escaneado,alta,d30.pdf
+ex47,ex.47,Samuel Montealegre dibujos,1960,programa de mano,3,0.3,programas/pdf/ex47.pdf,programas/portadas/ex47.jpg,escaneado,alta,d17.pdf
+ex50,ex.50,Exposición Colectiva de Pintura,1960,programa de mano,3,0.1,programas/pdf/ex50.pdf,programas/portadas/ex50.jpg,escaneado,alta,d20.pdf
+ex51,ex.51,Óleos,1961,programa de mano,2,0.1,programas/pdf/ex51.pdf,programas/portadas/ex51.jpg,escaneado,alta,d26.pdf
+ex53,ex.53,Pinturas y anti-pinturas,1961,programa de mano,3,0.2,programas/pdf/ex53.pdf,programas/portadas/ex53.jpg,escaneado,alta,d25.pdf
+ex54,ex.54,Exposición de Grabados,1961,programa de mano,2,0.1,programas/pdf/ex54.pdf,programas/portadas/ex54.jpg,escaneado,alta,d23.pdf
+ex55,ex.55,Pinturas de Fanny Buitrago,1961,programa de mano,4,0.4,programas/pdf/ex55.pdf,programas/portadas/ex55.jpg,escaneado,alta,d22.pdf
+ex58,ex.58,Emma Reyes,1961,catálogo,10,1.3,programas/pdf/ex58.pdf,programas/portadas/ex58.jpg,escaneado,media,d28.pdf
+ex59,ex.59,Herrán - Pinturas,1961,programa de mano,4,0.3,programas/pdf/ex59.pdf,programas/portadas/ex59.jpg,escaneado,media,d27.pdf
+ex61,ex.61,Pinturas 1961,1961,programa de mano,3,0.1,programas/pdf/ex61.pdf,programas/portadas/ex61.jpg,escaneado,alta,d24.pdf
+ex63,ex.63,"Arboleda, Martínez, Eggen",1961,programa de mano,4,0.2,programas/pdf/ex63.pdf,programas/portadas/ex63.jpg,escaneado,alta,d21.pdf
+ex65,ex.65,Exposición de pinturas de Gerardo Negret,1962,programa de mano,4,0.4,programas/pdf/ex65.pdf,programas/portadas/ex65.jpg,escaneado,alta,d37.pdf
+ex66,ex.66,Pinturas de Armando Villegas y Cerámicas de Alicia Tafur,1962,programa de mano,4,0.4,programas/pdf/ex66.pdf,programas/portadas/ex66.jpg,escaneado,alta,d36.pdf
+ex67,ex.67,Óscar Pantoja,1962,programa de mano,2,0.4,programas/pdf/ex67.pdf,programas/portadas/ex67.jpg,escaneado,alta,d38.pdf
+ex70,ex.70,Alberto Gutiérrez,1962,programa de mano,4,0.2,programas/pdf/ex70.pdf,programas/portadas/ex70.jpg,escaneado,alta,d39.pdf
+ex75,ex.75,Herrán - Pinturas,1963,programa de mano,4,0.2,programas/pdf/ex75.pdf,programas/portadas/ex75.jpg,escaneado,alta,d40.pdf
+ex77,ex.77,XV Salón de Artistas Colombianos,1963,programa de mano,4,0.3,programas/pdf/ex77.pdf,programas/portadas/ex77.jpg,escaneado,alta,d60.pdf
+ex78,ex.78,Pintura Moderna Ecuatoriana,1964,programa de mano,4,0.2,programas/pdf/ex78.pdf,programas/portadas/ex78.jpg,escaneado,alta,d43.pdf
+ex80,ex.80,Génesis,1964,programa de mano,3,0.1,programas/pdf/ex80.pdf,programas/portadas/ex80.jpg,escaneado,alta,d44.pdf
+ex82,ex.82,Alcántara,1964,programa de mano,5,0.4,programas/pdf/ex82.pdf,programas/portadas/ex82.jpg,escaneado,media,d41.pdf
+ex83,ex.83,José Mina,1964,programa de mano,2,0.2,programas/pdf/ex83.pdf,programas/portadas/ex83.jpg,escaneado,alta,d46.pdf
+ex84,ex.84,IV Festival Nacional de Arte,1964,programa de mano,2,0.2,programas/pdf/ex84.pdf,programas/portadas/ex84.jpg,escaneado,media,d45.pdf
+ex87,ex.87,Lucy Tejada,1964,programa de mano,2,0.3,programas/pdf/ex87.pdf,programas/portadas/ex87.jpg,escaneado,alta,d47.pdf
+ex88,ex.88,María Luisa Andino,1964,programa de mano,5,0.2,programas/pdf/ex88.pdf,programas/portadas/ex88.jpg,escaneado,alta,d48.pdf
+ex89,ex.89,Jan Bartelsman y Alberto Gutiérrez,1964,programa de mano,4,0.4,programas/pdf/ex89.pdf,programas/portadas/ex89.jpg,escaneado,alta,d42.pdf
+ex91,ex.91,Augusto Rivera,1965,programa de mano,4,0.2,programas/pdf/ex91.pdf,programas/portadas/ex91.jpg,escaneado,alta,d49.pdf
+ex93,ex.93,Alejandro Obregón,1965,programa de mano,4,0.3,programas/pdf/ex93.pdf,programas/portadas/ex93.jpg,escaneado,alta,d55.pdf
+ex97,ex.97,Beatriz González,1965,programa de mano,3,0.1,programas/pdf/ex97.pdf,programas/portadas/ex97.jpg,escaneado,alta,d51.pdf
+ex98,ex.98,Pedro Alcántara,1965,programa de mano,3,0.7,programas/pdf/ex98.pdf,programas/portadas/ex98.jpg,escaneado,alta,d52.pdf
+ex101,ex.101,Sofía Urrutia y Graciela Samper de Bermudez,1966,programa de mano,4,0.2,programas/pdf/ex101.pdf,programas/portadas/ex101.jpg,escaneado,alta,d53.pdf
+ex102,ex.102,Antonio Grass Óleo,1966,programa de mano,2,0.1,programas/pdf/ex102.pdf,programas/portadas/ex102.jpg,escaneado,alta,d33.pdf
+ex103,ex.103,Lamiel,1966,programa de mano,3,0.3,programas/pdf/ex103.pdf,programas/portadas/ex103.jpg,escaneado,alta,d34.pdf
+ex110,ex.110,Mario Abreu,1966,programa de mano,5,0.6,programas/pdf/ex110.pdf,programas/portadas/ex110.jpg,escaneado,alta,d35.pdf
+ex113,ex.113,Maria Thereza Negreiros,1967,programa de mano,4,0.3,programas/pdf/ex113.pdf,programas/portadas/ex113.jpg,escaneado,alta,d54.pdf
+ex114,ex.114,Lucy Tejada,1967,programa de mano,4,0.5,programas/pdf/ex114.pdf,programas/portadas/ex114.jpg,escaneado,media,d59.pdf
+ex117,ex.117,Luis Caballero,1967,programa de mano,3,0.3,programas/pdf/ex117.pdf,programas/portadas/ex117.jpg,escaneado,alta,d56.pdf
+ex119,ex.119,Manzur,1967,programa de mano,4,0.6,programas/pdf/ex119.pdf,programas/portadas/ex119.jpg,escaneado,alta,d57.pdf
+ex121,ex.121,Isabel Cuervo Casabianca,1967,programa de mano,3,0.2,programas/pdf/ex121.pdf,programas/portadas/ex121.jpg,escaneado,alta,d58.pdf
+ex122,ex.122,Mario Gordillo,1968,programa de mano,3,0.3,programas/pdf/ex122.pdf,programas/portadas/ex122.jpg,escaneado,alta,d63.pdf
+ex124,ex.124,VIII Festival Nacional de Arte - I Salón Austral y Colombiano de Pintura,1968,catálogo,46,6.9,programas/pdf/ex124.pdf,programas/portadas/ex124.jpg,escaneado,alta,d61.pdf
+ex126,ex.126,Santiago Cárdenas,1968,programa de mano,4,0.4,programas/pdf/ex126.pdf,programas/portadas/ex126.jpg,escaneado,alta,d66.pdf
+ex127,ex.127,León Ricaurte,1968,programa de mano,4,0.3,programas/pdf/ex127.pdf,programas/portadas/ex127.jpg,escaneado,alta,d65.pdf
+ex128,ex.128,Arte Virreinal Americano,1968,programa de mano,4,0.4,programas/pdf/ex128.pdf,programas/portadas/ex128.jpg,escaneado,alta,d62.pdf
+ex130,ex.130,Pintura y Grabado Hoy en Venezuela,1968,catálogo,24,1.9,programas/pdf/ex130.pdf,programas/portadas/ex130.jpg,escaneado,alta,d64.pdf
+ex133,ex.133,Lucy Tejada,1969,programa de mano,5,0.4,programas/pdf/ex133.pdf,programas/portadas/ex133.jpg,escaneado,alta,d72.pdf
+ex135,ex.135,Gianfranco Galante,1969,programa de mano,4,0.4,programas/pdf/ex135.pdf,programas/portadas/ex135.jpg,escaneado,alta,d69.pdf
+ex136,ex.136,Rogelio Polesello y Lya Kaufman,1969,programa de mano,5,0.4,programas/pdf/ex136.pdf,programas/portadas/ex136.jpg,escaneado,alta,d73.pdf
+ex137,ex.137,Enrique Grau,1969,programa de mano,4,0.3,programas/pdf/ex137.pdf,programas/portadas/ex137.jpg,escaneado,alta,d68.pdf
+ex140,ex.140,José Mina,1969,programa de mano,4,0.4,programas/pdf/ex140.pdf,programas/portadas/ex140.jpg,escaneado,alta,d71.pdf
+ex144,ex.144,Jan Bartelsman,1969,programa de mano,4,0.5,programas/pdf/ex144.pdf,programas/portadas/ex144.jpg,escaneado,alta,d70.pdf
+ex146,ex.146,Eduardo McEntyre,1969,programa de mano,5,0.7,programas/pdf/ex146.pdf,programas/portadas/ex146.jpg,escaneado,alta,d67.pdf
+ex147,ex.147,Gustavo Espinosa,1970,programa de mano,4,0.3,programas/pdf/ex147.pdf,programas/portadas/ex147.jpg,escaneado,alta,d79.pdf
+ex149,ex.149,Enrique Tábara,1970,programa de mano,5,0.4,programas/pdf/ex149.pdf,programas/portadas/ex149.jpg,escaneado,alta,d77.pdf
+ex151,ex.151,El Hombre y sus Pensamientos a través del Arte,1970,catálogo,66,5.9,programas/pdf/ex151.pdf,programas/portadas/ex151.jpg,escaneado,alta,El Hombre y sus pensamientos a traves del arte.pdf
+ex152a,ex.152,David Manzur y Augusto Rivera,1970,programa de mano,4,0.3,programas/pdf/ex152a.pdf,programas/portadas/ex152a.jpg,escaneado,alta,d74.pdf
+ex152b,ex.152,David Manzur y Augusto Rivera,1970,programa de mano,4,0.5,programas/pdf/ex152b.pdf,programas/portadas/ex152b.jpg,escaneado,alta,d80.pdf
+ex153,ex.153,Símbolos,1970,catálogo,10,1.1,programas/pdf/ex153.pdf,programas/portadas/ex153.jpg,escaneado,alta,d75.pdf
+ex154a,ex.154,XX Festival de Arte - Exposición Panamericana de Artes Gráficas y Plásticas,1970,catálogo,182,24.8,programas/pdf/ex154a.pdf,programas/portadas/ex154a.jpg,escaneado,alta,Exposicion Panamericana001.pdf
+ex154b,ex.154,XX Festival de Arte - Exposición Panamericana de Artes Gráficas y Plásticas,1970,catálogo,31,3.3,programas/pdf/ex154b.pdf,programas/portadas/ex154b.jpg,escaneado,media,d76.pdf
+ex157,ex.157,Festival Panamericano de Cultura - Brasil,1971,catálogo,7,0.4,programas/pdf/ex157.pdf,programas/portadas/ex157.jpg,escaneado,alta,d84.pdf
+ex164,ex.164,Cien Años de Soledad y Otros,1971,programa de mano,5,0.8,programas/pdf/ex164.pdf,programas/portadas/ex164.jpg,escaneado,alta,d83.pdf
+ex165,ex.165,I Bienal Americana de Artes Gráficas de Cali,1971,catálogo,257,25.5,programas/pdf/ex165.pdf,programas/portadas/ex165.jpg,escaneado,alta,Primera Bienal Americana de Artes Graficas.pdf
+ex166,ex.166,Diez Años de Arte Colombiano,1971,catálogo,66,8.3,programas/pdf/ex166.pdf,programas/portadas/ex166.jpg,escaneado,alta,d81.pdf
+ex167,ex.167,Grabados de Peter Milton,1972,catálogo,9,1.4,programas/pdf/ex167.pdf,programas/portadas/ex167.jpg,escaneado,alta,d88.pdf
+ex169,ex.169,"Grabados de Artistas Británicos, 1945-1957",1972,catálogo,14,1.6,programas/pdf/ex169.pdf,programas/portadas/ex169.jpg,escaneado,alta,d87.pdf
+ex170,ex.170,Eduardo Ramírez Villamizar,1972,catálogo,36,5.5,programas/pdf/ex170.pdf,programas/portadas/ex170.jpg,escaneado,alta,d85.pdf
+ex172,ex.172,La Obra Gráfica de Lorenzo Homar,1972,catálogo,8,1.3,programas/pdf/ex172.pdf,programas/portadas/ex172.jpg,escaneado,alta,d91.pdf
+ex173,ex.173,Juan Antonio Roda,1972,catálogo,16,2.6,programas/pdf/ex173.pdf,programas/portadas/ex173.jpg,escaneado,alta,d89.pdf
+ex174,ex.174,Grabados Cartón de Colombia,1972,catálogo,8,1.5,programas/pdf/ex174.pdf,programas/portadas/ex174.jpg,escaneado,alta,d86.pdf
+ex176,ex.176,Exposición de Gabrio Tosti Di Valminuta,1973,programa de mano,4,0.5,programas/pdf/ex176.pdf,programas/portadas/ex176.jpg,escaneado,alta,Tosti 1973.pdf
+ex177,ex.177,Brassai,1973,catálogo,13,1.6,programas/pdf/ex177.pdf,programas/portadas/ex177.jpg,escaneado,alta,d92.pdf
+ex179,ex.179,Enrique Grau Obra  1962 / 1972,1973,catálogo,14,2.6,programas/pdf/ex179.pdf,programas/portadas/ex179.jpg,escaneado,alta,Enrique Grau 1973.pdf
+ex180,ex.180,Exposición de Noe Nojechowiz,1973,catálogo,9,1.4,programas/pdf/ex180.pdf,programas/portadas/ex180.jpg,escaneado,alta,Nojechowis.pdf
+ex181,ex.181,II Bienal Americana de Artes Gráficas de Cali,1973,catálogo,226,40.9,programas/pdf/ex181.pdf,programas/portadas/ex181.jpg,escaneado,alta,II Bienal Americana de Artes Gráficas.pdf
+ex185,ex.185,Pinturas de Luis Caballero,1974,catálogo,17,3.2,programas/pdf/ex185.pdf,programas/portadas/ex185.jpg,escaneado,alta,Caballero Pinturas y Dibujos 1974.pdf
+ex186,ex.186,Exposición de Rodolfo Abularach,1974,catálogo,10,1.2,programas/pdf/ex186.pdf,programas/portadas/ex186.jpg,escaneado,alta,Rodolfo Abularach 1974.pdf
+ex188,ex.188,Cali a la Vanguardia,1974,catálogo,43,7.3,programas/pdf/ex188.pdf,programas/portadas/ex188.jpg,escaneado,alta,Cali a la Vanguardia 1974.pdf
+ex189,ex.189,Camas,1974,catálogo,14,1.1,programas/pdf/ex189.pdf,programas/portadas/ex189.jpg,escaneado,alta,Feliza Bursztyn-Camas.pdf
+ex190,ex.190,Exposición de Grabado Latino-americano,1974,catálogo,63,11.3,programas/pdf/ex190.pdf,programas/portadas/ex190.jpg,escaneado,media,Grabados Latinoamericanos del MoMA.pdf
+ex191,ex.191,Carlos Rojas,1974,catálogo,20,2.8,programas/pdf/ex191.pdf,programas/portadas/ex191.jpg,escaneado,alta,d93.pdf
+ex192,ex.192,Emilio Sánchez,1974,catálogo,13,1.4,programas/pdf/ex192.pdf,programas/portadas/ex192.jpg,escaneado,alta,d94.pdf
+ex194,ex.194,28 Artistas del Brasil,1975,catálogo,13,2.6,programas/pdf/ex194.pdf,programas/portadas/ex194.jpg,escaneado,alta,28 artistas del Brasil.pdf
+ex197,ex.197,Carlos Cruz Diez Obras Sobre el Muro: Graficas e Integración Arquitectónica,1975,programa de mano,5,1.2,programas/pdf/ex197.pdf,programas/portadas/ex197.jpg,escaneado,alta,d224.pdf
+ex198,ex.198,Kipniss,1975,catálogo,17,1.5,programas/pdf/ex198.pdf,programas/portadas/ex198.jpg,escaneado,alta,d212.pdf
+ex200,ex.200,Mauricio Bueno,1975,catálogo,8,1.4,programas/pdf/ex200.pdf,programas/portadas/ex200.jpg,escaneado,alta,d222.pdf
+ex201,ex.201,Seis Artistas Colombianos,1975,catálogo,15,2.7,programas/pdf/ex201.pdf,programas/portadas/ex201.jpg,escaneado,alta,d223.pdf
+ex208,ex.208,Publicación: Portafolio de serigrafías,1976,catálogo,10,1.2,programas/pdf/ex208.pdf,programas/portadas/ex208.jpg,escaneado,media,d214.pdf
+ex209,ex.209,Beatriz González,1976,catálogo,20,2.5,programas/pdf/ex209.pdf,programas/portadas/ex209.jpg,escaneado,alta,d95.pdf
+ex215,ex.215,Seis Artistas Premiados en la III Bienal de Artes Gráficas,1977,catálogo,7,1.0,programas/pdf/ex215.pdf,programas/portadas/ex215.jpg,escaneado,alta,D178.pdf
+ex216,ex.216,II Salón Nacional de Arte Jóven,1977,catálogo,33,3.4,programas/pdf/ex216.pdf,programas/portadas/ex216.jpg,escaneado,media,d221.pdf
+ex219,ex.219,Segundo Portafolio 8 Artistas Latinoamericanos,1977,catálogo,18,2.3,programas/pdf/ex219.pdf,programas/portadas/ex219.jpg,escaneado,alta,d32.pdf
+ex221,ex.221,Luis Camnitzer y Liliana Porter,1978,catálogo,12,1.5,programas/pdf/ex221.pdf,programas/portadas/ex221.jpg,escaneado,alta,d158.pdf
+ex222,ex.222,Gabriel Messil,1978,programa de mano,6,0.9,programas/pdf/ex222.pdf,programas/portadas/ex222.jpg,escaneado,alta,D205.pdf
+ex224,ex.224,Grabadores Norteamericanos,1978,catálogo,15,1.3,programas/pdf/ex224.pdf,programas/portadas/ex224.jpg,escaneado,alta,d215.pdf
+ex226,ex.226,El Grabado Norteamericano en la Colección del Museo de Arte Moderno La Tertulia,1978,catálogo,16,1.1,programas/pdf/ex226.pdf,programas/portadas/ex226.jpg,escaneado,alta,D195.pdf
+ex231,ex.231,Exposición conmemorativa de los 23 años de vida del Museo de Arte Moderno La Tertulia,1979,programa de mano,4,0.5,programas/pdf/ex231.pdf,programas/portadas/ex231.jpg,escaneado,media,D201.pdf
+ex234,ex.234,Baila Mécanica,1979,catálogo,10,1.2,programas/pdf/ex234.pdf,programas/portadas/ex234.jpg,escaneado,alta,d159.pdf
+ex236,ex.236,La Mujer En Las Artes Visuales,1980,catálogo,20,2.1,programas/pdf/ex236.pdf,programas/portadas/ex236.jpg,escaneado,alta,D189.pdf
+ex239,ex.239,Juan Camilo Uribe Telescopios y Álvaro Barrios Sueños con Marcel Duchamp,1980,catálogo,13,2.2,programas/pdf/ex239.pdf,programas/portadas/ex239.jpg,escaneado,alta,d29.pdf
+ex241,ex.241,Serie Amazónica,1980,catálogo,17,2.2,programas/pdf/ex241.pdf,programas/portadas/ex241.jpg,escaneado,alta,d218.pdf
+ex243,ex.243,IV Bienal Americana de Artes Gráficas,1981,programa de mano,4,0.4,programas/pdf/ex243.pdf,programas/portadas/ex243.jpg,escaneado,media,D200.pdf
+ex251,ex.251,Los Caminos del Bien y del Mal,1982,catálogo,30,6.5,programas/pdf/ex251.pdf,programas/portadas/ex251.jpg,escaneado,media,D203.pdf
+ex255,ex.255,Consagrados Maestros Jóvenes,1982,catálogo,8,1.2,programas/pdf/ex255.pdf,programas/portadas/ex255.jpg,escaneado,alta,d174.pdf
+ex258,ex.258,Gráfica Contemporanea de la Republica Democrática Alemana,1982,catálogo,39,6.9,programas/pdf/ex258.pdf,programas/portadas/ex258.jpg,escaneado,alta,D192.pdf
+ex262,ex.262,Actitudes Plurales,1983,catálogo,28,4.1,programas/pdf/ex262.pdf,programas/portadas/ex262.jpg,escaneado,alta,d162.pdf
+ex266,ex.266,Kunito Nagaoka,1983,catálogo,7,1.4,programas/pdf/ex266.pdf,programas/portadas/ex266.jpg,escaneado,alta,D191.pdf
+ex267,ex.267,Carmen Aldunate,1983,catálogo,16,2.3,programas/pdf/ex267.pdf,programas/portadas/ex267.jpg,escaneado,alta,d219.pdf
+ex275,ex.275,José Hernández,1983,programa de mano,6,0.7,programas/pdf/ex275.pdf,programas/portadas/ex275.jpg,escaneado,alta,d161.pdf
+ex276,ex.276,Doce Artistas Gráficos del Brasil,1983,programa de mano,3,0.3,programas/pdf/ex276.pdf,programas/portadas/ex276.jpg,escaneado,alta,d160.pdf
+ex289,ex.289,John Grillo,1984,catálogo,8,1.0,programas/pdf/ex289.pdf,programas/portadas/ex289.jpg,escaneado,alta,d175.pdf
+ex294,ex.294,Acuarelistas Colombianos,1984,catálogo,17,2.2,programas/pdf/ex294.pdf,programas/portadas/ex294.jpg,escaneado,alta,d9.pdf
+ex297,ex.297,Aspectos de lo Tridimensional en el Arte Colombiano,1984,catálogo,76,8.5,programas/pdf/ex297.pdf,programas/portadas/ex297.jpg,escaneado,alta,d204.pdf
+ex299,ex.299,Margarita Lozano,1984,catálogo,9,0.8,programas/pdf/ex299.pdf,programas/portadas/ex299.jpg,escaneado,alta,D180.pdf
+ex306,ex.306,Alicia Viteri,1985,catálogo,10,1.9,programas/pdf/ex306.pdf,programas/portadas/ex306.jpg,escaneado,alta,D182.pdf
+ex308,ex.308,Pedro Alcántara,1985,catálogo,12,1.4,programas/pdf/ex308.pdf,programas/portadas/ex308.jpg,escaneado,alta,D186.pdf
+ex311,ex.311,Exposición de Francisco Rocca-Lynn,1985,catálogo,12,1.0,programas/pdf/ex311.pdf,programas/portadas/ex311.jpg,escaneado,alta,d163.pdf
+ex314,ex.314,A Cali,1985,catálogo,12,2.0,programas/pdf/ex314.pdf,programas/portadas/ex314.jpg,escaneado,alta,d213.pdf
+ex325,ex.325,Diego Arango Arango,1986,catálogo,8,0.9,programas/pdf/ex325.pdf,programas/portadas/ex325.jpg,escaneado,alta,D194.pdf
+ex334,ex.334,Flor María Bouhot,1987,programa de mano,6,0.8,programas/pdf/ex334.pdf,programas/portadas/ex334.jpg,escaneado,alta,d166.pdf
+ex336,ex.336,José Luis Fajardo,1987,catálogo,61,5.0,programas/pdf/ex336.pdf,programas/portadas/ex336.jpg,escaneado,alta,d167.pdf
+ex337,ex.337,Sergio Camporeale,1987,catálogo,14,1.6,programas/pdf/ex337.pdf,programas/portadas/ex337.jpg,escaneado,alta,D183.pdf
+ex347,ex.347,Vivian Monsalve,1987,programa de mano,2,0.2,programas/pdf/ex347.pdf,programas/portadas/ex347.jpg,escaneado,alta,D198.pdf
+ex348,ex.348,Enrique Sánchez,1987,programa de mano,6,1.3,programas/pdf/ex348.pdf,programas/portadas/ex348.jpg,escaneado,alta,D196.pdf
+ex350,ex.350,Alberto Lenis Burckhardt,1987,programa de mano,4,0.5,programas/pdf/ex350.pdf,programas/portadas/ex350.jpg,escaneado,alta,d165.pdf
+ex352,ex.352,Ossaba,1988,catálogo,13,1.7,programas/pdf/ex352.pdf,programas/portadas/ex352.jpg,escaneado,alta,d217.pdf
+ex370,ex.370,Jan Bartelsman,1988,catálogo,12,1.8,programas/pdf/ex370.pdf,programas/portadas/ex370.jpg,escaneado,alta,D193.pdf
+ex371,ex.371,Juan Antonio Roda,1988,catálogo,11,1.6,programas/pdf/ex371.pdf,programas/portadas/ex371.jpg,escaneado,alta,D207.pdf
+ex372,ex.372,Diez Artistas Chilenos,1988,catálogo,27,2.5,programas/pdf/ex372.pdf,programas/portadas/ex372.jpg,escaneado,alta,d168.pdf
+ex381,ex.381,Fotografías y su Relación,1989,programa de mano,2,0.3,programas/pdf/ex381.pdf,programas/portadas/ex381.jpg,escaneado,alta,d173.pdf
+ex382,ex.382,Tres Artistas de Puerto Rico,1989,programa de mano,6,0.8,programas/pdf/ex382.pdf,programas/portadas/ex382.jpg,escaneado,alta,d170.pdf
+ex383,ex.383,Gráfica OP 89 Duque Se Expone,1989,catálogo,44,5.2,programas/pdf/ex383.pdf,programas/portadas/ex383.jpg,escaneado,alta,d172.pdf
+ex386,ex.386,Cinco Pintores Abstractos,1989,programa de mano,4,0.4,programas/pdf/ex386.pdf,programas/portadas/ex386.jpg,escaneado,alta,d171.pdf
+ex393,ex.393,Homenaje a Adalbert Meindl,1989,programa de mano,2,0.3,programas/pdf/ex393.pdf,programas/portadas/ex393.jpg,escaneado,alta,D199.pdf
+ex394,ex.394,Pinturas Tridimesionales,1989,programa de mano,2,0.2,programas/pdf/ex394.pdf,programas/portadas/ex394.jpg,escaneado,alta,d169.pdf
+ex406,ex.406,Laignelet,1990,catálogo,20,1.8,programas/pdf/ex406.pdf,programas/portadas/ex406.jpg,escaneado,alta,D208.pdf
+ex413,ex.413,Luz de la Cueva de los Sueños,1990,programa de mano,4,0.6,programas/pdf/ex413.pdf,programas/portadas/ex413.jpg,escaneado,alta,D184.pdf
+ex417,ex.417,Luis Caballero,1990,programa de mano,4,0.6,programas/pdf/ex417.pdf,programas/portadas/ex417.jpg,escaneado,alta,d209.pdf
+ex418,ex.418,Bibiana Vélez,1990,programa de mano,4,0.7,programas/pdf/ex418.pdf,programas/portadas/ex418.jpg,escaneado,alta,d216.pdf
+ex428,ex.428,Doce Escultores Colombianos: Pequeño Formato,1991,programa de mano,6,0.8,programas/pdf/ex428.pdf,programas/portadas/ex428.jpg,escaneado,alta,D206.pdf
+ex444,ex.444,Ricardo Gómez Campuzano,1992,catálogo,16,2.8,programas/pdf/ex444.pdf,programas/portadas/ex444.jpg,escaneado,alta,d176.pdf
+ex465,ex.465,Emma Reyes Máscaras,1993,catálogo,16,1.5,programas/pdf/ex465.pdf,programas/portadas/ex465.jpg,escaneado,alta,D185.pdf
+ex499,ex.499,Simón Rodríguez,1995,programa de mano,4,0.6,programas/pdf/ex499.pdf,programas/portadas/ex499.jpg,escaneado,alta,d210.pdf
+ex610,ex.610,Amazonas-Putumayo: Los Colores de la Biodiversidad,2001,catálogo,12,1.6,programas/pdf/ex610.pdf,programas/portadas/ex610.jpg,escaneado,alta,D187.pdf
+ex632,ex.632,Tres Fotográfos de la República Popular China,2002,programa de mano,6,0.6,programas/pdf/ex632.pdf,programas/portadas/ex632.jpg,escaneado,alta,D188.pdf
+ex732,ex.732,Atrato,2007,programa de mano,4,0.7,programas/pdf/ex732.pdf,programas/portadas/ex732.jpg,escaneado,alta,d220.pdf
+ex734,ex.734,"Santiago Harker, Huellas de Plata - Photocali 2007",2007,catálogo,8,2.2,programas/pdf/ex734.pdf,programas/portadas/ex734.jpg,escaneado,media,D177.pdf
+ex744,ex.744,"Eros, dolor y muerte",2009,programa de mano,2,2.4,programas/pdf/ex744.pdf,programas/portadas/ex744.jpg,digital,alta,programa de mano.pdf
+ex745,ex.745,Museo La Tertulia 54 años de historia,2010,programa de mano,24,5.9,programas/pdf/ex745.pdf,programas/portadas/ex745.jpg,digital,alta,cuadrnito2.pdf
+ex747,ex.747,Allora & Calzadilla,2011,programa de mano,2,0.7,programas/pdf/ex747.pdf,programas/portadas/ex747.jpg,digital,alta,prog de mano.ai
+ex750,ex.750,Siete Intelectuales en el Bosque de Bambú,2011,programa de mano,2,0.7,programas/pdf/ex750.pdf,programas/portadas/ex750.jpg,digital,alta,prog de mano Yang Fudong.pdf
+ex751,ex.751,"""Negrita""",2011,programa de mano,2,0.7,programas/pdf/ex751.pdf,programas/portadas/ex751.jpg,digital,alta,prog de mano Negrita.pdf
+ex752,ex.752,Rogelio Salmona. Espacios abiertos / espacios colectivos,2011,programa de mano,2,0.5,programas/pdf/ex752.pdf,programas/portadas/ex752.jpg,digital,alta,Programa.pdf
+ex752,ex.753,Miradas Transversales,2011,programa de mano,2,0.5,programas/pdf/ex752.pdf,programas/portadas/ex752.jpg,digital,alta,Programa.pdf
+ex755,ex.755,Reconfiguraciones,2011,programa de mano,2,0.7,programas/pdf/ex755.pdf,programas/portadas/ex755.jpg,digital,alta,programa de mano.pdf
+ex756,ex.756,Normativo,2011,programa de mano,2,5.4,programas/pdf/ex756.pdf,programas/portadas/ex756.jpg,digital,alta,prog de mano normativo.pdf
+ex758,ex.758,Colección Abierta,2012,programa de mano,2,1.1,programas/pdf/ex758.pdf,programas/portadas/ex758.jpg,digital,alta,plegable_coleccion_abierta.pdf
+ex759,ex.759,Desde el Malestar: ¿Qué cosa es la verdad?,2012,programa de mano,2,1.3,programas/pdf/ex759.pdf,programas/portadas/ex759.jpg,digital,alta,Salón Regional FINAL.pdf
+ex760,ex.760,"Bajo el cemento, la tierra",2012,programa de mano,2,1.7,programas/pdf/ex760.pdf,programas/portadas/ex760.jpg,digital,alta,prog de mano bajo la tierra.pdf
+ex763,ex.763,Víctor Albarracín “El Tratamiento de las Contradicciones”,2012,programa de mano,2,0.6,programas/pdf/ex763.pdf,programas/portadas/ex763.jpg,digital,alta,prog de mano FINAL SALA ALTERNA.pdf
+ex771,ex.771,Protografías,2013,programa de mano,16,4.9,programas/pdf/ex771.pdf,programas/portadas/ex771.jpg,digital,alta,Librillo Oscar Muñoz.pdf
+ex773,ex.773,Testigo de oídas,2014,programa de mano,20,5.6,programas/pdf/ex773.pdf,programas/portadas/ex773.jpg,digital,alta,Prog mano Testigo de Oídas.pdf
+ex775a,ex.775,Acueductos : Rosario López,2014,programa de mano,2,4.3,programas/pdf/ex775a.pdf,programas/portadas/ex775a.jpg,digital,alta,PAGINA WEB plegable Rosario López.pdf
+ex775b,ex.775,Acueductos : Rosario López,2014,catálogo,8,1.1,programas/pdf/ex775b.pdf,programas/portadas/ex775b.jpg,escaneado,alta,d226.pdf
+ex780,ex.780,Cartografías de un mundo conocido,2014,programa de mano,18,3.4,programas/pdf/ex780.pdf,programas/portadas/ex780.jpg,digital,media,Programa de mano BLOC.pdf
+ex781,ex.781,Territorio en discusión,2014,programa de mano,2,4.4,programas/pdf/ex781.pdf,programas/portadas/ex781.jpg,digital,alta,ULTIMO FINAL plegable TD 19 NOV.pdf
+ex782,ex.782,Tejadita: viajero y sibarita,2014,programa de mano,23,4.8,programas/pdf/ex782.pdf,programas/portadas/ex782.jpg,digital,alta,Programa de mano TEJADITA.pdf
+ex784,ex.784,Sexta Rotación: La Colección del Museo La Tertulia en Diálogo con la colección de la Fundación Arte Vivo Otero Herrera,2015,programa de mano,24,1.3,programas/pdf/ex784.pdf,programas/portadas/ex784.jpg,digital,alta,Prog Coleccion Museo.pdf
+ex787,ex.787,Un hechizo en el espacio,2015,programa de mano,2,0.8,programas/pdf/ex787.pdf,programas/portadas/ex787.jpg,digital,alta,fotocopia FINAL EXPO ERICKA.pdf
+ex788,ex.788,El diablo probablemente,2015,programa de mano,18,1.8,programas/pdf/ex788.pdf,programas/portadas/ex788.jpg,digital,alta,programa Expo DIABLO.pdf
+ex794,ex.794,Rompecabezas,2015,programa de mano,2,0.9,programas/pdf/ex794.pdf,programas/portadas/ex794.jpg,digital,alta,PROGRAMA DE MANO Roldan.pdf
+ex797,ex.797,Dash Shaw + Luis Echavaría: El fantasma que no se ve,2015,programa de mano,2,1.7,programas/pdf/ex797.pdf,programas/portadas/ex797.jpg,digital,alta,Programa de mano Viñetas.pdf
+ex799,ex.799,Los detalles,2015,programa de mano,2,2.3,programas/pdf/ex799.pdf,programas/portadas/ex799.jpg,digital,alta,Programa de mano CURVAS.pdf
+ex800,ex.800,Colonia Infancia: El reino del arte para explorar los sentidos,2015,programa de mano,2,3.0,programas/pdf/ex800.pdf,programas/portadas/ex800.jpg,digital,alta,programa de mano-colonia II 2016.pdf
+ex801,ex.801,Rembrandt : 69 grabados 1630-1659,2015,programa de mano,20,8.3,programas/pdf/ex801.pdf,programas/portadas/ex801.jpg,digital,alta,PROGRAMA DE MANO 2016.pdf
+ex802,ex.802,Noche es Día,2015,programa de mano,2,4.1,programas/pdf/ex802.pdf,programas/portadas/ex802.jpg,digital,alta,PROG DE MANO noche es dia print.pdf
+ex804,ex.804,Paciente. El cuerpo bajo sospecha,2016,programa de mano,2,5.0,programas/pdf/ex804.pdf,programas/portadas/ex804.jpg,digital,alta,Programa de mano 12 Abril.pdf
+ex805,ex.805,Beatriz González: El segundo original,2016,programa de mano,21,0.8,programas/pdf/ex805.pdf,programas/portadas/ex805.jpg,digital,alta,catalogoBG Cali Final.pdf
+ex806,ex.806,Tratado sobre la insurrección de la pintura O El tercer lado del espejo,2016,programa de mano,2,3.0,programas/pdf/ex806.pdf,programas/portadas/ex806.jpg,digital,alta,Programa Carta.pdf
+ex808,ex.808,Future Perfect,2016,programa de mano,7,5.1,programas/pdf/ex808.pdf,programas/portadas/ex808.jpg,digital,alta,Programa Future orden.pdf
+ex810,ex.810,La Forma Del Futuro,2016,programa de mano,2,3.0,programas/pdf/ex810.pdf,programas/portadas/ex810.jpg,digital,alta,Progrma de Mano la forma del futuro.pdf
+ex811,ex.811,Alex Rodríguez: Objetos de estudio para una república popular demediada,2016,programa de mano,8,0.5,programas/pdf/ex811.pdf,programas/portadas/ex811.jpg,digital,alta,prog Alex FINAL.pdf
+ex813,ex.813,Hacia el litoral,2016,programa de mano,2,0.8,programas/pdf/ex813.pdf,programas/portadas/ex813.jpg,digital,alta,Programa Impresion.pdf
+ex818,ex.818,A propósito del lugar,2016,programa de mano,4,1.3,programas/pdf/ex818.pdf,programas/portadas/ex818.jpg,digital,alta,Programa Toro FINAL.pdf
+ex826,ex.826,Francisco Todó,1970,programa de mano,5,0.4,programas/pdf/ex826.pdf,programas/portadas/ex826.jpg,escaneado,alta,d78.pdf
+ex827,ex.827,"Cali 71, ciudad de América Entre proyecto y realidad",2016,programa de mano,5,4.4,programas/pdf/ex827.pdf,programas/portadas/ex827.jpg,digital,alta,PROGRAMA BAJA.pdf
+ex828,ex.828,Ever Astudillo: Crimen Perfecto,2016,programa de mano,2,0.9,programas/pdf/ex828.pdf,programas/portadas/ex828.jpg,digital,alta,Programa Ever Impresion.pdf
+ex829,ex.829,Fernell Franco: Revelado,2016,programa de mano,2,3.4,programas/pdf/ex829.pdf,programas/portadas/ex829.jpg,digital,alta,Programa Fernell Impresion.pdf
+ex830,ex.830,El ejercicio de la empatía,2016,programa de mano,2,2.3,programas/pdf/ex830.pdf,programas/portadas/ex830.jpg,digital,alta,Programa Oscar impresion.pdf
+ex831,ex.831,Artist Talking Back to the Media,2016,programa de mano,2,2.4,programas/pdf/ex831.pdf,programas/portadas/ex831.jpg,digital,alta,Programa de mano.pdf
+ex832,ex.832,Universo Holograma,2017,programa de mano,2,2.4,programas/pdf/ex832.pdf,programas/portadas/ex832.jpg,digital,alta,Programa Universo Holograma 24 Marzo.pdf
+ex834,ex.834,Karen Lamassonne. Desnuda astucia del deseo,2017,programa de mano,5,0.6,programas/pdf/ex834.pdf,programas/portadas/ex834.jpg,digital,alta,Programa de mano 2.pdf
+ex837,ex.837,Es arriba es abajo,2017,programa de mano,2,2.4,programas/pdf/ex837.pdf,programas/portadas/ex837.jpg,digital,alta,Programa Mariangela Impresion.pdf
+ex838,ex.838,Jugar al museo. Un museo dentro del museo,2017,programa de mano,2,0.1,programas/pdf/ex838.pdf,programas/portadas/ex838.jpg,digital,alta,Programa Jugar al Museo.pdf
+ex839,ex.839,Carlos Amorales. Herramientas de trabajo,2017,programa de mano,2,0.5,programas/pdf/ex839.pdf,programas/portadas/ex839.jpg,digital,alta,Programa Amorales.pdf
+ex840,ex.840,¡Oído Pueblo! Ritmo y economía en Cali,2017,programa de mano,2,1.0,programas/pdf/ex840.pdf,programas/portadas/ex840.jpg,digital,alta,Programa Oido Pueblo Dic 12_corrección final.pdf
+ex841,ex.841,En Cauce,2017,programa de mano,2,4.3,programas/pdf/ex841.pdf,programas/portadas/ex841.jpg,digital,alta,Programa En Cauce_Dic 11.pdf
+ex843,ex.843,No todos los amores de Platón fueron imposibles,2018,programa de mano,6,0.4,programas/pdf/ex843.pdf,programas/portadas/ex843.jpg,digital,alta,Programa Sonnia.pdf
+ex844,ex.844,De frente me escondo. Powerpaola,2018,programa de mano,5,1.0,programas/pdf/ex844.pdf,programas/portadas/ex844.jpg,digital,alta,Programa FINAL.pdf
+ex845,ex.845,(El otro lado de la) Carretera al mar,2018,programa de mano,8,2.7,programas/pdf/ex845.pdf,programas/portadas/ex845.jpg,digital,alta,Programa Carretera_Final.pdf
+ex846,ex.846,"Allá nos veremos, sin sombra y sin faz",2018,programa de mano,6,0.6,programas/pdf/ex846.pdf,programas/portadas/ex846.jpg,digital,alta,Programa Adriana para web.pdf
+ex847,ex.847,Las populares Gráficas Molinari,2018,programa de mano,6,0.5,programas/pdf/ex847.pdf,programas/portadas/ex847.jpg,digital,alta,Programa Expo Molinari digital.pdf
+ex848,ex.848,Savia Solaris,2018,programa de mano,7,1.8,programas/pdf/ex848.pdf,programas/portadas/ex848.jpg,digital,alta,Programa de mano Carolina Charry.pdf
+ex850,ex.850,World Press Photo 2018,2018,programa de mano,2,5.0,programas/pdf/ex850.pdf,programas/portadas/ex850.jpg,digital,alta,Prog mano WPP 2018 FINAL.pdf
+ex851,ex.851,Abandonen toda esperanza,2018,programa de mano,7,4.0,programas/pdf/ex851.pdf,programas/portadas/ex851.jpg,digital,alta,Programa Expo Abandonen Toda Esperanza DIGITAL.pdf
+ex852,ex.852,Reserva abierta. ¿Por fin Cali sabrá lo que tiene?,2018,programa de mano,16,1.9,programas/pdf/ex852.pdf,programas/portadas/ex852.jpg,digital,alta,Programa Reserva arbierta web.pdf
+ex853,ex.853,Trazar el umbral,2018,programa de mano,8,5.2,programas/pdf/ex853.pdf,programas/portadas/ex853.jpg,digital,alta,Programa de mano Juan Guillermo Tamayo Final.pdf
+ex855,ex.855,"El carácter de la tradición en la arquitectura de Barney, Távora, Coderch",2019,programa de mano,2,2.0,programas/pdf/ex855.pdf,programas/portadas/ex855.jpg,digital,alta,Programa Expo Caracter FINAL.pdf
+ex856,ex.856,Srape Pøtø Tul-yu. El último círculo,2019,programa de mano,5,5.9,programas/pdf/ex856.pdf,programas/portadas/ex856.jpg,digital,alta,Programa El último círculo.pdf
+ex857a,ex.857,Exposición ganadores BLOC 2018,2019,programa de mano,12,0.2,programas/pdf/ex857a.pdf,programas/portadas/ex857a.jpg,digital,alta,Prog. Herlyng Ferla FINAL.pdf
+ex857b,ex.857,Exposición ganadores BLOC 2018,2019,programa de mano,13,2.2,programas/pdf/ex857b.pdf,programas/portadas/ex857b.jpg,digital,alta,Programa Vanessa Ortiz web.pdf
+ex858,ex.858,La unión que separa las cosas. BLOC 2018,2019,programa de mano,2,0.5,programas/pdf/ex858.pdf,programas/portadas/ex858.jpg,digital,alta,Programa de mano Bloc.pdf
+ex860,ex.860,"Manglaria. Raíces, vínculos y sujeciones",2019,programa de mano,2,1.6,programas/pdf/ex860.pdf,programas/portadas/ex860.jpg,digital,alta,Programa de Mano Manglaria.pdf
+ex863,ex.863,Fractales,2019,programa de mano,7,0.4,programas/pdf/ex863.pdf,programas/portadas/ex863.jpg,digital,alta,Programa de mano Mónica Vilá baja.pdf
+ex865,ex.865,El ruido del silencio,2019,programa de mano,7,0.9,programas/pdf/ex865.pdf,programas/portadas/ex865.jpg,digital,alta,El Ruido del Silencio digital.pdf
+ex866,ex.866,María Thereza Negreiros y 16 mujeres artistas de su generación,2020,programa de mano,12,2.5,programas/pdf/ex866.pdf,programas/portadas/ex866.jpg,digital,alta,Programa de mano MTN digital.pdf
+ex875,ex.875,La escuela del desencanto,2020,programa de mano,16,3.0,programas/pdf/ex875.pdf,programas/portadas/ex875.jpg,digital,alta,Prog. Catalina Jaramillo WEB.pdf
+ex896,ex.896,EOCL,2018,programa de mano,16,13.9,programas/pdf/ex896.pdf,programas/portadas/ex896.jpg,digital,alta,Programa BLOC_final.pdf
+ex929,ex.929,Radiar memorias. Diálogos con el Carare,2017,programa de mano,2,4.1,programas/pdf/ex929.pdf,programas/portadas/ex929.jpg,digital,alta,Programa Radiar Agosto 18 FINAL.pdf
+ex931,ex.931,El Río suena. Temporada de laboratorios,2017,programa de mano,2,1.3,programas/pdf/ex931.pdf,programas/portadas/ex931.jpg,digital,alta,Programa_El Río Suena Dic 8.pdf
+ex915,ex.915,Mateo López. Pasado futurista,2025,programa de mano,5,1.7,programas/pdf/ex915.pdf,programas/portadas/ex915.jpg,web,alta,PASADO-FUTURISTA.pdf
+ex916,ex.916,Espejo de luz,2026,programa de mano,4,2.0,programas/pdf/ex916.pdf,programas/portadas/ex916.jpg,web,alta,ESPEJO-DE-LUZ.pdf
+ex917,ex.917,Carlos Garaicoa. Ciudad Armero,2026,programa de mano,4,6.5,programas/pdf/ex917.pdf,programas/portadas/ex917.jpg,web,alta,CIUDAD-ARMERO.pdf

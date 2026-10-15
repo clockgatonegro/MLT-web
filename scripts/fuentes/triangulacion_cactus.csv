@@ -58,7 +58,7 @@ ex.807,confirma,existencia,,CASA OBESO/PENDON/PENDONES EXTERIORES/PENDONES.ai,"J
 ex.811,confirma,fecha_ini,2016-07-29,Exposiciones 2016/PROGRAMA C/ALEX RODRIGUEZ/INVITACION/sticker 29 Julio.ai,
 ex.808,confirma,existencia,,Exposiciones 2016/EXPO FUTURE PERFECT,Fichas técnicas y piezas
 ex.813,confirma,fecha_ini,2016-09-23,Exposiciones 2016/Hacia el litoral/Invitación/Invitación 15 Sept.pdf,
-ex.810,conflicto,fecha_ini,2016-09-24,Exposiciones 2016/LA FORMA DEL FUTURO/Documento word piezas La Forma del Futuro.docx,El texto de la invitación virtual anuncia el sábado 24 de septiembre; la base dice 8 de octubre
+ex.810,resuelto,fecha_ini,2016-09-24,Exposiciones 2016/LA FORMA DEL FUTURO/Documento word piezas La Forma del Futuro.docx,El texto de la invitación virtual anuncia el sábado 24 de septiembre; la base dice 8 de octubre
 ex.818,corrige,fecha_fin,2017-02-12,Exposiciones 2016/CALI 71 - CIUDAD DE AMERICA/CARPETA INVITACION/Documento word  textos INVITACIÓN 15 DICIEMBRE.docx,Postal: «Noviembre 9 2016 | Febrero 12 2017»; la base tenía 2017-02-05
 ex.829,corrige,fecha_fin,2017-03-05,Exposiciones 2016/EXPO FERNELL Y EVER/EXPO FERNELL FRANCO/Documento word  textos piezas-  Fernell Franco.docx,Piezas y postal: «Diciembre 15 2016 – Marzo 5 de 2017»; la base tenía 2017-03-12
 ex.828,resuelto,fecha_fin,2017-05-14,Exposiciones 2016/CALI 71 - CIUDAD DE AMERICA/CARPETA INVITACION/Documento word  textos INVITACIÓN 15 DICIEMBRE.docx,La postal anuncia cierre el 14 de mayo de 2017; la base dice 10 de septiembre (¿prórroga?)
@@ -151,3 +151,10 @@ ex.925,duplicado,ex.927,,EXPOSICIONES 2017/LA ESCENA sala sub/Banners/Banners.ai
 ex.927,confirma,fecha_ini,2017-01-28,EXPOSICIONES 2017/LA ESCENA sala sub/Banners/Banners.ai,«Apertura de la sala didáctica La Escena. Sábado 28 de enero»
 ex.878,retira,,,Confirmado por los autores (15/10/2026),"Feria editorial, no exposición"
 ex.889,retira,,,Confirmado por los autores (15/10/2026),"Feria editorial, no exposición"
+ex.810,confirma,fecha_ini,2016-10-08,Confirmado por los autores (15/10/2026),Abrió el 8 de octubre de 2016; la invitación anunciaba el 24 de septiembre
+ex.880,agrega,fecha_ini,2021-02-13,2021/ENTREGA CACTUS MUSEO JUL 2021/2021/2. Exposiciones/Barrio Adentro/Invitación WP/Barrio Adentro-05.png,«Sábado 13 de febrero | 2:00 p.m. Casa Obeso Mejía»
+ex.877,agrega,participantes,3 curadores,2020/EXPOSICIONES 2020/Manual de instrucciones/Invitación digital/Invitación digital MDI.png,«Curaduría: Laura Puerta, Carlos Hoyos Bucheli, Alejandro Martín»
+ex.873,confirma,fecha_ini,2020-10-01,2020/EXPOSICIONES 2020/SMArt 2020/Redes/El resplandor IG.png,«Una exposición de Stephanie Montes. Inauguración: jueves 1 de octubre»
+ex.842,confirma,fecha_ini,2018-02-13,Exposiciones 2018/Costutero viajero/Piezas/invitación virtual Costurero viajero.ai,«Martes 13 de febrero» (2018)
+ex.854,confirma,fecha_ini,2018-12-15,Exposiciones 2018/Aula Flexible/Piezas/Invitación virtual/Invitación Aula-02.jpg,«Apertura Dic 15 / 2018»
+ex.932,confirma,fecha_ini,2018-07-28,Exposiciones 2018/Museo Popular de Siloé/Invitación/Invitación - Museo Popular.jpg,«Inauguración sábado 28 de julio»

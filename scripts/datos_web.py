@@ -1,4 +1,4 @@
-import csv,json,collections,datetime
+import os,csv,json,collections,datetime
 import networkx as nx
 E=list(csv.DictReader(open('salida/exposiciones.csv')));A=list(csv.DictReader(open('salida/agentes.csv')));R=list(csv.DictReader(open('salida/aristas.csv')))
 MOD={'individual':0,'colectiva':1,'n/d':2}
@@ -13,7 +13,7 @@ idx={};nodes=[]
 for e in E:
     idx[e['Id']]=len(nodes)
     src=e['fuente_url'] or ''
-    nodes.append([e['Id'],e['Label'],0,int(e['ano']) if e['ano'] else None,e['fecha_ini'],e['fecha_fin'],e['espacio'],MOD[e['modalidad']],src,e['pieza_cactus'],e['tipo_expo'],dias(e['fecha_ini'],e['fecha_fin']),0 if e['confianza'] in ('base_MLT','alta') else 1])
+    nodes.append([e['Id'],e['Label'],0,int(e['ano']) if e['ano'] else None,e['fecha_ini'],e['fecha_fin'],e['espacio'],MOD[e['modalidad']],src,1 if (e['pieza_cactus'] or e.get('fuentes_cactus')) else 0,e['tipo_expo'],dias(e['fecha_ini'],e['fecha_fin']),0 if e['confianza'] in ('base_MLT','alta') else 1,1 if e['fuente']=='MLT_DB_07_2016' else 0])
 cl={'persona':1,'organizacion':2,'sin_catalogar':3}
 for a in A:
     idx[a['Id']]=len(nodes); nodes.append([a['Id'],a['Label'],cl[a['clase']],a['nacionalidad'],a['ocupacion'],a['ano_nacimiento'],a['ano_muerte']])
@@ -69,5 +69,15 @@ for i in range(len(PER)-2):
     ns=list(dg);nxt=[dg2.get(n,0) for n in ns]
     pred.append([PER[i],PER[i+1],round(spearmanr([ev.get(n,0) for n in ns],nxt).correlation,2),round(spearmanr([dg[n] for n in ns],nxt).correlation,2),len(ns),sum(1 for v in nxt if v)])
 print(pred)
-json.dump({'n':nodes,'e':edges,'per':PER,'comm':comm,'met':met,'pred':pred},open('datos_web.json','w'),ensure_ascii=False,separators=(',',':'))
+# programas de mano (PDF) y piezas gráficas (imagen) por exposición: [id, páginas, MB, tipo, 'pdf'|'img']
+prog={}
+W='/home/claude/mlt-web/'
+if os.path.exists(W+'data/programas.csv'):
+    for r in csv.DictReader(open(W+'data/programas.csv',encoding='utf-8')):
+        if r['id_expo'] in idx: prog.setdefault(r['id_expo'],[]).append([r['id_programa'],int(r['paginas']),float(r['mb']),r['tipo'],'pdf'])
+if os.path.exists(W+'data/piezas_fuentes.csv'):
+    for r in csv.DictReader(open(W+'data/piezas_fuentes.csv',encoding='utf-8')):
+        i=r['id_expo'].replace('.','')
+        if r['id_expo'] in idx: prog.setdefault(r['id_expo'],[]).append([i,1,round(os.path.getsize(W+'programas/piezas/'+i+'.jpg')/1e6,1),r['tipo'],'img'])
+json.dump({'n':nodes,'e':edges,'per':PER,'comm':comm,'met':met,'pred':pred,'prog':prog},open('datos_web.json','w'),ensure_ascii=False,separators=(',',':'))
 import os;print(os.path.getsize('datos_web.json'))

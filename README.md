@@ -31,6 +31,24 @@ Archivos CSV en UTF-8, listos para Gephi (Laboratorio de datos → Importar hoja
 
 `data/MLT_DB_07_2016 - enlaces-MLT.csv` es la lista de enlaces original de 2016 y se conserva sin cambios.
 
+## Programas de mano, catálogos y piezas gráficas (`programas/`)
+
+La ficha de cada exposición muestra la portada de su programa de mano o catálogo, cuando existe, con enlaces para verlo o descargarlo en PDF. Las exposiciones de 2009–2021 sin programa muestran, cuando la hay, una pieza gráfica de Cactus Taller Gráfico (invitación, afiche, pendón o pieza para redes), aprobada por los autores.
+
+- `programas/pdf/` — copias livianas de los programas (unos 480 MB). No se versionan: se suben al servidor junto a `index.html`.
+- `programas/portadas/` y `programas/piezas/` — portadas e imágenes completas de las piezas.
+- `data/programas.csv` — un renglón por programa y exposición: tipo, páginas, peso, origen y confianza del cruce.
+- `data/programas_fuentes.csv` — cruce hecho a mano entre cada archivo original y su exposición, con el recorte de la portada.
+- `data/piezas_fuentes.csv` — pieza gráfica elegida para cada exposición sin programa.
+
+Los programas preparados para imprenta se recortan a ras (TrimBox) para que no se vean las marcas de corte. Los originales están en el disco Mackup:
+
+```
+MLT_ORIGINALES=/Volumes/Mackup/Proyectos uv run --with pymupdf --with pillow python scripts/programas.py
+MLT_ORIGINALES=/Volumes/Mackup/Proyectos uv run --with pymupdf --with pillow python scripts/recortar_marcas.py
+MLT_ORIGINALES=/Volumes/Mackup/Proyectos uv run --with pymupdf --with pillow python scripts/piezas.py
+```
+
 ## Regenerar (`scripts/`)
 
 ```

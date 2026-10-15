@@ -159,131 +159,153 @@ ex.926,apoyan_auspicia,Parque Explora,n.53
 ex.929,artistas,Fundación Sub/Liminal,n.147
 ex.929,apoyan_auspicia,Centro Nacional de Memoria Histórica,n.148
 ex.932,artistas,Museo Popular de Siloé,n.149
-ex.181,artistas,Eugenio Darnet,n.150
-ex.181,artistas,Graciela Zar,n.151
-ex.181,artistas,Teresa Vila,n.152
-ex.181,artistas,José Avelino Vieira de Paula,n.153
-ex.181,artistas,Rodolfo Velásquez,n.154
-ex.181,artistas,Gersaín Triviño,n.155
-ex.181,artistas,Harold Town,n.156
-ex.181,artistas,Roger François Thepot,n.157
-ex.181,artistas,Manoel Augusto Serpa Andrade,n.158
-ex.181,artistas,Fritz Scholder,n.159
-ex.181,artistas,Jorge Satut,n.160
-ex.181,artistas,Nelson Romero,n.161
-ex.181,artistas,Edo Rocha,n.162
-ex.181,artistas,Joaquín Roca-Rey,n.163
-ex.181,artistas,Ricardo Regazzoni,n.164
-ex.181,artistas,Joaquim Redig de Campos,n.165
-ex.181,artistas,Arisio Rabim,n.166
-ex.181,artistas,Pedro Preux,n.167
-ex.181,artistas,Sergio Augusto Porto,n.168
-ex.181,artistas,Gustavo Pardo Sarmiento,n.169
-ex.181,artistas,Jacques Palumbo,n.170
-ex.181,artistas,Agustín Olavarría Valdivia,n.171
-ex.181,artistas,Marcello Nitsche,n.172
-ex.181,artistas,Sara Muller,n.173
-ex.181,artistas,Kurt Muller,n.174
-ex.181,artistas,Rubén Montoya,n.175
-ex.181,artistas,Newton Montenegro de Lima,n.176
-ex.181,artistas,Rodolfo Mishaan,n.177
-ex.181,artistas,Soledad Mendoza,n.178
-ex.181,artistas,Heber Marchisio,n.179
-ex.181,artistas,John MacGregor,n.180
-ex.181,artistas,Rita Letendre,n.181
-ex.181,artistas,Antonio Larrea,n.182
-ex.181,artistas,Vicente Larrea,n.183
-ex.181,artistas,Tito Kuramoto,n.184
-ex.181,artistas,Katya Kohn,n.185
-ex.181,artistas,Martela de Guruceaga,n.186
-ex.181,artistas,Antonio Granados Valdés,n.187
-ex.181,artistas,Martha Gavensky,n.188
-ex.181,artistas,Juan Antonio García Gayou,n.189
-ex.181,artistas,Jesús Emilio Franco,n.190
-ex.181,artistas,Oscar Ferrando,n.191
-ex.181,artistas,Angelo De Aquino,n.192
-ex.181,artistas,Fernando Dávila,n.193
-ex.181,artistas,Adriano D'Aquino,n.194
-ex.181,artistas,Greg Curnoe,n.195
-ex.181,artistas,Diana Cuervo,n.196
-ex.181,artistas,Valentina Cruz,n.197
-ex.181,artistas,Jack Coughlin,n.198
-ex.181,artistas,Luis Córdoba Salazar,n.199
-ex.181,artistas,Fernando Coral Dueñas,n.200
-ex.181,artistas,Julio Coll Rojas,n.201
-ex.181,artistas,Jorge Ceballos,n.202
-ex.181,artistas,Juan M. Calle,n.203
-ex.181,artistas,Álvaro Armesto,n.204
-ex.827,artista,Hernán Nicholls,n.205
-ex.827,artista,Diana Buitrón,n.206
-ex.827,artista,Taller 4 Rojo,n.207
-ex.827,artista,Nicolás Ramos Gómez,n.208
-ex.827,artista,Indira Gironza Bravo,n.209
-ex.827,artista,Jorge Silva,n.210
-ex.831,artista,Ana María Montenegro,n.211
-ex.831,artista,Oliver Laric,n.212
-ex.831,artista,Ulises Carrión,n.213
-ex.831,artista,Elodie Pong,n.214
-ex.831,artista,Barbara Bloom,n.215
-ex.831,artista,Douwe Dijkstra,n.216
-ex.831,artista,Donna Verheijden,n.217
-ex.831,artista,Lous America,n.218
-ex.831,artista,David Garcia,n.219
-ex.831,artista,Henk Wijnen,n.220
-ex.831,artista,Annie Wright,n.221
-ex.831,artista,Lydia Schouten,n.222
-ex.831,artista,Eddie D,n.223
-ex.831,artista,Barbara Kruger,n.224
-ex.831,artista,Eric Bogosian,n.225
-ex.831,artista,John Baldessari,n.226
-ex.831,artista,General Idea,n.227
-ex.831,artista,Sebastián López,n.228
-ex.831,artista,Saskia Bos,n.229
-ex.831,artista,Jouke Kleerebezem,n.230
-ex.845,artista,Rhonal Stiven Valencia Cuero,n.231
-ex.845,artista,Carlos Martiel,n.232
-ex.845,artista,Oscar Moreno Escárrega,n.233
-ex.845,artista,CaldodeCultivo,n.234
-ex.852,artista,Luis Roldán,n.235
-ex.852,artista,José Olano,n.236
-ex.852,artista,Gustavo Henao Zamora,n.237
-ex.847,artista,Pedro Manrique Figueroa,n.238
-ex.847,artista,María Ximena Laverde,n.239
-ex.847,artista,Nobara Catalina Hayakawa,n.240
-ex.847,artista,Nelson Garrido,n.241
-ex.847,artista,Nina S. de Friedemann,n.242
-ex.847,artista,Saturnina Sánchez,n.243
+ex.933,apoyan_auspicia,Rosa Contemporánea Eventos y Logística,n.150
+ex.933,apoyan_auspicia,360 Group Colombia,n.151
+ex.933,apoyan_auspicia,Bitaco,n.152
+ex.933,apoyan_auspicia,Corona,n.153
+ex.933,apoyan_auspicia,Evok,n.154
+ex.933,apoyan_auspicia,Marquetería Arte Moderno,n.155
+ex.933,apoyan_auspicia,Aritex de Colombia,n.156
+ex.933,apoyan_auspicia,El Molino,n.157
+ex.933,apoyan_auspicia,Carnes Frías Enriko,n.158
+ex.933,apoyan_auspicia,Krima,n.159
+ex.933,apoyan_auspicia,La Cocina Cali,n.160
+ex.933,apoyan_auspicia,Queso Labrantío,n.161
+ex.933,apoyan_auspicia,Impresos Richard,n.162
+ex.933,apoyan_auspicia,Huevos Santa Anita,n.163
+ex.933,apoyan_auspicia,Manitoba,n.164
+ex.933,apoyan_auspicia,Sokolata,n.165
+ex.933,apoyan_auspicia,Sweet Vanessa,n.166
+ex.933,apoyan_auspicia,Vizio,n.167
+ex.933,apoyan_auspicia,Verdissimo,n.168
+ex.933,apoyan_auspicia,Zahavi Repostería Gourmet,n.169
+ex.933,apoyan_auspicia,Zonin Prosecco,n.170
+ex.933,apoyan_auspicia,Orquídeas del Valle,n.171
+ex.181,artistas,Eugenio Darnet,n.172
+ex.181,artistas,Graciela Zar,n.173
+ex.181,artistas,Teresa Vila,n.174
+ex.181,artistas,José Avelino Vieira de Paula,n.175
+ex.181,artistas,Rodolfo Velásquez,n.176
+ex.181,artistas,Gersaín Triviño,n.177
+ex.181,artistas,Harold Town,n.178
+ex.181,artistas,Roger François Thepot,n.179
+ex.181,artistas,Manoel Augusto Serpa Andrade,n.180
+ex.181,artistas,Fritz Scholder,n.181
+ex.181,artistas,Jorge Satut,n.182
+ex.181,artistas,Nelson Romero,n.183
+ex.181,artistas,Edo Rocha,n.184
+ex.181,artistas,Joaquín Roca-Rey,n.185
+ex.181,artistas,Ricardo Regazzoni,n.186
+ex.181,artistas,Joaquim Redig de Campos,n.187
+ex.181,artistas,Arisio Rabim,n.188
+ex.181,artistas,Pedro Preux,n.189
+ex.181,artistas,Sergio Augusto Porto,n.190
+ex.181,artistas,Gustavo Pardo Sarmiento,n.191
+ex.181,artistas,Jacques Palumbo,n.192
+ex.181,artistas,Agustín Olavarría Valdivia,n.193
+ex.181,artistas,Marcello Nitsche,n.194
+ex.181,artistas,Sara Muller,n.195
+ex.181,artistas,Kurt Muller,n.196
+ex.181,artistas,Rubén Montoya,n.197
+ex.181,artistas,Newton Montenegro de Lima,n.198
+ex.181,artistas,Rodolfo Mishaan,n.199
+ex.181,artistas,Soledad Mendoza,n.200
+ex.181,artistas,Heber Marchisio,n.201
+ex.181,artistas,John MacGregor,n.202
+ex.181,artistas,Rita Letendre,n.203
+ex.181,artistas,Antonio Larrea,n.204
+ex.181,artistas,Vicente Larrea,n.205
+ex.181,artistas,Tito Kuramoto,n.206
+ex.181,artistas,Katya Kohn,n.207
+ex.181,artistas,Martela de Guruceaga,n.208
+ex.181,artistas,Antonio Granados Valdés,n.209
+ex.181,artistas,Martha Gavensky,n.210
+ex.181,artistas,Juan Antonio García Gayou,n.211
+ex.181,artistas,Jesús Emilio Franco,n.212
+ex.181,artistas,Oscar Ferrando,n.213
+ex.181,artistas,Angelo De Aquino,n.214
+ex.181,artistas,Fernando Dávila,n.215
+ex.181,artistas,Adriano D'Aquino,n.216
+ex.181,artistas,Greg Curnoe,n.217
+ex.181,artistas,Diana Cuervo,n.218
+ex.181,artistas,Valentina Cruz,n.219
+ex.181,artistas,Jack Coughlin,n.220
+ex.181,artistas,Luis Córdoba Salazar,n.221
+ex.181,artistas,Fernando Coral Dueñas,n.222
+ex.181,artistas,Julio Coll Rojas,n.223
+ex.181,artistas,Jorge Ceballos,n.224
+ex.181,artistas,Juan M. Calle,n.225
+ex.181,artistas,Álvaro Armesto,n.226
+ex.827,artista,Hernán Nicholls,n.227
+ex.827,artista,Diana Buitrón,n.228
+ex.827,artista,Taller 4 Rojo,n.229
+ex.827,artista,Nicolás Ramos Gómez,n.230
+ex.827,artista,Indira Gironza Bravo,n.231
+ex.827,artista,Jorge Silva,n.232
+ex.831,artista,Ana María Montenegro,n.233
+ex.831,artista,Oliver Laric,n.234
+ex.831,artista,Ulises Carrión,n.235
+ex.831,artista,Elodie Pong,n.236
+ex.831,artista,Barbara Bloom,n.237
+ex.831,artista,Douwe Dijkstra,n.238
+ex.831,artista,Donna Verheijden,n.239
+ex.831,artista,Lous America,n.240
+ex.831,artista,David Garcia,n.241
+ex.831,artista,Henk Wijnen,n.242
+ex.831,artista,Annie Wright,n.243
+ex.831,artista,Lydia Schouten,n.244
+ex.831,artista,Eddie D,n.245
+ex.831,artista,Barbara Kruger,n.246
+ex.831,artista,Eric Bogosian,n.247
+ex.831,artista,John Baldessari,n.248
+ex.831,artista,General Idea,n.249
+ex.831,artista,Sebastián López,n.250
+ex.831,artista,Saskia Bos,n.251
+ex.831,artista,Jouke Kleerebezem,n.252
+ex.845,artista,Rhonal Stiven Valencia Cuero,n.253
+ex.845,artista,Carlos Martiel,n.254
+ex.845,artista,Oscar Moreno Escárrega,n.255
+ex.845,artista,CaldodeCultivo,n.256
+ex.852,artista,Luis Roldán,n.257
+ex.852,artista,José Olano,n.258
+ex.852,artista,Gustavo Henao Zamora,n.259
+ex.847,artista,Pedro Manrique Figueroa,n.260
+ex.847,artista,María Ximena Laverde,n.261
+ex.847,artista,Nobara Catalina Hayakawa,n.262
+ex.847,artista,Nelson Garrido,n.263
+ex.847,artista,Nina S. de Friedemann,n.264
+ex.847,artista,Saturnina Sánchez,n.265
 ex.847,artista,Erick Beltrán,n.11
-ex.847,artista,Diana Cuartas,n.244
-ex.847,curador,Mariana Rodríguez,n.245
-ex.866,artista,Judith Márquez,n.246
+ex.847,artista,Diana Cuartas,n.266
+ex.847,curador,Mariana Rodríguez,n.267
+ex.866,artista,Judith Márquez,n.268
 ex.860,artista,Laura Campaz,n.86
-ex.860,artista,Andrea Payán,n.247
-ex.860,artista,Pablo Daza,n.248
-ex.860,artista,Diego Salas,n.249
+ex.860,artista,Andrea Payán,n.269
+ex.860,artista,Pablo Daza,n.270
+ex.860,artista,Diego Salas,n.271
 ex.860,artista,Johan Samboní,n.45
-ex.860,artista,Juan Durán,n.250
-ex.860,artista,William Villota,n.251
-ex.860,artista,Angie Montenegro,n.252
+ex.860,artista,Juan Durán,n.272
+ex.860,artista,William Villota,n.273
+ex.860,artista,Angie Montenegro,n.274
 ex.860,artista,Christian Velásquez,n.46
-ex.860,artista,Margarita Ariza,n.253
-ex.860,artista,Walter Caicedo,n.254
-ex.860,artista,Jordan Ramírez,n.255
-ex.860,artista,Ximena Vásquez,n.256
-ex.860,artista,Carmenza Banguera,n.257
-ex.860,artista,Minia Bibiabiany,n.258
-ex.860,artista,Laura Rodríguez,n.259
-ex.860,artista,Katherine Díaz,n.260
-ex.860,artista,José Manuel Cuesta,n.261
-ex.860,artista,Diego Mañunga,n.262
-ex.860,artista,Alexandra Gelis,n.263
-ex.860,artista,Elin Grueso,n.264
-ex.772,artista,Leyla Cárdenas,n.265
-ex.784,artista,Miguel Carini,n.266
-ex.832,artista,Nicolás Consuegra,n.267
-ex.832,artista,Pierre Huyghe,n.268
-ex.832,artista,Rometti Costales,n.269
-ex.832,artista,Leyla Cárdenas,n.265
+ex.860,artista,Margarita Ariza,n.275
+ex.860,artista,Walter Caicedo,n.276
+ex.860,artista,Jordan Ramírez,n.277
+ex.860,artista,Ximena Vásquez,n.278
+ex.860,artista,Carmenza Banguera,n.279
+ex.860,artista,Minia Bibiabiany,n.280
+ex.860,artista,Laura Rodríguez,n.281
+ex.860,artista,Katherine Díaz,n.282
+ex.860,artista,José Manuel Cuesta,n.283
+ex.860,artista,Diego Mañunga,n.284
+ex.860,artista,Alexandra Gelis,n.285
+ex.860,artista,Elin Grueso,n.286
+ex.772,artista,Leyla Cárdenas,n.287
+ex.784,artista,Miguel Carini,n.288
+ex.832,artista,Nicolás Consuegra,n.289
+ex.832,artista,Pierre Huyghe,n.290
+ex.832,artista,Rometti Costales,n.291
+ex.832,artista,Leyla Cárdenas,n.287
 ex.832,artista,Lina López,n.12
-ex.840,artista,Barrio Ballet,n.270
-ex.774,artista,Taller 4 Rojo,n.207
+ex.840,artista,Barrio Ballet,n.292
+ex.774,artista,Taller 4 Rojo,n.229

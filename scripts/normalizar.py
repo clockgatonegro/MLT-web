@@ -92,7 +92,7 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'luis a solari': 'p.169', 'roberto delamonica': 'p.144', 'sonnia von brusky': 'p.260',
          # fichas técnicas de Cactus (2014–2020)
          'carlos lersundy': 'p.213', 'gianfranco ferroni': 'p.529', 'henry c pearson': 'p.502', 'ivan rickenmann': 'p.190',
-         'lope max diaz': 'p.420', 'hernan braun': 'p.193',
+         'lope max diaz': 'p.420', 'hernan braun': 'p.193', 'ed ruscha': 'p.579',
          'bernardo oritz': 'p.2036'}
 def resolver(nombre, preferir):
     k = norm(nombre)

@@ -63,6 +63,10 @@ P = {
  "Amanecer. BLOC 2020": dict(fecha_ini="2021-01", fecha_fin="2021-03", confianza="alta", pieza_cactus="2021/Exposiciones 2021/Amanecer - Sala Alterna/Folleto"),
  "El ataque del presente contra el resto de los tiempos": dict(fecha_fin="2021-04-18", curadores="Alejandro Martín",
     pieza_cactus="2021/Exposiciones 2021/El ataque de los tiempos"),
+ "Sin novedad en la noche": dict(fecha_ini="2017-07-19", fecha_fin="2017-09-03", espacio="Sala Alterna", artistas="Breyner Huertas",
+    curadores="Miguel González", apoyan_auspicia="Ministerio de Cultura", tipo="presencial", confianza="alta", modalidad="individual",
+    pieza_cactus="EXPOSICIONES 2017/Breyner - Salón Regional", fuente_url="",
+    notas="Primera exposición individual de Breyner Huertas; beca para exposiciones individuales del XVI Salón Regional de Artistas (16SRA). Fechas y sala confirmadas por los autores (comunicado de prensa)"),
  "VI Salón BAT de Arte Popular": dict(fecha_fin="2021-07-04", confianza="alta", modalidad="colectiva", pieza_cactus="2021/Salón BAT - Arte Popular"),
 }
 # modalidad para exposiciones colectivas cuyos artistas no están nombrados
@@ -77,7 +81,7 @@ NEW = [
       pieza_cactus="EXPOSICIONES 2017/LA ESCENA sala sub", notas="Fecha = apertura"),
  dict(nombre_expo="Breyner Huertas. XVI Salón Regional de Artistas, Zona Pacífico", fecha_ini="2017-07-19", fecha_fin="2017-09-03", espacio="Sala Alterna",
       artistas="Breyner Huertas", curadores="Miguel González", apoyan_auspicia="Ministerio de Cultura", tipo="presencial", confianza="alta",
-      pieza_cactus="EXPOSICIONES 2017/Breyner - Salón Regional", notas="Beca para exposición individual del XVI Salón Regional; el título exacto no aparece en las piezas", modalidad="individual"),
+      pieza_cactus="EXPOSICIONES 2017/Breyner - Salón Regional", notas="Beca para exposición individual del XVI Salón Regional; el título exacto no aparece en las piezas", modalidad="individual", _drop=1),  # duplicado de «Sin novedad en la noche»; se conserva la fila para no mover los Id siguientes
  dict(nombre_expo="Radiar memorias. Diálogos con el Carare", fecha_ini="2017-08-21", fecha_fin="2017-09-14", espacio="Casa Obeso Mejía",
       artistas="Fundación Sub/Liminal", apoyan_auspicia="Centro Nacional de Memoria Histórica", tipo="laboratorio", confianza="alta",
       pieza_cactus="EXPOSICIONES 2017/Radiar Memorias - Casa Obeso", notas="Beca de proyectos museográficos en memoria histórica 2016"),
@@ -87,7 +91,11 @@ NEW = [
       tipo="laboratorio", confianza="media", pieza_cactus="EXPOSICIONES 2017/El Río suena", notas="Laboratorios a cargo de Juan López y Alejandro Villegas Pabón"),
  dict(nombre_expo="Joint Venture. Museo Popular de Siloé en el Museo La Tertulia", fecha_ini="2018-07-28", fecha_fin="2018-09-30",
       espacio="Sala Jugar al Museo, primer piso de la colección", artistas="Museo Popular de Siloé", tipo="comunitaria", confianza="alta",
-      pieza_cactus="Exposiciones 2018/Museo Popular de Siloé"),
+      pieza_cactus="Exposiciones 2018/Museo Popular de Siloé"), dict(nombre_expo="Afternoon Pop. Lanzamiento de «Ángel custodio de Popayanta», de Beatriz González", fecha_ini="2018-05-31", fecha_fin="2018-05-31",
+      espacio="Casa Obeso Mejía", artistas="Beatriz González", tipo="evento", confianza="alta", modalidad="individual",
+      apoyan_auspicia="Rosa Contemporánea Eventos y Logística; 360 Group Colombia; Bitaco; Corona; Evok; Marquetería Arte Moderno; Aritex de Colombia; El Molino; Carnes Frías Enriko; Krima; La Cocina Cali; Queso Labrantío; Impresos Richard; Huevos Santa Anita; Manitoba; Sokolata; Sweet Vanessa; Vizio; Verdissimo; Zahavi Repostería Gourmet; Zonin Prosecco; Orquídeas del Valle",
+      pieza_cactus="VARIOS/Afternoon Pop", notas="Evento benéfico; la obra es una serigrafía sobre llantas y los fondos se destinaron a los proyectos educativos del museo (publicación del museo en Facebook). Año 2018 inferido de las fechas de las piezas de Cactus"),
+
 ]
 
 for n, ch in P.items():
@@ -103,7 +111,8 @@ for n in COLECTIVAS:
 last = max(int(r['id_expo'][3:]) for r in rows)
 for i, d in enumerate(NEW, 1):
     r = {c: '' for c in cols}; r.update(d); r['id_expo'] = f'ex.{last+i}'; r['ano'] = r['fecha_ini'][:4]
-    r['fuente_url'] = ''; rows.append(r)
+    r['fuente_url'] = ''
+    if not r.pop('_drop', None): rows.append(r)
 with open(F, 'w', newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, fieldnames=cols); w.writeheader()
     for r in rows: w.writerow({c: r.get(c, '') for c in cols})

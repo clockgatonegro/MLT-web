@@ -68,8 +68,8 @@ El [Flickr del Museo La Tertulia](https://www.flickr.com/photos/museo-la-tertuli
 
 - Se precisaron fechas de Espesuras, Entre agua y raíces, Hacer ver, Deshilar, 21 obras en el cambio de tiempo, El aroma en construcción, La esquina del barrio y Fuego.
 - Se agregaron las curadurías de Espesuras (Melissa Aguilar y Carolina Chacón), Hacer ver (Melissa Aguilar, Mónica Restrepo y Nicolás Bonilla), Deshilar (Yohanna M. Roa), Cicatrices (Eugenio Viola), 21 obras en el cambio de tiempo (Yolanda Chois Rivera) y El aroma en construcción (Miguel González), y los artistas de Hacer ver (81), Deshilar y 21 obras en el cambio de tiempo.
-- Las discrepancias quedaron en `conflictos_cactus.csv` sin aplicar: Pasado futurista y ¡A la gráfica! (el álbum trae fechas que no cuadran), Huellas comunes, Huellas de desaparición, Piel es, Cicatrices (2022 en el álbum, 2023 en la Base de datos) y 21 obras en el cambio de tiempo.
-- Cuatro álbumes no corresponden a ninguna exposición de la Base de datos: Cuerpo transgresivo. Rosemberg Sandoval (2025), Barrio Adentro. La unión popular hace los barrios (2024) y los dos de Barrio Adentro, Montebello (2023). Quedan pendientes de confirmación.
+- Las fechas de los álbumes no se usan para discutir las de la Base de datos, salvo en ¡A la gráfica! y 21 obras en el cambio de tiempo, que quedaron en `conflictos_cactus.csv` sin aplicar.
+- Se agregaron tres exposiciones que solo aparecían en Flickr: Cuerpo transgresivo. Rosemberg Sandoval (2025), Barrio Adentro. La unión popular hace los barrios (2024) y Barrio Adentro. Montebello (2023). Barrio Adentro es una curaduría con comunidades que usan obras de la colección para contar su barrio; cada versión lleva el nombre del barrio, y la de 2021 quedó como Barrio Adentro. Vista Hermosa.
 
 ## Vacíos por resolver
 

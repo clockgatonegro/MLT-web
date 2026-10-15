@@ -997,7 +997,7 @@ p.1153,Martha Posso,persona,artista,3,artista,Colombiana,F,1967,,catalogo_person
 p.1154,Martha Torres,persona,artista,1,artista,,,,,catalogo_personas
 p.1155,Martha Trubint,persona,artista,1,artista,,,,,catalogo_personas
 p.1156,Marta Calderón,persona,artista,1,artista,,,,,catalogo_personas
-p.1157,Marta Granados,persona,artista,6,artista,,,,,catalogo_personas
+p.1157,Marta Granados,persona,artista,7,artista,,,,,catalogo_personas
 p.1158,Marta Lacorazza,persona,artista,1,artista,Colombia,F,1951,,catalogo_personas
 p.1159,Marta Minujín,persona,artista,11,artista,Argentina,,,,catalogo_personas
 p.1160,Marta Miranda,persona,artista,1,artista,,,,,catalogo_personas
@@ -2625,7 +2625,7 @@ p.2841,Jorge Echeverry,persona,artista,1,artista,,,,,catalogo_personas
 p.2842,Jorge Hernan González,persona,artista,1,artista,,,,,catalogo_personas
 p.2844,Jorge Mora,persona,artista,1,artista,,,,,catalogo_personas
 p.2846,Jorge R. Nuñez,persona,artista,1,artista,,,,,catalogo_personas
-p.2847,José Antonio Dorado,persona,artista,1,artista,,,,,catalogo_personas
+p.2847,José Antonio Dorado,persona,artista|curador,2,artista,,,,,catalogo_personas
 p.2848,José Antonio Quintero,persona,artista,1,artista,,,,,catalogo_personas
 p.2851,José Leonilson,persona,artista,1,artista,,,,,catalogo_personas
 p.2853,José Reyes Meza,persona,artista,1,artista,,,,,catalogo_personas
@@ -3514,7 +3514,6 @@ n.79,Stephanie Montes,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.80,Línea Roja Producciones,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.81,Catalina Jaramillo Quijano,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.82,Luz Adriana Hoyos,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.83,Acumulaciones Taller,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.84,Paula Solarte,sin_catalogar,artista|curador,2,,,,,,texto_exposiciones
 n.85,Biblioteca Pública Centro Cultural Comuna 1,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.86,Laura Campaz,sin_catalogar,artista,3,,,,,,texto_exposiciones
@@ -3523,7 +3522,7 @@ n.88,Dayana Camacho,sin_catalogar,artista,2,,,,,,texto_exposiciones
 n.89,Miguel Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.90,Pablo Wilson Córdoba Saa,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.91,BAT,sin_catalogar,apoyo,2,,,,,,texto_exposiciones
-n.92,Lina Saavedra de La Cruz,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.92,Lina Saavedra de La Cruz,sin_catalogar,curador,2,,,,,,texto_exposiciones
 n.93,Pavel Andrés Vernaza Ortiz,sin_catalogar,curador,1,,,,,,texto_exposiciones
 n.94,Sergio Lasso Estudio,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.95,Colectivo Deúniti,sin_catalogar,artista,1,,,,,,texto_exposiciones
@@ -3724,36 +3723,32 @@ n.289,Pierre Huyghe,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.290,Rometti Costales,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.291,Barrio Ballet,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.292,Carlos Arturo Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.293,Martha Granados,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.294,Fiorella Gómez,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.295,Carlos Hoyos,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.296,Sandra Jaramillo,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.297,Lina Saavedra,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.298,Antonio Dorado,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.299,Aura Rico,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.300,Andrés Velasco,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.301,Eduardo Garcés,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.302,Johan Valencia,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.303,David León,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.304,Marco Torres,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.305,Valeria S. Oggioni,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.306,Braim Canizales,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.307,Jesús Ramírez,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.308,Jorge Panchoaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.309,Juanita Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.310,José Luis Rodríguez Maldonado,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.311,Luis Morales,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.312,Nicolás Van Hemelryck,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.313,Francisco Mojica,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.314,Juan Arias,sin_catalogar,curador,2,,,,,,texto_exposiciones
-n.315,Xochilán Rojas,sin_catalogar,curador,2,,,,,,texto_exposiciones
-n.316,María Alejandra González,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.317,Gina Castaño,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.318,César Suárez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.319,Víctor Andrés García,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.320,Ivonn Lloreda,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.321,Stephanie Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.322,Juliana Góngora,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.323,Institución Educativa Oficial Boyacá,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.324,Cristina Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.325,Sandra Rengifo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.293,Carlos Hoyos,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.294,Sandra Jaramillo,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.295,Aura Rico,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.296,Andrés Velasco,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.297,Eduardo Garcés,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.298,Johan Valencia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.299,David León,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.300,Marco Torres,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.301,Valeria S. Oggioni,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.302,Braim Canizales,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.303,Jesús Ramírez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.304,Jorge Panchoaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.305,Juanita Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.306,José Luis Rodríguez Maldonado,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.307,Luis Morales,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.308,Nicolás Van Hemelryck,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.309,Francisco Mojica,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.310,Juan Arias,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.311,Xochilán Rojas,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.312,María Alejandra González,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.313,Gina Castaño,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.314,César Suárez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.315,Víctor Andrés García,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.316,Ivonn Lloreda,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.317,Stephanie Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.318,Juliana Góngora,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.319,Institución Educativa Oficial Boyacá,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.320,Cristina Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.321,Sandra Rengifo,sin_catalogar,artista,1,,,,,,texto_exposiciones

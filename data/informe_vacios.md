@@ -42,9 +42,9 @@ Cada fila trae su URL de captura. Transcribí solo lo que aparece escrito en la 
 
 La base de 2016 traía la II Bienal (`ex.181`) sin artistas. Los 196 participantes se tomaron del catálogo de la bienal (lista en `scripts/fuentes/catalogo_II_bienal_1973.txt`); sus aristas llevan `fuente = catalogo_II_bienal_1973`. 141 coinciden con el catálogo de personas de 2016: 126 por nombre exacto, 9 por variantes de grafía claras (por ejemplo, Roser Brau → Roser Bru, Ken Danby → Ken Damby) y 6 confirmadas por los autores (por ejemplo, Francisco Rocca → Francisco Rocca-Lynn), documentadas en `ALIAS`. El registro «Francisco Jung» del catálogo de 2016 se corrigió a Francisco Hung. Nelson Romero y Nelson Román son personas distintas. Los otros 55 se crearon como agentes nuevos (`n.*`).
 
-## Cali 71, ciudad de América (2016–2018)
+## Cali 71, ciudad de América (2016–2019)
 
-La base de 2016 traía 6 artistas para `ex.827`. Con las fichas técnicas, el listado de obras de la curaduría (`FTECNICAS_obras_CALI71_AM`) y el programa de mano de la exposición y de sus rotaciones (archivos de Cactus Taller Gráfico, 2016–2018) quedan 110. La lista, con el documento de origen de cada nombre, está en `scripts/fuentes/participantes_cali71.csv`. 73 de los 110 participaron también en alguna Bienal Americana de Artes Gráficas. No se incluyeron las personas que solo aparecen retratadas en fotografías ni los nombres que solo se citan en los textos de sala.
+La base de 2016 traía 6 artistas para `ex.827`. Con las fichas técnicas, el listado de obras de la curaduría (`FTECNICAS_obras_CALI71_AM`) y el programa de mano de la exposición y de sus rotaciones (archivos de Cactus Taller Gráfico, 2016–2019) quedan 110. La lista, con el documento de origen de cada nombre, está en `scripts/fuentes/participantes_cali71.csv`. 73 de los 110 participaron también en alguna Bienal Americana de Artes Gráficas. No se incluyeron las personas que solo aparecen retratadas en fotografías ni los nombres que solo se citan en los textos de sala.
 
 ## Otras exposiciones completadas con fichas técnicas de Cactus
 

@@ -93,9 +93,12 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          # fichas técnicas de Cactus (2014–2020)
          'carlos lersundy': 'p.213', 'gianfranco ferroni': 'p.529', 'henry c pearson': 'p.502', 'ivan rickenmann': 'p.190',
          'lope max diaz': 'p.420', 'hernan braun': 'p.193', 'ed ruscha': 'p.579',
+         # confirmados por los autores (15/10/2026)
+         'martha granados': 'p.1157', 'fiorella gomez': 'p.3179', 'antonio dorado': 'p.2847',
          'bernardo oritz': 'p.2036'}
 # grafías corregidas con documentos de Cactus (ver fuentes/triangulacion_cactus.csv, campo «nombre»)
 NAMEFIX = {'adriana castellanos olmedos': 'Adriana Castellanos Olmedo',
+           'lina saavedra': 'Lina Saavedra de La Cruz',  # misma persona, confirmado por los autores (15/10/2026)
            'manuel augusto mendes soares': 'Manuel Augusto Soares Mendes'}
 
 def resolver(nombre, preferir):
@@ -204,16 +207,24 @@ if os.path.exists(TRI):
     porid = {e['Id']: e for e in expos}
     docs = collections.defaultdict(list)
     dup = {}
+    retirar = set()
     for r in csv.DictReader(open(TRI, encoding='utf-8')):
         e = porid.get(r['id_expo'])
         if e is None: continue
         acc, campo, val = r['accion'], r['campo'], r['valor']
+        autores = r['documento'].startswith('Confirmado por los autores')
+        if acc == 'retira':
+            retirar.add(r['id_expo']); continue
+        if acc == 'resuelto':
+            if r['documento'] not in docs[r['id_expo']]: docs[r['id_expo']].append(r['documento'])
+            continue
         if acc == 'duplicado':
             dup[r['id_expo']] = campo; continue
         if acc == 'conflicto':
             conflictos.append(dict(id_expo=r['id_expo'], expo=e['Label'], campo=campo, valor_base=e.get(campo, ''),
                                    valor_cactus=val, documento=r['documento'], nota=r['nota'])); continue
-        if r['documento'] and r['documento'] not in docs[r['id_expo']]: docs[r['id_expo']].append(r['documento'])
+        if autores: docs.setdefault(r['id_expo'], [])
+        elif r['documento'] and r['documento'] not in docs[r['id_expo']]: docs[r['id_expo']].append(r['documento'])
         if acc in ('corrige', 'agrega') and campo in ('fecha_ini', 'fecha_fin', 'espacio', 'ano'):
             e[campo] = val
             if campo == 'espacio':
@@ -224,7 +235,7 @@ if os.path.exists(TRI):
         if e['fecha_ini'][:4].isdigit(): e['ano'] = int(e['fecha_ini'][:4])
         if e['ano']: e['decada'] = int(e['ano']) // 10 * 10
         e['fuentes_cactus'] = ' | '.join(d)
-        if not e.get('pieza_cactus'): e['pieza_cactus'] = d[0]
+        if d and not e.get('pieza_cactus'): e['pieza_cactus'] = d[0]
         if e.get('confianza', 'base_MLT') != 'base_MLT': e['confianza'] = 'alta'
     for a in aristas:
         if a['Source'] in docs: a['ano'] = porid[a['Source']]['ano']
@@ -242,7 +253,12 @@ if os.path.exists(TRI):
         aristas[:] = nuevas
         expos[:] = [e for e in expos if e['Id'] not in dup]
         no_cruzados[:] = [dict(n, id_expo=dup.get(n['id_expo'], n['id_expo'])) for n in no_cruzados]
-    print('triangulación Cactus:', len(docs), 'exposiciones documentadas |', len(conflictos), 'conflictos |', len(dup), 'duplicados unidos')
+    # filas que no son exposiciones (p. ej., ferias editoriales), retiradas por decisión de los autores
+    if retirar:
+        aristas[:] = [a for a in aristas if a['Source'] not in retirar]
+        expos[:] = [e for e in expos if e['Id'] not in retirar]
+        no_cruzados[:] = [n for n in no_cruzados if n['id_expo'] not in retirar]
+    print('triangulación Cactus:', sum(1 for d in docs.values() if d), 'exposiciones con documento de Cactus |', len(conflictos), 'conflictos |', len(dup), 'duplicados unidos |', len(retirar), 'retiradas')
 
 # ---------- salidas ----------
 grado = collections.Counter(a['Target'] for a in aristas)

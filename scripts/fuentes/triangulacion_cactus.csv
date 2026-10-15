@@ -48,7 +48,8 @@ ex.794,confirma,existencia,,Banners 2015/BANNERS SEPTIEMBRE/TALLER AVES/taller p
 ex.795,corrige,fecha_ini,2015-10-15,AULA/PROGRAMAS/folleto aula final.pdf,Folleto: «Apertura: 15 de octubre»; la base tenía 2015-09-15 a 2015-10-15
 ex.795,corrige,fecha_fin,,AULA/PROGRAMAS/folleto aula final.pdf,Fecha de cierre desconocida
 ex.800,confirma,existencia,,60 AÑOS/alcaldia/Invitacion.ai,Invitación del 7 de marzo de 2016
-ex.801,conflicto,fecha_fin,2016-02-28,CARTILLA MUSEO/Cartilla museo.idml,"La cartilla del museo dice hasta el 28 de febrero de 2016; la base, 13 de marzo (¿prórroga?)"
+ex.801,resuelto,fecha_fin,2016-02-28,CARTILLA MUSEO/Cartilla museo.idml,"La cartilla del museo dice hasta el 28 de febrero de 2016; la base, 13 de marzo (¿prórroga?)"
+ex.801,confirma,fecha_fin,2016-03-13,Confirmado por los autores (15/10/2026),Cierre previsto el 28 de febrero de 2016 y prorrogado hasta el 13 de marzo
 ex.803,corrige,fecha_fin,2016-04-17,BLOC 2016/Banners.ai,Banner: «Febrero 25 | Abril 17 | 2016»; la base tenía 2016-04-27
 ex.805,confirma,fecha_ini,2016-03-03,Exposiciones 2016/EXPO BEATRIZ GONZALEZ/Invitacion/Invitación Beatriz González.ai,
 ex.804,confirma,existencia,,Exposiciones 2016/EXPO PACIENTE/Programa de mano/Programa de mano 2 - AM.pdf,Programa de mano
@@ -60,8 +61,10 @@ ex.813,confirma,fecha_ini,2016-09-23,Exposiciones 2016/Hacia el litoral/Invitaci
 ex.810,conflicto,fecha_ini,2016-09-24,Exposiciones 2016/LA FORMA DEL FUTURO/Documento word piezas La Forma del Futuro.docx,El texto de la invitación virtual anuncia el sábado 24 de septiembre; la base dice 8 de octubre
 ex.818,corrige,fecha_fin,2017-02-12,Exposiciones 2016/CALI 71 - CIUDAD DE AMERICA/CARPETA INVITACION/Documento word  textos INVITACIÓN 15 DICIEMBRE.docx,Postal: «Noviembre 9 2016 | Febrero 12 2017»; la base tenía 2017-02-05
 ex.829,corrige,fecha_fin,2017-03-05,Exposiciones 2016/EXPO FERNELL Y EVER/EXPO FERNELL FRANCO/Documento word  textos piezas-  Fernell Franco.docx,Piezas y postal: «Diciembre 15 2016 – Marzo 5 de 2017»; la base tenía 2017-03-12
-ex.828,conflicto,fecha_fin,2017-05-14,Exposiciones 2016/CALI 71 - CIUDAD DE AMERICA/CARPETA INVITACION/Documento word  textos INVITACIÓN 15 DICIEMBRE.docx,La postal anuncia cierre el 14 de mayo de 2017; la base dice 10 de septiembre (¿prórroga?)
-ex.827,conflicto,fecha_fin,2019-06-22,Banner 2019/Cali 71 Cierre/Texto invitación.docx,"La exposición tuvo cuatro rotaciones (informe de gestión 2018) y una invitación al cierre el sábado 22 de junio, en la carpeta de 2019; la base dice 6 de agosto de 2017"
+ex.828,resuelto,fecha_fin,2017-05-14,Exposiciones 2016/CALI 71 - CIUDAD DE AMERICA/CARPETA INVITACION/Documento word  textos INVITACIÓN 15 DICIEMBRE.docx,La postal anuncia cierre el 14 de mayo de 2017; la base dice 10 de septiembre (¿prórroga?)
+ex.828,confirma,fecha_fin,2017-09-10,Confirmado por los autores (15/10/2026),Cierra en septiembre de 2017
+ex.827,resuelto,fecha_fin,2019-06-22,Banner 2019/Cali 71 Cierre/Texto invitación.docx,"La exposición tuvo cuatro rotaciones (informe de gestión 2018) y una invitación al cierre el sábado 22 de junio, en la carpeta de 2019; la base dice 6 de agosto de 2017"
+ex.827,corrige,fecha_fin,2019-06-23,Confirmado por los autores (15/10/2026),"Cali 71 cerró el 23 de junio de 2019, tras sus rotaciones"
 ex.830,confirma,existencia,,Exposiciones 2016/EXPO FERNELL Y EVER/PROGRAMA OSCAR MUÑOZ/El ejercicio de la empatía(f).docx,
 ex.831,confirma,existencia,,Exposiciones 2016/ARTIST TALKING BACK TO THE MEDIA/créditos programa de mano.docx,Programa de mano y fichas
 ex.832,confirma,fechas,2017-03-30/2017-07-16,EXPOSICIONES 2017/Universo Holograma/Piezas/Programa de mano/Programa Universo Holograma.pdf,Programa de mano
@@ -71,10 +74,13 @@ ex.837,confirma,existencia,,EXPOSICIONES 2017/Temporada FIn de Año/Volante/prop
 ex.838,confirma,existencia,,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,Proyecto Museo + Escuela; museografía del Colectivo 720
 ex.839,corrige,fecha_ini,2017-12-14,EXPOSICIONES 2017/Carlos Amorales/Piezas/invitación virtual/invitación virtual amorales.ai,"Invitación: «Jueves 14 de diciembre de 2017», apertura; la base tenía 2017-12-15"
 ex.840,confirma,fecha_ini,2017-12-14,EXPOSICIONES 2017/Oido pueblo/Prueba.ai,
-ex.840,conflicto,artista,Catalina Torres,EXPOSICIONES 2017/Oido pueblo/Prueba.ai,La invitación y las fichas dicen «Catalina Torres»; la base (desde la web) tiene «Carolina Torres». También nombra a María Juliana Soto
+ex.840,resuelto,artista,Catalina Torres,EXPOSICIONES 2017/Oido pueblo/Prueba.ai,La invitación y las fichas dicen «Catalina Torres»; la base (desde la web) tiene «Carolina Torres». También nombra a María Juliana Soto
+ex.840,confirma,artista,Carolina Torres,Confirmado por los autores (15/10/2026),La artista es Carolina Torres; «Catalina» en la invitación y las fichas es un error
 ex.841,confirma,fechas,2017-12-14/2018-01-14,EXPOSICIONES 2017/En Cauce/Piezas/Programa de Mano/Txtos Artistas-LYA.docx,Programa de mano
-ex.841,conflicto,fecha_fin,2018-02-17,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,El cuadernillo de febrero anuncia el «cierre de programas El Río Suena y En Cauce» el sábado 17 de febrero de 2018
-ex.931,conflicto,fecha_fin,2018-02-17,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,Cierre de El Río Suena y En Cauce el sábado 17 de febrero de 2018; la base dice 14 de enero
+ex.841,resuelto,fecha_fin,2018-02-17,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,El cuadernillo de febrero anuncia el «cierre de programas El Río Suena y En Cauce» el sábado 17 de febrero de 2018
+ex.841,corrige,fecha_fin,2018-02-17,Confirmado por los autores (15/10/2026),Cierre de El Río Suena y En Cauce el 17 de febrero de 2018
+ex.931,resuelto,fecha_fin,2018-02-17,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,Cierre de El Río Suena y En Cauce el sábado 17 de febrero de 2018; la base dice 14 de enero
+ex.931,corrige,fecha_fin,2018-02-17,Confirmado por los autores (15/10/2026),Cierre de El Río Suena y En Cauce el 17 de febrero de 2018
 ex.842,corrige,fecha_ini,2018-02-13,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,Cuadernillo: «Martes 13 de febrero – Apertura: Costurero Viajero»; la base tenía 2018-02-14
 ex.843,confirma,existencia,,CUADERNILLO PROGRAMACION/PROGRAMACION JUN/JUNIO.docx,Programa C; curaduría de Breyner Huertas
 ex.844,confirma,fechas,2018-05-05/2018-07-15,Exposiciones 2018/PowerPaola/Piezas/Programa/Programa.pdf,Programa de mano
@@ -93,7 +99,8 @@ ex.929,corrige,fecha_ini,2017-08-24,EXPOSICIONES 2017/Radiar Memorias - Casa Obe
 ex.930,confirma,fecha_fin,2017-11-18,Banners 2017/Boletín profesore/boletín profesores septiembre.pdf,
 ex.932,confirma,existencia,,Exposiciones 2018/Museo Popular de Siloé/banners/Agenda académica.ai,Agenda académica de septiembre de 2018
 ex.933,confirma,fecha_ini,2018-05-31,VARIOS/Afternoon Pop/Afternoon Pop invitacion virtual.ai,Invitación: «Mayo 31 de 2018»; confirma el año
-ex.855,conflicto,fecha_ini,2019-05-10,Exposiciones 2019/…/Carpeta Programa Expo Caracter/insumos/Texto Programa de mano.docx,Programa: «Mayo 10 - Agosto 18 – 2019»; la base tiene 2019-05-09 (posible noche de inauguración)
+ex.855,resuelto,fecha_ini,2019-05-10,Exposiciones 2019/…/Carpeta Programa Expo Caracter/insumos/Texto Programa de mano.docx,Programa: «Mayo 10 - Agosto 18 – 2019»; la base tiene 2019-05-09 (posible noche de inauguración)
+ex.855,corrige,fecha_ini,2019-05-10,Confirmado por los autores (15/10/2026),"Abre el 10 de mayo de 2019, como dice el programa de mano"
 ex.855,corrige,fecha_fin,2019-08-18,Exposiciones 2019/…/Carpeta Programa Expo Caracter/insumos/Texto Programa de mano.docx,La base tenía 2019-07
 ex.855,corrige,nombre,Manuel Augusto Soares Mendes,Texto Programa de mano.docx; Bifurcaciones Sticker Frost 2.ai,El archivo web invertía los apellidos (Mendes Soares)
 ex.856,confirma,existencia,,Exposiciones 2019/Programa C/Julieth Morales/Ficha técnica/Ficha Programa C .ai,"Ficha: «Srape Pøtø Tul-yu (El último círculo)», Julieth Morales, minga performática"
@@ -103,7 +110,8 @@ ex.858,confirma,fecha_ini,2019-04-25,Exposiciones 2019/Bloc 2019/Programa de man
 ex.858,corrige,fecha_fin,2019-06-16,Exposiciones 2019/Bloc 2019/Programa de mano BLOC/Programa de mano Bloc.pdf,"La base no tenía cierre. Una invitación (Bolc2019b.ai) anuncia además una apertura el sábado 22 de junio en el segundo piso del Edificio de la Colección: posible traslado, sin confirmar"
 ex.858,agrega,participantes,12 artistas y 3 curadores,Exposiciones 2019/Bloc 2019/Programa de mano BLOC/Programa de mano Bloc.pdf,"Curaduría: Proyecto Jhon Doe (Paula Solarte, Braim Canizales, Jesús Ramírez)"
 ex.859,corrige,fecha_ini,2019-08-27,Exposiciones 2019/Luz de memoria/EL TESTIGO/Piezas/Portafolio de visitas/Portafolio de visitas 2.pdf,"Portafolio: «Inauguración: 27 de agosto – 17 de noviembre de 2019», Edificio de la Colección; la base tenía 2019-09"
-ex.859,conflicto,fecha_fin,2019-11-17,Exposiciones 2019/Luz de memoria/EL TESTIGO/Piezas/Portafolio de visitas/Portafolio de visitas 2.pdf,La base (web) tiene 2020-03-01: ¿prórroga?
+ex.859,resuelto,fecha_fin,2019-11-17,Exposiciones 2019/Luz de memoria/EL TESTIGO/Piezas/Portafolio de visitas/Portafolio de visitas 2.pdf,La base (web) tiene 2020-03-01: ¿prórroga?
+ex.859,confirma,fecha_fin,2020-03-01,Confirmado por los autores (15/10/2026),Prorrogada del 17 de noviembre de 2019 al 1 de marzo de 2020
 ex.860,confirma,existencia,,CUADERNILLO PROGRAMACION/PROGRAMACIÓN AGOSTO 2019/Programación educación.docx,"Visita guiada a Manglaria, agosto de 2019"
 ex.861,confirma,existencia,,CUADERNILLO PROGRAMACION/PROGRAMACIÓN OCT 2019 y NOV 2019; PROGRAMACIÓN MARZO 2020,En temporada de octubre de 2019 a marzo de 2020
 ex.861,agrega,participantes,8 fotógrafos y 4 curadores,Exposiciones 2019/Luz de memoria/BIFURCACIONES/Piezas/Sticker Frost/Bifurcaciones Sticker Frost 1.ai,"Curaduría: Colectivo Calidoscopio (Ximena Vásquez, Juan Arias, Xochilán Rojas) y Lorena Díez"
@@ -112,15 +120,20 @@ ex.862,confirma,fecha_fin,2019-10-27,Exposiciones 2019/Luz de memoria/VOCES/Broc
 ex.863,corrige,fecha_ini,2019-09-13,Exposiciones 2019/Programa C/Mónica Vilá/Invitación Física/Invitacion Fisica Programa C Monica Vilá.ai,Invitación: «Viernes 13 de sept / 2019»; la base tenía 2019-09
 ex.863,agrega,participantes,4 curadores,Invitacion Fisica Programa C Monica Vilá.ai,"Curaduría: Colectivo Calidoscopio (Ximena Vásquez, Juan Arias, Xochilán Rojas) y Lorena Díez"
 ex.864,confirma,existencia,,CUADERNILLO PROGRAMACION/PROGRAMACIÓN NOV 2019/Programación Noviembre 2019.pdf,
-ex.865,conflicto,fecha_ini,2019-12-12,Exposiciones 2019/Programa C/Diego Hernández/Insumos/Info Invitación.docx,Insumo de invitación: «12 de diciembre – 12 de febrero»; la base tiene 2019-12-17
-ex.865,conflicto,fecha_fin,2020-02-12,Exposiciones 2019/Programa C/Diego Hernández/Insumos/Info Invitación.docx,La base tiene 2020-02-28
+ex.865,resuelto,fecha_ini,2019-12-12,Exposiciones 2019/Programa C/Diego Hernández/Insumos/Info Invitación.docx,Insumo de invitación: «12 de diciembre – 12 de febrero»; la base tiene 2019-12-17
+ex.865,confirma,fecha_ini,2019-12-17,Confirmado por los autores (15/10/2026),Programada originalmente del 17 de diciembre al 28 de febrero; el insumo de invitación tenía otras fechas
+ex.865,resuelto,fecha_fin,2020-02-12,Exposiciones 2019/Programa C/Diego Hernández/Insumos/Info Invitación.docx,La base tiene 2020-02-28
+ex.865,confirma,fecha_fin,2020-02-28,Confirmado por los autores (15/10/2026),
 ex.866,confirma,existencia,,2020/EXPOSICIONES 2020/Maria Thereza Negreiros/Insumos/textodesala-AM.docx,
-ex.867,conflicto,fecha_ini,2020-03,CUADERNILLOS DE PROGRAMACIÓN/PROGRAMACIÓN MARZO 2020/Carpeta Programación Marzo/Programación Marzo.idml,«Celeste: instalación multimedia» figura en la programación de marzo de 2020; la base tiene 2020-05-07
+ex.867,resuelto,fecha_ini,2020-03,CUADERNILLOS DE PROGRAMACIÓN/PROGRAMACIÓN MARZO 2020/Carpeta Programación Marzo/Programación Marzo.idml,«Celeste: instalación multimedia» figura en la programación de marzo de 2020; la base tiene 2020-05-07
+ex.867,confirma,fecha_ini,2020-05,Confirmado por los autores (15/10/2026),Exposición virtual que abre en mayo de 2020
 ex.870,confirma,existencia,,CUADERNILLOS DE PROGRAMACIÓN/PROGRAMACIÓN MARZO 2020/Programación Marzo V02.pdf,
 ex.872,confirma,fecha_ini,2020-08-29,2020/Bajo El Samán/Sigo esperando/Pliego/2.docx,«Sesión 1 … Sábado 29 de agosto»
 ex.875,confirma,fecha_ini,2020-10-10,2020/Programa C/Catalina Jaramillo/Invitación digital/Invitación digital.ai,Curaduría Luz Adriana Hoyos; Sala Alterna
 ex.877,agrega,participantes,23 artistas,2020/EXPOSICIONES 2020/Manual de instrucciones/Carpeta MDI Print/MDI Print.pdf,Sumario de la publicación del programa (obras de la Colección e instrucciones de artistas mediadores)
-ex.879,conflicto,fecha_fin,2021-04,Programación digital 2021/2. PROGRAMACIÓN ABRIL/Programación Abril V3.pdf,"«Amanecer. Una exposición de Paula Solarte», Sala Alterna, en la programación de abril de 2021; la base cierra en 2021-03"
+ex.879,resuelto,fecha_fin,2021-04,Programación digital 2021/2. PROGRAMACIÓN ABRIL/Programación Abril V3.pdf,"«Amanecer. Una exposición de Paula Solarte», Sala Alterna, en la programación de abril de 2021; la base cierra en 2021-03"
+ex.879,corrige,fecha_ini,2021-02-06,Confirmado por los autores (15/10/2026),Abierta al público del 6 de febrero al 30 de abril de 2021
+ex.879,corrige,fecha_fin,2021-04-30,Confirmado por los autores (15/10/2026),
 ex.881,confirma,existencia,,Programación digital 2021/1. PROGRAMACIÓN MARZO/Insumos/Eduación marzo.docx,"Visita guiada con el curador Alejandro Martín, 6 de marzo de 2021"
 ex.885,confirma,curadores,Lina María Saavedra de la Cruz; Adriana Castellanos Olmedo,2020/EXPOSICIONES 2020/Manolo Lago/Invitación física V2/Invitación física ML V2.pdf,Inauguración prevista el 25 de abril de 2020 y luego «fecha por definir» (pandemia); la base fecha la apertura en 2021-11
 ex.885,corrige,nombre,Adriana Castellanos Olmedo,2020/EXPOSICIONES 2020/Manolo Lago/Marca Manolo Lago2.ai,El archivo web escribía «Olmedos»; se une con la curadora de ex.865
@@ -136,3 +149,5 @@ ex.921,duplicado,ex.748,,BOLETIN ELECTRONICO (boletines 2011),"Fila web sin fech
 ex.923,duplicado,ex.752,,2012-2013/INSUMOS GRAFICOS MUSEO/boletines/6 al 13.pdf,Fila web sin fecha que repite «Rogelio Salmona…» (2011)
 ex.925,duplicado,ex.927,,EXPOSICIONES 2017/LA ESCENA sala sub/Banners/Banners.ai,"Fila web sin fecha que repite la sala didáctica La Escena (ex.927, tomada de las piezas de Cactus)"
 ex.927,confirma,fecha_ini,2017-01-28,EXPOSICIONES 2017/LA ESCENA sala sub/Banners/Banners.ai,«Apertura de la sala didáctica La Escena. Sábado 28 de enero»
+ex.878,retira,,,Confirmado por los autores (15/10/2026),"Feria editorial, no exposición"
+ex.889,retira,,,Confirmado por los autores (15/10/2026),"Feria editorial, no exposición"

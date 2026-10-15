@@ -110,7 +110,7 @@ p.114,José Horacio Martínez,persona,artista|curador,16,artista,Colombia,M,1961
 p.115,Jesús Rafael Soto,persona,artista,16,artista,Venezuela,,,,catalogo_personas
 p.116,Ignacio Gómez Jaramillo,persona,artista,14,artista,Colombia,,,,catalogo_personas
 p.117,Heriberto Cogollo,persona,artista,1,artista,Colombia,,,,catalogo_personas
-p.118,Francisco Rocca-Lynn,persona,artista,3,artista,Colombia,,,,catalogo_personas
+p.118,Francisco Rocca-Lynn,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.119,Francisco Rodón,persona,artista,8,artista,Puerto Rico,,,,catalogo_personas
 p.120,Francis Bacon,persona,artista,1,artista,Inglaterra,,,,catalogo_personas
 p.121,Eduardo Carvajal,persona,artista,4,artista,Colombia,,,,catalogo_personas
@@ -328,7 +328,7 @@ p.389,María Girona,persona,artista,1,artista,España,,,,catalogo_personas
 p.390,Margot Römer,persona,artista,3,artista,Venezuela,,,,catalogo_personas
 p.392,Marco Tobón Mejía,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.394,Manuel Camargo,persona,artista,2,artista,Colombia,,,,catalogo_personas
-p.396,Manuel Espinoza,persona,artista,2,artista,Venezuela,,,,catalogo_personas
+p.396,Manuel Espinoza,persona,artista,3,artista,Venezuela,,,,catalogo_personas
 p.397,Manuel Estrada,persona,artista,3,artista,Colombia,,,,catalogo_personas
 p.398,Manuel Felguérez,persona,artista,4,artista,México,,,,catalogo_personas
 p.399,Manuel García,persona,artista,1,artista,Cuba,,,,catalogo_personas
@@ -1200,7 +1200,7 @@ p.1373,Josep Monjalés,persona,artista,1,artista,,,,,catalogo_personas
 p.1374,Josef-Ludwing Taeschler,persona,artista,1,artista,,,,,catalogo_personas
 p.1375,Josef Bischolberger,persona,artista,1,artista,,,,,catalogo_personas
 p.1376,Josef Dahinden,persona,artista,1,artista,,,,,catalogo_personas
-p.1377,José Acevedo,persona,artista,1,artista,,,,,catalogo_personas
+p.1377,José Acevedo,persona,artista,2,artista,,,,,catalogo_personas
 p.1378,José Alicea,persona,artista,2,artista,,,,,catalogo_personas
 p.1379,José Bedia,persona,artista,1,artista,,,,,catalogo_personas
 p.1380,José Bracamonte,persona,artista,2,artista,,,,,catalogo_personas
@@ -1504,7 +1504,7 @@ p.1683,Francisco Espinoza,persona,artista,1,artista,,,,,catalogo_personas
 p.1684,Francisco Fernández,persona,artista,1,artista,,,,,catalogo_personas
 p.1685,Francisco Gallardo,persona,artista,1,artista,,,,,catalogo_personas
 p.1686,Francisco Gámez,persona,artista,1,artista,,,,,catalogo_personas
-p.1687,Francisco Jung,persona,artista,1,artista,,,,,catalogo_personas
+p.1687,Francisco Hung,persona,artista,2,artista,,,,,catalogo_personas
 p.1688,Francisco López,persona,artista,1,artista,,,,,catalogo_personas
 p.1689,Francisco Piñeros,persona,artista,1,artista,,,,,catalogo_personas
 p.1690,Francisco Quilici,persona,artista,1,artista,,,,,catalogo_personas
@@ -1780,7 +1780,7 @@ p.1973,Carmelo Carra,persona,artista,1,artista,,,,,catalogo_personas
 p.1974,Carmela Gross,persona,artista,1,artista,,,,,catalogo_personas
 p.1975,Carlota Bentham,persona,artista,1,artista,,,,,catalogo_personas
 p.1976,Carlos Altamirano,persona,artista,1,artista,,,,,catalogo_personas
-p.1977,Carlos Avendaño,persona,artista,1,artista,,,,,catalogo_personas
+p.1977,Carlos Avendaño,persona,artista,2,artista,,,,,catalogo_personas
 p.1978,Carlos Blanco,persona,artista,1,artista,Colombiana,M,1961,,catalogo_personas
 p.1979,Carlos Caicedo,persona,artista,1,artista,,,,,catalogo_personas
 p.1980,Carlos Cañas,persona,artista,1,artista,,,,,catalogo_personas
@@ -2098,7 +2098,7 @@ p.2302,Graciela Samper de Bermúdez,persona,artista,2,artista,,,,,catalogo_perso
 p.2303,Gregorio Vásquez de Arce,persona,artista,1,artista,,,,,catalogo_personas
 p.2304,Guillermo Pérez Villalta,persona,artista,1,artista,,,,,catalogo_personas
 p.2305,Gustavo Adolfo González,persona,artista,1,artista,,,,,catalogo_personas
-p.2306,Gustavo Gómez Casallas,persona,artista,2,artista,,,,,catalogo_personas
+p.2306,Gustavo Gómez Casallas,persona,artista,3,artista,,,,,catalogo_personas
 p.2307,Gustavo López Armentía,persona,artista,1,artista,,,,,catalogo_personas
 p.2308,Héctor Contte Pau,persona,artista,1,artista,,,,,catalogo_personas
 p.2309,Héctor Fabio Oviedo,persona,artista,2,artista,,,,,catalogo_personas
@@ -3591,50 +3591,44 @@ n.164,Jorge Satut,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.165,Nelson Romero,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.166,Edo Rocha,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.167,Joaquín Roca-Rey,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.168,Francisco Rocca,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.169,Ricardo Regazzoni,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.170,Joaquim Redig de Campos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.171,Arisio Rabim,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.172,Pedro Preux,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.173,Sergio Augusto Porto,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.174,Gustavo Pardo Sarmiento,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.175,Jacques Palumbo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.176,Agustín Olavarría Valdivia,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.177,Marcello Nitsche,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.178,Sara Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.179,Kurt Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.180,Rubén Montoya,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.181,Newton Montenegro de Lima,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.182,Rodolfo Mishaan,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.183,Soledad Mendoza,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.184,Heber Marchisio,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.185,John MacGregor,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.186,Rita Letendre,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.187,Antonio Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.188,Vicente Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.189,Tito Kuramoto,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.190,Katya Kohn,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.191,Francisco Hung,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.192,Martela de Guruceaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.193,Antonio Granados Valdés,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.194,Gustavo Gómez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.195,Martha Gavensky,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.196,Juan Antonio García Gayou,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.197,Jesús Emilio Franco,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.198,Oscar Ferrando,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.199,Manuel Espinosa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.200,Angelo De Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.201,Fernando Dávila,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.202,Adriano D'Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.203,Greg Curnoe,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.204,Diana Cuervo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.205,Valentina Cruz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.206,Jack Coughlin,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.207,Luis Córdoba Salazar,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.208,Fernando Coral Dueñas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.209,Julio Coll Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.210,Jorge Ceballos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.211,Juan M. Calle,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.212,Carlos Avendaño Cass,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.213,Álvaro Armesto,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.214,José del C. Acevedo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.168,Ricardo Regazzoni,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.169,Joaquim Redig de Campos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.170,Arisio Rabim,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.171,Pedro Preux,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.172,Sergio Augusto Porto,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.173,Gustavo Pardo Sarmiento,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.174,Jacques Palumbo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.175,Agustín Olavarría Valdivia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.176,Marcello Nitsche,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.177,Sara Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.178,Kurt Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.179,Rubén Montoya,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.180,Newton Montenegro de Lima,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.181,Rodolfo Mishaan,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.182,Soledad Mendoza,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.183,Heber Marchisio,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.184,John MacGregor,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.185,Rita Letendre,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.186,Antonio Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.187,Vicente Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.188,Tito Kuramoto,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.189,Katya Kohn,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.190,Martela de Guruceaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.191,Antonio Granados Valdés,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.192,Martha Gavensky,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.193,Juan Antonio García Gayou,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.194,Jesús Emilio Franco,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.195,Oscar Ferrando,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.196,Angelo De Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.197,Fernando Dávila,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.198,Adriano D'Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.199,Greg Curnoe,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.200,Diana Cuervo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.201,Valentina Cruz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.202,Jack Coughlin,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.203,Luis Córdoba Salazar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.204,Fernando Coral Dueñas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.205,Julio Coll Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.206,Jorge Ceballos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.207,Juan M. Calle,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.208,Álvaro Armesto,sin_catalogar,artista,1,,,,,,texto_exposiciones

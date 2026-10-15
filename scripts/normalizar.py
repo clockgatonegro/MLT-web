@@ -71,6 +71,9 @@ for r in orgs:
         ocupacion='', nacionalidad=r.get('pais') or '', sexo='', ano_nacimiento=entero(r.get('ano_constitucion')) or '',
         ano_muerte=entero(r.get('ano_cierre')) or '', origen='catalogo_organizaciones')
 
+# Correcciones de nombre confirmadas por los autores (14/10/2026): «Francisco Jung» es Francisco Hung
+for _k, _v in {'p.1687': 'Francisco Hung'}.items():
+    if _k in agentes: agentes[_k]['Label'] = _v
 nuevos = {}  # norm -> id para nombres no catalogados
 # Equivalencias revisadas a mano (nombre en archivo web -> registro del catálogo 2016)
 ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258', 'ericka florez hidalgo': 'p.2708',
@@ -79,7 +82,10 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          # catálogo de la II Bienal Americana de Artes Gráficas (1973): variantes de grafía claras
          'osvaldo viteri': 'p.1033', 'maria victoria porras': 'p.2458', 'yairo mejia villa': 'p.235',
          'michael manzur': 'p.1114', 'ernesto fontecilla': 'p.1760', 'ken danby': 'p.1322',
-         'herman braun': 'p.193', 'roser brau': 'p.55', 'francisco jose gamez': 'p.2288'}
+         'herman braun': 'p.193', 'roser brau': 'p.55', 'francisco jose gamez': 'p.2288',
+         # confirmadas por los autores (14/10/2026)
+         'francisco rocca': 'p.118', 'gustavo gomez': 'p.2306', 'francisco hung': 'p.1687',
+         'manuel espinosa': 'p.396', 'carlos avendano cass': 'p.1977', 'jose del c acevedo': 'p.1377'}
 def resolver(nombre, preferir):
     k = norm(nombre)
     if k in ALIAS: return ALIAS[k], True

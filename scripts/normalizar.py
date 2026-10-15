@@ -94,6 +94,7 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'carlos lersundy': 'p.213', 'gianfranco ferroni': 'p.529', 'henry c pearson': 'p.502', 'ivan rickenmann': 'p.190',
          'lope max diaz': 'p.420', 'hernan braun': 'p.193', 'ed ruscha': 'p.579',
          # confirmados por los autores (15/10/2026)
+         'anselmo carrera': 'p.663', 'thom o conor': 'p.252', 'claudia sarria': 'p.2258',  # grafías de la nota de 2009 y de los autores
          'martha granados': 'p.1157', 'fiorella gomez': 'p.3179', 'antonio dorado': 'p.2847',
          'bernardo oritz': 'p.2036'}
 # grafías corregidas con documentos de Cactus (ver fuentes/triangulacion_cactus.csv, campo «nombre»)
@@ -276,6 +277,12 @@ for e in expos:
     k = n_art[e['Id']]
     e['n_artistas'] = k
     e['modalidad'] = e.get('modalidad_fija') or ('individual' if k == 1 else 'colectiva' if k >= 2 else 'n/d')
+# colectivas confirmadas por los autores (15/10/2026), aunque la Base de datos no nombre a sus artistas;
+# también todas las exposiciones curadas por Miguel González que quedaban como n/d
+COLECTIVAS = {'ex.765', 'ex.822', 'ex.916', 'ex.745', 'ex.637', 'ex.587', 'ex.365', 'ex.720', 'ex.838', 'ex.841', 'ex.912', 'ex.741'}
+cur_mg = {a['Source'] for a in aristas if a['rol'] == 'curador' and agentes.get(a['Target'], {}).get('Label') == 'Miguel González'}
+for e in expos:
+    if e['modalidad'] == 'n/d' and (e['Id'] in COLECTIVAS or e['Id'] in cur_mg): e['modalidad'] = 'colectiva'
 CE=['Id','Label','ano','decada','fecha_ini','fecha_fin','espacio','sede','tipo_expo','modalidad','n_artistas','autor_texto','artistas_varios','fuente','confianza','fuente_url','pieza_cactus','fuentes_cactus']
 for e in expos:
     e.setdefault('confianza','base_MLT'); e.setdefault('fuente_url',''); e.setdefault('pieza_cactus',''); e.setdefault('fuentes_cactus','')

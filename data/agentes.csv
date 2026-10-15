@@ -1,26 +1,26 @@
 Id,Label,clase,roles,n_expos,ocupacion,nacionalidad,sexo,ano_nacimiento,ano_muerte,origen
 p.1,Emma Reyes,persona,artista,18,artista,Colombia,,1915,,catalogo_personas
-p.2,Édgar Negret,persona,artista,36,artista,Colombia,,,,catalogo_personas
+p.2,Édgar Negret,persona,artista,37,artista,Colombia,,,,catalogo_personas
 p.3,Lorenzo Homar,persona,artista,11,artista,Puerto Rico,,,,catalogo_personas
 p.4,Ómar Rayo,persona,artista,40,artista,Colombia,M,1928,2010,catalogo_personas
-p.5,María de la Paz Jaramillo,persona,artista|curador,41,artista,Colombia,F,1948,,catalogo_personas
+p.5,María de la Paz Jaramillo,persona,artista|curador,42,artista,Colombia,F,1948,,catalogo_personas
 p.7,Pedro Alcántara Herrán,persona,artista,48,artista,Colombia,M,1942,,catalogo_personas
 p.8,Álvaro Barrios,persona,artista|curador,32,artista,Colombia,M,,,catalogo_personas
 p.9,Beatriz González,persona,artista,63,artista,Colombia,F,1938,,catalogo_personas
 p.10,Hernán Díaz,persona,artista,8,artista,Colombia,M,,,catalogo_personas
 p.11,Antonio Caro,persona,artista,23,artista,Colombia,F,1950,,catalogo_personas
-p.12,Enrique Grau,persona,artista,56,artista,Colombia,M,1920,2004,catalogo_personas
+p.12,Enrique Grau,persona,artista,57,artista,Colombia,M,1920,2004,catalogo_personas
 p.13,Gustavo Zalamea,persona,artista,16,artista,Colombia,M,,,catalogo_personas
 p.14,Óscar Muñoz,persona,artista|curador,50,artista,Colombia,M,1951,,catalogo_personas
 p.15,Luis Eduardo Borja,persona,artista,1,artista,Colombia,M,,,catalogo_personas
 p.16,Luis Caballero,persona,artista,35,artista,Colombia,M,1942,1995,catalogo_personas
-p.17,Lucy Tejada,persona,artista,52,artista,Colombia,F,1920,2011,catalogo_personas
+p.17,Lucy Tejada,persona,artista,53,artista,Colombia,F,1920,2011,catalogo_personas
 p.18,Nunik Sauret,persona,artista,4,artista,México,,,,catalogo_personas
 p.19,León Ferrari,persona,artista,11,artista,Brasil,M,,,catalogo_personas
 p.20,Juan Antonio Roda,persona,artista,29,artista,Español,M,1921,2003,catalogo_personas
 p.21,Teresa Cuéllar,persona,artista,10,artista,Colombia,,,,catalogo_personas
 p.22,Santiago Cárdenas,persona,artista,41,artista,Colombia,M,1932,,catalogo_personas
-p.23,Hernando Tejada,persona,artista,52,artista,Colombia,M,1924,1999,catalogo_personas
+p.23,Hernando Tejada,persona,artista,53,artista,Colombia,M,1924,1999,catalogo_personas
 p.24,David Manzur,persona,artista,23,artista,Colombia,M,1929,,catalogo_personas
 p.25,Daniel Zelaya,persona,artista,9,artista,Argentina,,,,catalogo_personas
 p.26,Umberto Giangrandi,persona,artista,8,artista,Colombia,,,,catalogo_personas
@@ -30,7 +30,7 @@ p.29,Liliana Porter,persona,artista,32,artista,Argentina,F,1941,,catalogo_person
 p.30,Antonio Barrera,persona,artista,14,artista,Colombiana,M,1948,1990,catalogo_personas
 p.31,Fernell Franco Barrios,persona,artista,14,artista,Colombia,M,1942,2006,catalogo_personas
 p.32,Carlos Cruz-Diez,persona,artista,22,artista,Venezuela,,,,catalogo_personas
-p.33,Wifredo Lam,persona,artista,9,artista,Cuba,,,,catalogo_personas
+p.33,Wifredo Lam,persona,artista,10,artista,Cuba,,,,catalogo_personas
 p.34,Paul-Armand Gette,persona,artista,1,artista,Francia,,,,catalogo_personas
 p.35,Manuel Hernández,persona,artista,29,artista,Colombiana,M,1928,2014,catalogo_personas
 p.36,Linda Troeller,persona,artista,7,artista,Estados Unidos,,,,catalogo_personas
@@ -41,12 +41,12 @@ p.40,Carlos Rojas,persona,artista,41,artista,Colombia,,,,catalogo_personas
 p.41,Alejandro Obregón,persona,artista,42,artista,Español,M,1920,1992,catalogo_personas
 p.42,Peter Milton,persona,artista,14,artista,Estados Unidos,,,,catalogo_personas
 p.43,Miguel Ángel Rojas,persona,artista|curador,15,artista,Colombia,,,,catalogo_personas
-p.44,María Thereza Negreiros,persona,artista,46,artista,Brasileña ,F,1930,,catalogo_personas
+p.44,María Thereza Negreiros,persona,artista,47,artista,Brasileña ,F,1930,,catalogo_personas
 p.45,Luis Camnitzer,persona,artista,16,artista,Uruguay,,,,catalogo_personas
 p.46,Leonel Góngora,persona,artista,24,artista,Colombia,M,1932,,catalogo_personas
 p.47,Gregorio Cuartas,persona,artista,9,artista,Colombia,M,1938,,catalogo_personas
 p.48,Ever Astudillo,persona,artista,32,artista,Colombia,M,1948,2015,catalogo_personas
-p.49,Eugenio Dittborn,persona,artista,18,artista,Chile,M,1943,,catalogo_personas
+p.49,Eugenio Dittborn,persona,artista,19,artista,Chile,M,1943,,catalogo_personas
 p.50,Diego Arango,persona,artista,10,artista,Colombia,M,1946,,catalogo_personas
 p.51,Víctor Laignelet,persona,artista,13,artista,Colombia,M,1955,,catalogo_personas
 p.53,Susy Iglicki,persona,artista,8,artista,Venezuela,,,,catalogo_personas
@@ -54,7 +54,7 @@ p.54,Sergio Camporeale,persona,artista,14,artista,Argentina,M,1937,,catalogo_per
 p.55,Roser Bru,persona,artista,17,artista,Chile,,,,catalogo_personas
 p.56,Rodolfo Abularach,persona,artista,22,artista,Guatemala,M,1933,,catalogo_personas
 p.57,Robert Nelson,persona,artista,11,artista,Estados Unidos,,,,catalogo_personas
-p.58,René Portocarrero,persona,artista,8,artista,Cuba,,,,catalogo_personas
+p.58,René Portocarrero,persona,artista,9,artista,Cuba,,,,catalogo_personas
 p.59,Mercedes Sebastián,persona,artista,10,artista,Colombia,,,,catalogo_personas
 p.60,María Cristina Cortés,persona,artista,9,artista,Colombia,,,,catalogo_personas
 p.62,Juan Camilo Uribe,persona,artista,6,artista,Colombia,,,,catalogo_personas
@@ -70,20 +70,20 @@ p.71,Geo Ripley,persona,artista,3,artista,Rep. Dominicana,,,,catalogo_personas
 p.72,Fernando de Szyszlo,persona,artista,18,artista,Perú,M,1925,,catalogo_personas
 p.73,Feliza Bursztyn,persona,artista,28,artista,Colombia,,,,catalogo_personas
 p.74,Eduardo Vilches,persona,artista,8,artista,Chile,,,,catalogo_personas
-p.75,Cristina Llano,persona,artista,12,artista,Colombiana,F,1955,,catalogo_personas
+p.75,Cristina Llano,persona,artista,13,artista,Colombiana,F,1955,,catalogo_personas
 p.76,Antonio Seguí,persona,artista,19,artista,Argentina,M,1934,,catalogo_personas
 p.77,Ana Mercedes Hoyos,persona,artista,13,artista,Colombia,F,1942,,catalogo_personas
 p.78,Álvaro Marín Vieco,persona,artista,3,artista,Colombia,,,,catalogo_personas
-p.79,Alicia Viteri,persona,artista,8,artista,Colombia,,,,catalogo_personas
+p.79,Alicia Viteri,persona,artista,9,artista,Colombia,,,,catalogo_personas
 p.80,Alfonso Quijano Acero,persona,artista,3,artista,Colombia,,,,catalogo_personas
 p.81,Yutaka Toyota,persona,artista,10,artista,Brasil / Japón,,1931,,catalogo_personas
 p.82,Wilmer García,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.83,Will Barnet,persona,artista,6,artista,Estados Unidos,,,,catalogo_personas
-p.85,Rufino Tamayo,persona,artista,8,artista,México,,,,catalogo_personas
+p.85,Rufino Tamayo,persona,artista,9,artista,México,,,,catalogo_personas
 p.87,Rosemberg Sandoval,persona,artista,16,artista,Colombia,M,1959,,catalogo_personas
 p.88,Rogelio Polesello,persona,artista,14,artista,Argentina,,,,catalogo_personas
 p.89,Rodolfo Vélez,persona,artista,5,artista,Colombia,M,1956,,catalogo_personas
-p.90,Roberto Sebastián Matta,persona,artista,7,artista,Chile,,,,catalogo_personas
+p.90,Roberto Sebastián Matta,persona,artista,8,artista,Chile,,,,catalogo_personas
 p.91,Robert Kipniss,persona,artista,11,artista,,,,,catalogo_personas
 p.92,Paul Davis,persona,artista,3,artista,Estados Unidos,,,,catalogo_personas
 p.93,Pablo Picasso,persona,artista,3,artista,España,,,,catalogo_personas
@@ -119,7 +119,7 @@ p.123,Darío Morales,persona,artista,15,artista,Colombia,,,,catalogo_personas
 p.124,Clarisse Gueller,persona,artista,1,artista,Brasil,,,,catalogo_personas
 p.125,Catalina Mejía,persona,artista,7,artista,Colombia,,,,catalogo_personas
 p.126,Carlos Martínez,persona,artista,1,artista,Colombia,,,,catalogo_personas
-p.127,Bernardo Salcedo,persona,artista,27,artista,Colombia,,,,catalogo_personas
+p.127,Bernardo Salcedo,persona,artista,28,artista,Colombia,,,,catalogo_personas
 p.128,Augusto Rendón,persona,artista,11,artista,Colombia,,,,catalogo_personas
 p.129,Arcangelo Ianelli,persona,artista,12,artista,Brasil,,,,catalogo_personas
 p.130,Alberto Castro Leñero,persona,artista,1,artista,México,,,,catalogo_personas
@@ -135,7 +135,7 @@ p.140,Rubens Gerchman,persona,artista,14,artista,Brasil,,,,catalogo_personas
 p.141,Ronny Vayda,persona,artista,5,artista,Colombia,,,,catalogo_personas
 p.142,Rolando Peña,persona,artista,6,artista,Venezuela,,,,catalogo_personas
 p.143,Rodrigo Facundo,persona,artista,5,artista,Colombia,,,,catalogo_personas
-p.144,Roberto De Lamonica,persona,artista,5,artista,Brasil,,,,catalogo_personas
+p.144,Roberto De Lamonica,persona,artista,6,artista,Brasil,,,,catalogo_personas
 p.146,Régulo Pérez,persona,artista,2,artista,Venezuela,,,,catalogo_personas
 p.148,Rafael Echeverri,persona,artista,13,artista,Colombia,,,,catalogo_personas
 p.149,Rafael Ortiz,persona,artista,11,artista,Colombia,M,1960,,catalogo_personas
@@ -156,7 +156,7 @@ p.165,Marco Ospina,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.166,Luz Ángela Lizarazo,persona,artista,9,artista,Colombia,F,1966,,catalogo_personas
 p.167,Luisa Palacios,persona,artista,5,artista,Venezuela,,,,catalogo_personas
 p.168,Luis Gregorio Correia,persona,artista,2,artista,Brasil,,,,catalogo_personas
-p.169,Luis Alberto Solari,persona,artista,10,artista,Uruguay,M,1918,1993,catalogo_personas
+p.169,Luis Alberto Solari,persona,artista,11,artista,Uruguay,M,1918,1993,catalogo_personas
 p.170,Luis Guevara Moreno,persona,artista,1,artista,Venezuela,,,,catalogo_personas
 p.171,Luis Martínez Pedro,persona,artista,1,artista,Cuba,,,,catalogo_personas
 p.172,Luis Molinari-Flores,persona,artista,7,artista,Ecuador,,,,catalogo_personas
@@ -167,13 +167,13 @@ p.176,Leonardo Herrera,persona,artista|curador,14,artista,Colombia,,,,catalogo_p
 p.177,Julio Alpuy,persona,artista,2,artista,Uruguay,,,,catalogo_personas
 p.178,Juan Manuel Lugo,persona,artista,6,artista,Colombia,,,,catalogo_personas
 p.179,Juan Cárdenas,persona,artista,4,artista,Colombia,,,,catalogo_personas
-p.180,José Luis Cuevas,persona,artista,18,artista,México,,,,catalogo_personas
+p.180,José Luis Cuevas,persona,artista,19,artista,México,,,,catalogo_personas
 p.181,José Balmes,persona,artista,10,artista,Chile,M,1925,,catalogo_personas
 p.182,José Bermúdez,persona,artista,5,artista,Cuba,,,,catalogo_personas
 p.183,Jorge Alberto Reyes,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.184,Jorge Mantilla Caballero,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.185,John Paul Jones,persona,artista,11,artista,Estados Unidos,M,1924,1999,catalogo_personas
-p.186,Jim Amaral,persona,artista,16,artista,Estados Unidos,,,,catalogo_personas
+p.186,Jim Amaral,persona,artista,17,artista,Estados Unidos,,,,catalogo_personas
 p.187,Jaime Franco,persona,artista,5,artista,Colombia,M,1963,,catalogo_personas
 p.188,Jaime González,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.189,Jaime Valencia,persona,artista,2,artista,Colombia,,,,catalogo_personas
@@ -183,7 +183,7 @@ p.193,Herman Braun-Vega,persona,artista,7,artista,Perú,M,1933,,catalogo_persona
 p.195,Guillermo Trujillo,persona,artista,3,artista,Panamá,,,,catalogo_personas
 p.196,Gracia Barrios,persona,artista,13,artista,Chile,F,1926,,catalogo_personas
 p.197,Gloria Duncan,persona,artista,4,artista,Colombia,,,,catalogo_personas
-p.198,Germán Londoño,persona,artista,7,artista,Colombia,M,1961,,catalogo_personas
+p.198,Germán Londoño,persona,artista,8,artista,Colombia,M,1961,,catalogo_personas
 p.199,Gabriel Messil,persona,artista,7,artista,Argentina,,,,catalogo_personas
 p.200,Fernando Botero,persona,artista,18,artista,Colombia,,1932,,catalogo_personas
 p.201,Fernando Maza,persona,artista,13,artista,Argentina,,,,catalogo_personas
@@ -192,7 +192,7 @@ p.203,Elías Heim,persona,artista|curador,28,artista,Colombia,M,1966,,catalogo_p
 p.204,Eduardo Audivert,persona,artista,7,artista,Argentina,,,,catalogo_personas
 p.205,Édgar Álvarez,persona,artista,6,artista,Colombia,,,,catalogo_personas
 p.206,Diego Mazuera,persona,artista,9,artista,Colombiana,M,1950,,catalogo_personas
-p.207,David Alfaro Siqueiros,persona,artista,7,artista,México,M,1896,1974,catalogo_personas
+p.207,David Alfaro Siqueiros,persona,artista,8,artista,México,M,1896,1974,catalogo_personas
 p.208,Danilo Dueñas,persona,artista,11,artista,Colombia,,,,catalogo_personas
 p.209,Dana W. Atchley,persona,artista,1,artista,Canadá,,,,catalogo_personas
 p.210,Cecilia Coronel,persona,artista,3,artista,Colombia,,,,catalogo_personas
@@ -201,7 +201,7 @@ p.212,Carlos Jacanamijoy Tisoy,persona,artista,7,artista,Colombia,M,1964,,catalo
 p.213,Carlos Lersundy García,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.214,Carlos Salas Silva,persona,artista,11,artista,Colombia,M,1957,,catalogo_personas
 p.215,Bibiana Vélez,persona,artista,12,artista,Colombia,,1956,,catalogo_personas
-p.216,Becky Mayer,persona,artista,10,artista,Colombia,,1944,,catalogo_personas
+p.216,Becky Mayer,persona,artista,11,artista,Colombia,,1944,,catalogo_personas
 p.217,Beatriz Daza,persona,artista,21,artista,Colombia,,,,catalogo_personas
 p.218,Augusto Rivera,persona,artista,12,artista,Colombia,,,,catalogo_personas
 p.219,Arturo Kubotta,persona,artista,4,artista,Perú,,,,catalogo_personas
@@ -231,7 +231,7 @@ p.248,Toshihiro Katayama,persona,artista,1,artista,Estados Unidos,,,,catalogo_pe
 p.249,Tony Onley,persona,artista,2,artista,Canadá,,,,catalogo_personas
 p.250,Tomás Gonda,persona,artista,1,artista,Argentina,,,,catalogo_personas
 p.251,Tino Stefanoni,persona,artista,2,artista,Italia,,,,catalogo_personas
-p.252,Thom O'Connor,persona,artista,7,artista,Estados Unidos,,,,catalogo_personas
+p.252,Thom O'Connor,persona,artista,8,artista,Estados Unidos,,,,catalogo_personas
 p.253,Tancredo De Araújo,persona,artista,5,artista,Brasil,,,,catalogo_personas
 p.255,Tadeo Castro,persona,artista,2,artista,Perú,,,,catalogo_personas
 p.256,Susy Dembo,persona,artista,1,artista,Venezuela,,,,catalogo_personas
@@ -270,7 +270,7 @@ p.298,Ricardo Potes Vargas,persona,artista,1,artista,Colombia,,,,catalogo_person
 p.299,Ricardo Rocha,persona,artista,2,artista,México,,,,catalogo_personas
 p.300,Ria Zurne,persona,artista,1,artista,Holanda,,,,catalogo_personas
 p.302,Raúl Cattelani,persona,artista,1,artista,Uruguay,,,,catalogo_personas
-p.303,Raquel Forner,persona,artista,2,artista,Argentina,,,,catalogo_personas
+p.303,Raquel Forner,persona,artista,3,artista,Argentina,,,,catalogo_personas
 p.305,Rangel Gutiérrez,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.306,Ramón Vanegas,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.307,Rafael Canogar,persona,artista,1,artista,España,,,,catalogo_personas
@@ -291,7 +291,7 @@ p.323,Patricia Bravo,persona,artista,2,artista,Colombia,F,1966,,catalogo_persona
 p.324,Paige Abadi,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.325,Pablo O'higgins,persona,artista,1,artista,México,,,,catalogo_personas
 p.327,Pablo Van Wong,persona,artista,16,artista,Colombia,,,,catalogo_personas
-p.328,Oswaldo Guayasamín,persona,artista,7,artista,Ecuador,,,,catalogo_personas
+p.328,Oswaldo Guayasamín,persona,artista,8,artista,Ecuador,,,,catalogo_personas
 p.329,Oswaldo Subero,persona,artista,1,artista,Venezuela,,,,catalogo_personas
 p.332,Óscar González Cerón,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.333,Óscar Ramos,persona,artista,1,artista,,,,,catalogo_personas
@@ -301,7 +301,7 @@ p.337,Odetto Guersoni,persona,apoyo|artista,3,artista,Brasil,,,,catalogo_persona
 p.339,Norberto Onofrio,persona,artista,1,artista,Argentina,,,,catalogo_personas
 p.345,Nelson Villalobo,persona,artista,1,artista,Cuba,,,,catalogo_personas
 p.346,Ned Truss,persona,artista,5,artista,Estados Unidos,,,,catalogo_personas
-p.349,Nadín Ospina,persona,artista,16,artista,Colombia,M,1960,,catalogo_personas
+p.349,Nadín Ospina,persona,artista,17,artista,Colombia,M,1960,,catalogo_personas
 p.350,Myrna Báez,persona,artista,7,artista,Puerto Rico,,,,catalogo_personas
 p.351,Mónika Herrán,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.352,Mónica Meira,persona,artista,7,artista,Colombia,,,,catalogo_personas
@@ -311,7 +311,7 @@ p.357,Miguel Ángel Reyes,persona,artista,3,artista,Colombiana,M,1952,,catalogo_
 p.362,Michel Leclair,persona,artista,1,artista,Canadá,,,,catalogo_personas
 p.364,Melitón Rodríguez,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.365,Mauricio Bueno,persona,artista,3,artista,Ecuador,M,1939,,catalogo_personas
-p.366,Mauricio Lasansky,persona,artista,9,artista,Estados Unidos,,,,catalogo_personas
+p.366,Mauricio Lasansky,persona,artista,10,artista,Estados Unidos,,,,catalogo_personas
 p.367,Mathias Goeritz,persona,artista,5,artista,México,,,,catalogo_personas
 p.368,Mateo Manaure,persona,artista,5,artista,Venezuela,,,,catalogo_personas
 p.369,Massimo Vignelli,persona,artista,1,artista,Estados Unidos,,,,catalogo_personas
@@ -326,7 +326,7 @@ p.379,Mario Zabaleta,persona,artista,3,artista,Colombia,,,,catalogo_personas
 p.380,Marilyn Tamkin,persona,artista,1,artista,México,,,,catalogo_personas
 p.381,Marietta Berman,persona,artista,5,artista,Venezuela,,,,catalogo_personas
 p.382,Mariana Varela,persona,artista,8,artista,Colombia,,,,catalogo_personas
-p.385,María José Morales,persona,artista,5,artista,Colombia,,,,catalogo_personas
+p.385,María José Morales,persona,artista,6,artista,Colombia,,,,catalogo_personas
 p.387,María Clara Gómez,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.388,María Clara Piñeyro,persona,artista,5,artista,Colombia,,,,catalogo_personas
 p.389,María Girona,persona,artista,1,artista,España,,,,catalogo_personas
@@ -354,7 +354,7 @@ p.418,Louise Richter,persona,artista,4,artista,Venezuela,,,,catalogo_personas
 p.420,Lope Max Díaz Rivera,persona,artista,2,artista,Puerto Rico,,,,catalogo_personas
 p.421,Liliana Durán,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.424,Leonora Carrington,persona,artista,3,artista,México,,,,catalogo_personas
-p.426,Leonard Baskin,persona,artista,9,artista,Estados Unidos,,,,catalogo_personas
+p.426,Leonard Baskin,persona,artista,10,artista,Estados Unidos,,,,catalogo_personas
 p.427,León Ricaurte Miranda,persona,artista,1,artista,Ecuador,,,,catalogo_personas
 p.428,Kenjilo Nanao,persona,artista,5,artista,Estados Unidos,,,,catalogo_personas
 p.429,Julio Augusto Zachrisson,persona,artista,2,artista,Panamá,,,,catalogo_personas
@@ -396,7 +396,7 @@ p.475,Jesús Martínez,persona,artista,1,artista,México,,,,catalogo_personas
 p.476,Jean Gabriel Thénot,persona,artista,4,artista,Frances,M,1951,,catalogo_personas
 p.477,Javier Restrepo,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.478,Jan Cremer,persona,artista,1,artista,Holanda,,,,catalogo_personas
-p.479,James Brown,persona,artista,2,artista,Estados Unidos,,,,catalogo_personas
+p.479,James Brown,persona,artista,3,artista,Estados Unidos,,,,catalogo_personas
 p.480,Jaime Ávila,persona,artista,6,artista,Colombia,M,1966,,catalogo_personas
 p.481,Jaime Iregui,persona,artista,8,artista,Colombia,M,1956,,catalogo_personas
 p.483,Jaime Osorio,persona,artista,2,artista,Colombia,,,,catalogo_personas
@@ -500,8 +500,8 @@ p.613,Carmenza Delgado,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.615,Carmen Aldunate,persona,artista,3,artista,Chile,F,1935,,catalogo_personas
 p.617,Carlos -Bororo- Maturana,persona,artista,4,artista,Chile,,,,catalogo_personas
 p.618,Carlos Andrade,persona,artista,3,artista,Colombia,,,,catalogo_personas
-p.620,Carlos Collazo,persona,artista,5,artista,Puerto Rico,,,,catalogo_personas
-p.621,Carlos Correa,persona,artista,11,artista,Colombia,,,,catalogo_personas
+p.620,Carlos Collazo,persona,artista,6,artista,Puerto Rico,,,,catalogo_personas
+p.621,Carlos Correa,persona,artista,12,artista,Colombia,,,,catalogo_personas
 p.624,Carlos García Estrada,persona,artista,1,artista,México,,,,catalogo_personas
 p.625,Carlos Gómez,persona,artista,7,artista,Colombia,M,1963,,catalogo_personas
 p.626,Carlos Granada,persona,artista,9,artista,Colombia,,,,catalogo_personas
@@ -533,7 +533,7 @@ p.656,Antonio Martorell,persona,artista,3,artista,Puerto Rico,,,,catalogo_person
 p.658,Antonio Peláez,persona,artista,2,artista,México,,,,catalogo_personas
 p.659,Antonio Rodríguez,persona,artista,1,artista,México,,,,catalogo_personas
 p.660,Antonio Samudio,persona,artista,2,artista,Colombia,,,,catalogo_personas
-p.663,Anselmo Carrera Rojas,persona,artista,4,artista,Perú,,,,catalogo_personas
+p.663,Anselmo Carrera Rojas,persona,artista,5,artista,Perú,,,,catalogo_personas
 p.664,Anna Letycia Quadros,persona,artista,3,artista,Brasil,,,,catalogo_personas
 p.665,Anna Bella Geiger,persona,artista,3,artista,Brasil,,,,catalogo_personas
 p.666,Aníbal Gil,persona,artista,8,artista,Colombia,,,,catalogo_personas
@@ -2061,7 +2061,7 @@ p.2253,Charmion Von Weigand,persona,artista,1,artista,,,,,catalogo_personas
 p.2254,Chasper Otto Melcher,persona,artista,1,artista,,,,,catalogo_personas
 p.2255,Chen Chi Kwan,persona,artista,1,artista,,,,,catalogo_personas
 p.2256,Christian de Portzamparc,persona,artista,1,artista,,,,,catalogo_personas
-p.2258,Claudia Patricia Sarria,persona,artista,2,artista,,,,,catalogo_personas
+p.2258,Claudia Patricia Sarria,persona,artista,3,artista,,,,,catalogo_personas
 p.2259,Daniel Romero Lozano,persona,artista,1,artista,,,,,catalogo_personas
 p.2261,Delia del Carril,persona,artista,1,artista,,,,,catalogo_personas
 p.2262,Diana Galindo Giraldo,persona,artista,1,artista,,,,,catalogo_personas
@@ -2185,7 +2185,7 @@ p.2384,Juan Manuel Caneja,persona,artista,1,artista,,,,,catalogo_personas
 p.2385,Juan Manuel Colombia,persona,artista,1,artista,,,,,catalogo_personas
 p.2386,Juan Manuel Salcedo,persona,artista,1,artista,,,,,catalogo_personas
 p.2387,Juan Miguel Figueroa,persona,artista,1,artista,,,,,catalogo_personas
-p.2388,Juan Pablo Fajardo,persona,artista|curador,3,artista,,,,,catalogo_personas
+p.2388,Juan Pablo Fajardo,persona,artista|curador,4,artista,,,,,catalogo_personas
 p.2389,Juan Pablo Renzi,persona,artista,1,artista,,,,,catalogo_personas
 p.2390,Juan Ramón Giraldo,persona,artista,1,artista,,,,,catalogo_personas
 p.2391,Juan Ramón Velásquez,persona,artista,2,artista,,,,,catalogo_personas
@@ -3482,7 +3482,7 @@ n.47,María Belén Sáez de Ibarra,sin_catalogar,curador,1,,,,,,texto_exposicion
 n.48,Semillero de Investigación Litoralidades,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.49,Museo de Memoria de Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.50,Mónica Vilá,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.51,Adriana Castellanos Olmedo,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.51,Adriana Castellanos Olmedo,sin_catalogar,curador,3,,,,,,texto_exposiciones
 n.52,Solimán López,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.53,Parque Explora,sin_catalogar,apoyo,2,,,,,,texto_exposiciones
 n.54,Planetario de Bogotá,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
@@ -3752,3 +3752,13 @@ n.318,Juliana Góngora,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.319,Institución Educativa Oficial Boyacá,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.320,Cristina Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.321,Sandra Rengifo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.322,Adrián Balseca,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.323,Aimema Uai,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.324,Alejandra Hernández,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.325,Felipe Álvarez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.326,Fernando Hichamón,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.327,Hélio Melo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.328,Felipe Arturo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.329,Óscar Ardila,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.330,Sol Colmenares,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.331,Alexis Polanco,sin_catalogar,artista,1,,,,,,texto_exposiciones

@@ -95,6 +95,9 @@ NEW = [
       espacio="Casa Obeso Mejía", artistas="Beatriz González", tipo="evento", confianza="alta", modalidad="individual",
       apoyan_auspicia="Rosa Contemporánea Eventos y Logística; 360 Group Colombia; Bitaco; Corona; Evok; Marquetería Arte Moderno; Aritex de Colombia; El Molino; Carnes Frías Enriko; Krima; La Cocina Cali; Queso Labrantío; Impresos Richard; Huevos Santa Anita; Manitoba; Sokolata; Sweet Vanessa; Vizio; Verdissimo; Zahavi Repostería Gourmet; Zonin Prosecco; Orquídeas del Valle",
       pieza_cactus="VARIOS/Afternoon Pop", notas="Evento benéfico; la obra es una serigrafía sobre llantas y los fondos se destinaron a los proyectos educativos del museo (publicación del museo en Facebook). Año 2018 inferido de las fechas de las piezas de Cactus"),
+ dict(nombre_expo="¡A la gráfica! Experimentar, reproducir, democratizar. Bienales Americanas de Artes Gráficas", fecha_ini="2025-06-20",
+      espacio="Edificio de la Colección", curadores="Adriana Castellanos Olmedo, Juan Pablo Fajardo", tipo="colección", confianza="alta", modalidad="colectiva",
+      notas="Ocupó los tres pisos del Edificio de la Colección; obras de la colección y archivos del Centro de Documentación sobre las Bienales Americanas de Artes Gráficas (1970–1986). Fuente: nota de prensa sobre la apertura, aportada por los autores"),
 
 ]
 

@@ -78,7 +78,7 @@ ex.840,resuelto,artista,Catalina Torres,EXPOSICIONES 2017/Oido pueblo/Prueba.ai,
 ex.840,confirma,artista,Carolina Torres,Confirmado por los autores (15/10/2026),La artista es Carolina Torres; «Catalina» en la invitación y las fichas es un error
 ex.841,confirma,fechas,2017-12-14/2018-01-14,EXPOSICIONES 2017/En Cauce/Piezas/Programa de Mano/Txtos Artistas-LYA.docx,Programa de mano
 ex.841,resuelto,fecha_fin,2018-02-17,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,El cuadernillo de febrero anuncia el «cierre de programas El Río Suena y En Cauce» el sábado 17 de febrero de 2018
-ex.841,corrige,fecha_fin,2018-02-17,Confirmado por los autores (15/10/2026),Cierre de El Río Suena y En Cauce el 17 de febrero de 2018
+ex.841,corrige,fecha_fin,2018-01-14,Confirmado por los autores (15/10/2026),"Del 14 de diciembre de 2017 al 14 de enero de 2018 (datos de los autores, 15/10/2026, que coinciden con el programa de mano)"
 ex.931,resuelto,fecha_fin,2018-02-17,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,Cierre de El Río Suena y En Cauce el sábado 17 de febrero de 2018; la base dice 14 de enero
 ex.931,corrige,fecha_fin,2018-02-17,Confirmado por los autores (15/10/2026),Cierre de El Río Suena y En Cauce el 17 de febrero de 2018
 ex.842,corrige,fecha_ini,2018-02-13,CUADERNILLO PROGRAMACION/PROGRAMACION FEB/FEBRERO.docx,Cuadernillo: «Martes 13 de febrero – Apertura: Costurero Viajero»; la base tenía 2018-02-14
@@ -158,3 +158,5 @@ ex.873,confirma,fecha_ini,2020-10-01,2020/EXPOSICIONES 2020/SMArt 2020/Redes/El 
 ex.842,confirma,fecha_ini,2018-02-13,Exposiciones 2018/Costutero viajero/Piezas/invitación virtual Costurero viajero.ai,«Martes 13 de febrero» (2018)
 ex.854,confirma,fecha_ini,2018-12-15,Exposiciones 2018/Aula Flexible/Piezas/Invitación virtual/Invitación Aula-02.jpg,«Apertura Dic 15 / 2018»
 ex.932,confirma,fecha_ini,2018-07-28,Exposiciones 2018/Museo Popular de Siloé/Invitación/Invitación - Museo Popular.jpg,«Inauguración sábado 28 de julio»
+ex.741,conflicto,curador,Miguel González,"Nota de prensa de la Alcaldía de Cali (20/05/2009), aportada por los autores",La nota atribuye la curaduría a Miguel González; la Base de datos de 2016 registra a Elías Heim
+ex.741,conflicto,fecha_ini,2009-05,"Nota de prensa de la Alcaldía de Cali (20/05/2009), aportada por los autores",La nota del 20 de mayo de 2009 anuncia la exposición en las salas Maritza Uribe de Urdinola y Subterránea; la Base de datos la fecha el 1 de diciembre de 2009

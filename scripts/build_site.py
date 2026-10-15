@@ -70,9 +70,20 @@ gtag('js',new Date());gtag('config','G-SYWHRKMC3T',{{anonymize_ip:true}});
 '''
 BANNER='<div id="ck" hidden style="position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;z-index:50;background:#1b2422;color:#eef0ec;font:13px/1.45 \'IBM Plex Sans\',Arial,sans-serif;padding:12px 14px;border-radius:6px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,.25)">\n<span style="flex:1 1 260px">Usamos Google Analytics para saber cómo se usa esta visualización. Las cookies de medición solo se activan si las acepta.</span>\n<span style="display:flex;gap:8px"><button id="ck-no" style="font:inherit;background:transparent;color:inherit;border:1px solid #93a39e;border-radius:4px;padding:4px 10px;cursor:pointer">Rechazar</button><button id="ck-si" style="font:inherit;background:#eef0ec;color:#1b2422;border:0;border-radius:4px;padding:5px 12px;cursor:pointer;font-weight:600">Aceptar</button></span>\n</div>\n<script>\n(function(){var b=document.getElementById(\'ck\'),c=null;try{c=localStorage.getItem(\'mlt_consent\')}catch(e){}\nif(!c)b.hidden=false;\nfunction set(v){try{localStorage.setItem(\'mlt_consent\',v)}catch(e){}if(v===\'si\')gtag(\'consent\',\'update\',{analytics_storage:\'granted\'});b.hidden=true}\ndocument.getElementById(\'ck-si\').onclick=function(){set(\'si\')};document.getElementById(\'ck-no\').onclick=function(){set(\'no\')};})();\n</script>\n'
 open('/home/claude/mlt-web/index.html','w').write(head+page+BANNER+'\n</body>\n</html>\n')
+# página aparte: Método y fuentes (mismo documento; una clase en <html> muestra solo esa sección)
+def metodo(pg,hd):
+    pg=pg.replace('<title>Red del Museo La Tertulia · Cali, 1956–2026</title>','<title>Método y fuentes · Red del Museo La Tertulia</title><script>document.documentElement.classList.add("pg-metodo")</script>',1)
+    for a in ('expedientes','quien','explorar'): pg=pg.replace(f'<a href="#{a}">',f'<a href="./#{a}">',1)
+    pg=pg.replace('<a href="metodo.html" class="pgm">','<a href="metodo.html" class="pgm" aria-current="true">',1)
+    hd=hd.replace(f'<link rel="canonical" href="{URL}">',f'<link rel="canonical" href="{URL}metodo.html">')
+    return hd,pg
+_h,_p=metodo(page,head)
+open('/home/claude/mlt-web/metodo.html','w').write(_h+_p+BANNER+'\n</body>\n</html>\n')
+open('/home/claude/mlt/metodo.html','w').write(metodo(page,'')[1])
 open('/home/claude/mlt-web/sitemap.xml','w').write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{URL}</loc><lastmod>{datetime.date.today().isoformat()}</lastmod><changefreq>yearly</changefreq><priority>1.0</priority></url>
+  <url><loc>{URL}metodo.html</loc><lastmod>{datetime.date.today().isoformat()}</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>
 ''')
 open('/home/claude/mlt-web/robots.txt','w').write(f'''User-agent: *

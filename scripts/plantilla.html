@@ -177,8 +177,8 @@ section.s h2{font:700 clamp(26px,3.6vw,38px)/1.05 var(--f-display);letter-spacin
 svg.dg{width:100%;height:auto;display:block}svg.dg text{font:12px var(--f-body);fill:var(--fg)}svg.dg text.em{fill:var(--muted);font-style:italic;font-size:11px}
 .estr svg.dg{max-width:640px}
 .mh{font:500 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px;border-top:1px solid var(--line);padding-top:12px}
-.dgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px 28px;margin:0 0 10px}.dgs figure{margin:0}.dgs svg.dg{max-width:340px;margin-bottom:6px}
-.exp .go{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.exp .go .gol{font:500 11px var(--f-data);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:4px}.exp .go .btn.sm{padding:6px 12px;font-size:13px}
+.dgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px 28px;margin:0 0 10px}.dgs figure{margin:0;display:flex;flex-direction:column}.dgs svg.dg{height:210px;width:100%;max-width:340px;margin-bottom:8px}
+.exp .go{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.exp .gol{font:500 11px var(--f-data);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:4px}.exp .go .btn.sm{padding:5px 10px;font-size:12.5px;white-space:nowrap}.exp .go.many{flex-wrap:nowrap;gap:6px;overflow-x:auto}.exp .gol{flex:0 0 100%}.exp .gor{display:block;margin:14px 0 6px}
 .cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px 40px}
 .cols2 h3{font:500 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px;border-top:1px solid var(--line);padding-top:12px}
 .cols2 p,.cols2 li{line-height:1.55;max-width:64ch}
@@ -204,6 +204,9 @@ footer.f a{color:inherit}
   .nav{flex-wrap:nowrap;gap:14px;overflow-x:auto;white-space:nowrap}
   .nav a.opt{display:none}
 }
+html:not(.pg-metodo) #metodo{display:none}
+html.pg-metodo #inicio,html.pg-metodo #expedientes,html.pg-metodo #quien,html.pg-metodo #explorar{display:none}
+html.pg-metodo #metodo{padding-top:24px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -212,7 +215,7 @@ footer.f a{color:inherit}
   <a href="#expedientes">Expedientes</a>
   <a href="#quien">Quién conecta</a>
   <a href="#explorar">Explorar la red</a>
-  <a href="#metodo" class="opt">Método y fuentes</a>
+  <a href="metodo.html" class="pgm">Método y fuentes</a>
 </nav>
 
 <header class="hero" id="inicio">
@@ -372,8 +375,12 @@ footer.f a{color:inherit}
     <p><a class="btn" id="falta-link" href="https://github.com/clockgatonegro/MLT-web/issues/new?title=Correcci%C3%B3n%3A%20&body=Exposici%C3%B3n%20o%20agente%3A%0AQu%C3%A9%20falta%20o%20est%C3%A1%20mal%3A%0AFuente%20(programa%20de%20mano%2C%20cat%C3%A1logo%2C%20enlace)%3A%0A" target="_blank" rel="noopener">Proponer una corrección</a></p>
     <p class="hint">Se abre un formulario en GitHub; necesita una cuenta gratuita.</p>
   </div>
-  <footer class="f">Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em> · Juan Fernando Correa y Carlos Dussán · Datos actualizados en octubre de 2026 · Código y datos en <a href="https://github.com/clockgatonegro/MLT-web" target="_blank" rel="noopener">GitHub</a></footer>
+
 </section>
+
+<div class="wrap">
+  <footer class="f">Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em> · Juan Fernando Correa y Carlos Dussán · Datos actualizados en octubre de 2026 · Código y datos en <a href="https://github.com/clockgatonegro/MLT-web" target="_blank" rel="noopener">GitHub</a></footer>
+</div>
 
 <div id="movil" hidden role="dialog" aria-labelledby="movil-t">
   <b id="movil-t">Hay más en una pantalla grande</b>
@@ -676,7 +683,7 @@ function intro(){
   <dl class="meta"><dt>${modPill(0)}</dt><dd>${fmt(counts[0])}</dd><dt>${modPill(1)}</dt><dd>${fmt(counts[1])}</dd><dt>${modPill(2)}</dt><dd>${fmt(counts[2])}</dd></dl>
   <p>Arrastre sobre la línea de tiempo para acotar un periodo. Un agente aparece solo si cumple el mínimo de exposiciones; bájelo a 1 para ver la red completa.</p>
   <h3>Más conectados en la vista</h3><ul id="top"></ul>
-  <p class="src">Fuentes, método y datos abiertos: <a href="#metodo">ver más abajo</a>.</p>`;
+  <p class="src">Fuentes, método y datos abiertos: <a href="metodo.html">en una página aparte</a>.</p>`;
   const top=VN.filter(n=>n.t>0).sort((a,b)=>deg[b.i]-deg[a.i]).slice(0,12);
   document.getElementById('top').innerHTML=top.map(n=>`<li><a data-i="${n.i}">${esc(n.label)}</a><span class="n">${deg[n.i]}</span></li>`).join('');
 }
@@ -926,7 +933,7 @@ const EXPS=[
    g+=`<text x="0" y="${H-2}">1977</text><text x="${W}" y="${H-2}" text-anchor="end">2020</text>`;
    return `<div class="big">${pct(k,L.length)} %</div><div class="cap">de las exposiciones entre 1982 y 2006 lo tienen como curador. Abajo, por año: en rojo las suyas, en gris el total.</div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`},
   src:'<b>Fuentes:</b> Aguilera Toro y Gómez García (2007); <em>Cartografiar mundos del arte</em> (artículo del proyecto); Wills Londoño (2018); Base de datos MLT 2016.',
-  go:{label:'Ver a Miguel González, 1993–2006',o:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}}},
+  go:{label:'Ver a Miguel González, 1993–2006',o:{view:'red',a:1993,b:2006,sel:MG&&MG.id}}},
  {id:'expansion',k:'2007–2026 · Expansión',t:'Curadores que también exponen',
   body(){const m=RAW.met['2007-2016'],m2=RAW.met['2017-2026'],r=m.evrol,pr=RAW.pred,X=EVC['2017-2026'];
    const win=pr.filter(p=>p[2]>p[3]);const cur=new Set();exIn(2007,2016).forEach(x=>{const L=rolesOf(x);L[1].concat(L[2]).forEach(t=>cur.add(t))});const top10=m.ev.slice(0,10).filter(([i])=>cur.has(i)&&ARTSET.has(i)).length;
@@ -955,7 +962,7 @@ const EXPS=[
   src:'<b>Fuentes:</b> Base de datos MLT 2016 y complemento 2016–2026 (solo exposiciones con apertura y cierre completos); lectura de los autores sobre la producción de las exposiciones.',
   go:{label:'Ver la duración de cada exposición',o:{view:'dur'}}}
 ];
-function renderExps(){document.getElementById('exps').innerHTML=EXPS.map((x,i)=>`<article class="exp" id="exp-${x.id}"><div><span class="k">${String(i+1).padStart(2,'0')} · ${x.k}</span><h3>${x.t}</h3>${x.body()}<p class="go">${x.gos?`<span class="gol">Ver en la red:</span>`:''}${(x.gos?x.gos():[x.go]).map((g,j)=>`<button class="btn${x.gos?' sm':''}" data-exp="${i}" data-g="${j}">${g.label}${x.gos?'':' →'}</button>`).join('')}</p></div><div><div class="fig">${x.fig()}</div><p class="src">${x.src}</p></div></article>`).join('')}
+function renderExps(){document.getElementById('exps').innerHTML=EXPS.map((x,i)=>`<article class="exp" id="exp-${x.id}"><div><span class="k">${String(i+1).padStart(2,'0')} · ${x.k}</span><h3>${x.t}</h3>${x.body()}${x.gos?`<span class="gol gor">Ver en la red</span>`:''}<p class="go${x.gos?' many':''}">${(x.gos?x.gos():[x.go]).map((g,j)=>`<button class="btn${x.gos?' sm':''}" data-exp="${i}" data-g="${j}">${g.label}${x.gos?'':' →'}</button>`).join('')}</p></div><div><div class="fig">${x.fig()}</div><p class="src">${x.src}</p></div></article>`).join('')}
 renderExps();
 document.getElementById('exps').addEventListener('click',ev=>{const b=ev.target.closest('[data-exp]');if(!b)return;const x=EXPS[+b.dataset.exp],g=(x.gos?x.gos():[x.go])[+b.dataset.g||0];track('abrir_expediente',{expediente:x.id});explore(g.o)});
 

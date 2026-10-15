@@ -75,7 +75,11 @@ nuevos = {}  # norm -> id para nombres no catalogados
 # Equivalencias revisadas a mano (nombre en archivo web -> registro del catálogo 2016)
 ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258', 'ericka florez hidalgo': 'p.2708',
          'luz lizarazo': 'p.166', 'manuel lago franco': 'p.1212', 'yohanna m roa': 'p.3243', 'oscar roldan': 'p.3223',
-         'embajada de suiza en colombia': 'o.173', 'equipo museo la tertulia': 'o.332'}
+         'embajada de suiza en colombia': 'o.173', 'equipo museo la tertulia': 'o.332',
+         # catálogo de la II Bienal Americana de Artes Gráficas (1973): variantes de grafía claras
+         'osvaldo viteri': 'p.1033', 'maria victoria porras': 'p.2458', 'yairo mejia villa': 'p.235',
+         'michael manzur': 'p.1114', 'ernesto fontecilla': 'p.1760', 'ken danby': 'p.1322',
+         'herman braun': 'p.193', 'roser brau': 'p.55', 'francisco jose gamez': 'p.2288'}
 def resolver(nombre, preferir):
     k = norm(nombre)
     if k in ALIAS: return ALIAS[k], True
@@ -142,6 +146,20 @@ if os.path.exists(COMP):
                 aristas.append(dict(Source=r['id_expo'], Target=aid, Type='Undirected', rol=rol, ano=a0 or '',
                                     Label=rol, Weight=1, fuente=fuente))
                 if not ok: no_cruzados.append(dict(id_expo=r['id_expo'], campo=campo, texto=nom, id_asignado=aid))
+
+# ---------- participantes de la II Bienal Americana de Artes Gráficas (1973), según su catálogo ----------
+CAT2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fuentes', 'catalogo_II_bienal_1973.txt')
+if os.path.exists(CAT2):
+    e2 = next(e for e in expos if e['Id'] == 'ex.181')
+    e2['artistas_varios'] = 0
+    vistos = {a['Target'] for a in aristas if a['Source'] == 'ex.181' and a['rol'] == 'artista'}
+    for nom in [l.strip() for l in open(CAT2, encoding='utf-8') if l.strip()]:
+        aid, ok = resolver(nom, 'p')
+        if aid in vistos: continue
+        vistos.add(aid)
+        aristas.append(dict(Source='ex.181', Target=aid, Type='Undirected', rol='artista', ano=1973,
+                            Label='artista', Weight=1, fuente='catalogo_II_bienal_1973'))
+        if not ok: no_cruzados.append(dict(id_expo='ex.181', campo='artistas', texto=nom, id_asignado=aid))
 
 # ---------- salidas ----------
 grado = collections.Counter(a['Target'] for a in aristas)

@@ -311,6 +311,7 @@ footer.f a{color:inherit}
       <ul>
         <li>Base de datos MLT (julio de 2016), construida en el proyecto de investigación-creación <em>Visualización de datos de las exposiciones del Museo La Tertulia (1956–2016)</em>, Pontificia Universidad Javeriana Cali.</li>
         <li>Capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com (2015–2025), con la dirección de cada captura en la ficha.</li>
+        <li>Catálogo de la II Bienal Americana de Artes Gráficas (1973), para la lista de artistas participantes.</li>
         <li>Piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021).</li>
         <li>Web actual del museo, consultada el 3 de octubre de 2026.</li>
       </ul>
@@ -835,12 +836,12 @@ const EXPS=[
  {id:'bienales',k:'1970–1986 · Nueva sede',t:'Las Bienales Americanas de Artes Gráficas',
   body(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)),A=new Set();B.forEach(x=>rolesOf(x)[0].forEach(t=>A.add(t)));const solo=[...A].filter(t=>N[t].adj.length===1).length;
    return `<p>En 1968, en el marco del VIII Festival de Arte de Cali, el museo estrenó su edificio con el Salón Austral de Pintura, Dibujo y Grabado. Pedro Alcántara Herrán, desde la junta asesora, promovió la Exposición Panamericana de Artes Gráficas en el X Festival (1970), que un año después se convirtió en la I Bienal Americana de Artes Gráficas (González Martínez 2015, 54–55). Adriana Castellanos Olmedo estudió las bienales entre 1970 y 1976.</p>
-   <p>En la red, las bienales son los nodos más grandes de todo el periodo: cada edición reúne más artistas que cualquier otra exposición del museo. La II Bienal (1973) figura en la base sin artistas: es un vacío de los registros, no del evento.</p>
+   <p>En la red, las bienales son los nodos más grandes de todo el periodo: cada edición reúne más artistas que cualquier otra exposición del museo. La base de 2016 no tenía los artistas de la II Bienal (1973); se tomaron de su catálogo.</p>
    <p>De los ${fmt(A.size)} artistas que pasan por las bienales, ${fmt(solo)} no vuelven a aparecer en ninguna otra exposición del museo.</p>
-   <p class="inf">Lectura nuestra: las bienales funcionan como una puerta: conectan con Cali a cientos de artistas del continente por una sola vez, mientras unos pocos se quedan en la red local.</p>`},
+   <p class="inf">Lectura nuestra: las bienales funcionan como una puerta: conectan con Cali a cientos de artistas del continente, y para la mitad de ellos es su única aparición en el museo.</p>`},
   fig(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)).sort((a,b)=>a.year-b.year);
    return `<div class="cap">Artistas registrados por edición</div>${list(B.map(x=>[`${x.year} · ${esc(x.label.replace(/ de Cali$/,''))}`,rolesOf(x)[0].length||'sin datos']))}`},
-  src:'<b>Fuentes:</b> González Martínez (2015); Castellanos Olmedo, «Cali, ciudad de la gráfica»; base MLT 2016.',
+  src:'<b>Fuentes:</b> González Martínez (2015); Castellanos Olmedo, «Cali, ciudad de la gráfica»; catálogo de la II Bienal (1973); base MLT 2016.',
   go:{label:'Ver la I Bienal en la red',o:{view:'red',a:1969,b:1986,mindeg:1,sel:(EXPOS.find(n=>/^I Bienal Americana/.test(n.label))||{}).id}}},
  {id:'presentador-curador',k:'1956–2026 · Roles',t:'Del presentador al curador',
   body(){return `<p>En los primeros años las exposiciones se presentaban: una persona escribía o hablaba para introducir al artista. Aguilera y Gómez encontraron que de las 723 exposiciones realizadas entre 1956 y 2006, 177 aparecen en las fuentes bajo la curaduría de alguna persona o entidad; el primer registro es de 1971 y la mayoría se concentra entre los años ochenta y 2000, con un aumento progresivo (Aguilera y Gómez 2007).</p>
@@ -914,7 +915,6 @@ document.getElementById('idx').addEventListener('keydown',ev=>{if(ev.key==='Ente
  document.getElementById('conf').innerHTML=`Cada ficha de exposición lleva una marca. <span class="mk">●</span> <b>Documentada</b> (${fmt(ok)}): viene de la base de 2016 o de una página con fechas y agentes explícitos. <span class="mk">○</span> <b>Reconstruida</b> (${fmt(par)}): falta la fecha, la lista de agentes está incompleta o solo se conoce el título en un listado. Las fichas reconstruidas salen del archivo web del museo y de las piezas gráficas; cada una trae su fuente.`;
  document.getElementById('vacios').innerHTML=[`${fmt(sinA)} exposiciones no tienen año; no aparecen en la línea de tiempo ni en las vistas por periodo.`,
   `2019 está casi vacío: ${y19} exposiciones con fecha. Las fichas archivadas de ese año no traen fechas.`,
-  'La II Bienal Americana de Artes Gráficas (1973) está en la base sin artistas.',
   `Solo ${fmt(dur)} de ${fmt(EXPOS.length)} exposiciones tienen fecha de apertura y de cierre completas.`,
   `${fmt(sinAg)} exposiciones no tienen agentes nombrados (por ejemplo, «Varios»).`,
   'El catálogo de personas termina en 2016: los agentes nuevos no tienen nacionalidad, ocupación ni fechas.'].map(t=>`<li>${t}</li>`).join('')}

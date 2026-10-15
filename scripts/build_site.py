@@ -5,7 +5,9 @@ page=t.replace('/*DATA*/null',open('/home/claude/mlt/datos_web.json').read()).re
 open('/home/claude/mlt/redes-tertulia.html','w').write(page)
 URL='https://mlt.cactus.com.co/'
 GH='https://github.com/clockgatonegro/MLT-web'
-DESC=('Red interactiva de 932 exposiciones y 3.574 artistas, curadores, presentadores y auspiciadores del Museo La Tertulia de Cali, '
+import csv as _c
+_na=sum(1 for _ in _c.DictReader(open('/home/claude/mlt/salida/agentes.csv')));_ne=sum(1 for _ in _c.DictReader(open('/home/claude/mlt/salida/exposiciones.csv')))
+DESC=(f'Red interactiva de {_ne} exposiciones y {_na:,}'.replace(',','.')+' artistas, curadores, presentadores y auspiciadores del Museo La Tertulia de Cali, '
       'de 1956 a 2026. Exposiciones individuales y colectivas, red de curadores y artistas por periodos, y bases de datos abiertas en CSV.')
 ld={"@context":"https://schema.org","@type":"Dataset","name":"Red del Museo La Tertulia, Cali (1956–2026)",
  "description":DESC,"url":URL,"sameAs":GH,"inLanguage":"es","isAccessibleForFree":True,

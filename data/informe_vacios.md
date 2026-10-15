@@ -38,6 +38,10 @@ Cada fila trae su URL de captura. Transcribí solo lo que aparece escrito en la 
 | media | 38 | Falta la fecha o la lista de agentes está incompleta |
 | baja | 30 | Solo el título en un listado. Cuando hay año, sale del archivo mensual o de la fecha de publicación, no de la exposición |
 
+## II Bienal Americana de Artes Gráficas (1973)
+
+La base de 2016 traía la II Bienal (`ex.181`) sin artistas. Los 196 participantes se tomaron del catálogo de la bienal (lista en `scripts/fuentes/catalogo_II_bienal_1973.txt`); sus aristas llevan `fuente = catalogo_II_bienal_1973`. 135 coinciden con el catálogo de personas de 2016: 126 por nombre exacto y 9 por variantes de grafía claras (por ejemplo, Roser Brau → Roser Bru, Ken Danby → Ken Damby), documentadas en `ALIAS`. Los otros 61 se crearon como agentes nuevos (`n.*`). Seis coincidencias posibles quedaron sin aplicar en `candidatos_homonimia.csv`.
+
 ## Vacíos por resolver
 
 1. **2019 está casi vacío** (2 exposiciones con fecha). Las fichas archivadas de ese año no traen fechas. Siete exposiciones con captura en 2019 quedaron sin año: Barney/Távora/Coderch, Julieth Morales, BLOC 2018, El Testigo, Manglaria, Bifurcaciones y Fractales.

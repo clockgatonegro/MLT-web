@@ -312,6 +312,7 @@ footer.f a{color:inherit}
         <li>Base de datos MLT (julio de 2016), construida en el proyecto de investigación-creación <em>Visualización de datos de las exposiciones del Museo La Tertulia (1956–2016)</em>, Pontificia Universidad Javeriana Cali.</li>
         <li>Capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com (2015–2025), con la dirección de cada captura en la ficha.</li>
         <li>Catálogo de la II Bienal Americana de Artes Gráficas (1973), para la lista de artistas participantes.</li>
+        <li>Fichas técnicas y programa de mano de la exposición <em>Cali 71, ciudad de América</em> y sus rotaciones (2016–2018), en los archivos de Cactus Taller Gráfico.</li>
         <li>Piezas gráficas de Cactus Taller Gráfico para el museo (2016–2021).</li>
         <li>Web actual del museo, consultada el 3 de octubre de 2026.</li>
       </ul>
@@ -834,10 +835,10 @@ const EXPS=[
   src:'<b>Fuentes:</b> González Martínez (2015), nota 5 del capítulo «Ciudad Solar»; base MLT 2016.',
   go:{label:'Ver 1956–1968 en la red',o:{view:'red',a:1956,b:1968,mindeg:1}}},
  {id:'bienales',k:'1970–1986 · Nueva sede',t:'Las Bienales Americanas de Artes Gráficas',
-  body(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)),A=new Set();B.forEach(x=>rolesOf(x)[0].forEach(t=>A.add(t)));const solo=[...A].filter(t=>N[t].adj.length===1).length;
+  body(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)),A=new Set();B.forEach(x=>rolesOf(x)[0].forEach(t=>A.add(t)));const solo=[...A].filter(t=>N[t].adj.length===1).length;const c71=EXPOS.find(n=>n.id==='ex.827'),c71a=c71?rolesOf(c71)[0]:[];
    return `<p>En 1968, en el marco del VIII Festival de Arte de Cali, el museo estrenó su edificio con el Salón Austral de Pintura, Dibujo y Grabado. Pedro Alcántara Herrán, desde la junta asesora, promovió la Exposición Panamericana de Artes Gráficas en el X Festival (1970), que un año después se convirtió en la I Bienal Americana de Artes Gráficas (González Martínez 2015, 54–55). Adriana Castellanos Olmedo estudió las bienales entre 1970 y 1976.</p>
    <p>En la red, las bienales son los nodos más grandes de todo el periodo: cada edición reúne más artistas que cualquier otra exposición del museo. La base de 2016 no tenía los artistas de la II Bienal (1973); se tomaron de su catálogo.</p>
-   <p>De los ${fmt(A.size)} artistas que pasan por las bienales, ${fmt(solo)} no vuelven a aparecer en ninguna otra exposición del museo.</p>
+   <p>De los ${fmt(A.size)} artistas que pasan por las bienales, ${fmt(solo)} no vuelven a aparecer en ninguna otra exposición del museo.${c71?` Cuarenta y cinco años después, la exposición «Cali 71, ciudad de América» y sus rotaciones (2016–2018) reunieron a ${fmt(c71a.length)} artistas; ${fmt(c71a.filter(t=>A.has(t)).length)} de ellos habían pasado por las bienales.`:''}</p>
    <p class="inf">Lectura nuestra: las bienales funcionan como una puerta: conectan con Cali a cientos de artistas del continente, y para la mitad de ellos es su única aparición en el museo.</p>`},
   fig(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)).sort((a,b)=>a.year-b.year);
    return `<div class="cap">Artistas registrados por edición</div>${list(B.map(x=>[`${x.year} · ${esc(x.label.replace(/ de Cali$/,''))}`,rolesOf(x)[0].length||'sin datos']))}`},

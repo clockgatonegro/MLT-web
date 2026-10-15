@@ -42,6 +42,10 @@ Cada fila trae su URL de captura. Transcribí solo lo que aparece escrito en la 
 
 La base de 2016 traía la II Bienal (`ex.181`) sin artistas. Los 196 participantes se tomaron del catálogo de la bienal (lista en `scripts/fuentes/catalogo_II_bienal_1973.txt`); sus aristas llevan `fuente = catalogo_II_bienal_1973`. 141 coinciden con el catálogo de personas de 2016: 126 por nombre exacto, 9 por variantes de grafía claras (por ejemplo, Roser Brau → Roser Bru, Ken Danby → Ken Damby) y 6 confirmadas por los autores (por ejemplo, Francisco Rocca → Francisco Rocca-Lynn), documentadas en `ALIAS`. El registro «Francisco Jung» del catálogo de 2016 se corrigió a Francisco Hung. Nelson Romero y Nelson Román son personas distintas. Los otros 55 se crearon como agentes nuevos (`n.*`).
 
+## Cali 71, ciudad de América (2016–2018)
+
+La base de 2016 traía 6 artistas para `ex.827`. Con las fichas técnicas y el programa de mano de la exposición y sus rotaciones (archivos de Cactus Taller Gráfico: fichas de la sala 1 y del programa de 2016, fichas de diciembre de 2017, de la tercera rotación y de julio de 2018) quedan 64. La lista, con el documento de origen de cada nombre, está en `scripts/fuentes/participantes_cali71.csv`; sus aristas llevan `fuente = participantes_cali71`. 42 de los 64 participaron también en alguna Bienal Americana de Artes Gráficas. Quedan sin leer las fichas de 2016 que están en curvas (sala principal, enero, documentos, Mario Roldán, Marta Rodríguez y faltantes); por el nombre de los archivos, probablemente incluyen a Mario Roldán y a Marta Rodríguez y Jorge Silva.
+
 ## Vacíos por resolver
 
 1. **2019 está casi vacío** (2 exposiciones con fecha). Las fichas archivadas de ese año no traen fechas. Siete exposiciones con captura en 2019 quedaron sin año: Barney/Távora/Coderch, Julieth Morales, BLOC 2018, El Testigo, Manglaria, Bifurcaciones y Fractales.

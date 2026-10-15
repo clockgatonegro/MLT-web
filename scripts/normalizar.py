@@ -86,7 +86,9 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          # confirmadas por los autores (14/10/2026)
          'francisco rocca': 'p.118', 'gustavo gomez': 'p.2306', 'francisco hung': 'p.1687',
          'manuel espinosa': 'p.396', 'carlos avendano cass': 'p.1977', 'jose del c acevedo': 'p.1377',
-         'camila rodriguez triana': 'p.2627', 'jose ruiz diaz': 'p.3201', 'maria del carmen espinosa': 'p.2438'}
+         'camila rodriguez triana': 'p.2627', 'jose ruiz diaz': 'p.3201', 'maria del carmen espinosa': 'p.2438',
+         # fichas técnicas de Cali 71 (2016–2018)
+         'dana watchley': 'p.209', 'roberto matta': 'p.90', 'otto moll': 'p.94'}
 def resolver(nombre, preferir):
     k = norm(nombre)
     if k in ALIAS: return ALIAS[k], True
@@ -167,6 +169,21 @@ if os.path.exists(CAT2):
         aristas.append(dict(Source='ex.181', Target=aid, Type='Undirected', rol='artista', ano=1973,
                             Label='artista', Weight=1, fuente='catalogo_II_bienal_1973'))
         if not ok: no_cruzados.append(dict(id_expo='ex.181', campo='artistas', texto=nom, id_asignado=aid))
+
+# ---------- participantes tomados de fichas técnicas y catálogos (scripts/fuentes/participantes_*.csv) ----------
+import glob
+for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fuentes', 'participantes_*.csv'))):
+    tag = os.path.splitext(os.path.basename(f))[0]
+    ya = {(a['Source'], a['Target'], a['rol']) for a in aristas}
+    for r in csv.DictReader(open(f, encoding='utf-8')):
+        aid, ok = resolver(r['nombre'], 'p')
+        e = next(x for x in expos if x['Id'] == r['id_expo'])
+        k = (r['id_expo'], aid, r['rol'])
+        if k in ya: continue
+        ya.add(k)
+        aristas.append(dict(Source=r['id_expo'], Target=aid, Type='Undirected', rol=r['rol'], ano=e['ano'],
+                            Label=r['rol'], Weight=1, fuente=tag))
+        if not ok: no_cruzados.append(dict(id_expo=r['id_expo'], campo=r['rol'], texto=r['nombre'], id_asignado=aid))
 
 # ---------- salidas ----------
 grado = collections.Counter(a['Target'] for a in aristas)

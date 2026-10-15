@@ -226,6 +226,7 @@ if os.path.exists(TRI):
                                    valor_cactus=val, documento=r['documento'], nota=r['nota'])); continue
         if autores: docs.setdefault(r['id_expo'], [])
         elif r['documento'] and r['documento'] not in docs[r['id_expo']]: docs[r['id_expo']].append(r['documento'])
+        if acc == 'corrige' and campo == 'titulo': e['Label'] = val
         if acc in ('corrige', 'agrega') and campo in ('fecha_ini', 'fecha_fin', 'espacio', 'ano'):
             e[campo] = val
             if campo == 'espacio':

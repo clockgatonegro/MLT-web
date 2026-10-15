@@ -239,7 +239,7 @@ html.pg-metodo #metodo{padding-top:24px}
 <main>
 <section class="s wrap" id="expedientes">
   <p class="eyebrow">Expedientes</p>
-  <h2>Seis lecturas de la red</h2>
+  <h2>Siete lecturas de la red</h2>
   <p class="lede">Cada expediente cruza lo que dice la red con lo que han escrito quienes estudiaron el museo. Las cifras se calculan en vivo sobre la Base de datos; el botón abre la red con el filtro correspondiente.</p>
   <div class="exps" id="exps"></div>
 </section>
@@ -1034,15 +1034,35 @@ const EXPS=[
   go:{label:'Ver curadores-artistas, 2007–2016',o:{view:'pro',a:2007,b:2016,color:'rol'}}},
  {id:'duracion',k:'1956–2026 · Duración',t:'Exposiciones cada vez más largas',
   body(){const P=[[1956,1968],[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],st=P.map(([a,b])=>{const d=exIn(a,b).filter(n=>n.dur!=null).map(n=>n.dur);return {a,b,n:d.length,m:d.length?d3.median(d):null}}),f=st[0],l=st[st.length-1],tot=EXPOS.filter(n=>n.dur!=null).length;
-   return `<p>En la casona de San Antonio las exposiciones duraban poco, a veces una semana: se colgaban sin museógrafos, sin piezas gráficas ni desarrollo de marca. Hoy una exposición requiere una inversión mayor —museografía, diseño, publicaciones, salas educativas y programas públicos— y por eso permanece abierta mucho más tiempo.</p>
+   return `<p>En la casona de San Antonio las exposiciones duraban muy poco, a veces una semana: se montaban sin museógrafos, sin piezas gráficas ni desarrollo de marca. Hoy una exposición requiere una inversión mayor —museografía, montajistas, diseño de identidad, publicaciones y salas educativas— y por eso permanece abierta mucho más tiempo.</p>
    <p>La Base de datos lo confirma con las exposiciones que tienen fecha de apertura y de cierre: la mediana pasa de ${f.m!=null?dn(f.m,0):'—'} días en ${f.a}–${f.b} a ${l.m!=null?dn(l.m,0):'—'} días en ${l.a}–${l.b}. El salto más claro llega después de 2007: de ${dn(st[3].m,0)} días en ${st[3].a}–${st[3].b} a ${dn(st[4].m,0)} en ${st[4].a}–${st[4].b}.</p>
    <p>La medida tiene un límite: solo ${fmt(tot)} de ${fmt(EXPOS.length)} exposiciones tienen las dos fechas completas, y en los primeros periodos son muy pocas (${st.slice(0,3).map(x=>`${x.n} en ${x.a}–${x.b}`).join(', ')}).</p>`},
   fig(){const P=[[1956,1968],[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],st=P.map(([a,b])=>{const d=exIn(a,b).filter(n=>n.dur!=null).map(n=>n.dur);return {k:`${a}–${String(b).slice(2)}`,n:d.length,m:d.length?d3.median(d):0}}),W=320,H=150,mx=d3.max(st,x=>x.m)*1.15||1,bw=W/st.length;let g='';
    st.forEach((x,i)=>{const h=(H-36)*x.m/mx,X=i*bw+bw*.15;g+=`<rect x="${X}" y="${H-20-h}" width="${bw*.7}" height="${h}" fill="var(--col)"><title>${x.k}: mediana ${x.m} días (${x.n} exposiciones)</title></rect><text x="${X+bw*.35}" y="${H-24-h}" text-anchor="middle">${dn(x.m,0)}</text><text x="${i*bw+bw/2}" y="${H-5}" text-anchor="middle">${x.k}</text>`});
    return `<div class="cap">Mediana de días que dura una exposición, por periodo</div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`},
   src:'<b>Fuentes:</b> Base de datos MLT 2016 y complemento 2016–2026 (solo exposiciones con apertura y cierre completos); lectura de los autores sobre la producción de las exposiciones.',
-  go:{label:'Ver la duración de cada exposición',o:{view:'dur'}}}
+  go:{label:'Ver la duración de cada exposición',o:{view:'dur'}}},
+ {id:'circulacion',k:'1956–2026 · Circulación',t:'Quién vuelve y quién paga',
+  body(){const D=CIRC();const d=k=>D.dec.find(x=>x.d===k)||{};
+   return `<p>Este expediente reúne tres lecturas que salen de cálculos sobre la Base de datos; la interpretación es de los autores.</p>
+   <p><b>El círculo de artistas se cerró y luego se reabrió.</b> Para cada década contamos qué parte de sus artistas ya había expuesto en el museo en los quince años anteriores; la ventana fija evita que la cifra crezca solo porque el museo acumula historia. La proporción pasa de ${d(1980).rec} % en los ochenta a ${d(1990).rec} % en los noventa y ${d(2000).rec} % en los dos mil, y baja a ${d(2010).rec} % en los 2010. En los 2020 vuelve a subir (${d(2020).rec} %), pero es una década en curso y con pocos registros. La curva acompaña la concentración curatorial: Miguel González reúne el ${d(1980).mg} %, el ${d(1990).mg} % y el ${d(2000).mg} % de los vínculos de curaduría de esas tres décadas, y en los 2010 ningún curador pasa del ${d(2010).top} %. Los datos muestran que las dos cosas coinciden en el tiempo; no prueban que una cause la otra.</p>
+   <p><b>Cambió quién financia.</b> En los sesenta y setenta, con pocos registros, los auspiciadores que más se repiten son empresas de la región (Cartón de Colombia, Asocaña, Industria de Licores del Valle, Carvajal, Propal) y representaciones extranjeras (Embajada de Argentina, Consejo Británico, Embajada de Venezuela). Desde los noventa dominan las entidades públicas de cultura: Ministerio de Cultura, Colcultura, Alcaldía y Dirección de Cultura de Cali, Gerencia Cultural del Valle. También crece su número: de ${dn(d(1980).ap,2)} auspiciadores por exposición en los ochenta a ${dn(d(1990).ap,2)} en los noventa y ${dn(d(2000).ap,2)} en los dos mil. Hasta 2006 todas las cifras salen de la misma fuente, la Base de datos de 2016; después se mezclan fuentes que registran los apoyos de manera distinta y la cifra deja de ser comparable. Más financiadores por exposición es coherente con exposiciones más costosas y más largas, como muestra el expediente anterior.</p>
+   <p><b>La mayoría pasa una sola vez.</b> De ${fmt(D.nA)} artistas registrados, el ${D.p1} % expone una sola vez en setenta años y solo ${fmt(D.n5)} lo hacen cinco veces o más. Para la mayoría, el museo es un lugar de paso; para un núcleo pequeño, una plataforma a la que se vuelve.</p>`},
+  fig(){const D=CIRC(),L=D.dec.filter(x=>x.d>=1960);
+   return `<div class="cap">Artistas de cada década que ya habían expuesto en el museo en los quince años anteriores (%)</div>${decBars([L.map(x=>x.rec)],L.map(x=>String(x.d).slice(2)),['var(--artista)'])}
+   <div class="cap" style="margin-top:14px">Auspiciadores por exposición, por década (1960–2009)</div>${list(D.dec.filter(x=>x.d>=1960&&x.d<=2000).map(x=>[`${x.d}–${String(x.d+9).slice(2)}`,dn(x.ap,2)]))}
+   <div class="big" style="margin-top:14px">${D.p1} %</div><div class="cap">de los artistas expone una sola vez en el museo.</div>`},
+  src:'<b>Fuentes:</b> Base de datos MLT 2016 (hasta 2006) y complemento 2016–2026. Cálculos e interpretación de los autores.',
+  gos(){return [{label:'Artistas en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[1,0,0,0]}},{label:'Auspiciadores en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[0,0,0,1]}}]}}
 ];
+let CIRC_=null;function CIRC(){if(CIRC_)return CIRC_;
+ const art=[];EXPOS.forEach(x=>{if(!x.year)return;rolesOf(x)[0].forEach(t=>art.push([t,x.year,x.i]))});
+ const ex=new Map();art.forEach(([t,y,e])=>{if(!ex.has(t))ex.set(t,new Set());ex.get(t).add(e)});const cnt=[...ex.values()].map(s=>s.size);
+ const dec=d3.range(1950,2030,10).map(d=>{const A=new Set(art.filter(a=>a[1]>=d&&a[1]<=d+9).map(a=>a[0])),P=new Set(art.filter(a=>a[1]<d&&a[1]>=d-15).map(a=>a[0]));
+   const L=exIn(d,d+9),cur=new Map();let ap=0;L.forEach(x=>{const R=rolesOf(x);R[1].forEach(t=>cur.set(t,(cur.get(t)||0)+1));ap+=R[3].length});
+   const tot=d3.sum([...cur.values()])||1,mx=d3.max([...cur.values()])||0;
+   return {d,rec:A.size?Math.round(100*[...A].filter(t=>P.has(t)).length/A.size):0,mg:MG?Math.round(100*(cur.get(MG.i)||0)/tot):0,top:Math.round(100*mx/tot),ap:L.length?ap/L.length:0}});
+ return CIRC_={dec,nA:cnt.length,p1:Math.round(100*cnt.filter(c=>c===1).length/cnt.length),n5:cnt.filter(c=>c>=5).length}}
 function renderExps(){document.getElementById('exps').innerHTML=EXPS.map((x,i)=>`<article class="exp" id="exp-${x.id}"><div><span class="k">${String(i+1).padStart(2,'0')} · ${x.k}</span><h3>${x.t}</h3>${x.body()}${x.gos?`<span class="gol gor">Ver en la red</span>`:''}<p class="go${x.gos?' many':''}">${(x.gos?x.gos():[x.go]).map((g,j)=>`<button class="btn${x.gos?' sm':''}" data-exp="${i}" data-g="${j}">${g.label}${x.gos?'':' →'}</button>`).join('')}</p></div><div><div class="fig">${x.fig()}</div><p class="src">${x.src}</p></div></article>`).join('')}
 renderExps();
 document.getElementById('exps').addEventListener('click',ev=>{const b=ev.target.closest('[data-exp]');if(!b)return;const x=EXPS[+b.dataset.exp],g=(x.gos?x.gos():[x.go])[+b.dataset.g||0];track('abrir_expediente',{expediente:x.id});explore(g.o)});

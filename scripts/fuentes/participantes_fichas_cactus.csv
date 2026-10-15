@@ -1,0 +1,332 @@
+id_expo,nombre,rol,fuente_doc
+ex.831,Ana María Montenegro,artista,programa_de_mano_listado_artistas
+ex.831,Oliver Laric,artista,programa_de_mano_listado_artistas
+ex.831,Ulises Carrión,artista,programa_de_mano_listado_artistas
+ex.831,Elodie Pong,artista,programa_de_mano_listado_artistas
+ex.831,Barbara Bloom,artista,programa_de_mano_listado_artistas
+ex.831,Douwe Dijkstra,artista,programa_de_mano_listado_artistas
+ex.831,Oscar Campo,artista,programa_de_mano_listado_artistas
+ex.831,Donna Verheijden,artista,programa_de_mano_listado_artistas
+ex.831,Lous America,artista,programa_de_mano_listado_artistas
+ex.831,David Garcia,artista,programa_de_mano_listado_artistas
+ex.831,Henk Wijnen,artista,programa_de_mano_listado_artistas
+ex.831,Annie Wright,artista,programa_de_mano_listado_artistas
+ex.831,Raúl Marroquín,artista,programa_de_mano_listado_artistas
+ex.831,Lydia Schouten,artista,programa_de_mano_listado_artistas
+ex.831,Eddie D,artista,programa_de_mano_listado_artistas
+ex.831,Breyner Huertas,artista,programa_de_mano_listado_artistas
+ex.831,Jaime Iregui,artista,programa_de_mano_listado_artistas
+ex.831,Barbara Kruger,artista,programa_de_mano_listado_artistas
+ex.831,Eric Bogosian,artista,programa_de_mano_listado_artistas
+ex.831,John Baldessari,artista,programa_de_mano_listado_artistas
+ex.831,General Idea,artista,programa_de_mano_listado_artistas
+ex.831,Sebastián López,artista,programa_de_mano_listado_artistas
+ex.831,Saskia Bos,artista,programa_de_mano_listado_artistas
+ex.831,Jouke Kleerebezem,artista,programa_de_mano_listado_artistas
+ex.831,Alejandro Martín,curador,programa_de_mano_creditos
+ex.831,Iván Tovar,curador,programa_de_mano_creditos
+ex.845,Jan Bartelsman,artista,fichas_tecnicas
+ex.845,Henry Salazar,artista,fichas_tecnicas
+ex.845,Fabio Melecio Palacios,artista,fichas_tecnicas
+ex.845,Rhonal Stiven Valencia Cuero,artista,fichas_tecnicas
+ex.845,Carlos Martiel,artista,fichas_tecnicas
+ex.845,Liliana Angulo,artista,fichas_tecnicas
+ex.845,Oscar Moreno Escárrega,artista,fichas_tecnicas
+ex.845,CaldodeCultivo,artista,fichas_tecnicas
+ex.852,Adrián Gaitán,artista,fichas_tecnicas
+ex.852,Carlos Lersundy,artista,fichas_tecnicas
+ex.852,Pedro Alcántara Herrán,artista,fichas_tecnicas
+ex.852,Lorenzo Homar,artista,fichas_tecnicas
+ex.852,Elías Heim,artista,fichas_tecnicas
+ex.852,Adolfo Bernal,artista,fichas_tecnicas
+ex.852,Robert Indiana,artista,fichas_tecnicas
+ex.852,Roy Lichtenstein,artista,fichas_tecnicas
+ex.852,Alexander Calder,artista,fichas_tecnicas
+ex.852,Beatriz González,artista,fichas_tecnicas
+ex.852,Jonier Marín,artista,fichas_tecnicas
+ex.852,Rodolfo Abularach,artista,fichas_tecnicas
+ex.852,Édgar Negret,artista,fichas_tecnicas
+ex.852,Emma Reyes,artista,fichas_tecnicas
+ex.852,Oscar Muñoz,artista,fichas_tecnicas
+ex.852,Gracia Barrios,artista,fichas_tecnicas
+ex.852,Gustavo Zalamea,artista,fichas_tecnicas
+ex.852,Liliana Porter,artista,fichas_tecnicas
+ex.852,Luis Roldán,artista,fichas_tecnicas
+ex.852,Alicia Barney,artista,fichas_tecnicas
+ex.852,Rolando Peña,artista,fichas_tecnicas
+ex.852,Rosemberg Sandoval,artista,fichas_tecnicas
+ex.852,Marta Minujín,artista,fichas_tecnicas
+ex.852,Jorge Reyes,artista,fichas_tecnicas
+ex.852,José Olano,artista,fichas_tecnicas
+ex.852,Santiago Cárdenas,artista,fichas_tecnicas
+ex.852,Danilo Dueñas,artista,fichas_tecnicas
+ex.852,Feliza Bursztyn,artista,fichas_tecnicas
+ex.852,Jorge Acero,artista,fichas_tecnicas
+ex.852,Diego Hernández,artista,fichas_tecnicas
+ex.852,Nicolás González,artista,fichas_tecnicas
+ex.852,Gustavo Henao Zamora,artista,fichas_tecnicas
+ex.852,Ricardo Gómez Campuzano,artista,fichas_tecnicas
+ex.852,Francisco de la Puente,artista,fichas_tecnicas
+ex.852,Antonio Caro,artista,fichas_tecnicas
+ex.852,Chuck Close,artista,fichas_tecnicas
+ex.852,Ever Astudillo,artista,fichas_tecnicas
+ex.870,Diego Arango,artista,fichas_tecnicas_2019
+ex.870,Nancy Friedemann,artista,fichas_tecnicas_2019
+ex.870,Santiago Cárdenas,artista,fichas_tecnicas_2019
+ex.870,Delia Cugat,artista,fichas_tecnicas_2019
+ex.870,León Ferrari,artista,fichas_tecnicas_2019
+ex.870,Miguel Ángel Rojas,artista,fichas_tecnicas_2019
+ex.870,Antonio Seguí,artista,fichas_tecnicas_2019
+ex.870,Ever Astudillo,artista,fichas_tecnicas_2019
+ex.870,Beatriz González,artista,fichas_tecnicas_2019
+ex.870,Jacobo Borges,artista,fichas_tecnicas_2019
+ex.870,Vivian Monsalve,artista,fichas_tecnicas_2019
+ex.870,Diego Rivera,artista,fichas_tecnicas_2019
+ex.870,Rodolfo Vélez,artista,fichas_tecnicas_2019
+ex.870,Alicia Viteri,artista,fichas_tecnicas_2019
+ex.870,Emilio Sánchez,artista,fichas_tecnicas_2019
+ex.870,Mario Carreño,artista,fichas_tecnicas_2019
+ex.870,Francis Bacon,artista,fichas_tecnicas_2019
+ex.870,Pablo Obelar,artista,fichas_tecnicas_2019
+ex.870,Will Barnet,artista,fichas_tecnicas_2019
+ex.870,Luis Caballero,artista,fichas_tecnicas_2019
+ex.870,Víctor Laignelet,artista,fichas_tecnicas_2019
+ex.870,Pedro Alcántara Herrán,artista,fichas_tecnicas_2019
+ex.870,Leonel Góngora,artista,fichas_tecnicas_2019
+ex.870,María de la Paz Jaramillo,artista,fichas_tecnicas_2019
+ex.870,Monika Herrán,artista,fichas_tecnicas_2019
+ex.870,John Lange,artista,fichas_tecnicas_2019
+ex.870,Flor María Bouhot,artista,fichas_tecnicas_2019
+ex.870,José Guadalupe Posada,artista,fichas_tecnicas_2019
+ex.870,John Paul Jones,artista,fichas_tecnicas_2019
+ex.870,Fernell Franco,artista,fichas_tecnicas_2019
+ex.870,Oscar Muñoz,artista,fichas_tecnicas_2019
+ex.870,Oscar Muñoz,artista,fichas_tecnicas_2020
+ex.870,Cristina Llano,artista,fichas_tecnicas_2020
+ex.870,Hernando Tejada,artista,fichas_tecnicas_2020
+ex.870,León Ferrari,artista,fichas_tecnicas_2020
+ex.847,PowerPaola,artista,fichas_tecnicas
+ex.847,Jan Bartelsman,artista,fichas_tecnicas
+ex.847,Enrique Grau,artista,fichas_tecnicas
+ex.847,Carlos Caicedo,artista,fichas_tecnicas
+ex.847,Patricia Bonilla,artista,fichas_tecnicas
+ex.847,Carlos Zerpa,artista,fichas_tecnicas
+ex.847,Juan Camilo Uribe,artista,fichas_tecnicas
+ex.847,Beatriz González,artista,fichas_tecnicas
+ex.847,Pedro Manrique Figueroa,artista,fichas_tecnicas
+ex.847,Wilson Díaz,artista,fichas_tecnicas
+ex.847,Karen Lamassonne,artista,fichas_tecnicas
+ex.847,María Ximena Laverde,artista,fichas_tecnicas
+ex.847,Nobara Catalina Hayakawa,artista,fichas_tecnicas
+ex.847,Nelson Garrido,artista,fichas_tecnicas
+ex.847,Emel Meneses,artista,fichas_tecnicas
+ex.847,Nina S. de Friedemann,artista,fichas_tecnicas
+ex.847,Saturnina Sánchez,artista,fichas_tecnicas
+ex.847,Alfonso Suárez,artista,fichas_tecnicas
+ex.847,José Alejandro Restrepo,artista,fichas_tecnicas
+ex.847,Fernell Franco,artista,fichas_tecnicas
+ex.847,Álvaro Barrios,artista,fichas_tecnicas
+ex.847,Marta Elena Vélez,artista,fichas_tecnicas
+ex.847,Carlos Duque,artista,fichas_tecnicas
+ex.847,Lorenzo Homar,artista,fichas_tecnicas
+ex.847,Erick Beltrán,artista,fichas_tecnicas
+ex.847,Luz Ángela Lizarazo,artista,fichas_tecnicas
+ex.847,Ever Astudillo,artista,fichas_tecnicas
+ex.847,Herman Braun,artista,fichas_tecnicas
+ex.847,Hernán Díaz,artista,fichas_tecnicas
+ex.847,Elsa Zambrano,artista,fichas_tecnicas
+ex.847,Oscar Muñoz,artista,fichas_tecnicas
+ex.847,Liliana Porter,artista,fichas_tecnicas
+ex.847,Dicken Castro,artista,fichas_tecnicas
+ex.847,Breyner Huertas,artista,programa_de_mano_inserto_artistas_invitados
+ex.847,Jorge Acero,artista,programa_de_mano_inserto_artistas_invitados
+ex.847,Diego Hernández,artista,programa_de_mano_inserto_artistas_invitados
+ex.847,Diana Cuartas,artista,programa_de_mano_inserto_artistas_invitados
+ex.847,Carlos Andrade,artista,programa_de_mano_inserto_artistas_invitados
+ex.847,José Ruiz,curador,informe_de_gestion_2018
+ex.847,Mariana Rodríguez,curador,informe_de_gestion_2018
+ex.847,Lucas Ospina,curador,informe_de_gestion_2018
+ex.866,Olga de Amaral,artista,fichas_artistas
+ex.866,Feliza Bursztyn,artista,fichas_artistas
+ex.866,Cecilia Coronel,artista,fichas_artistas
+ex.866,Teresa Cuéllar,artista,fichas_artistas
+ex.866,Beatriz Daza,artista,fichas_artistas
+ex.866,Beatriz González,artista,fichas_artistas
+ex.866,Sonia Gutiérrez,artista,fichas_artistas
+ex.866,Ana Mercedes Hoyos,artista,fichas_artistas
+ex.866,Margarita Lozano,artista,fichas_artistas
+ex.866,Judith Márquez,artista,fichas_artistas
+ex.866,Piry de Patiño,artista,fichas_artistas
+ex.866,Cecilia Porras,artista,fichas_artistas
+ex.866,Emma Reyes,artista,fichas_artistas
+ex.866,Fanny Sanín,artista,fichas_artistas
+ex.866,Lucy Tejada,artista,fichas_artistas
+ex.866,Nirma Zárate,artista,fichas_artistas
+ex.860,Laura Campaz,artista,fichas_tecnicas_y_programa
+ex.860,Andrea Payán,artista,fichas_tecnicas_y_programa
+ex.860,Pablo Daza,artista,fichas_tecnicas_y_programa
+ex.860,Diego Salas,artista,fichas_tecnicas_y_programa
+ex.860,Johan Samboní,artista,fichas_tecnicas_y_programa
+ex.860,Juan Durán,artista,fichas_tecnicas_y_programa
+ex.860,William Villota,artista,fichas_tecnicas_y_programa
+ex.860,Angie Montenegro,artista,fichas_tecnicas_y_programa
+ex.860,Christian Velásquez,artista,fichas_tecnicas_y_programa
+ex.860,Édgar Álvarez,artista,fichas_tecnicas_y_programa
+ex.860,Margarita Ariza,artista,fichas_tecnicas_y_programa
+ex.860,Walter Caicedo,artista,fichas_tecnicas_y_programa
+ex.860,Jordan Ramírez,artista,fichas_tecnicas_y_programa
+ex.860,Ximena Vásquez,artista,fichas_tecnicas_y_programa
+ex.860,Carmenza Banguera,artista,fichas_tecnicas_y_programa
+ex.860,Liliana Angulo,artista,fichas_tecnicas_y_programa
+ex.860,Minia Bibiabiany,artista,fichas_tecnicas_y_programa
+ex.860,Laura Rodríguez,artista,fichas_tecnicas_y_programa
+ex.860,Katherine Díaz,artista,fichas_tecnicas_y_programa
+ex.860,José Manuel Cuesta,artista,fichas_tecnicas_y_programa
+ex.860,Diego Mañunga,artista,fichas_tecnicas_y_programa
+ex.860,Alexandra Gelis,artista,fichas_tecnicas_y_programa
+ex.860,Elin Grueso,artista,fichas_tecnicas_y_programa
+ex.854,Olga de Amaral,artista,fichas_tecnicas
+ex.854,Ofelia Rodríguez,artista,fichas_tecnicas
+ex.854,Antonio Caro,artista,fichas_tecnicas
+ex.854,Sergio Camporeale,artista,fichas_tecnicas
+ex.854,Elías Heim,artista,fichas_tecnicas
+ex.854,Rosemberg Sandoval,artista,fichas_tecnicas
+ex.854,Julio Le Parc,artista,fichas_tecnicas
+ex.772,Tino Stefanoni,artista,fichas_tecnicas_4R
+ex.772,Hans Richter,artista,fichas_tecnicas_4R
+ex.772,Henry C. Pearson,artista,fichas_tecnicas_4R
+ex.772,Louise Nevelson,artista,fichas_tecnicas_4R
+ex.772,Will Barnet,artista,fichas_tecnicas_4R
+ex.772,Yutaka Toyota,artista,fichas_tecnicas_4R
+ex.772,John Lange,artista,fichas_tecnicas_4R
+ex.772,Agustín Fernández,artista,fichas_tecnicas_4R
+ex.772,Manuel Felguérez,artista,fichas_tecnicas_4R
+ex.772,Liliana Porter,artista,fichas_tecnicas_4R
+ex.772,Rafael Tufiño,artista,fichas_tecnicas_4R
+ex.772,René Portocarrero,artista,fichas_tecnicas_4R
+ex.772,Arnulfo Luna,artista,fichas_tecnicas_4R
+ex.772,Dicken Castro,artista,fichas_tecnicas_4R
+ex.772,Juan Antonio Roda,artista,fichas_tecnicas_4R
+ex.772,Augusto Rendón,artista,fichas_tecnicas_4R
+ex.772,Omar Rayo,artista,fichas_tecnicas_4R
+ex.772,Diego Arango,artista,fichas_tecnicas_4R
+ex.772,Eduardo Audivert,artista,fichas_tecnicas_4R
+ex.772,José María Yturralde,artista,fichas_tecnicas_4R
+ex.772,David Manzur,artista,fichas_tecnicas_4R
+ex.772,Lucas Ospina,artista,fichas_tecnicas_4R
+ex.772,Norman Mejía,artista,fichas_tecnicas_4R
+ex.772,Enrique Grau,artista,fichas_tecnicas_4R
+ex.772,Gianfranco Ferroni,artista,fichas_tecnicas_4R
+ex.772,Débora Arango,artista,fichas_tecnicas_4R
+ex.772,Santiago Cárdenas,artista,fichas_tecnicas_4R
+ex.772,Gonzalo Ariza,artista,fichas_tecnicas_4R
+ex.772,Richard Claude Ziemann,artista,fichas_tecnicas_4R
+ex.772,Luis Caballero,artista,fichas_tecnicas_4R
+ex.772,Ever Astudillo,artista,fichas_tecnicas_4R
+ex.772,Darío Morales,artista,fichas_tecnicas_4R
+ex.772,Juan Cárdenas,artista,fichas_tecnicas_4R
+ex.772,Emilio Sánchez,artista,fichas_tecnicas_4R
+ex.772,Delia Cugat,artista,fichas_tecnicas_4R
+ex.772,Saturnino Ramírez,artista,fichas_tecnicas_4R
+ex.772,Oscar Muñoz,artista,fichas_tecnicas_4R
+ex.772,Fernando Grillón,artista,fichas_tecnicas_4R
+ex.772,Hernando Tejada,artista,fichas_tecnicas_4R
+ex.772,Gregorio Cuartas,artista,fichas_tecnicas_4R
+ex.772,Marco Ospina,artista,fichas_tecnicas_4R
+ex.772,María de la Paz Jaramillo,artista,fichas_tecnicas_4R
+ex.772,Eduardo Ramírez Villamizar,artista,fichas_tecnicas_4R
+ex.772,Robert Kipniss,artista,fichas_tecnicas_4R
+ex.772,Leyla Cárdenas,artista,fichas_tecnicas_4R
+ex.777,John Paul Jones,artista,fichas_tecnicas_5R
+ex.777,Hans Richter,artista,fichas_tecnicas_5R
+ex.777,George Raab,artista,fichas_tecnicas_5R
+ex.777,Ernest Trova,artista,fichas_tecnicas_5R
+ex.777,Pierre Keller,artista,fichas_tecnicas_5R
+ex.777,Francisco Toledo,artista,fichas_tecnicas_5R
+ex.777,Oswaldo Guayasamín,artista,fichas_tecnicas_5R
+ex.777,Myrna Báez,artista,fichas_tecnicas_5R
+ex.777,Luis Hernández Cruz,artista,fichas_tecnicas_5R
+ex.777,Manuel Felguérez,artista,fichas_tecnicas_5R
+ex.777,Geo Ripley,artista,fichas_tecnicas_5R
+ex.777,Rafael Echeverri,artista,fichas_tecnicas_5R
+ex.777,Feliza Bursztyn,artista,fichas_tecnicas_5R
+ex.777,Iván Rickenmann,artista,fichas_tecnicas_5R
+ex.777,John Castles,artista,fichas_tecnicas_5R
+ex.777,Antonio Barrera,artista,fichas_tecnicas_5R
+ex.777,Gustavo Zalamea,artista,fichas_tecnicas_5R
+ex.777,Eugenio Dittborn,artista,fichas_tecnicas_5R
+ex.777,Richard Claude Ziemann,artista,fichas_tecnicas_5R
+ex.777,Oscar Muñoz,artista,fichas_tecnicas_5R
+ex.777,Fernell Franco,artista,fichas_tecnicas_5R
+ex.777,Karen Lamassonne,artista,fichas_tecnicas_5R
+ex.777,José Antonio Dávila,artista,fichas_tecnicas_5R
+ex.777,Ana Mercedes Hoyos,artista,fichas_tecnicas_5R
+ex.777,Gracia Barrios,artista,fichas_tecnicas_5R
+ex.777,José Balmes,artista,fichas_tecnicas_5R
+ex.777,Roberto Cabrera,artista,fichas_tecnicas_5R
+ex.777,Luis A. Solari,artista,fichas_tecnicas_5R
+ex.777,Roser Bru,artista,fichas_tecnicas_5R
+ex.777,Arthur Tashko,artista,fichas_tecnicas_5R
+ex.777,Julio Le Parc,artista,fichas_tecnicas_5R
+ex.777,Gabriel Messil,artista,fichas_tecnicas_5R
+ex.777,Miguel Böhmer,artista,fichas_tecnicas_5R
+ex.777,Fernando Maza,artista,fichas_tecnicas_5R
+ex.777,Carlos Correa,artista,fichas_tecnicas_5R
+ex.777,Giovanni Vargas,artista,fichas_tecnicas_5R
+ex.784,Daniel Zelaya,artista,fichas_tecnicas_6R
+ex.784,Pablo Obelar,artista,fichas_tecnicas_6R
+ex.784,Delia Cugat,artista,fichas_tecnicas_6R
+ex.784,Sergio Camporeale,artista,fichas_tecnicas_6R
+ex.784,Carol Summers,artista,fichas_tecnicas_6R
+ex.784,Beatriz González,artista,fichas_tecnicas_6R
+ex.784,Carlos Rojas,artista,fichas_tecnicas_6R
+ex.784,Hernando Tejada,artista,fichas_tecnicas_6R
+ex.784,Gonzalo Ariza,artista,fichas_tecnicas_6R
+ex.784,Guillermo Wiedemann,artista,fichas_tecnicas_6R
+ex.784,Juan Cárdenas,artista,fichas_tecnicas_6R
+ex.784,Álvaro Barrios,artista,fichas_tecnicas_6R
+ex.784,Miguel Carini,artista,fichas_tecnicas_6R
+ex.784,Pedro Alcántara Herrán,artista,fichas_tecnicas_6R
+ex.784,Sergio Trujillo Magnenat,artista,fichas_tecnicas_6R
+ex.784,José Luis Cuevas,artista,fichas_tecnicas_6R
+ex.784,Darío Jiménez,artista,fichas_tecnicas_6R
+ex.784,Saturnino Ramírez,artista,fichas_tecnicas_6R
+ex.784,Gregorio Cuartas,artista,fichas_tecnicas_6R
+ex.784,Santiago Cárdenas,artista,fichas_tecnicas_6R
+ex.784,Enrique Grau,artista,fichas_tecnicas_6R
+ex.784,Leonel Góngora,artista,fichas_tecnicas_6R
+ex.784,María de la Paz Jaramillo,artista,fichas_tecnicas_6R
+ex.784,Arnulfo Luna,artista,fichas_tecnicas_6R
+ex.784,Antonio Joseph,artista,fichas_tecnicas_6R
+ex.784,Omar Rayo,artista,fichas_tecnicas_6R
+ex.784,René Portocarrero,artista,fichas_tecnicas_6R
+ex.784,Armando Villegas,artista,fichas_tecnicas_6R
+ex.784,Rodolfo Abularach,artista,fichas_tecnicas_6R
+ex.784,Manuel Hernández,artista,fichas_tecnicas_6R
+ex.784,Juan Antonio Roda,artista,fichas_tecnicas_6R
+ex.784,Alberto Arboleda,artista,fichas_tecnicas_6R
+ex.784,Emma Reyes,artista,fichas_tecnicas_6R
+ex.784,Ana Mercedes Hoyos,artista,fichas_tecnicas_6R
+ex.784,Arthur Tashko,artista,fichas_tecnicas_6R
+ex.784,Lucy Tejada,artista,fichas_tecnicas_6R
+ex.784,Eduardo Ramírez Villamizar,artista,fichas_tecnicas_6R
+ex.784,Noé León,artista,fichas_tecnicas_6R
+ex.784,María Thereza Negreiros,artista,fichas_tecnicas_6R
+ex.784,León Ferrari,artista,fichas_tecnicas_6R
+ex.784,Wifredo Lam,artista,fichas_tecnicas_6R
+ex.784,Oscar Muñoz,artista,fichas_tecnicas_6R
+ex.784,Peter Milton,artista,fichas_tecnicas_6R
+ex.784,José Gamarra,artista,fichas_tecnicas_6R
+ex.784,Lope Max Díaz,artista,fichas_tecnicas_6R
+ex.832,Nicolás Consuegra,artista,fichas_tecnicas
+ex.832,Pierre Huyghe,artista,fichas_tecnicas
+ex.832,Rometti Costales,artista,fichas_tecnicas
+ex.832,Leyla Cárdenas,artista,fichas_tecnicas
+ex.832,Lina López,artista,fichas_tecnicas
+ex.832,Bernardo Ortiz,artista,fichas_tecnicas
+ex.840,Camilo Aguilera,artista,fichas_tecnicas
+ex.840,Barrio Ballet,artista,fichas_tecnicas
+ex.781,Edward Ruscha,artista,fichas_tecnicas
+ex.781,Carlos Cruz-Diez,artista,fichas_tecnicas
+ex.781,Robert Kipniss,artista,fichas_tecnicas
+ex.774,Taller 4 Rojo,artista,fichas_tecnicas

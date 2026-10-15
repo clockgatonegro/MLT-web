@@ -44,7 +44,11 @@ La base de 2016 traía la II Bienal (`ex.181`) sin artistas. Los 196 participant
 
 ## Cali 71, ciudad de América (2016–2018)
 
-La base de 2016 traía 6 artistas para `ex.827`. Con las fichas técnicas y el programa de mano de la exposición y sus rotaciones (archivos de Cactus Taller Gráfico: fichas de la sala 1 y del programa de 2016, fichas de diciembre de 2017, de la tercera rotación y de julio de 2018) quedan 64. La lista, con el documento de origen de cada nombre, está en `scripts/fuentes/participantes_cali71.csv`; sus aristas llevan `fuente = participantes_cali71`. 42 de los 64 participaron también en alguna Bienal Americana de Artes Gráficas. Quedan sin leer las fichas de 2016 que están en curvas (sala principal, enero, documentos, Mario Roldán, Marta Rodríguez y faltantes); por el nombre de los archivos, probablemente incluyen a Mario Roldán y a Marta Rodríguez y Jorge Silva.
+La base de 2016 traía 6 artistas para `ex.827`. Con las fichas técnicas, el listado de obras de la curaduría (`FTECNICAS_obras_CALI71_AM`) y el programa de mano de la exposición y de sus rotaciones (archivos de Cactus Taller Gráfico, 2016–2018) quedan 110. La lista, con el documento de origen de cada nombre, está en `scripts/fuentes/participantes_cali71.csv`. 73 de los 110 participaron también en alguna Bienal Americana de Artes Gráficas. No se incluyeron las personas que solo aparecen retratadas en fotografías ni los nombres que solo se citan en los textos de sala.
+
+## Otras exposiciones completadas con fichas técnicas de Cactus
+
+`scripts/fuentes/participantes_fichas_cactus.csv` agrega artistas (y, cuando consta, curadores) a exposiciones que en la base tenían pocos o ningún agente: Artist Talking Back to the Media (2016), (El otro lado de la) Carretera al mar (2018), Reserva abierta (2018), Casa Ocupada (2019–2020), Las populares Gráficas Molinari (2018), María Thereza Negreiros y 16 mujeres artistas (2020), Manglaria (2019), Aula Flexible (2018), el cuarto y quinto guion de la colección (2014) y la sexta rotación (2015). También completa Universo Holograma, ¡Oído pueblo!, Territorio en discusión y Rojo y más rojo. Los curadores de Las populares Gráficas Molinari salen del informe de gestión de 2018.
 
 ## Vacíos por resolver
 

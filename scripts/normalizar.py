@@ -88,7 +88,12 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'manuel espinosa': 'p.396', 'carlos avendano cass': 'p.1977', 'jose del c acevedo': 'p.1377',
          'camila rodriguez triana': 'p.2627', 'jose ruiz diaz': 'p.3201', 'maria del carmen espinosa': 'p.2438',
          # fichas técnicas de Cali 71 (2016–2018)
-         'dana watchley': 'p.209', 'roberto matta': 'p.90', 'otto moll': 'p.94'}
+         'dana watchley': 'p.209', 'roberto matta': 'p.90', 'otto moll': 'p.94',
+         'luis a solari': 'p.169', 'roberto delamonica': 'p.144', 'sonnia von brusky': 'p.260',
+         # fichas técnicas de Cactus (2014–2020)
+         'carlos lersundy': 'p.213', 'gianfranco ferroni': 'p.529', 'henry c pearson': 'p.502', 'ivan rickenmann': 'p.190',
+         'lope max diaz': 'p.420', 'hernan braun': 'p.193',
+         'bernardo oritz': 'p.2036'}
 def resolver(nombre, preferir):
     k = norm(nombre)
     if k in ALIAS: return ALIAS[k], True

@@ -9,19 +9,19 @@ p.8,Álvaro Barrios,persona,artista|curador,32,artista,Colombia,M,,,catalogo_per
 p.9,Beatriz González,persona,artista,63,artista,Colombia,F,1938,,catalogo_personas
 p.10,Hernán Díaz,persona,artista,8,artista,Colombia,M,,,catalogo_personas
 p.11,Antonio Caro,persona,artista,23,artista,Colombia,F,1950,,catalogo_personas
-p.12,Enrique Grau,persona,artista,55,artista,Colombia,M,1920,2004,catalogo_personas
+p.12,Enrique Grau,persona,artista,56,artista,Colombia,M,1920,2004,catalogo_personas
 p.13,Gustavo Zalamea,persona,artista,16,artista,Colombia,M,,,catalogo_personas
-p.14,Óscar Muñoz,persona,artista|curador,49,artista,Colombia,M,1951,,catalogo_personas
+p.14,Óscar Muñoz,persona,artista|curador,50,artista,Colombia,M,1951,,catalogo_personas
 p.15,Luis Eduardo Borja,persona,artista,1,artista,Colombia,M,,,catalogo_personas
 p.16,Luis Caballero,persona,artista,35,artista,Colombia,M,1942,1995,catalogo_personas
-p.17,Lucy Tejada,persona,artista,51,artista,Colombia,F,1920,2011,catalogo_personas
+p.17,Lucy Tejada,persona,artista,52,artista,Colombia,F,1920,2011,catalogo_personas
 p.18,Nunik Sauret,persona,artista,4,artista,México,,,,catalogo_personas
-p.19,León Ferrari,persona,artista,10,artista,Brasil,M,,,catalogo_personas
+p.19,León Ferrari,persona,artista,11,artista,Brasil,M,,,catalogo_personas
 p.20,Juan Antonio Roda,persona,artista,29,artista,Español,M,1921,2003,catalogo_personas
 p.21,Teresa Cuéllar,persona,artista,10,artista,Colombia,,,,catalogo_personas
 p.22,Santiago Cárdenas,persona,artista,41,artista,Colombia,M,1932,,catalogo_personas
 p.23,Hernando Tejada,persona,artista,52,artista,Colombia,M,1924,1999,catalogo_personas
-p.24,David Manzur,persona,artista,22,artista,Colombia,M,1929,,catalogo_personas
+p.24,David Manzur,persona,artista,23,artista,Colombia,M,1929,,catalogo_personas
 p.25,Daniel Zelaya,persona,artista,9,artista,Argentina,,,,catalogo_personas
 p.26,Umberto Giangrandi,persona,artista,8,artista,Colombia,,,,catalogo_personas
 p.27,Rafael Moure,persona,artista,1,artista,Colombia,,,,catalogo_personas
@@ -29,23 +29,23 @@ p.28,Pablo Obelar,persona,artista,9,artista,Uruguay,,,,catalogo_personas
 p.29,Liliana Porter,persona,artista,32,artista,Argentina,F,1941,,catalogo_personas
 p.30,Antonio Barrera,persona,artista,14,artista,Colombiana,M,1948,1990,catalogo_personas
 p.31,Fernell Franco Barrios,persona,artista,14,artista,Colombia,M,1942,2006,catalogo_personas
-p.32,Carlos Cruz-Diez,persona,artista,21,artista,Venezuela,,,,catalogo_personas
+p.32,Carlos Cruz-Diez,persona,artista,22,artista,Venezuela,,,,catalogo_personas
 p.33,Wifredo Lam,persona,artista,9,artista,Cuba,,,,catalogo_personas
 p.34,Paul-Armand Gette,persona,artista,1,artista,Francia,,,,catalogo_personas
 p.35,Manuel Hernández,persona,artista,29,artista,Colombiana,M,1928,2014,catalogo_personas
 p.36,Linda Troeller,persona,artista,7,artista,Estados Unidos,,,,catalogo_personas
 p.37,Francois Dolmetsch,persona,artista,8,artista,Inglaterra,M,1940,,catalogo_personas
 p.38,Emilio Sánchez,persona,artista,16,artista,Cuba,,,,catalogo_personas
-p.39,Eduardo Ramírez Villamizar,persona,artista,36,artista,Colombia,,,,catalogo_personas
+p.39,Eduardo Ramírez Villamizar,persona,artista,37,artista,Colombia,,,,catalogo_personas
 p.40,Carlos Rojas,persona,artista,41,artista,Colombia,,,,catalogo_personas
-p.41,Alejandro Obregón,persona,artista,41,artista,Español,M,1920,1992,catalogo_personas
+p.41,Alejandro Obregón,persona,artista,42,artista,Español,M,1920,1992,catalogo_personas
 p.42,Peter Milton,persona,artista,14,artista,Estados Unidos,,,,catalogo_personas
 p.43,Miguel Ángel Rojas,persona,artista|curador,15,artista,Colombia,,,,catalogo_personas
 p.44,María Thereza Negreiros,persona,artista,46,artista,Brasileña ,F,1930,,catalogo_personas
 p.45,Luis Camnitzer,persona,artista,16,artista,Uruguay,,,,catalogo_personas
 p.46,Leonel Góngora,persona,artista,24,artista,Colombia,M,1932,,catalogo_personas
 p.47,Gregorio Cuartas,persona,artista,9,artista,Colombia,M,1938,,catalogo_personas
-p.48,Ever Astudillo,persona,artista,31,artista,Colombia,M,1948,2015,catalogo_personas
+p.48,Ever Astudillo,persona,artista,32,artista,Colombia,M,1948,2015,catalogo_personas
 p.49,Eugenio Dittborn,persona,artista,18,artista,Chile,M,1943,,catalogo_personas
 p.50,Diego Arango,persona,artista,10,artista,Colombia,M,1946,,catalogo_personas
 p.51,Víctor Laignelet,persona,artista,13,artista,Colombia,M,1955,,catalogo_personas
@@ -56,7 +56,7 @@ p.56,Rodolfo Abularach,persona,artista,22,artista,Guatemala,M,1933,,catalogo_per
 p.57,Robert Nelson,persona,artista,11,artista,Estados Unidos,,,,catalogo_personas
 p.58,René Portocarrero,persona,artista,8,artista,Cuba,,,,catalogo_personas
 p.59,Mercedes Sebastián,persona,artista,10,artista,Colombia,,,,catalogo_personas
-p.60,María Cristina Cortés,persona,artista,8,artista,Colombia,,,,catalogo_personas
+p.60,María Cristina Cortés,persona,artista,9,artista,Colombia,,,,catalogo_personas
 p.62,Juan Camilo Uribe,persona,artista,6,artista,Colombia,,,,catalogo_personas
 p.63,Juan Bernal Ponce,persona,artista,3,artista,Chile,,,,catalogo_personas
 p.64,José Guadalupe Posada,persona,artista,7,artista,México,,,,catalogo_personas
@@ -98,17 +98,17 @@ p.102,María Angélica Medina,persona,artista,3,artista,,,,,catalogo_personas
 p.103,Lydia Azout,persona,artista,6,artista,Colombia,,,,catalogo_personas
 p.104,Luis Fernando Peláez,persona,artista,6,artista,Colombia,M,1945,,catalogo_personas
 p.105,Luis Fernando Roldán,persona,artista,16,artista,Colombia,M,1955,,catalogo_personas
-p.106,Luis Díaz,persona,artista,7,artista,Guatemala,,,,catalogo_personas
+p.106,Luis Díaz,persona,artista,8,artista,Guatemala,,,,catalogo_personas
 p.107,Luis Hernández Cruz,persona,artista,3,artista,Puerto Rico,,,,catalogo_personas
 p.108,Luciano Jaramillo,persona,artista,14,artista,Colombia,,,,catalogo_personas
 p.109,Louise Nevelson,persona,artista,9,artista,Estados Unidos,,,,catalogo_personas
 p.110,Karen Lamassonne,persona,artista,11,artista,Colombia,,,,catalogo_personas
 p.111,Julio Le Parc,persona,artista,11,artista,Argentina,,,,catalogo_personas
-p.112,Juan Manuel Echavarría,persona,artista,7,artista,Colombia,M,1947,,catalogo_personas
+p.112,Juan Manuel Echavarría,persona,artista,6,artista,Colombia,M,1947,,catalogo_personas
 p.113,Juan Soriano,persona,artista,4,artista,México,,,,catalogo_personas
 p.114,José Horacio Martínez,persona,artista|curador,16,artista,Colombia,M,1961,,catalogo_personas
 p.115,Jesús Rafael Soto,persona,artista,17,artista,Venezuela,,,,catalogo_personas
-p.116,Ignacio Gómez Jaramillo,persona,artista,14,artista,Colombia,,,,catalogo_personas
+p.116,Ignacio Gómez Jaramillo,persona,artista,15,artista,Colombia,,,,catalogo_personas
 p.117,Heriberto Cogollo,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.118,Francisco Rocca-Lynn,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.119,Francisco Rodón,persona,artista,8,artista,Puerto Rico,,,,catalogo_personas
@@ -152,7 +152,7 @@ p.160,Mario Gordillo,persona,artista,12,artista,Ecuador,,,,catalogo_personas
 p.162,Mario Ossaba,persona,artista,5,artista,Colombia,,,,catalogo_personas
 p.163,María Teresa Vieco,persona,artista,8,artista,Colombia,F,1953,,catalogo_personas
 p.164,Margarita Monsalve,persona,artista,3,artista,Colombia,,,,catalogo_personas
-p.165,Marco Ospina,persona,artista,3,artista,Colombia,,,,catalogo_personas
+p.165,Marco Ospina,persona,artista,4,artista,Colombia,,,,catalogo_personas
 p.166,Luz Ángela Lizarazo,persona,artista,9,artista,Colombia,F,1966,,catalogo_personas
 p.167,Luisa Palacios,persona,artista,5,artista,Venezuela,,,,catalogo_personas
 p.168,Luis Gregorio Correia,persona,artista,2,artista,Brasil,,,,catalogo_personas
@@ -161,7 +161,7 @@ p.170,Luis Guevara Moreno,persona,artista,1,artista,Venezuela,,,,catalogo_person
 p.171,Luis Martínez Pedro,persona,artista,1,artista,Cuba,,,,catalogo_personas
 p.172,Luis Molinari-Flores,persona,artista,7,artista,Ecuador,,,,catalogo_personas
 p.173,Lucas Ospina,persona,artista|curador,7,artista,Colombia,M,1971,,catalogo_personas
-p.174,Lorenzo Jaramillo,persona,artista,8,artista,Colombia,,,,catalogo_personas
+p.174,Lorenzo Jaramillo,persona,artista,9,artista,Colombia,,,,catalogo_personas
 p.175,Leonilda González,persona,artista,4,artista,Uruguay,,,,catalogo_personas
 p.176,Leonardo Herrera,persona,artista|curador,14,artista,Colombia,,,,catalogo_personas
 p.177,Julio Alpuy,persona,artista,2,artista,Uruguay,,,,catalogo_personas
@@ -411,7 +411,7 @@ p.493,Hugo Camandona,persona,artista,1,artista,Perú,,,,catalogo_personas
 p.494,Hugo Cifuentes,persona,artista,8,artista,Ecuador,,,,catalogo_personas
 p.495,Homero Aguilar,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.496,Hervé Télémaque,persona,artista,1,artista,Haití,,,,catalogo_personas
-p.497,Hernando del Villar,persona,artista,4,artista,Colombia,,,,catalogo_personas
+p.497,Hernando del Villar,persona,artista,5,artista,Colombia,,,,catalogo_personas
 p.498,Hernando Ordóñez,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.499,Hernando Rojas,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.500,Hernán Zúñiga Alban,persona,artista,1,artista,Ecuador,,,,catalogo_personas
@@ -426,7 +426,7 @@ p.511,Gustavo Vejarano,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.512,Guillermo Cuartas,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.515,Guillermo Núñez,persona,artista,4,artista,Chile,,,,catalogo_personas
 p.516,Guillermo Vélez,persona,artista,2,artista,Colombia,,,,catalogo_personas
-p.517,Guillermo Wiedemann,persona,artista,10,artista,Colombia,,,,catalogo_personas
+p.517,Guillermo Wiedemann,persona,artista,11,artista,Colombia,,,,catalogo_personas
 p.519,Gonzalo Ariza,persona,artista,9,artista,Colombia,,,,catalogo_personas
 p.522,Gloria Uribe,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.523,Gladys Meneses,persona,artista,4,artista,Venezuela,,,,catalogo_personas
@@ -532,13 +532,13 @@ p.655,Antonio Joseph,persona,artista,3,artista,Haití,,,,catalogo_personas
 p.656,Antonio Martorell,persona,artista,3,artista,Puerto Rico,,,,catalogo_personas
 p.658,Antonio Peláez,persona,artista,2,artista,México,,,,catalogo_personas
 p.659,Antonio Rodríguez,persona,artista,1,artista,México,,,,catalogo_personas
-p.660,Antonio Samudio,persona,artista,1,artista,Colombia,,,,catalogo_personas
+p.660,Antonio Samudio,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.663,Anselmo Carrera Rojas,persona,artista,4,artista,Perú,,,,catalogo_personas
 p.664,Anna Letycia Quadros,persona,artista,3,artista,Brasil,,,,catalogo_personas
 p.665,Anna Bella Geiger,persona,artista,3,artista,Brasil,,,,catalogo_personas
 p.666,Aníbal Gil,persona,artista,8,artista,Colombia,,,,catalogo_personas
 p.667,Ángela María Restrepo,persona,artista,1,artista,Colombia,,,,catalogo_personas
-p.668,Ángel Loochkartt,persona,artista,5,artista,Colombia,,,,catalogo_personas
+p.668,Ángel Loochkartt,persona,artista,6,artista,Colombia,,,,catalogo_personas
 p.669,Andy Warhol,persona,artista,7,artista,Estados Unidos,,,,catalogo_personas
 p.671,Ana María Mazzei,persona,artista,3,artista,Venezuela,,,,catalogo_personas
 p.672,Ana Durán,persona,artista,1,artista,Colombia,,,,catalogo_personas
@@ -546,7 +546,7 @@ p.673,Ana Velasco,persona,artista,3,artista,Colombia,F,1973,,catalogo_personas
 p.674,Álvaro Herrán,persona,artista,7,artista,Colombia,,,,catalogo_personas
 p.675,Álvaro Peñarete,persona,artista,1,artista,Colombia,,,,catalogo_personas
 p.676,Alirio Palacios,persona,artista,3,artista,Venezuela,,,,catalogo_personas
-p.677,Alicia Barney,persona,artista,21,artista,Colombia,F,1952,,catalogo_personas
+p.677,Alicia Barney,persona,artista,22,artista,Colombia,F,1952,,catalogo_personas
 p.679,Alfredo Lleras Rojas,persona,artista,2,artista,Colombia,,,,catalogo_personas
 p.681,Alfredo Zalce,persona,artista,1,artista,México,,,,catalogo_personas
 p.683,Alfonso Mateus Ortega,persona,artista,1,artista,Colombia,,,,catalogo_personas
@@ -902,7 +902,7 @@ p.1050,Norman McLaren,persona,artista,1,artista,,,,,catalogo_personas
 p.1051,Norman Mejía,persona,artista,3,artista,,,,,catalogo_personas
 p.1052,Norman Suescún,persona,artista,1,artista,,,,,catalogo_personas
 p.1054,Nora Dobarro,persona,artista,1,artista,,,,,catalogo_personas
-p.1055,Noé León,persona,artista,3,artista,,,,,catalogo_personas
+p.1055,Noé León,persona,artista,4,artista,,,,,catalogo_personas
 p.1057,Nicolás Svistoonoff,persona,artista,3,artista,,,,,catalogo_personas
 p.1058,Nicolas Bouvier,persona,artista,1,artista,,,,,catalogo_personas
 p.1059,Nicolas Monkewitz,persona,artista,1,artista,,,,,catalogo_personas
@@ -1944,7 +1944,7 @@ p.2134,Alnfonso Quijano,persona,artista,1,artista,,,,,catalogo_personas
 p.2135,Allin Braund,persona,artista,1,artista,,,,,catalogo_personas
 p.2136,Allan Edmunds,persona,artista,1,artista,,,,,catalogo_personas
 p.2137,Alirio Rodríguez,persona,artista,2,artista,,,,,catalogo_personas
-p.2138,Alipio Jaramillo,persona,artista,2,artista,,,,,catalogo_personas
+p.2138,Alipio Jaramillo,persona,artista,3,artista,,,,,catalogo_personas
 p.2139,Alicia Carletti,persona,artista,1,artista,,,,,catalogo_personas
 p.2140,Alicia Tafur,persona,artista,1,artista,,,,,catalogo_personas
 p.2141,Alicia Vega,persona,artista,1,artista,,,,,catalogo_personas
@@ -2143,7 +2143,7 @@ p.2339,John Edward González,persona,artista,2,artista,Colombiana,M,1969,,catalo
 p.2341,John Michael Armleder,persona,artista,1,artista,,,,,catalogo_personas
 p.2342,John Thomas Biggers,persona,artista,1,artista,,,,,catalogo_personas
 p.2343,Joke Van Ommen,persona,artista,1,artista,,,,,catalogo_personas
-p.2344,Jorge Elías Triana,persona,artista,2,artista,,,,,catalogo_personas
+p.2344,Jorge Elías Triana,persona,artista,3,artista,,,,,catalogo_personas
 p.2345,Jorge Enrique Madriñán,persona,artista,2,artista,,,,,catalogo_personas
 p.2346,Jorge Luis de la Vega,persona,artista,1,artista,,,,,catalogo_personas
 p.2347,Jorge Mario Gómez,persona,artista,2,artista,,,,,catalogo_personas
@@ -2338,7 +2338,7 @@ p.2545,Mario Laserna,persona,apoyo,1,auspiciador,,,,,catalogo_personas
 p.2546,Ruly Vargas,persona,apoyo,1,auspiciador,,,,,catalogo_personas
 p.2547,Soffy Arboleda de Vega,persona,apoyo|curador,2,auspiciador,,,,,catalogo_personas
 p.2548,Sofía de Urdinola,persona,apoyo,1,auspiciador,,,,,catalogo_personas
-p.2549,Luis Eduardo Tobón,persona,artista,1,artista,,,,,catalogo_personas
+p.2549,Luis Eduardo Tobón,persona,artista,2,artista,,,,,catalogo_personas
 p.2550,María Sol Barón,persona,curador,1,artista,,,,,catalogo_personas
 p.2551,Camilo Ordóñez Robayo,persona,curador,1,artista,,,,,catalogo_personas
 p.2552,3 Libras,persona,artista,1,artista,,,,,catalogo_personas
@@ -2408,13 +2408,13 @@ p.2617,Betsabé Romero,persona,artista,1,artista,,,,,catalogo_personas
 p.2618,Boada,persona,artista,1,artista,,,,,catalogo_personas
 p.2619,Boris Pérez,persona,artista,2,artista,,,,,catalogo_personas
 p.2620,Boris Viskin,persona,artista,1,artista,,,,,catalogo_personas
-p.2621,Breyner Huertas,persona,artista|curador,6,artista,,,,,catalogo_personas
+p.2621,Breyner Huertas,persona,artista|curador,7,artista,,,,,catalogo_personas
 p.2622,Bridget Riley,persona,artista,1,artista,,,,,catalogo_personas
 p.2623,Bruno Serralongue,persona,artista,1,artista,,,,,catalogo_personas
 p.2624,Bruno Zeppilli,persona,artista,1,artista,,,,,catalogo_personas
 p.2625,Bustamante,persona,artista,1,artista,,,,,catalogo_personas
 p.2626,Camila Echevarría & Michael Gavish,persona,artista,1,artista,,,,,catalogo_personas
-p.2627,Camila Rodríguez,persona,artista,3,artista,,,,,catalogo_personas
+p.2627,Camila Rodríguez,persona,artista,4,artista,,,,,catalogo_personas
 p.2628,Camilo Aguilera,persona,artista,2,artista,,,,,catalogo_personas
 p.2629,Camilo Aguirre,persona,artista,1,artista,,,,,catalogo_personas
 p.2630,Camilo Restrepo,persona,artista,2,artista,,,,,catalogo_personas
@@ -2432,7 +2432,7 @@ p.2641,Carlos Tamayo,persona,artista|curador,2,artista,,,,,catalogo_personas
 p.2642,Carmen Sofia Reyes,persona,artista,1,artista,,,,,catalogo_personas
 p.2643,Carolina Ángel Idrobo,persona,artista,1,artista,,,,,catalogo_personas
 p.2644,Carolina Caicedo,persona,artista,1,artista,,,,,catalogo_personas
-p.2645,Carolina Ruiz,persona,artista,2,artista,,,,,catalogo_personas
+p.2645,Carolina Ruiz,persona,artista,3,artista,,,,,catalogo_personas
 p.2647,Catálina Toro,persona,artista,1,artista,,,,,catalogo_personas
 p.2648,Ceballo J.,persona,artista,1,artista,,,,,catalogo_personas
 p.2649,Cecile Hartmann,persona,artista,1,artista,,,,,catalogo_personas
@@ -2492,7 +2492,7 @@ p.2704,Elisa Gomez,persona,artista,1,artista,,,,,catalogo_personas
 p.2705,Emilia Uribe de Mejía,persona,artista,1,artista,,,,,catalogo_personas
 p.2706,Endara Joaquín,persona,artista,1,artista,,,,,catalogo_personas
 p.2707,Epifanio Garay,persona,artista,1,artista,,,,,catalogo_personas
-p.2708,Éricka Flórez,persona,artista|curador,5,artista,,,,,catalogo_personas
+p.2708,Éricka Flórez,persona,artista|curador,6,artista,,,,,catalogo_personas
 p.2709,Erik Nitsche,persona,artista,1,artista,,,,,catalogo_personas
 p.2710,Erling Ericsson,persona,artista,1,artista,,,,,catalogo_personas
 p.2711,Ernesto Bertani,persona,artista,1,artista,,,,,catalogo_personas
@@ -2505,7 +2505,7 @@ p.2717,Evandro Teixeira,persona,artista,1,artista,,,,,catalogo_personas
 p.2718,Evelyn Soto Gabino,persona,artista,1,artista,,,,,catalogo_personas
 p.2719,Eyder Wilson Ul Ascue,persona,artista,1,artista,,,,,catalogo_personas
 p.2720,F. H. K. Henrion,persona,artista,1,artista,,,,,catalogo_personas
-p.2721,Fabio Melecio Palacios,persona,artista,4,artista,,,,,catalogo_personas
+p.2721,Fabio Melecio Palacios,persona,artista,5,artista,,,,,catalogo_personas
 p.2722,Fabio Rodriguez Amaya,persona,artista,1,artista,,,,,catalogo_personas
 p.2723,Falko Behrendt,persona,artista,1,artista,,,,,catalogo_personas
 p.2724,Federico Guzmán,persona,artista,1,artista,,,,,catalogo_personas
@@ -2557,7 +2557,7 @@ p.2773,Guillermo Calzadilla,persona,artista,1,artista,,,,,catalogo_personas
 p.2774,Guillermo Gómez Peña,persona,artista,1,artista,,,,,catalogo_personas
 p.2775,Guilles Charalambos,persona,artista,1,artista,,,,,catalogo_personas
 p.2776,Gustav Henri Jossot,persona,artista,1,artista,,,,,catalogo_personas
-p.2777,Gustavo Niño,persona,artista,1,artista,,,,,catalogo_personas
+p.2777,Gustavo Niño,persona,artista,2,artista,,,,,catalogo_personas
 p.2778,Gustavo Toro,persona,artista,1,artista,,,,,catalogo_personas
 p.2779,Harold Cohen,persona,artista,1,artista,,,,,catalogo_personas
 p.2780,Harold Orlando Rodriguez,persona,artista,1,artista,,,,,catalogo_personas
@@ -2632,7 +2632,7 @@ p.2853,José Reyes Meza,persona,artista,1,artista,,,,,catalogo_personas
 p.2854,Josefina de Hoyos,persona,artista,1,artista,,,,,catalogo_personas
 p.2855,Juan Andrés Posada Jaramillo,persona,artista,1,artista,,,,,catalogo_personas
 p.2856,Juan Carlos Distéfano & Rubén Fontana & Carlos Soler,persona,artista,1,artista,,,,,catalogo_personas
-p.2857,Juan David Velásquez,persona,artista,1,artista,,,,,catalogo_personas
+p.2857,Juan David Velásquez,persona,artista,2,artista,,,,,catalogo_personas
 p.2858,Juan Fernando Herrán,persona,artista,1,artista,,,,,catalogo_personas
 p.2859,Juan Fernando Toro,persona,artista,2,artista,,,,,catalogo_personas
 p.2860,Juan Guillermo Restrepo,persona,artista,1,artista,,,,,catalogo_personas
@@ -2712,7 +2712,7 @@ p.2937,Marcia Valladares,persona,artista,1,artista,,,,,catalogo_personas
 p.2938,Margarita Betancourt,persona,artista,1,artista,,,,,catalogo_personas
 p.2939,María Angélica Madero,persona,artista,1,artista,,,,,catalogo_personas
 p.2940,Maria Cristina Pavia,persona,artista,1,artista,,,,,catalogo_personas
-p.2941,María Juliana Soto,persona,artista,1,artista,,,,,catalogo_personas
+p.2941,María Juliana Soto,persona,artista,2,artista,,,,,catalogo_personas
 p.2942,María Mercedes Salgado,persona,artista,1,artista,,,,,catalogo_personas
 p.2943,María Paola Sánchez,persona,artista,1,artista,,,,,catalogo_personas
 p.2944,Maria Teresa Guerrero,persona,artista|curador,2,artista,,,,,catalogo_personas
@@ -2767,7 +2767,7 @@ p.2995,Nelson Guzmán,persona,artista,1,artista,,,,,catalogo_personas
 p.2996,Nestor Franco aka Bagual,persona,artista,1,artista,,,,,catalogo_personas
 p.2997,Nestor Gutiérrez,persona,artista,1,artista,,,,,catalogo_personas
 p.2999,Nicolás Cadavid,persona,artista,1,artista,,,,,catalogo_personas
-p.3000,Nicolás González,persona,artista,2,artista,,,,,catalogo_personas
+p.3000,Nicolás González,persona,artista,3,artista,,,,,catalogo_personas
 p.3001,Nicolás Leguizamón,persona,artista,1,artista,,,,,catalogo_personas
 p.3002,Nicolás Moreno,persona,artista,1,artista,,,,,catalogo_personas
 p.3003,Nini Bautista,persona,artista,2,artista,,,,,catalogo_personas
@@ -2830,7 +2830,7 @@ p.3061,Robert Gretczko & Charles Zimmerman,persona,artista,1,artista,,,,,catalog
 p.3062,Roberto Valcarcel,persona,artista,1,artista,,,,,catalogo_personas
 p.3063,Robyn Denny,persona,artista,1,artista,,,,,catalogo_personas
 p.3064,Rodolfo Morales,persona,artista,1,artista,,,,,catalogo_personas
-p.3065,Rogelio Salmona,persona,artista,2,artista,,,,,catalogo_personas
+p.3065,Rogelio Salmona,persona,artista,1,artista,,,,,catalogo_personas
 p.3066,Rolf Muenzner,persona,artista,1,artista,,,,,catalogo_personas
 p.3067,Roman Cieslewicz,persona,artista,1,artista,,,,,catalogo_personas
 p.3068,Rosa Sanin Sader,persona,artista,1,artista,,,,,catalogo_personas
@@ -2895,7 +2895,7 @@ p.3130,Wilson Díaz & Juan Mejía,persona,artista,1,artista,,,,,catalogo_persona
 p.3131,Wim Crouwel,persona,artista,1,artista,,,,,catalogo_personas
 p.3132,Wolfgang Mattheuer,persona,artista,1,artista,,,,,catalogo_personas
 p.3133,Ximena Díaz,persona,artista,1,artista,,,,,catalogo_personas
-p.3134,Yang Fudong,persona,artista,2,artista,,,,,catalogo_personas
+p.3134,Yang Fudong,persona,artista,1,artista,,,,,catalogo_personas
 p.3135,Yeison Riascos,persona,artista,1,artista,,,,,catalogo_personas
 p.3136,Yezid Campos,persona,artista,1,artista,,,,,catalogo_personas
 p.3137,Yolanda Andrade,persona,artista,1,artista,,,,,catalogo_personas
@@ -2914,7 +2914,7 @@ p.3149,Acklyn Lynch,persona,curador,1,curador,,,,,catalogo_personas
 p.3150,Alberto Moreno,persona,curador,1,curador,,,,,catalogo_personas
 p.3151,Alberto Pérez,persona,curador,1,curador,,,,,catalogo_personas
 p.3152,Alberto Quiroga,persona,curador,1,curador,,,,,catalogo_personas
-p.3153,Alejandro Martín Maldonado,persona,curador,13,curador,,,,,catalogo_personas
+p.3153,Alejandro Martín Maldonado,persona,curador,14,curador,,,,,catalogo_personas
 p.3154,Ana María Lozano,persona,curador,1,curador,,,,,catalogo_personas
 p.3155,Ana Sokoloff,persona,curador,1,curador,,,,,catalogo_personas
 p.3156,Andrés Casanova,persona,curador,1,curador,,,,,catalogo_personas
@@ -3457,7 +3457,7 @@ n.22,Carolina Torres,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.23,Carolina Navas,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.24,Nois Radio,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.25,Alberto Campuzano,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.26,Lorena Díez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.26,Lorena Díez,sin_catalogar,curador,3,,,,,,texto_exposiciones
 n.27,Artesanal Tecnológica,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.28,Universidad Icesi,sin_catalogar,apoyo,2,,,,,,texto_exposiciones
 n.29,Sonnia Yepez,sin_catalogar,artista,1,,,,,,texto_exposiciones
@@ -3474,15 +3474,15 @@ n.39,Fernando Távora,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.40,José Antonio Coderch,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.41,Andrés Felipe Erazo Barco,sin_catalogar,curador,1,,,,,,texto_exposiciones
 n.42,Antonio Armesto Aira,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.43,Manuel Augusto Mendes Soares,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.43,Manuel Augusto Soares Mendes,sin_catalogar,curador,1,,,,,,texto_exposiciones
 n.44,Julieth Morales,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.45,Johan Samboní,sin_catalogar,artista|curador,4,,,,,,texto_exposiciones
+n.45,Johan Samboní,sin_catalogar,artista|curador,5,,,,,,texto_exposiciones
 n.46,Christian Velásquez,sin_catalogar,artista,2,,,,,,texto_exposiciones
 n.47,María Belén Sáez de Ibarra,sin_catalogar,curador,1,,,,,,texto_exposiciones
 n.48,Semillero de Investigación Litoralidades,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.49,Museo de Memoria de Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.50,Mónica Vilá,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.51,Adriana Castellanos Olmedo,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.51,Adriana Castellanos Olmedo,sin_catalogar,curador,2,,,,,,texto_exposiciones
 n.52,Solimán López,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.53,Parque Explora,sin_catalogar,apoyo,2,,,,,,texto_exposiciones
 n.54,Planetario de Bogotá,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
@@ -3507,7 +3507,7 @@ n.72,Tomás Rubio,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.73,Paula Rodríguez,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.74,Stefany Ordóñez,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.75,Universidad El Bosque,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.76,David Vélez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.76,David Vélez,sin_catalogar,artista|curador,2,,,,,,texto_exposiciones
 n.77,Kadist,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.78,Espacio Odeón,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.79,Stephanie Montes,sin_catalogar,artista,1,,,,,,texto_exposiciones
@@ -3515,212 +3515,245 @@ n.80,Línea Roja Producciones,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.81,Catalina Jaramillo Quijano,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.82,Luz Adriana Hoyos,sin_catalogar,curador,1,,,,,,texto_exposiciones
 n.83,Acumulaciones Taller,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.84,Paula Solarte,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.84,Paula Solarte,sin_catalogar,artista|curador,2,,,,,,texto_exposiciones
 n.85,Biblioteca Pública Centro Cultural Comuna 1,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
 n.86,Laura Campaz,sin_catalogar,artista,3,,,,,,texto_exposiciones
 n.87,Colectivo Monómero,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.88,Dayana Camacho,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.88,Dayana Camacho,sin_catalogar,artista,2,,,,,,texto_exposiciones
 n.89,Miguel Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.90,Pablo Wilson Córdoba Saa,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.91,BAT,sin_catalogar,apoyo,2,,,,,,texto_exposiciones
 n.92,Lina Saavedra de La Cruz,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.93,Adriana Castellanos Olmedos,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.94,Pavel Andrés Vernaza Ortiz,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.95,Sergio Lasso Estudio,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.96,Colectivo Deúniti,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.97,Eva Parra,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.98,Carlos Uribe,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.99,Fundación SURA,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.100,Ana González,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.101,Alejandra Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.102,Juan Pablo Velásquez,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.103,MinCiencias,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.104,Adrien Chauvin Picard,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.105,Alix Quirama,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.106,Ani Ganzala,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.107,Cecilia Vicuña,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.108,Costurero Dapa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.109,Costurero Electrónico,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.110,Daniela Whaley,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.111,Edith Medina,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.112,Florencia Alonso,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.113,Holman Álvarez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.114,Irma Sofía Poeter,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.115,Juana Gómez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.116,Juliana Silva,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.117,Lilia Ziamou,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.118,Lina Puerta,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.119,María del Pilar Vergel,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.120,María José Durán Steinman,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.121,Mariana Guimaraes,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.122,Maritza Sánchez H,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.123,Miriam Martínez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.124,Miriam Medrez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.125,Ornella Ridone,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.126,Alianza 4U,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.127,Tecnocentro Cultural Somos Pacífico,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.128,Artolución,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.129,Gabriela Pinilla,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.130,Museo de Historia Natural de Londres,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.131,Forensic Architecture,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.132,Comisión de la Verdad,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.133,Diego Henao,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.134,María Astrid Ríos,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.135,Industrias Metálicas de Palmira,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.136,Boris Friedewald,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.137,ZKM,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.138,Erna von der Walde,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.139,Piedra Tijera Papel,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.140,"Ministerio de las Culturas, las Artes y los Saberes",sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.141,Biblioteca Nacional de Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.142,Gerson Vargas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.143,Mateo López,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.144,Julien Petit,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.145,Carlos Garaicoa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.146,Le Corbusier,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.147,Fundación Sub/Liminal,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.148,Centro Nacional de Memoria Histórica,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.149,Museo Popular de Siloé,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.150,Rosa Contemporánea Eventos y Logística,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.151,360 Group Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.152,Bitaco,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.153,Corona,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.154,Evok,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.155,Marquetería Arte Moderno,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.156,Aritex de Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.157,El Molino,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.158,Carnes Frías Enriko,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.159,Krima,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.160,La Cocina Cali,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.161,Queso Labrantío,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.162,Impresos Richard,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.163,Huevos Santa Anita,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.164,Manitoba,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.165,Sokolata,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.166,Sweet Vanessa,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.167,Vizio,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.168,Verdissimo,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.169,Zahavi Repostería Gourmet,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.170,Zonin Prosecco,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.171,Orquídeas del Valle,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
-n.172,Eugenio Darnet,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.173,Graciela Zar,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.174,Teresa Vila,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.175,José Avelino Vieira de Paula,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.176,Rodolfo Velásquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.177,Gersaín Triviño,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.178,Harold Town,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.179,Roger François Thepot,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.180,Manoel Augusto Serpa Andrade,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.181,Fritz Scholder,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.182,Jorge Satut,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.183,Nelson Romero,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.184,Edo Rocha,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.185,Joaquín Roca-Rey,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.186,Ricardo Regazzoni,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.187,Joaquim Redig de Campos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.188,Arisio Rabim,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.189,Pedro Preux,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.190,Sergio Augusto Porto,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.191,Gustavo Pardo Sarmiento,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.192,Jacques Palumbo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.193,Agustín Olavarría Valdivia,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.194,Marcello Nitsche,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.195,Sara Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.196,Kurt Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.197,Rubén Montoya,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.198,Newton Montenegro de Lima,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.199,Rodolfo Mishaan,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.200,Soledad Mendoza,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.201,Heber Marchisio,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.202,John MacGregor,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.203,Rita Letendre,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.204,Antonio Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.205,Vicente Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.206,Tito Kuramoto,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.207,Katya Kohn,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.208,Martela de Guruceaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.209,Antonio Granados Valdés,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.210,Martha Gavensky,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.211,Juan Antonio García Gayou,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.212,Jesús Emilio Franco,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.213,Oscar Ferrando,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.214,Angelo De Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.215,Fernando Dávila,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.216,Adriano D'Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.217,Greg Curnoe,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.218,Diana Cuervo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.219,Valentina Cruz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.220,Jack Coughlin,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.221,Luis Córdoba Salazar,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.222,Fernando Coral Dueñas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.223,Julio Coll Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.224,Jorge Ceballos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.225,Juan M. Calle,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.226,Álvaro Armesto,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.227,Hernán Nicholls,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.228,Diana Buitrón,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.229,Taller 4 Rojo,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.230,Nicolás Ramos Gómez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.231,Indira Gironza Bravo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.232,Jorge Silva,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.233,Ana María Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.234,Oliver Laric,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.235,Ulises Carrión,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.236,Elodie Pong,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.237,Barbara Bloom,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.238,Douwe Dijkstra,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.239,Donna Verheijden,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.240,Lous America,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.241,David Garcia,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.242,Henk Wijnen,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.243,Annie Wright,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.244,Lydia Schouten,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.245,Eddie D,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.246,Barbara Kruger,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.247,Eric Bogosian,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.248,John Baldessari,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.249,General Idea,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.250,Sebastián López,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.251,Saskia Bos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.252,Jouke Kleerebezem,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.253,Rhonal Stiven Valencia Cuero,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.254,Carlos Martiel,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.255,Oscar Moreno Escárrega,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.256,CaldodeCultivo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.257,Luis Roldán,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.258,José Olano,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.259,Gustavo Henao Zamora,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.260,Pedro Manrique Figueroa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.261,María Ximena Laverde,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.262,Nobara Catalina Hayakawa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.263,Nelson Garrido,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.264,Nina S. de Friedemann,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.265,Saturnina Sánchez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.266,Diana Cuartas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.267,Mariana Rodríguez,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.268,Judith Márquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.269,Andrea Payán,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.270,Pablo Daza,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.271,Diego Salas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.272,Juan Durán,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.273,William Villota,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.274,Angie Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.275,Margarita Ariza,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.276,Walter Caicedo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.277,Jordan Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.278,Ximena Vásquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.279,Carmenza Banguera,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.280,Minia Bibiabiany,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.281,Laura Rodríguez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.282,Katherine Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.283,José Manuel Cuesta,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.284,Diego Mañunga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.285,Alexandra Gelis,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.286,Elin Grueso,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.287,Leyla Cárdenas,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.288,Miguel Carini,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.289,Nicolás Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.290,Pierre Huyghe,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.291,Rometti Costales,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.292,Barrio Ballet,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.93,Pavel Andrés Vernaza Ortiz,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.94,Sergio Lasso Estudio,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.95,Colectivo Deúniti,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.96,Eva Parra,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.97,Carlos Uribe,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.98,Fundación SURA,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.99,Ana González,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.100,Alejandra Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.101,Juan Pablo Velásquez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.102,MinCiencias,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.103,Adrien Chauvin Picard,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.104,Alix Quirama,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.105,Ani Ganzala,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.106,Cecilia Vicuña,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.107,Costurero Dapa,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.108,Costurero Electrónico,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.109,Daniela Whaley,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.110,Edith Medina,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.111,Florencia Alonso,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.112,Holman Álvarez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.113,Irma Sofía Poeter,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.114,Juana Gómez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.115,Juliana Silva,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.116,Lilia Ziamou,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.117,Lina Puerta,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.118,María del Pilar Vergel,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.119,María José Durán Steinman,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.120,Mariana Guimaraes,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.121,Maritza Sánchez H,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.122,Miriam Martínez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.123,Miriam Medrez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.124,Ornella Ridone,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.125,Alianza 4U,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.126,Tecnocentro Cultural Somos Pacífico,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.127,Artolución,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.128,Gabriela Pinilla,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.129,Museo de Historia Natural de Londres,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.130,Forensic Architecture,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.131,Comisión de la Verdad,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.132,Diego Henao,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.133,María Astrid Ríos,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.134,Industrias Metálicas de Palmira,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.135,Boris Friedewald,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.136,ZKM,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.137,Erna von der Walde,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.138,Piedra Tijera Papel,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.139,"Ministerio de las Culturas, las Artes y los Saberes",sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.140,Biblioteca Nacional de Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.141,Gerson Vargas,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.142,Mateo López,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.143,Julien Petit,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.144,Carlos Garaicoa,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.145,Le Corbusier,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.146,Fundación Sub/Liminal,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.147,Centro Nacional de Memoria Histórica,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.148,Museo Popular de Siloé,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.149,Rosa Contemporánea Eventos y Logística,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.150,360 Group Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.151,Bitaco,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.152,Corona,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.153,Evok,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.154,Marquetería Arte Moderno,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.155,Aritex de Colombia,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.156,El Molino,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.157,Carnes Frías Enriko,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.158,Krima,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.159,La Cocina Cali,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.160,Queso Labrantío,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.161,Impresos Richard,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.162,Huevos Santa Anita,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.163,Manitoba,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.164,Sokolata,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.165,Sweet Vanessa,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.166,Vizio,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.167,Verdissimo,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.168,Zahavi Repostería Gourmet,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.169,Zonin Prosecco,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.170,Orquídeas del Valle,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.171,Eugenio Darnet,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.172,Graciela Zar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.173,Teresa Vila,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.174,José Avelino Vieira de Paula,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.175,Rodolfo Velásquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.176,Gersaín Triviño,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.177,Harold Town,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.178,Roger François Thepot,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.179,Manoel Augusto Serpa Andrade,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.180,Fritz Scholder,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.181,Jorge Satut,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.182,Nelson Romero,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.183,Edo Rocha,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.184,Joaquín Roca-Rey,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.185,Ricardo Regazzoni,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.186,Joaquim Redig de Campos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.187,Arisio Rabim,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.188,Pedro Preux,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.189,Sergio Augusto Porto,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.190,Gustavo Pardo Sarmiento,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.191,Jacques Palumbo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.192,Agustín Olavarría Valdivia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.193,Marcello Nitsche,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.194,Sara Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.195,Kurt Muller,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.196,Rubén Montoya,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.197,Newton Montenegro de Lima,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.198,Rodolfo Mishaan,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.199,Soledad Mendoza,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.200,Heber Marchisio,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.201,John MacGregor,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.202,Rita Letendre,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.203,Antonio Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.204,Vicente Larrea,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.205,Tito Kuramoto,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.206,Katya Kohn,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.207,Martela de Guruceaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.208,Antonio Granados Valdés,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.209,Martha Gavensky,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.210,Juan Antonio García Gayou,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.211,Jesús Emilio Franco,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.212,Oscar Ferrando,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.213,Angelo De Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.214,Fernando Dávila,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.215,Adriano D'Aquino,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.216,Greg Curnoe,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.217,Diana Cuervo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.218,Valentina Cruz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.219,Jack Coughlin,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.220,Luis Córdoba Salazar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.221,Fernando Coral Dueñas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.222,Julio Coll Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.223,Jorge Ceballos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.224,Juan M. Calle,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.225,Álvaro Armesto,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.226,Hernán Nicholls,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.227,Diana Buitrón,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.228,Taller 4 Rojo,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.229,Nicolás Ramos Gómez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.230,Indira Gironza Bravo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.231,Jorge Silva,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.232,Ana María Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.233,Oliver Laric,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.234,Ulises Carrión,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.235,Elodie Pong,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.236,Barbara Bloom,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.237,Douwe Dijkstra,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.238,Donna Verheijden,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.239,Lous America,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.240,David Garcia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.241,Henk Wijnen,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.242,Annie Wright,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.243,Lydia Schouten,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.244,Eddie D,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.245,Barbara Kruger,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.246,Eric Bogosian,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.247,John Baldessari,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.248,General Idea,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.249,Sebastián López,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.250,Saskia Bos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.251,Jouke Kleerebezem,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.252,Rhonal Stiven Valencia Cuero,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.253,Carlos Martiel,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.254,Oscar Moreno Escárrega,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.255,CaldodeCultivo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.256,Luis Roldán,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.257,José Olano,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.258,Gustavo Henao Zamora,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.259,Pedro Manrique Figueroa,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.260,María Ximena Laverde,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.261,Nobara Catalina Hayakawa,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.262,Nelson Garrido,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.263,Nina S. de Friedemann,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.264,Saturnina Sánchez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.265,Diana Cuartas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.266,Mariana Rodríguez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.267,Judith Márquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.268,Andrea Payán,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.269,Pablo Daza,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.270,Diego Salas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.271,Juan Durán,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.272,William Villota,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.273,Angie Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.274,Margarita Ariza,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.275,Walter Caicedo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.276,Jordan Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.277,Ximena Vásquez,sin_catalogar,artista|curador,3,,,,,,texto_exposiciones
+n.278,Carmenza Banguera,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.279,Minia Bibiabiany,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.280,Laura Rodríguez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.281,Katherine Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.282,José Manuel Cuesta,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.283,Diego Mañunga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.284,Alexandra Gelis,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.285,Elin Grueso,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.286,Leyla Cárdenas,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.287,Miguel Carini,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.288,Nicolás Consuegra,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.289,Pierre Huyghe,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.290,Rometti Costales,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.291,Barrio Ballet,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.292,Carlos Arturo Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.293,Martha Granados,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.294,Fiorella Gómez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.295,Carlos Hoyos,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.296,Sandra Jaramillo,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.297,Lina Saavedra,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.298,Antonio Dorado,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.299,Aura Rico,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.300,Andrés Velasco,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.301,Eduardo Garcés,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.302,Johan Valencia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.303,David León,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.304,Marco Torres,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.305,Valeria S. Oggioni,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.306,Braim Canizales,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.307,Jesús Ramírez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.308,Jorge Panchoaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.309,Juanita Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.310,José Luis Rodríguez Maldonado,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.311,Luis Morales,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.312,Nicolás Van Hemelryck,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.313,Francisco Mojica,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.314,Juan Arias,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.315,Xochilán Rojas,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.316,María Alejandra González,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.317,Gina Castaño,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.318,César Suárez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.319,Víctor Andrés García,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.320,Ivonn Lloreda,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.321,Stephanie Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.322,Juliana Góngora,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.323,Institución Educativa Oficial Boyacá,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.324,Cristina Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.325,Sandra Rengifo,sin_catalogar,artista,1,,,,,,texto_exposiciones

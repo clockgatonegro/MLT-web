@@ -50,11 +50,23 @@ La base de 2016 traía 6 artistas para `ex.827`. Con las fichas técnicas, el li
 
 `scripts/fuentes/participantes_fichas_cactus.csv` agrega artistas (y, cuando consta, curadores) a exposiciones que en la base tenían pocos o ningún agente: Artist Talking Back to the Media (2016), (El otro lado de la) Carretera al mar (2018), Reserva abierta (2018), Casa Ocupada (2019–2020), Las populares Gráficas Molinari (2018), María Thereza Negreiros y 16 mujeres artistas (2020), Manglaria (2019), Aula Flexible (2018), el cuarto y quinto guion de la colección (2014) y la sexta rotación (2015). También completa Universo Holograma, ¡Oído pueblo!, Territorio en discusión y Rojo y más rojo. Los curadores de Las populares Gráficas Molinari salen del informe de gestión de 2018.
 
+## Triangulación con el archivo de Cactus Taller Gráfico (2009–2021)
+
+Cactus diseñó las piezas del museo desde *Eros, dolor y muerte* (2009) hasta *El ataque del presente contra el resto de los tiempos* (2021). Para ese tramo se buscó cada exposición en su archivo (programas de mano, invitaciones, fichas técnicas, boletines y cuadernillos de programación) y se anotó el resultado en `scripts/fuentes/triangulacion_cactus.csv`, con el documento de cada dato. Reglas:
+
+- **confirma / corrige / agrega**: se aplican. Una ficha que solo venía de la web y queda respaldada por un documento de Cactus pasa a confianza «alta» (●). Los documentos quedan en la columna `fuentes_cactus` de `exposiciones.csv`.
+- **conflicto**: no se aplica; el dato de la base se mantiene y la discrepancia queda en `conflictos_cactus.csv` para que la resuelvan los autores.
+- **duplicado**: cinco filas web sin fecha repetían exposiciones ya fechadas y se unieron con ellas: La guerra que no hemos visto, Siete intelectuales en el bosque de bambú, Réquiem NN, Rogelio Salmona (las cuatro de 2011) y la sala didáctica La Escena (2017). La película *Réquiem NN* que la Cinemateca proyectó en 2014 no es una exposición.
+
+Resultado: 101 exposiciones con al menos un documento de Cactus y 14 conflictos. También se agregaron participantes que la web no traía: los finalistas y curadores de BLOC 2018 (*La unión que separa las cosas*), los fotógrafos y curadores de *Bifurcaciones*, los curadores de *Fractales*, los artistas de *Manual de instrucciones* (según la publicación del programa) y Sandra Rengifo en *Los lirios del campo y las aves del cielo*. Dos grafías se corrigieron con los documentos: Adriana Castellanos Olmedo (la web decía «Olmedos») y Manuel Augusto Soares Mendes.
+
+Exposiciones de 2009–2021 que solo vienen de la web y no tienen rastro en el archivo de Cactus: El mundo según Mafalda, UMBRAL adentro, Impulsive Habitat, Cuando nace el sonido, El resplandor del desastre, Proyecciones para el Sereno, Máquina monumental, Subterránea 2020, VI Salón BAT de Arte Popular, Una piedra en el camino, Wilson Díaz. Gusto y conflicto, La esquina del barrio, Hijas del Agua, Transición (Cuarto Salón del Pacífico), Gráfica Subterránea, EOCL, Reimaginando Potrero Grande, Ensayos para un mundo perfecto y Auditum 2020. Varias son ciclos sonoros o virtuales de la pandemia, que no necesitaban pieza impresa.
+
 ## Vacíos por resolver
 
-1. **2019 está casi vacío** (2 exposiciones con fecha). Las fichas archivadas de ese año no traen fechas. Siete exposiciones con captura en 2019 quedaron sin año: Barney/Távora/Coderch, Julieth Morales, BLOC 2018, El Testigo, Manglaria, Bifurcaciones y Fractales.
-2. **26 exposiciones no tienen fecha.** Entre ellas Le Corbusier, Rogelio Salmona, Requiem NN (Juan Manuel Echavarría), Yang Fudong, Hijas del Agua y Sendero de las esculturas.
-3. **Listas truncadas:** en Universo Holograma y Deshilar la captura corta la lista de artistas, y en 21 obras en el cambio de tiempo, VI Salón BAT y BLOC 2018 no aparecen los nombres.
+1. **Conflictos de fecha con el archivo de Cactus** (14, en `conflictos_cactus.csv`): entre otros, el cierre de Cali 71 (2017 o 2019, por sus rotaciones), El Testigo (17 de noviembre de 2019 o 1 de marzo de 2020), El ruido del silencio, Celeste (marzo o mayo de 2020), el espacio de Le Corbusier (Casa Obeso Mejía o jardines) y el nombre de Catalina o Carolina Torres en ¡Oído pueblo!
+2. **6 exposiciones siguen sin fecha:** Hijas del Agua, Transición, Gráfica Subterránea, Reimaginando Potrero Grande, Sendero de las esculturas y Ensayos para un mundo perfecto.
+3. **Listas truncadas:** en Universo Holograma y Deshilar la captura corta la lista de artistas, y en 21 obras en el cambio de tiempo y el VI Salón BAT no aparecen los nombres (los de BLOC 2018 ya se completaron con el programa de mano).
 4. **Fechas que se contradicen** (anotadas en `notas`): Costurero Viajero (2017 o 2018), Savia Solaris (cierre 28 de octubre o 12 de noviembre de 2018), Trazar el umbral (cierre 3 o 24 de marzo de 2019) y Wildlife Photographer (publicada en 2023 con "2024" en el título).
 5. **Sedes:** en los registros nuevos casi nunca aparece la sala, así que `sede` quedó vacía en la mayoría.
 6. **Homonimias:** apliqué solo las equivalencias claras, que están documentadas en `ALIAS` dentro de `normalizar.py`. Por ejemplo, Ericka Flórez Hidalgo → Éricka Flórez, Luz Lizarazo → Luz Ángela Lizarazo y Óscar Roldán → Oscar Roldán-Alzate. Tres casos más (Camila Rodríguez Triana, Jose Ruiz Díaz y María del Carmen Espinosa) fueron confirmados por los autores y están en `candidatos_homonimia.csv`.
@@ -67,5 +79,6 @@ Para cerrar los puntos 1 a 4, lo más directo sería el archivo del CEDOC del mu
 
 ```
 python3 complemento_2016_2026.py
+python3 cactus_fechas.py
 python3 normalizar.py MLT_DB_07_2016.xlsx
 ```

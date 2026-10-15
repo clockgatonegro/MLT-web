@@ -94,8 +94,13 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'carlos lersundy': 'p.213', 'gianfranco ferroni': 'p.529', 'henry c pearson': 'p.502', 'ivan rickenmann': 'p.190',
          'lope max diaz': 'p.420', 'hernan braun': 'p.193', 'ed ruscha': 'p.579',
          'bernardo oritz': 'p.2036'}
+# grafías corregidas con documentos de Cactus (ver fuentes/triangulacion_cactus.csv, campo «nombre»)
+NAMEFIX = {'adriana castellanos olmedos': 'Adriana Castellanos Olmedo',
+           'manuel augusto mendes soares': 'Manuel Augusto Soares Mendes'}
+
 def resolver(nombre, preferir):
     k = norm(nombre)
+    if k in NAMEFIX: nombre = NAMEFIX[k]; k = norm(nombre)
     if k in ALIAS: return ALIAS[k], True
     orden = [('p', idx_p), ('o', idx_o)] if preferir == 'p' else [('o', idx_o), ('p', idx_p)]
     for pref, idx in orden:
@@ -190,6 +195,55 @@ for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)
                             Label=r['rol'], Weight=1, fuente=tag))
         if not ok: no_cruzados.append(dict(id_expo=r['id_expo'], campo=r['rol'], texto=r['nombre'], id_asignado=aid))
 
+# ---------- triangulación con los archivos de Cactus Taller Gráfico (fuentes/triangulacion_cactus.csv) ----------
+# confirma / corrige / agrega se aplican; «conflicto» no se aplica y queda listado en salida/conflictos_cactus.csv;
+# «duplicado» une una fila web sin fecha con la exposición de la base que repite.
+TRI = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fuentes', 'triangulacion_cactus.csv')
+conflictos = []
+if os.path.exists(TRI):
+    porid = {e['Id']: e for e in expos}
+    docs = collections.defaultdict(list)
+    dup = {}
+    for r in csv.DictReader(open(TRI, encoding='utf-8')):
+        e = porid.get(r['id_expo'])
+        if e is None: continue
+        acc, campo, val = r['accion'], r['campo'], r['valor']
+        if acc == 'duplicado':
+            dup[r['id_expo']] = campo; continue
+        if acc == 'conflicto':
+            conflictos.append(dict(id_expo=r['id_expo'], expo=e['Label'], campo=campo, valor_base=e.get(campo, ''),
+                                   valor_cactus=val, documento=r['documento'], nota=r['nota'])); continue
+        if r['documento'] and r['documento'] not in docs[r['id_expo']]: docs[r['id_expo']].append(r['documento'])
+        if acc in ('corrige', 'agrega') and campo in ('fecha_ini', 'fecha_fin', 'espacio', 'ano'):
+            e[campo] = val
+            if campo == 'espacio':
+                sedes = {(espacios.get(x.strip()) or {}).get('sede') for x in val.split(',')} - {None, ''}
+                e['sede'] = '|'.join(sorted(sedes))
+    for eid, d in docs.items():
+        e = porid[eid]
+        if e['fecha_ini'][:4].isdigit(): e['ano'] = int(e['fecha_ini'][:4])
+        if e['ano']: e['decada'] = int(e['ano']) // 10 * 10
+        e['fuentes_cactus'] = ' | '.join(d)
+        if not e.get('pieza_cactus'): e['pieza_cactus'] = d[0]
+        if e.get('confianza', 'base_MLT') != 'base_MLT': e['confianza'] = 'alta'
+    for a in aristas:
+        if a['Source'] in docs: a['ano'] = porid[a['Source']]['ano']
+    # unir duplicados: las aristas pasan a la exposición de la base y la fila web se retira
+    if dup:
+        ya = set()
+        nuevas = []
+        for a in aristas:
+            a['Source'] = dup.get(a['Source'], a['Source'])
+            k = (a['Source'], a['Target'], a['rol'])
+            if k in ya: continue
+            ya.add(k)
+            if a['Source'] in dup.values(): a['ano'] = porid[a['Source']]['ano']
+            nuevas.append(a)
+        aristas[:] = nuevas
+        expos[:] = [e for e in expos if e['Id'] not in dup]
+        no_cruzados[:] = [dict(n, id_expo=dup.get(n['id_expo'], n['id_expo'])) for n in no_cruzados]
+    print('triangulación Cactus:', len(docs), 'exposiciones documentadas |', len(conflictos), 'conflictos |', len(dup), 'duplicados unidos')
+
 # ---------- salidas ----------
 grado = collections.Counter(a['Target'] for a in aristas)
 roles_ag = collections.defaultdict(set)
@@ -206,9 +260,9 @@ for e in expos:
     k = n_art[e['Id']]
     e['n_artistas'] = k
     e['modalidad'] = e.get('modalidad_fija') or ('individual' if k == 1 else 'colectiva' if k >= 2 else 'n/d')
-CE=['Id','Label','ano','decada','fecha_ini','fecha_fin','espacio','sede','tipo_expo','modalidad','n_artistas','autor_texto','artistas_varios','fuente','confianza','fuente_url','pieza_cactus']
+CE=['Id','Label','ano','decada','fecha_ini','fecha_fin','espacio','sede','tipo_expo','modalidad','n_artistas','autor_texto','artistas_varios','fuente','confianza','fuente_url','pieza_cactus','fuentes_cactus']
 for e in expos:
-    e.setdefault('confianza','base_MLT'); e.setdefault('fuente_url',''); e.setdefault('pieza_cactus','')
+    e.setdefault('confianza','base_MLT'); e.setdefault('fuente_url',''); e.setdefault('pieza_cactus',''); e.setdefault('fuentes_cactus','')
 esc('exposiciones.csv', expos, CE)
 camp_ag = ['Id', 'Label', 'clase', 'roles', 'n_expos', 'ocupacion', 'nacionalidad', 'sexo', 'ano_nacimiento', 'ano_muerte', 'origen']
 esc('agentes.csv', ag_usados, camp_ag)
@@ -218,6 +272,7 @@ nodos = [dict(Id=e['Id'], Label=e['Label'], tipo='exposicion', clase='exposicion
               roles=a['roles'], n_expos=a['n_expos'], fuente=a['origen'], modalidad='') for a in ag_usados]
 esc('nodos.csv', nodos, ['Id', 'Label', 'tipo', 'clase', 'ano', 'decada', 'sede', 'espacio', 'roles', 'n_expos', 'fuente', 'modalidad'])
 esc('aristas.csv', aristas, ['Source', 'Target', 'Type', 'Label', 'rol', 'ano', 'Weight', 'fuente'])
+esc('conflictos_cactus.csv', conflictos, ['id_expo','expo','campo','valor_base','valor_cactus','documento','nota'])
 esc('no_cruzados.csv', no_cruzados, ['id_expo', 'campo', 'texto', 'id_asignado'])
 
 print('exposiciones', len(expos), '| agentes', len(ag_usados), '| aristas', len(aristas))

@@ -1051,7 +1051,9 @@ const EXPS=[
   fig(){const D=CIRC(),L=D.dec.filter(x=>x.d>=1960);
    return `<div class="cap">Artistas de cada década que ya habían expuesto en el museo en los quince años anteriores (%)</div>${decBars([L.map(x=>x.rec)],L.map(x=>String(x.d).slice(2)),['var(--artista)'])}
    <div class="cap" style="margin-top:14px">Auspiciadores por exposición, por década (1960–2009)</div>${list(D.dec.filter(x=>x.d>=1960&&x.d<=2000).map(x=>[`${x.d}–${String(x.d+9).slice(2)}`,dn(x.ap,2)]))}
-   <div class="big" style="margin-top:14px">${D.p1} %</div><div class="cap">de los artistas expone una sola vez en el museo.</div>`},
+   <div class="cap" style="margin-top:14px">Artistas según cuántas veces exponen en el museo, 1956–2026 (% de ${fmt(D.nA)})</div>${(()=>{const B=D.bins,W=320,rh=22,H=B.length*rh+4,mx=d3.max(B,b=>b.n),lx=46;
+    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="El ${D.p1} % de los artistas expone una sola vez">${B.map((b,i)=>{const w=(W-lx-100)*b.n/mx,y=i*rh+2;
+     return `<text x="${lx-8}" y="${y+14}" text-anchor="end">${b.k}</text><rect x="${lx}" y="${y+3}" width="${Math.max(w,1)}" height="${rh-8}" fill="${i?'var(--muted)':'var(--artista)'}" fill-opacity="${i?.45:1}"><title>${b.k} ${b.k==='1'?'exposición':'exposiciones'}: ${fmt(b.n)} artistas</title></rect><text x="${lx+w+6}" y="${y+14}">${b.p} % · ${fmt(b.n)}</text>`}).join('')}</svg>`})()}`},
   src:'<b>Fuentes:</b> Base de datos MLT 2016 (hasta 2006) y complemento 2016–2026. Cálculos e interpretación de los autores.',
   gos(){return [{label:'Artistas en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[1,0,0,0]}},{label:'Auspiciadores en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[0,0,0,1]}}]}}
 ];
@@ -1062,7 +1064,8 @@ let CIRC_=null;function CIRC(){if(CIRC_)return CIRC_;
    const L=exIn(d,d+9),cur=new Map();let ap=0;L.forEach(x=>{const R=rolesOf(x);R[1].forEach(t=>cur.set(t,(cur.get(t)||0)+1));ap+=R[3].length});
    const tot=d3.sum([...cur.values()])||1,mx=d3.max([...cur.values()])||0;
    return {d,rec:A.size?Math.round(100*[...A].filter(t=>P.has(t)).length/A.size):0,mg:MG?Math.round(100*(cur.get(MG.i)||0)/tot):0,top:Math.round(100*mx/tot),ap:L.length?ap/L.length:0}});
- return CIRC_={dec,nA:cnt.length,p1:Math.round(100*cnt.filter(c=>c===1).length/cnt.length),n5:cnt.filter(c=>c>=5).length}}
+ const bins=[['1',c=>c===1],['2',c=>c===2],['3',c=>c===3],['4',c=>c===4],['5–9',c=>c>=5&&c<10],['10+',c=>c>=10]].map(([k,f])=>{const n=cnt.filter(f).length;return {k,n,p:Math.round(100*n/cnt.length)}});
+ return CIRC_={dec,bins,nA:cnt.length,p1:Math.round(100*cnt.filter(c=>c===1).length/cnt.length),n5:cnt.filter(c=>c>=5).length}}
 function renderExps(){document.getElementById('exps').innerHTML=EXPS.map((x,i)=>`<article class="exp" id="exp-${x.id}"><div><span class="k">${String(i+1).padStart(2,'0')} · ${x.k}</span><h3>${x.t}</h3>${x.body()}${x.gos?`<span class="gol gor">Ver en la red</span>`:''}<p class="go${x.gos?' many':''}">${(x.gos?x.gos():[x.go]).map((g,j)=>`<button class="btn${x.gos?' sm':''}" data-exp="${i}" data-g="${j}">${g.label}${x.gos?'':' →'}</button>`).join('')}</p></div><div><div class="fig">${x.fig()}</div><p class="src">${x.src}</p></div></article>`).join('')}
 renderExps();
 document.getElementById('exps').addEventListener('click',ev=>{const b=ev.target.closest('[data-exp]');if(!b)return;const x=EXPS[+b.dataset.exp],g=(x.gos?x.gos():[x.go])[+b.dataset.g||0];track('abrir_expediente',{expediente:x.id});explore(g.o)});

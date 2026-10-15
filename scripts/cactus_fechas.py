@@ -98,6 +98,18 @@ NEW = [
  dict(nombre_expo="¡A la gráfica! Experimentar, reproducir, democratizar. Bienales Americanas de Artes Gráficas", fecha_ini="2025-06-20",
       espacio="Edificio de la Colección", curadores="Adriana Castellanos Olmedo, Juan Pablo Fajardo", tipo="colección", confianza="alta", modalidad="colectiva",
       notas="Ocupó los tres pisos del Edificio de la Colección; obras de la colección y archivos del Centro de Documentación sobre las Bienales Americanas de Artes Gráficas (1970–1986). Fuente: nota de prensa sobre la apertura, aportada por los autores"),
+ dict(nombre_expo="Cuerpo transgresivo. Rosemberg Sandoval", fecha_ini="2025-04-10", fecha_fin="2025-09-14",
+      espacio="Sala Maritza Uribe de Urdinola", artistas="Rosemberg Sandoval", curadores="Nayibe Ruíz", tipo="presencial", confianza="alta", modalidad="individual",
+      notas="Fuente: álbum del Flickr del museo (https://www.flickr.com/photos/museo-la-tertulia/albums/72177720330152212)"),
+ dict(nombre_expo="Barrio Adentro. La unión popular hace los barrios. Memorias del surgimiento y re-existencias del oriente caleño", fecha_ini="2024-08-10", fecha_fin="2024-09-22",
+      curadores="Bawerpanter, C.E.R.O, Dihana Valencia, Dyskola Psyke, Gerson Vargas, Margarita Maquilón Moreno, Paula Avirama Castrillón, Profe Papas de PR, Rocío Castañeda Peralta",
+      tipo="comunitaria", confianza="alta", modalidad="colectiva",
+      notas="Curaduría comunitaria del grupo de Unión de Vivienda Popular; facilitación del laboratorio: Jimena María Andrade Forero. Fuente: álbum del Flickr del museo (https://www.flickr.com/photos/museo-la-tertulia/albums/72177720322503830)"),
+ dict(nombre_expo="Barrio Adentro. Montebello. Un viaje a través del agua y la montaña", fecha_ini="2023",
+      artistas="Beatriz González, Luis Díaz, Fernell Franco, María Thereza Negreiros, Ever Astudillo, Bibiana Vélez, León Ferrari, Roberto Angulo, Jaime Suárez, Maricela Bejarano, Camila Penagos, Jhon Alexander Penagos, Diego Posada, Rural Graffiti",
+      curadores="Alejandra Anacona, Angélica Baena, Maricela Bejarano, Camilo Mesa, Camila Penagos, Jhon Alexander Penagos, Mónica Quinayas, Ruth Quintero, Harryson Villareal, Steven Zuluaga",
+      apoyan_auspicia="Biblioteca Pública Rural Rumenige Perea Padilla", tipo="comunitaria", confianza="media", modalidad="colectiva",
+      notas="Laboratorio de fotografía Barrio Adentro: Montebello; curaduría del grupo comunitario de Montebello con obras de la colección y de artistas del barrio. Año tomado del álbum del laboratorio («Sendero de las gatas 2023»). Fuente: álbumes del Flickr del museo (https://www.flickr.com/photos/museo-la-tertulia/albums/72177720308737751 y 72177720317988581)"),
 
 ]
 

@@ -95,13 +95,14 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'lope max diaz': 'p.420', 'hernan braun': 'p.193', 'ed ruscha': 'p.579',
          # confirmados por los autores (15/10/2026)
          'anselmo carrera': 'p.663', 'thom o conor': 'p.252', 'claudia sarria': 'p.2258',  # grafías de la nota de 2009 y de los autores
+         'hernan braum vega': 'p.193', 'lazid thame': 'p.69',  # errores de tipeo de 2016 (autores, 15/10/2026)
          'yolanda chois rivera': 'p.3138', 'fernell franco': 'p.31', 'lorena marin gutierrez': 'p.2914',  # álbumes de Flickr
          'martha granados': 'p.1157', 'fiorella gomez': 'p.3179', 'antonio dorado': 'p.2847',
          'bernardo oritz': 'p.2036'}
 # grafías corregidas con documentos de Cactus (ver fuentes/triangulacion_cactus.csv, campo «nombre»)
 NAMEFIX = {'adriana castellanos olmedos': 'Adriana Castellanos Olmedo',
            'lina saavedra': 'Lina Saavedra de La Cruz',
-           'maritza sanchez h': 'Maritza Sánchez', 'colectivo nois radio': 'Nois Radio',  # misma persona, confirmado por los autores (15/10/2026)
+           'maritza sanchez h': 'Maritza Sánchez', 'elin grueso': 'Eblin Grueso', 'vanesa sandoval': 'Vanessa Sandoval', 'colectivo nois radio': 'Nois Radio',  # misma persona, confirmado por los autores (15/10/2026)
            'manuel augusto mendes soares': 'Manuel Augusto Soares Mendes'}
 
 def resolver(nombre, preferir):

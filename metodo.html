@@ -718,7 +718,7 @@ const FILES={"exposiciones.csv": "Id,Label,ano,decada,fecha_ini,fecha_fin,espaci
 (async()=>{try{DL=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(e){DL=null}renderDownloads()})();
 function renderDownloads(){const box=document.getElementById('dls');if(!box)return;
   const GH='https://github.com/clockgatonegro/MLT-web/blob/master/data/';
-  const links='<ul class="ghl">'+Object.keys(FILES).map(f=>`<li><a href="${GH}${f}" target="_blank" rel="noopener" data-track="${f}">${f}</a><span class="n">GitHub</span></li>`).join('')+'</ul>';
+  const links='<ul class="ghl">'+Object.keys(FILES).map(f=>`<li><a href="${GH}${f}" target="_blank" rel="noopener" data-track="${f}">${f}</a></li>`).join('')+'</ul>';
   box.onclick=ev=>{const a=ev.target.closest('a[data-track]');if(a)track('file_download',{file_name:a.dataset.track,origen:'github'})};
   if(!DL){box.innerHTML=links;return}
   box.innerHTML=Object.keys(FILES).map(f=>`<button data-f="${f}">${f}</button>`).join('')+'<span class="msg" id="dlmsg"></span>'+links;

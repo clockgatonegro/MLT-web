@@ -85,7 +85,8 @@ ALIAS = {'alejandro martin': 'p.3153', 'claudia patricia sarria macias': 'p.2258
          'herman braun': 'p.193', 'roser brau': 'p.55', 'francisco jose gamez': 'p.2288',
          # confirmadas por los autores (14/10/2026)
          'francisco rocca': 'p.118', 'gustavo gomez': 'p.2306', 'francisco hung': 'p.1687',
-         'manuel espinosa': 'p.396', 'carlos avendano cass': 'p.1977', 'jose del c acevedo': 'p.1377'}
+         'manuel espinosa': 'p.396', 'carlos avendano cass': 'p.1977', 'jose del c acevedo': 'p.1377',
+         'camila rodriguez triana': 'p.2627', 'jose ruiz diaz': 'p.3201', 'maria del carmen espinosa': 'p.2438'}
 def resolver(nombre, preferir):
     k = norm(nombre)
     if k in ALIAS: return ALIAS[k], True

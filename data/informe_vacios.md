@@ -49,7 +49,7 @@ La base de 2016 traía la II Bienal (`ex.181`) sin artistas. Los 196 participant
 3. **Listas truncadas:** en Universo Holograma y Deshilar la captura corta la lista de artistas, y en 21 obras en el cambio de tiempo, VI Salón BAT y BLOC 2018 no aparecen los nombres.
 4. **Fechas que se contradicen** (anotadas en `notas`): Costurero Viajero (2017 o 2018), Savia Solaris (cierre 28 de octubre o 12 de noviembre de 2018), Trazar el umbral (cierre 3 o 24 de marzo de 2019) y Wildlife Photographer (publicada en 2023 con "2024" en el título).
 5. **Sedes:** en los registros nuevos casi nunca aparece la sala, así que `sede` quedó vacía en la mayoría.
-6. **Homonimias:** apliqué solo las equivalencias claras, que están documentadas en `ALIAS` dentro de `normalizar.py`. Por ejemplo, Ericka Flórez Hidalgo → Éricka Flórez, Luz Lizarazo → Luz Ángela Lizarazo y Óscar Roldán → Oscar Roldán-Alzate. Tres casos quedan para que decidas tú en `candidatos_homonimia.csv`.
+6. **Homonimias:** apliqué solo las equivalencias claras, que están documentadas en `ALIAS` dentro de `normalizar.py`. Por ejemplo, Ericka Flórez Hidalgo → Éricka Flórez, Luz Lizarazo → Luz Ángela Lizarazo y Óscar Roldán → Oscar Roldán-Alzate. Tres casos más (Camila Rodríguez Triana, Jose Ruiz Díaz y María del Carmen Espinosa) fueron confirmados por los autores y están en `candidatos_homonimia.csv`.
 7. **El catálogo de personas termina en 2016.** Los 142 agentes nuevos (`n.*`) no tienen nacionalidad, ocupación ni fechas.
 8. **Programas que no son exposiciones:** Sigo esperando, Impulsive Habitat, Celeste y UMBRAL adentro son ciclos de video, sonoros o virtuales. Quedaron marcados en `tipo` para que puedas filtrarlos.
 

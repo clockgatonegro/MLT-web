@@ -193,7 +193,7 @@ for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)
     tag = os.path.splitext(os.path.basename(f))[0]
     ya = {(a['Source'], a['Target'], a['rol']) for a in aristas}
     for r in csv.DictReader(open(f, encoding='utf-8')):
-        aid, ok = resolver(r['nombre'], 'p')
+        aid, ok = resolver(r['nombre'], 'o' if r['rol'] == 'apoyo' else 'p')
         e = next(x for x in expos if x['Id'] == r['id_expo'])
         k = (r['id_expo'], aid, r['rol'])
         if k in ya: continue

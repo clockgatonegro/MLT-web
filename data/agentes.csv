@@ -941,7 +941,7 @@ p.1090,Moisés Barrios,persona,artista,1,artista,,,,,catalogo_personas
 p.1091,Moisés Finalé,persona,artista,1,artista,,,,,catalogo_personas
 p.1092,Mo Lebowitz,persona,artista,1,artista,,,,,catalogo_personas
 p.1093,Miriam Chiaverini,persona,artista,1,artista,,,,,catalogo_personas
-p.1094,Mireya Zawadzki,persona,artista|presentador,5,artista,,,,,catalogo_personas
+p.1094,Mireya Zawadzki,persona,artista|presentador,6,artista,,,,,catalogo_personas
 p.1095,Mira Schendel,persona,artista,2,artista,,,,,catalogo_personas
 p.1097,Milica Vuckovic,persona,artista,1,artista,,,,,catalogo_personas
 p.1098,Mildred Burton,persona,artista,1,artista,,,,,catalogo_personas
@@ -3685,132 +3685,133 @@ n.250,Taller 4 Rojo,sin_catalogar,artista,2,,,,,,texto_exposiciones
 n.251,Nicolás Ramos Gómez,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.252,Indira Gironza Bravo,sin_catalogar,artista,1,,,,,,texto_exposiciones
 n.253,Jorge Silva,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.254,Ana María Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.255,Oliver Laric,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.256,Ulises Carrión,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.257,Elodie Pong,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.258,Barbara Bloom,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.259,Douwe Dijkstra,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.260,Donna Verheijden,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.261,Lous America,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.262,David Garcia,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.263,Henk Wijnen,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.264,Annie Wright,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.265,Lydia Schouten,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.266,Eddie D,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.267,Barbara Kruger,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.268,Eric Bogosian,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.269,John Baldessari,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.270,General Idea,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.271,Sebastián López,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.272,Saskia Bos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.273,Jouke Kleerebezem,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.274,Rhonal Stiven Valencia Cuero,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.275,Carlos Martiel,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.276,Oscar Moreno Escárrega,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.277,CaldodeCultivo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.278,Luis Roldán,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.279,José Olano,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.280,Gustavo Henao Zamora,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.281,Pedro Manrique Figueroa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.282,María Ximena Laverde,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.283,Nobara Catalina Hayakawa,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.284,Nelson Garrido,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.285,Nina S. de Friedemann,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.286,Saturnina Sánchez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.287,Diana Cuartas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.288,Mariana Rodríguez,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.289,Judith Márquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.290,Andrea Payán,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.291,Pablo Daza,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.292,Diego Salas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.293,Juan Durán,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.294,William Villota,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.295,Angie Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.296,Margarita Ariza,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.297,Walter Caicedo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.298,Jordan Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.299,Ximena Vásquez,sin_catalogar,artista|curador,3,,,,,,texto_exposiciones
-n.300,Carmenza Banguera,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.301,Minia Bibiabiany,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.302,Laura Rodríguez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.303,Katherine Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.304,José Manuel Cuesta,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.305,Diego Mañunga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.306,Alexandra Gelis,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.307,Eblin Grueso,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.308,Leyla Cárdenas,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.309,Miguel Carini,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.310,Nicolás Consuegra,sin_catalogar,artista,2,,,,,,texto_exposiciones
-n.311,Pierre Huyghe,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.312,Rometti Costales,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.313,Barrio Ballet,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.314,Carlos Arturo Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.315,Carlos Hoyos,sin_catalogar,curador,2,,,,,,texto_exposiciones
-n.316,Sandra Jaramillo,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.317,Aura Rico,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.318,Andrés Velasco,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.319,Eduardo Garcés,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.320,Johan Valencia,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.321,David León,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.322,Marco Torres,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.323,Valeria S. Oggioni,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.324,Braim Canizales,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.325,Jesús Ramírez,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.326,Jorge Panchoaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.327,Juanita Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.328,José Luis Rodríguez Maldonado,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.329,Luis Morales,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.330,Nicolás Van Hemelryck,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.331,Francisco Mojica,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.332,Juan Arias,sin_catalogar,curador,2,,,,,,texto_exposiciones
-n.333,Xochilán Rojas,sin_catalogar,curador,2,,,,,,texto_exposiciones
-n.334,María Alejandra González,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.335,Gina Castaño,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.336,César Suárez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.337,Víctor Andrés García,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.338,Ivonn Lloreda,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.339,Stephanie Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.340,Juliana Góngora,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.341,Institución Educativa Oficial Boyacá,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.342,Cristina Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.343,Sandra Rengifo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.344,Adrián Balseca,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.345,Aimema Uai,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.346,Alejandra Hernández,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.347,Felipe Álvarez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.348,Fernando Hichamón,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.349,Hélio Melo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.350,Felipe Arturo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.351,Óscar Ardila,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.352,Sol Colmenares,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.353,Alexis Polanco,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.354,Melissa Aguilar,sin_catalogar,curador,2,,,,,,texto_exposiciones
-n.355,Carolina Chacón,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.356,Nicolás Bonilla,sin_catalogar,artista|curador,2,,,,,,texto_exposiciones
-n.357,Eugenio Viola,sin_catalogar,curador,1,,,,,,texto_exposiciones
-n.358,Pedro Riascos,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.359,Rodrigo Vidal,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.360,Víctor Luciano Rebuffo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.361,Scarlett Yavar,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.362,Tania Andrade,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.363,Vanessa Freitag,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.364,Margarita Cuéllar Barona,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.365,María Inés Vega,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.366,Luz Esther López,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.367,Martha Zuluaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.368,Ana Calle,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.369,Ana Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.370,Angélica Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.371,Cindy Muñoz,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.372,Eider Yangana,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.373,Estefanía García,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.374,Eyder Fabio Calambás Tróchez,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.375,Jean Lucumí,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.376,Jennifer Avila,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.377,Colectivo Jóvenes Creadores del Chocó,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.378,Colectivo Las Renacientes,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.379,Colectivo Puerto Creativo,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.380,Yemayá Producciones,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.381,Fundación Tura Hip-Hop,sin_catalogar,artista,1,,,,,,texto_exposiciones
-n.382,Colectivo de Comunicaciones En Puja de Nuquí,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.254,Taxader de Aviación,sin_catalogar,apoyo,1,,,,,,texto_exposiciones
+n.255,Ana María Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.256,Oliver Laric,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.257,Ulises Carrión,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.258,Elodie Pong,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.259,Barbara Bloom,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.260,Douwe Dijkstra,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.261,Donna Verheijden,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.262,Lous America,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.263,David Garcia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.264,Henk Wijnen,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.265,Annie Wright,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.266,Lydia Schouten,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.267,Eddie D,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.268,Barbara Kruger,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.269,Eric Bogosian,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.270,John Baldessari,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.271,General Idea,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.272,Sebastián López,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.273,Saskia Bos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.274,Jouke Kleerebezem,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.275,Rhonal Stiven Valencia Cuero,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.276,Carlos Martiel,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.277,Oscar Moreno Escárrega,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.278,CaldodeCultivo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.279,Luis Roldán,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.280,José Olano,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.281,Gustavo Henao Zamora,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.282,Pedro Manrique Figueroa,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.283,María Ximena Laverde,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.284,Nobara Catalina Hayakawa,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.285,Nelson Garrido,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.286,Nina S. de Friedemann,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.287,Saturnina Sánchez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.288,Diana Cuartas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.289,Mariana Rodríguez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.290,Judith Márquez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.291,Andrea Payán,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.292,Pablo Daza,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.293,Diego Salas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.294,Juan Durán,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.295,William Villota,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.296,Angie Montenegro,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.297,Margarita Ariza,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.298,Walter Caicedo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.299,Jordan Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.300,Ximena Vásquez,sin_catalogar,artista|curador,3,,,,,,texto_exposiciones
+n.301,Carmenza Banguera,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.302,Minia Bibiabiany,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.303,Laura Rodríguez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.304,Katherine Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.305,José Manuel Cuesta,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.306,Diego Mañunga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.307,Alexandra Gelis,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.308,Eblin Grueso,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.309,Leyla Cárdenas,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.310,Miguel Carini,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.311,Nicolás Consuegra,sin_catalogar,artista,2,,,,,,texto_exposiciones
+n.312,Pierre Huyghe,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.313,Rometti Costales,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.314,Barrio Ballet,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.315,Carlos Arturo Rojas,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.316,Carlos Hoyos,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.317,Sandra Jaramillo,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.318,Aura Rico,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.319,Andrés Velasco,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.320,Eduardo Garcés,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.321,Johan Valencia,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.322,David León,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.323,Marco Torres,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.324,Valeria S. Oggioni,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.325,Braim Canizales,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.326,Jesús Ramírez,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.327,Jorge Panchoaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.328,Juanita Escobar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.329,José Luis Rodríguez Maldonado,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.330,Luis Morales,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.331,Nicolás Van Hemelryck,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.332,Francisco Mojica,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.333,Juan Arias,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.334,Xochilán Rojas,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.335,María Alejandra González,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.336,Gina Castaño,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.337,César Suárez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.338,Víctor Andrés García,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.339,Ivonn Lloreda,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.340,Stephanie Díaz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.341,Juliana Góngora,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.342,Institución Educativa Oficial Boyacá,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.343,Cristina Consuegra,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.344,Sandra Rengifo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.345,Adrián Balseca,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.346,Aimema Uai,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.347,Alejandra Hernández,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.348,Felipe Álvarez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.349,Fernando Hichamón,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.350,Hélio Melo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.351,Felipe Arturo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.352,Óscar Ardila,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.353,Sol Colmenares,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.354,Alexis Polanco,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.355,Melissa Aguilar,sin_catalogar,curador,2,,,,,,texto_exposiciones
+n.356,Carolina Chacón,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.357,Nicolás Bonilla,sin_catalogar,artista|curador,2,,,,,,texto_exposiciones
+n.358,Eugenio Viola,sin_catalogar,curador,1,,,,,,texto_exposiciones
+n.359,Pedro Riascos,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.360,Rodrigo Vidal,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.361,Víctor Luciano Rebuffo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.362,Scarlett Yavar,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.363,Tania Andrade,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.364,Vanessa Freitag,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.365,Margarita Cuéllar Barona,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.366,María Inés Vega,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.367,Luz Esther López,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.368,Martha Zuluaga,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.369,Ana Calle,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.370,Ana Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.371,Angélica Ramírez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.372,Cindy Muñoz,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.373,Eider Yangana,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.374,Estefanía García,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.375,Eyder Fabio Calambás Tróchez,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.376,Jean Lucumí,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.377,Jennifer Avila,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.378,Colectivo Jóvenes Creadores del Chocó,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.379,Colectivo Las Renacientes,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.380,Colectivo Puerto Creativo,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.381,Yemayá Producciones,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.382,Fundación Tura Hip-Hop,sin_catalogar,artista,1,,,,,,texto_exposiciones
+n.383,Colectivo de Comunicaciones En Puja de Nuquí,sin_catalogar,artista,1,,,,,,texto_exposiciones

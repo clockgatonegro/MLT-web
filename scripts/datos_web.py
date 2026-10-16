@@ -38,9 +38,23 @@ for a,b in PER:
                 w=G[c][ar]['weight']+1 if G.has_edge(c,ar) else 1
                 G.add_edge(c,ar,weight=w)
     U=G.to_undirected()
-    cs=nx.community.louvain_communities(U,seed=7,resolution=1.0) if U.number_of_nodes() else []
+    # Louvain depende del orden aleatorio: comunidades de consenso (Lancichinetti y Fortunato 2012).
+    # Se corre 50 veces; dos agentes vinculados quedan juntos si caen en la misma comunidad en al menos el 70 % de las ejecuciones.
+    cs=[];coh={}
+    if U.number_of_nodes():
+        runs=[{n:i for i,c in enumerate(nx.community.louvain_communities(U,seed=sd,resolution=1.0)) for n in c} for sd in range(1,51)]
+        H=nx.Graph();H.add_nodes_from(U);fr={}
+        for u,v in U.edges():
+            f=sum(r[u]==r[v] for r in runs)/len(runs);fr[(u,v)]=f
+            if f>=.7:H.add_edge(u,v)
+        cs=list(nx.connected_components(H))
     cs=sorted(cs,key=len,reverse=True)
     cm={n:i for i,c in enumerate(cs) for n in c}
+    if U.number_of_nodes():
+        acc=collections.defaultdict(list)
+        for (u,v),f in fr.items():
+            if cm[u]==cm[v]: acc[cm[u]].append(f)
+        coh={k:round(sum(v)/len(v),2) for k,v in acc.items()}
     bt=nx.betweenness_centrality(G,normalized=False) if G.number_of_nodes()<4000 else {}
     # vector propio (no dirigido, ponderado, componente gigante; fuera de ella vale 0)
     ev={}
@@ -63,13 +77,8 @@ for a,b in PER:
     met[key]['evrol']=[len(ca),round(sum(ca)/len(ca),4) if ca else None,len(co),round(sum(co)/len(co),4) if co else None]
     print(key,G.number_of_nodes(),G.number_of_edges(),len(cs),[len(c) for c in cs[:8]])
 from scipy.stats import spearmanr
-# estabilidad de las comunidades de 1956-2026 (última iteración): 30 semillas, Jaccard de la mejor coincidencia frente a la semilla 7
-runs=[nx.community.louvain_communities(U,seed=sd,resolution=1.0) for sd in range(1,31)]
-stab=[]
-for i,c in enumerate(cs):
-    if len(c)<20: continue
-    j=sorted(max(len(c&x)/len(c|x) for x in run) for run in runs)
-    stab.append([i,round(j[15],2),round(j[0],2)])
+# cohesión de las comunidades de 1956-2026 (última iteración): promedio de la fracción de ejecuciones en que sus vínculos internos quedan juntos
+stab=[[k,v,len(cs[k])] for k,v in sorted(coh.items()) if len(cs[k])>=20]
 print('estabilidad',stab)
 pred=[]
 for i in range(len(PER)-2):

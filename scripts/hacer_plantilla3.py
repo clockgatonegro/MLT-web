@@ -15,18 +15,18 @@ html.pg-metodo #carto{display:none}#expedientes{display:none}
 .hero .lede3{font:400 clamp(18px,2.2vw,23px)/1.45 var(--f-body);max-width:46ch;margin:14px 0 22px}
 .carto{display:grid;grid-template-columns:minmax(300px,390px) minmax(0,1fr);gap:0 36px;max-width:1360px;margin:0 auto;padding:0 16px}
 .carto-g{grid-column:2;grid-row:1;position:sticky;top:var(--navh,48px);height:calc(100vh - var(--navh,48px));height:calc(100svh - var(--navh,48px))}
-.carto-g canvas{width:100%;height:100%;display:block}
+.carto-g canvas{width:100%;height:100%;display:block;touch-action:pan-y}
 .carto-yr{position:absolute;left:12px;top:10px;font:500 11px var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .carto-leg{position:absolute;left:12px;bottom:10px;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted);max-width:90%}
 .carto-leg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px}.carto-leg i.sq{border-radius:1px}
 .carto-steps{grid-column:1;grid-row:1;padding:34vh 0 50vh}
 .cstep{min-height:92vh;display:flex;align-items:center}
-.cstep .card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px;opacity:.35;transition:opacity .45s;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.cstep .card{padding:6px 0;opacity:.22;transition:opacity .45s}
 .cstep.on .card{opacity:1}
 .card .act{font:600 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;color:var(--fg);margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .card .k{font:500 11px var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
 .card h3{font:700 22px/1.15 var(--f-display);margin:2px 0 10px;text-wrap:balance}
-.card p{margin:0 0 10px;line-height:1.55;font-size:15px}
+.card p{margin:0 0 12px;line-height:1.6;font-size:16px}
 .card .src{font-size:12px;color:var(--muted)}
 .card .lk{display:inline-block;margin-top:6px;font-size:13px;color:var(--muted)}.card .lk:hover{color:var(--fg)}
 .card .sw{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin:0 4px 0 2px;vertical-align:-1px}
@@ -40,7 +40,7 @@ html.pg-metodo #carto{display:none}#expedientes{display:none}
 .csrch ul{list-style:none;margin:6px 0 10px;padding:0}.csrch button{all:unset;cursor:pointer;display:block;padding:4px 2px;font-size:14px;border-bottom:1px dotted var(--line);width:100%}
 .csrch button:hover{color:var(--curador)}
 @media (max-width:860px){.carto{display:block;padding:0}.carto-g{position:sticky;top:var(--navh,48px);height:54vh;height:54svh;z-index:0;background:var(--bg)}
- .carto-steps{position:relative;z-index:1;padding:4vh 12px 30vh}.cstep{min-height:80vh;align-items:flex-end}.cstep .card{opacity:.97}}
+ .carto-steps{position:relative;z-index:1;padding:4vh 12px 30vh}.cstep{min-height:80vh;align-items:flex-end}.cstep .card{opacity:0;padding:14px 4px}.cstep.on .card{opacity:1;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(3px)}}
 ''')
 # navegación
 R('''  <a href="#expedientes">Expedientes</a>

@@ -8,8 +8,8 @@
    curadores rojo, presentadores naranja, auspiciadores violeta), ajustado para fondo claro y oscuro. */
 :root{
   --bg:#eceeea; --surface:#f7f8f5; --fg:#1b2422; --muted:#5d6b67; --line:#cfd6d2; --band:#e2e6e1;
-  --ind:#1b9a9a; --col:#e2725b; --nd:#9aa3a0;
-  --artista:#4f9a2c; --curador:#e08a1e; --presentador:#c9b04a; --apoyo:#7a5fc0; --curart:#8a4fb8;
+  --ind:#005d71; --col:#ff6b59; --nd:#9aa3a0;
+  --artista:#1a983f; --curador:#e69500; --presentador:#c9b04a; --apoyo:#464c89; --curart:#dd4d88;
   --edge:27,36,34; --focus:#1b2422;
   --f-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
   --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
@@ -17,13 +17,13 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#121816; --surface:#19211f; --fg:#e4ebe7; --muted:#93a39e; --line:#2c3835; --band:#1f2826;
-  --ind:#3cc2c0; --col:#f08a72; --nd:#6f7a77;
-  --artista:#7cc552; --curador:#f2a443; --presentador:#ece08c; --apoyo:#a08ae0; --curart:#b980e6;
+  --ind:#3aa6bd; --col:#ff6b59; --nd:#6f7a77;
+  --artista:#3fbf62; --curador:#ffa600; --presentador:#ece08c; --apoyo:#8e94d8; --curart:#ef6fa3;
   --edge:228,235,231; --focus:#e4ebe7; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#121816; --surface:#19211f; --fg:#e4ebe7; --muted:#93a39e; --line:#2c3835; --band:#1f2826;
-  --ind:#3cc2c0; --col:#f08a72; --nd:#6f7a77;
-  --artista:#7cc552; --curador:#f2a443; --presentador:#ece08c; --apoyo:#a08ae0; --curart:#b980e6;
+  --ind:#3aa6bd; --col:#ff6b59; --nd:#6f7a77;
+  --artista:#3fbf62; --curador:#ffa600; --presentador:#ece08c; --apoyo:#8e94d8; --curart:#ef6fa3;
   --edge:228,235,231; --focus:#e4ebe7; color-scheme:dark}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:50px}
@@ -240,6 +240,7 @@ html.pg-metodo #carto{display:none}#expedientes{display:none}
 .card p{margin:0 0 12px;line-height:1.6;font-size:16px}
 .card .src{font-size:12px;color:var(--muted)}
 .card .lk{display:inline-block;margin-top:6px;font-size:13px;color:var(--muted)}.card .lk:hover{color:var(--fg)}
+.card .nw{white-space:nowrap}.card table.m{width:100%;border-collapse:collapse;font-size:13px}.card table.m td{padding:2px 0;border-bottom:1px dotted var(--line)}.card table.m td:nth-child(2){color:var(--muted);font-size:12px}.card table.m td:last-child{text-align:right;font:12px var(--f-data);color:var(--muted)}
 .card .sw{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin:0 4px 0 2px;vertical-align:-1px}
 .card .fig{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:8px 0 10px}
 .card .fig .cap{font-size:12px;color:var(--muted);margin:2px 0 8px}.card .fig .big{font:700 30px/1 var(--f-display)}
@@ -286,14 +287,14 @@ html.pg-metodo #metodo{padding-top:24px}
 <section class="s wrap" id="expedientes">
   <p class="eyebrow">Expedientes</p>
   <h2>Ocho lecturas de la red</h2>
-  <p class="lede">Cada expediente cruza lo que dice la red con lo que han escrito quienes estudiaron el museo. Las cifras se calculan en vivo sobre la base de datos; el botón abre la red con el filtro correspondiente.</p>
+  <p class="lede">Cada expediente cruza lo que dice la red con lo que han escrito quienes estudiaron el Museo. Las cifras se calculan en vivo sobre la base de datos; el botón abre la red con el filtro correspondiente.</p>
   <div class="exps" id="exps"></div>
 </section>
 
 <section class="s wrap" id="quien">
   <p class="eyebrow">Índice</p>
   <h2>Quién conecta</h2>
-  <p class="lede">Las personas y organizaciones con más exposiciones en el museo. La barra separa sus roles; la franja de la derecha muestra en qué décadas aparecen. Haga clic en un nombre para verlo en la red. «Todos» suma artistas, curadores y presentadores; las entidades que auspician tienen su propio filtro.</p>
+  <p class="lede">Las personas y organizaciones con más exposiciones en el Museo. La barra separa sus roles; la franja de la derecha muestra en qué décadas aparecen. Haga clic en un nombre para verlo en la red. «Todos» suma artistas, curadores y presentadores; las entidades que auspician tienen su propio filtro.</p>
   <div class="idx-ctl">
     <div class="grp"><span class="lbl">Rol</span><div class="seg" id="ix-rol"></div></div>
     <div class="grp"><span class="lbl">Década</span><div class="seg" id="ix-dec"></div></div>
@@ -437,7 +438,7 @@ if(!rm)new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!on){on=
       <p><b>Vector propio.</b> Mide qué tan conectado está un agente con otros agentes muy conectados; en palabras del proyecto, responde a «¿quién es el mejor conectado?», mientras el grado responde a «¿quién es el más conectado?». Se calcula en cada periodo sobre la red curador–artista sin dirección, ponderada por el número de exposiciones compartidas y en su componente principal. Para probar si anticipa la centralidad, comparamos con correlación de rangos (Spearman) el vector propio y el grado de cada agente con su grado en el periodo siguiente: <span id="predtxt"></span></p>
       <p><b>Duración.</b> Solo exposiciones con fecha de apertura y de cierre completas.</p>
       <h3>Individuales y colectivas</h3>
-      <p>Una exposición es individual si tiene un artista registrado y colectiva si tiene dos o más; sin artistas nombrados (por ejemplo, «Varios») queda como n/d. Es una regla sobre los datos, no sobre el catálogo: Aguilera y Gómez, que clasificaron cada muestra con los boletines del museo, contaron 374 individuales y 346 colectivas entre las 723 exposiciones de 1956 a 2006. Las dos cifras no son comparables una a una.</p>
+      <p>Una exposición es individual si tiene un artista registrado y colectiva si tiene dos o más; sin artistas nombrados (por ejemplo, «Varios») queda como n/d. Es una regla sobre los datos, no sobre el catálogo: Aguilera y Gómez, que clasificaron cada muestra con los boletines del Museo, contaron 374 individuales y 346 colectivas entre las 723 exposiciones de 1956 a 2006. Las dos cifras no son comparables una a una.</p>
       <h3>Qué tan segura es cada ficha</h3>
       <p id="conf"></p>
       <h3>Vacíos conocidos</h3>
@@ -450,10 +451,10 @@ if(!rm)new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!on){on=
         <li>Base de datos MLT (julio de 2016), construida en el proyecto de investigación-creación <em>Visualización de datos de las exposiciones del Museo La Tertulia (1956–2016)</em>, Pontificia Universidad Javeriana Cali.</li>
         <li>Capturas del Archivo de Internet de museolatertulia.org y museolatertulia.com (2015–2025), con la dirección de cada captura en la ficha.</li>
         <li>Catálogo de la II Bienal Americana de Artes Gráficas (1973), para la lista de artistas participantes.</li>
-        <li>Archivo de Cactus Taller Gráfico, diseñador del museo desde <em>Eros, dolor y muerte</em> (2009) hasta <em>El ataque del presente contra el resto de los tiempos</em> (2021): programas de mano, invitaciones, fichas técnicas, boletines y cuadernillos de programación, entre ellos los de <em>Cali 71, ciudad de América</em> y sus rotaciones. Con ellos se contrastaron una a una las fechas, salas y participantes de 2009–2021: cuando un documento confirma una ficha que solo venía de la web, la ficha pasa a «documentada»; cuando la contradice, el dato no se cambia y queda en la lista de conflictos (<code>conflictos_cactus.csv</code>).</li>
-        <li>Web actual del museo, consultada el 3 de octubre de 2026.</li>
+        <li>Archivo de Cactus Taller Gráfico, diseñador del Museo desde <em>Eros, dolor y muerte</em> (2009) hasta <em>El ataque del presente contra el resto de los tiempos</em> (2021): programas de mano, invitaciones, fichas técnicas, boletines y cuadernillos de programación, entre ellos los de <em>Cali 71, ciudad de América</em> y sus rotaciones. Con ellos se contrastaron una a una las fechas, salas y participantes de 2009–2021: cuando un documento confirma una ficha que solo venía de la web, la ficha pasa a «documentada»; cuando la contradice, el dato no se cambia y queda en la lista de conflictos (<code>conflictos_cactus.csv</code>).</li>
+        <li>Web actual del Museo, consultada el 3 de octubre de 2026.</li>
         <li>Álbumes de exposiciones del <a href="https://www.flickr.com/photos/museo-la-tertulia/albums" target="_blank" rel="noopener">Flickr del Museo La Tertulia</a> (2021–2025), consultados el 15 de octubre de 2026, para contrastar fechas, curadurías y artistas.</li>
-        <li>Programas de mano y catálogos escaneados por el Centro de Documentación del museo (proyecto <em>Cartografiar redes del arte</em>) y artes finales e invitaciones de Cactus Taller Gráfico, enlazados en la ficha de cada exposición.</li>
+        <li>Programas de mano y catálogos escaneados por el Centro de Documentación del Museo (proyecto <em>Cartografiar redes del arte</em>) y artes finales e invitaciones de Cactus Taller Gráfico, enlazados en la ficha de cada exposición.</li>
       </ul>
       <h3>Lecturas</h3>
       <ul class="bib">
@@ -807,7 +808,7 @@ function intro(){
      <p>Una flecha va de quien curó o presentó una exposición hacia cada artista de esa exposición. Es la proyección que el proyecto usó para leer los cortes temporales: el paso del presentador al curador, la centralidad de Miguel González entre 1982 y 2006, y el auge del curador-artista.</p>
      ${M?`<h3>Mejores intermediarios</h3><p class="src">Centralidad de intermediación: cuántas veces el agente está en el camino más corto entre otros dos.</p>
      <table class="m"><thead><tr><th>Agente</th><th>Interm.</th><th>Entra</th><th>Sale</th></tr></thead><tbody>${M.bt.slice(0,10).map(([i,b,din,dout])=>`<tr><td><a data-i="${i}">${esc(N[i].label)}</a></td><td>${fmt(b)}</td><td>${din}</td><td>${dout}</td></tr>`).join('')}</tbody></table>
-     ${M.ev&&M.ev.length?`<h3>Mejor conectados</h3><p class="src">Centralidad de vector propio: puntúa alto a quien está conectado con otros agentes muy conectados. CA: curador o presentador que también expone en el museo.</p>
+     ${M.ev&&M.ev.length?`<h3>Mejor conectados</h3><p class="src">Centralidad de vector propio: puntúa alto a quien está conectado con otros agentes muy conectados. CA: curador o presentador que también expone en el Museo.</p>
      <table class="m"><thead><tr><th>Agente</th><th>Vector propio</th></tr></thead><tbody>${M.ev.slice(0,10).map(([i,v])=>`<tr><td><a data-i="${i}">${esc(N[i].label)}</a>${pRole.get(i)&&ARTSET.has(i)&&/curador|presentador/.test(pRole.get(i))?' <span class="pill">CA</span>':''}</td><td>${dn(v,3)}</td></tr>`).join('')}</tbody></table>
      ${M.evrol&&M.evrol[1]!=null&&M.evrol[3]!=null?`<p class="src">Promedio del vector propio: ${M.evrol[0]} curadores que también exponen, ${dn(M.evrol[1],3)}; ${M.evrol[2]} curadores que no exponen, ${dn(M.evrol[3],3)}.</p>`:''}`:''}
      <h3>Curadores con más artistas</h3><ul>${M.out.map(([i,d])=>`<li><a data-i="${i}">${esc(N[i].label)}</a><span class="n">${d} artistas</span></li>`).join('')}</ul>`
@@ -843,7 +844,7 @@ function select(i,center=false,quiet=false){if(i!=null&&!quiet&&i!==state.sel)tr
   const n=N[i];
   if(n.t===0){
     const by=[[],[],[],[]];n.adj.forEach(k=>{const e=E[k];by[e.r].push(N[e.t])});
-    const fu=[n.base?'Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>':'',n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Web La Tertulia</a>`:'',n.pieza?'Archivo Cactus Taller Gráfico':'',n.flk?`<a href="${esc(n.flk)}" target="_blank" rel="noopener">Flickr del museo</a>`:''].filter(Boolean);
+    const fu=[n.base?'Proyecto <em>Cartografiar redes del arte. 60 años del Museo La Tertulia</em>':'',n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Web La Tertulia</a>`:'',n.pieza?'Archivo Cactus Taller Gráfico':'',n.flk?`<a href="${esc(n.flk)}" target="_blank" rel="noopener">Flickr del Museo</a>`:''].filter(Boolean);
     panel.innerHTML=`<div class="kind" style="color:${C.mod[n.mod]}">Exposición · ${esc(n.id)}</div><h2>${esc(n.label)}</h2>
      <dl class="meta"><dt>Fechas</dt><dd>${esc(fecha(n))}${n.dur!=null?` · ${n.dur} días`:''}</dd><dt>Modalidad</dt><dd>${modPill(n.mod)}</dd><dt>Registro</dt><dd><span class="mk">${n.conf?'○':'●'}</span> ${n.conf?'reconstruido con datos parciales':'documentado'}</dd><dt>Espacio</dt><dd>${esc(n.esp||'—')}</dd>${n.tipo?`<dt>Tipo</dt><dd>${esc(n.tipo)}</dd>`:''}</dl>
      ${fu.length?`<p class="src">${fu.length>1?'Fuentes':'Fuente'}: ${fu.join(' · ')}</p>`:''}
@@ -1031,27 +1032,27 @@ addEventListener('mlt-theme',reqHero);
 // expedientes
 function list(rows){return `<ol>${rows.map(([a,b])=>`<li><span>${a}</span><span>${b}</span></li>`).join('')}</ol>`}
 function topAgents(L,role,k=6){const c=new Map();L.forEach(x=>x.adj.forEach(e=>{if(E[e].r===role)c.set(E[e].t,(c.get(E[e].t)||0)+1)}));return [...c].sort((a,b)=>b[1]-a[1]).slice(0,k)}
-function decBars(series,labels,cols){const W=320,H=120,m={l:22,b:16,t:6},n=labels.length,bw=(W-m.l)/n,mx=d3.max(series.flat())||1,y=v=>H-m.b-(H-m.b-m.t)*v/mx;
-  let g='';labels.forEach((l,i)=>{series.forEach((s,j)=>{const x=m.l+i*bw+bw*.12+j*bw*.38;g+=`<rect x="${x}" y="${y(s[i])}" width="${bw*.36}" height="${H-m.b-y(s[i])}" fill="${cols[j]}"><title>${l}: ${s[i]}</title></rect>`});
+function decBars(series,labels,cols,vals){const W=320,H=120,m=vals!=null?{l:4,b:16,t:16}:{l:22,b:16,t:6},n=labels.length,bw=(W-m.l)/n,mx=d3.max(series.flat())||1,y=v=>H-m.b-(H-m.b-m.t)*v/mx;
+  let g='';labels.forEach((l,i)=>{series.forEach((s,j)=>{const one=series.length===1,x=one?m.l+i*bw+bw*.2:m.l+i*bw+bw*.12+j*bw*.38,bwd=one?bw*.6:bw*.36;if(vals!=null)g+=`<text x="${x+bwd/2}" y="${y(s[i])-4}" text-anchor="middle">${s[i]}${vals}</text>`;g+=`<rect x="${x}" y="${y(s[i])}" width="${bwd}" height="${H-m.b-y(s[i])}" fill="${cols[j]}"><title>${l}: ${s[i]}</title></rect>`});
     g+=`<text x="${m.l+i*bw+bw/2}" y="${H-3}" text-anchor="middle">${l}</text>`});
-  g+=`<text x="0" y="${m.t+8}">${mx}</text><line x1="${m.l}" x2="${W}" y1="${H-m.b}" y2="${H-m.b}" stroke="currentColor" stroke-opacity=".25"/>`;
+  g+=`${vals!=null?'':`<text x="0" y="${m.t+8}">${mx}</text>`}<line x1="${m.l}" x2="${W}" y1="${H-m.b}" y2="${H-m.b}" stroke="currentColor" stroke-opacity=".25"/>`;
   return `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`}
 const EXPS=[
  {id:'san-antonio',k:'1956–1968 · San Antonio',t:'Un club que expone',
   body(){const L=exIn(1956,1968),ind=L.filter(n=>n.mod===0).length,pres=L.filter(x=>rolesOf(x)[2].length).length,cur=L.filter(x=>rolesOf(x)[1].length).length;
    return `<p>Antes de ser museo, La Tertulia fue un club cultural que funcionó doce años, de 1956 a 1968, en una casona de la carrera 5 en el barrio San Antonio. Allí se organizaron exposiciones de Alejandro Obregón, Enrique Grau, Beatriz González, Luis Caballero y los hermanos Lucy y Hernando Tejada (González Martínez 2015, 156–157).</p>
-   <p>La base de datos registra ${fmt(L.length)} exposiciones en ese periodo; ${pct(ind,L.length)} % son individuales. ${pres} tienen un presentador registrado y ninguna tiene curador${cur?` salvo ${cur}`:''}. Los nombres que más se repiten como artistas coinciden con los que recuerda la historiografía.</p>
+   <p>La base de datos registra ${fmt(L.length)} exposiciones en ese periodo; ${pct(ind,L.length)}&nbsp;% son individuales. ${pres} tienen un presentador registrado y ninguna tiene curador${cur?` salvo ${cur}`:''}, pues esa figura se consolida a mediados de los años 70. Los nombres que más se repiten como artistas coinciden con los que recuerda la historiografía.</p>
    <p>Es una red de pocos vínculos por exposición, armada alrededor de un grupo pequeño de artistas que vuelven una y otra vez; todavía no hay intermediarios entre ellos.</p>`},
   fig(){const L=exIn(1956,1968);return `<div class="cap">Artistas con más exposiciones, 1956–1968</div>${list(topAgents(L,0).map(([i,c])=>[esc(N[i].label),c+' expos']))}`},
   src:'<b>Fuentes:</b> González Martínez (2015), nota 5 del capítulo «Ciudad Solar»; base de datos MLT 2016.',
   go:{label:'Ver 1956–1968 en la red',o:{view:'red',a:1956,b:1968,mindeg:1}}},
  {id:'bienales',k:'1970–1986 · Nueva sede',t:'Las Bienales Americanas de Artes Gráficas',
   body(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)),A=new Set();B.forEach(x=>rolesOf(x)[0].forEach(t=>A.add(t)));const solo=[...A].filter(t=>N[t].adj.length===1).length;const B3=new Set();B.filter(x=>[1971,1973,1976].includes(x.year)).forEach(x=>rolesOf(x)[0].forEach(t=>B3.add(t)));const c71=EXPOS.find(n=>n.id==='ex.827'),c71a=c71?rolesOf(c71)[0]:[];
-   return `<p>En 1968, en el marco del VIII Festival de Arte de Cali, el museo estrenó su edificio con el Salón Austral de Pintura, Dibujo y Grabado. Pedro Alcántara Herrán, desde la junta asesora, promovió la Exposición Panamericana de Artes Gráficas en el X Festival (1970), que un año después se convirtió en la I Bienal Americana de Artes Gráficas (González Martínez 2015, 54–55). Adriana Castellanos Olmedo estudió las bienales entre 1970 y 1976, y Juan Pablo Fajardo González dirigió el proyecto <em>Archivo BAAG</em>, que digitalizó obras y documentos de las tres primeras ediciones y los reunió en un libro y un repositorio en línea. Según Fajardo, esas tres ediciones (1971, 1973 y 1976) contaron con 660 artistas, 18 jurados y 22 países del continente; en 2016, 246 de las cerca de 1.846 obras de la colección, un 13 %, estaban relacionadas con las bienales (Fajardo González 2024, 97–98 y 106).</p>
-   <p>En la red, las bienales son los nodos más grandes de todo el periodo: cada edición reúne más artistas que cualquier otra exposición del museo. La base de datos de 2016 no tenía los artistas de la II Bienal (1973); se tomaron de su catálogo. Con eso, la base de datos registra ${fmt(B3.size)} artistas en las tres primeras ediciones, frente a los 660 que reporta el <em>Archivo BAAG</em>: la diferencia es otro vacío por llenar.</p>
-   <p>De los ${fmt(A.size)} artistas que pasan por las bienales, ${fmt(solo)} no vuelven a aparecer en ninguna otra exposición del museo.${c71?` Cuarenta y cinco años después, la exposición «Cali 71, ciudad de América» y sus rotaciones (2016–2019) reunieron a ${fmt(c71a.length)} artistas; ${fmt(c71a.filter(t=>A.has(t)).length)} de ellos habían pasado por las bienales.`:''}</p>
-   <p>En 2025 el museo volvió sobre ellas con «¡A la gráfica! Experimentar, reproducir, democratizar», curada por Adriana Castellanos Olmedo y Juan Pablo Fajardo, que ocupó los tres pisos del Edificio de la Colección con obras de la colección y documentos del Centro de Documentación.</p>
-   <p>Las bienales funcionan como una puerta: conectan con Cali a cientos de artistas del continente, y para la mitad de ellos es su única aparición en el museo.</p>`},
+   return `<p>En 1968, durante la realización del VIII Festival de Arte de Cali, el Museo estrenó su edificio con el Salón Austral de Pintura, Dibujo y Grabado. Pedro Alcántara Herrán, desde la junta asesora, promovió la Exposición Panamericana de Artes Gráficas en el X Festival (1970), que un año después se convirtió en la I Bienal Americana de Artes Gráficas (González Martínez 2015, 54–55). Adriana Castellanos Olmedo estudió las bienales entre 1970 y 1976, y Juan Pablo Fajardo González dirigió el proyecto <em>Archivo BAAG</em>, que digitalizó obras y documentos de las tres primeras ediciones y los reunió en un libro y un repositorio en línea. Según Fajardo, esas tres ediciones (1971, 1973 y 1976) contaron con 660 artistas, 18 jurados y 22 países del continente; en 2016, 246 de las cerca de 1.846 obras de la colección, un 13&nbsp;%, estaban relacionadas con las bienales (Fajardo González 2024, 97–98 y 106).</p>
+   <p>En la red, las bienales son los nodos más grandes de todo el periodo: cada edición reúne más artistas que cualquier otra exposición del Museo. La base de datos de 2016 no tenía los artistas de la II Bienal (1973); se tomaron de su catálogo. Con eso, la base de datos registra ${fmt(B3.size)} artistas en las tres primeras ediciones, frente a los 660 que reporta el <em>Archivo BAAG</em>: la diferencia es un vacío por llenar.</p>
+   <p>De los ${fmt(A.size)} artistas que pasan por las bienales, ${fmt(solo)} no vuelven a aparecer en ninguna otra exposición del Museo.${c71?` Cuarenta y cinco años después, la exposición «Cali 71, ciudad de América» y sus rotaciones (2016–2019) reunieron a ${fmt(c71a.length)} artistas; ${fmt(c71a.filter(t=>A.has(t)).length)} de ellos habían pasado por las bienales.`:''}</p>
+   <p>En 2025 el Museo volvió sobre ellas con «¡A la gráfica! Experimentar, reproducir, democratizar», curada por Adriana Castellanos Olmedo y Juan Pablo Fajardo, que ocupó los tres pisos del Edificio de la Colección con obras de la colección y documentos del Centro de Documentación.</p>
+   <p>Las bienales funcionan como una puerta: conectan con Cali a cientos de artistas del continente, y para la mitad de ellos es su única aparición en el Museo.</p>`},
   fig(){const B=EXPOS.filter(n=>/Bienal Americana de Artes Gr/i.test(n.label)).sort((a,b)=>a.year-b.year);
    return `<div class="cap">Artistas registrados por edición</div>${list(B.map(x=>[`${x.year} · ${esc(x.label.replace(/ de Cali$/,''))}`,rolesOf(x)[0].length||'sin datos']))}`},
   src:'<b>Fuentes:</b> González Martínez (2015); Castellanos Olmedo, «Cali, ciudad de la gráfica»; Fajardo González, «1971, 1973, 1976 archivo BAAG» (2024) y repositorio <a href="https://bienales.museolatertulia.com/" target="_blank" rel="noopener">bienales.museolatertulia.com</a>; catálogo de la II Bienal (1973); base de datos MLT 2016.',
@@ -1066,23 +1067,23 @@ const EXPS=[
   src:'<b>Fuentes:</b> Aguilera Toro y Gómez García (2007); base de datos MLT 2016 y complemento 2016–2026.',
   go:{label:'Ver curadores y presentadores en el tiempo',o:{view:'pro',a:Y0,b:Y1,layout:'t'}}},
  {id:'miguel-gonzalez',k:'1982–2006 · Miguel González',t:'El nodo mayor',
-  body(){const L=exIn(1982,2006),k=L.filter(x=>MG&&x.adj.some(e=>E[e].t===MG.i&&E[e].r===1)).length,all=MG?MG.adj.filter(e=>E[e].r===1):[],ys=all.map(e=>N[E[e].s].year).filter(Boolean);
-   return `<p>Miguel González se vinculó al museo como curador en 1982. Según Aguilera y Gómez, sus relaciones con el mundo del arte nacional e internacional fueron decisivas para muchas de las exposiciones del museo (2007). El proyecto lo identificó como el nodo con mayor centralidad de grado de toda la red.</p>
-   <p>María Wills lo sitúa entre «los cuatro evangelistas», como se llamó a los pioneros de la curaduría en Colombia: Eduardo Serrano en Bogotá, Alberto Sierra en Medellín, Álvaro Barrios en Barranquilla y González en Cali, ligados a los museos de arte moderno de esas ciudades. Para Wills fue el primer curador de La Tertulia, durante casi treinta años (hacia 1975–2005), aunque advierte que no es posible fijar un inicio y un cierre formales, porque su trabajo en el museo empezó y terminó de manera informal. Antes de la curaduría fue reseñista de prensa, dirigió la galería de Ciudad Solar y enseñó historia del arte en Bellas Artes, desde donde conoció a los artistas jóvenes que luego expuso (Wills Londoño 2018).</p>
-   <p>En la base de datos figura como curador de ${fmt(all.length)} exposiciones. Entre 1982 y 2006 aparece en ${fmt(k)} de ${fmt(L.length)}, el ${pct(k,L.length)} %. Su primer registro en la base de datos es de ${d3.min(ys)} y el último de ${d3.max(ys)}, lo que coincide con ese vínculo informal, anterior y posterior al cargo.</p>
+  body(){const L=exIn(1982,2006),k=L.filter(x=>MG&&x.adj.some(e=>E[e].t===MG.i&&E[e].r===1)).length,all=MG?MG.adj.filter(e=>E[e].r===1):[],ys=all.map(e=>N[E[e].s].year).filter(Boolean),mgX=all.map(e=>N[E[e].s]).filter(x=>x.year).sort((a,b)=>(a.fi||String(a.year)).localeCompare(b.fi||String(b.year))),mgF=mgX[0],mgL=mgX[mgX.length-1];
+   return `<p>Miguel González se vinculó al Museo como curador en 1982. Según Aguilera y Gómez, sus relaciones con el mundo del arte nacional e internacional fueron decisivas para muchas de las exposiciones del Museo (2007). El proyecto lo identificó como el nodo con mayor centralidad de grado de toda la red.</p>
+   <p>María Wills sitúa a Miguel González entre «los cuatro evangelistas», como se llamó a los pioneros de la curaduría en Colombia: Eduardo Serrano en Bogotá, Alberto Sierra en Medellín, Álvaro Barrios en Barranquilla y González en Cali, ligados a los museos de arte moderno de esas ciudades. Para Wills fue el primer curador de La Tertulia, durante casi treinta años (1975–2005). Si bien Wills advierte que no es posible fijar un inicio y un cierre formales, porque su trabajo en el Museo empezó y terminó de manera informal, la base de datos registra su primera curaduría en ${mgF?`${mgF.year}, «${esc(mgF.label)}»`:'—'}, y la más reciente en ${mgL?`${mgL.year}, «${esc(mgL.label)}»`:'—'}. Antes de la curaduría fue reseñista de prensa, dirigió la galería de Ciudad Solar y enseñó historia del arte en Bellas Artes, desde donde conoció a muchos de los artistas más jóvenes que luego expuso; la reseña de prensa y la docencia continuaron en paralelo con su trabajo de curador (Wills Londoño 2018).</p>
+   <p>En la base de datos figura como curador de ${fmt(all.length)} exposiciones. Entre 1982 y 2006 aparece en ${fmt(k)} de ${fmt(L.length)}, el ${pct(k,L.length)}&nbsp;%.</p>
    <p>Durante veinticinco años buena parte de la red pasa por una sola persona. En la vista de curadores se ve como una estrella en el centro con flechas hacia cientos de artistas que entre sí casi no se tocan.</p>`},
   fig(){const L=exIn(1982,2006),k=L.filter(x=>MG&&x.adj.some(e=>E[e].t===MG.i&&E[e].r===1)).length;
    const ys=d3.range(1977,2021),c=ys.map(y=>MG?MG.adj.filter(e=>E[e].r===1&&N[E[e].s].year===y).length:0),t=ys.map(y=>exIn(y,y).length),mx=d3.max(t)||1;
    const W=320,H=90,bw=W/ys.length;let g='';ys.forEach((y,i)=>{g+=`<rect x="${i*bw}" y="${H-14-(H-20)*t[i]/mx}" width="${bw*.8}" height="${(H-20)*t[i]/mx}" fill="var(--band)"/><rect x="${i*bw}" y="${H-14-(H-20)*c[i]/mx}" width="${bw*.8}" height="${(H-20)*c[i]/mx}" fill="var(--curador)"><title>${y}: ${c[i]} de ${t[i]}</title></rect>`});
    g+=`<text x="0" y="${H-2}">1977</text><text x="${W}" y="${H-2}" text-anchor="end">2020</text>`;
-   return `<div class="big">${pct(k,L.length)} %</div><div class="cap">de las exposiciones entre 1982 y 2006 lo tienen como curador. Abajo, por año: en rojo las suyas, en gris el total.</div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`},
+   return `<div class="big">${pct(k,L.length)}&nbsp;%</div><div class="cap">de las exposiciones entre 1982 y 2006 lo tienen como curador. Abajo, por año: en rojo las suyas, en gris el total.</div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`},
   src:'<b>Fuentes:</b> Aguilera Toro y Gómez García (2007); <em>Cartografiar mundos del arte</em> (artículo del proyecto); Wills Londoño (2018); base de datos MLT 2016.',
   go:{label:'Ver a Miguel González, 1993–2006',o:{view:'red',a:1993,b:2006,sel:MG&&MG.id}}},
  {id:'expansion',k:'2007–2026 · Expansión',t:'Curadores que también exponen',
   body(){const m=RAW.met['2007-2016'],m2=RAW.met['2017-2026'],r=m.evrol,pr=RAW.pred,X=EVC['2017-2026'];
    const win=pr.filter(p=>p[2]>p[3]);const cur=new Set();exIn(2007,2016).forEach(x=>{const L=rolesOf(x);L[1].concat(L[2]).forEach(t=>cur.add(t))});const top10=m.ev.slice(0,10).filter(([i])=>cur.has(i)&&ARTSET.has(i)).length;
-   return `<p>Para la etapa más reciente, el proyecto señaló la remodelación del edificio de la colección, la llegada de nuevos curadores y la supresión de «arte moderno» del nombre del museo. A esto se suma la apertura de la Casa Obeso en 2015.</p>
-   <p>En la red, el cambio se ve en un rol mixto: personas que curan exposiciones y que también exponen como artistas en el museo. Entre 2007 y 2016 son cerca de una cuarta parte de los curadores, la proporción más alta de la serie. La centralidad de vector propio identifica a los mejor conectados, que no son necesariamente los más conectados: puntúa alto a quien está unido a agentes que a su vez tienen muchos vínculos, aunque él mismo tenga pocos. Esta medida muestra la diferencia con claridad en 2017–2026: los curadores-artistas tienen un promedio de ${dn(m2.evrol[1],3)}, frente a ${dn(m2.evrol[3],3)} de los curadores que no exponen, ${dn(m2.evrol[1]/m2.evrol[3],1)} veces más. En 2007–2016 la diferencia es menor (${dn(r[1],3)} frente a ${dn(r[3],3)}): «Cali 71, ciudad de América», con más de cien artistas, pone en el centro de ese periodo a los curadores de esa exposición.</p>
+   return `<p>Para la etapa más reciente, el proyecto señaló la remodelación del edificio de la colección, la llegada de nuevos curadores y la supresión de «arte moderno» del nombre del Museo. A esto se suma la apertura de la Casa Obeso, que trabaja en alianza con el Museo desde 2015.</p>
+   <p>En la red, el cambio se ve en un rol mixto: personas que curan exposiciones y que también exponen como artistas en el Museo. Entre 2007 y 2016 son cerca de una cuarta parte de los curadores, la proporción más alta de la serie. Una mayor centralidad de vector propio los identifica como los mejor conectados, que no son necesariamente los más conectados: puntúa alto a quien está unido a agentes que a su vez tienen muchos vínculos, aunque él mismo tenga pocos. Esta medida muestra la diferencia con claridad en 2017–2026: los curadores-artistas tienen un promedio de ${dn(m2.evrol[1],3)}, frente a ${dn(m2.evrol[3],3)} de los curadores que no exponen, ${dn(m2.evrol[1]/m2.evrol[3],1)} veces más. En 2007–2016 la diferencia es menor (${dn(r[1],3)} frente a ${dn(r[3],3)}).</p>
    <p>La medida también anticipa quién será central. En ${win.length} de los ${pr.length} cambios de periodo, el vector propio de un agente predice mejor su número de vínculos en el periodo siguiente que su número de vínculos actual; la mayor diferencia está entre 1983–1992 y 1993–2006 (correlación de ${dn(pr[2][2],2)} frente a ${dn(pr[2][3],2)}).</p>
    ${(()=>{const T=(RAW.met['1956-2026']||{}).bt||[],top=T.slice(0,10),ca=top.filter(([i])=>isCA(i));
      return top.length?`<p>${ca.length===top.length?'Los diez':`${ca.length} de los diez`} mejores intermediarios de toda la red (1956–2026), los agentes que más veces quedan en el camino más corto entre otros dos, son curadores-artistas (tabla a la derecha). La red fluye en varias direcciones a través de ellos: reciben vínculos como artistas y los emiten como curadores, y por eso quedan en medio de muchos caminos. El curador-artista acorta la distancia`:'<p>El curador-artista acorta la distancia'})()} entre quien produce y quien selecciona, y por eso queda en contacto con los nodos más conectados. Más que una ruptura, es una figura que gana peso cuando deja de haber un curador central; en los setenta ya había casos, y una sola exposición grande puede desplazar el centro de un periodo. En los artistas consolidados se vuelve una estrategia para hacer de plataforma a nuevos artistas emergentes.</p>`},
@@ -1091,9 +1092,9 @@ const EXPS=[
      g+=`<text x="${i*bw+bw/2}" y="${H-4}" text-anchor="middle">${k.replace('-','–')}</text>`});
    const P=[[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],art=ARTSET;
    return `<div class="cap">Vector propio promedio: curadores que también exponen <span class="dot" style="background:var(--curart)"></span> y curadores que no <span class="dot" style="background:var(--curador)"></span></div><svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>
-   <div class="cap" style="margin-top:14px">Curadores de cada periodo que también aparecen como artistas en alguna exposición del museo</div>${list(P.map(([a,b])=>{const cur=new Set();exIn(a,b).forEach(x=>rolesOf(x)[1].forEach(t=>cur.add(t)));const ca=[...cur].filter(t=>art.has(t)).length;return [`${a}–${b}`,`${ca} de ${cur.size} · ${pct(ca,cur.size)} %`]}))}
-   ${(()=>{const top=((RAW.met['1956-2026']||{}).bt||[]).slice(0,10);return top.length?`<div class="cap" style="margin-top:14px">Mejores intermediarios, 1956–2026. CA: curador o presentador que también expone en el museo</div><table class="m"><thead><tr><th>Agente</th><th>Interm.</th><th>Entra</th><th>Sale</th></tr></thead><tbody>${top.map(([i,b,din,dout])=>`<tr><td>${esc(N[i].label)}${isCA(i)?' <span class="pill">CA</span>':''}</td><td>${fmt(b)}</td><td>${din}</td><td>${dout}</td></tr>`).join('')}</tbody></table>`:''})()}`},
-  src:'<b>Fuentes:</b> <em>Cartografiar mundos del arte</em> (artículo del proyecto); archivo web del museo 2015–2025; base de datos MLT 2016. Vector propio calculado sobre la red curador–artista de cada periodo, sin dirección y ponderada.',
+   <div class="cap" style="margin-top:14px">Curadores de cada periodo que también aparecen como artistas en alguna exposición del Museo</div>${list(P.map(([a,b])=>{const cur=new Set();exIn(a,b).forEach(x=>rolesOf(x)[1].forEach(t=>cur.add(t)));const ca=[...cur].filter(t=>art.has(t)).length;return [`${a}–${b}`,`${ca} de ${cur.size} · ${pct(ca,cur.size)}&nbsp;%`]}))}
+   ${(()=>{const top=((RAW.met['1956-2026']||{}).bt||[]).slice(0,10);return top.length?`<div class="cap" style="margin-top:14px">Mejores intermediarios, 1956–2026. CA: curador o presentador que también expone en el Museo</div><table class="m"><thead><tr><th>Agente</th><th>Interm.</th><th>Entra</th><th>Sale</th></tr></thead><tbody>${top.map(([i,b,din,dout])=>`<tr><td>${esc(N[i].label)}${isCA(i)?' <span class="pill">CA</span>':''}</td><td>${fmt(b)}</td><td>${din}</td><td>${dout}</td></tr>`).join('')}</tbody></table>`:''})()}`},
+  src:'<b>Fuentes:</b> <em>Cartografiar mundos del arte</em> (artículo del proyecto); archivo web del Museo 2015–2025; base de datos MLT 2016. Vector propio calculado sobre la red curador–artista de cada periodo, sin dirección y ponderada.',
   go:{label:'Ver curadores-artistas, 2007–2016',o:{view:'pro',a:2007,b:2016,color:'rol'}}},
  {id:'duracion',k:'1956–2026 · Duración',t:'Exposiciones cada vez más largas',
   body(){const P=[[1956,1968],[1969,1982],[1983,1992],[1993,2006],[2007,2016],[2017,Y1]],st=P.map(([a,b])=>{const d=exIn(a,b).filter(n=>n.dur!=null).map(n=>n.dur);return {a,b,n:d.length,m:d.length?d3.median(d):null}}),f=st[0],l=st[st.length-1],tot=EXPOS.filter(n=>n.dur!=null).length;
@@ -1108,30 +1109,30 @@ const EXPS=[
  {id:'circulacion',k:'1956–2026 · Circulación',t:'Quién vuelve y quién apoya',
   body(){const D=CIRC();const d=k=>D.dec.find(x=>x.d===k)||{};
    return `<p>Este expediente reúne tres lecturas que salen de cálculos sobre la base de datos; la interpretación es de los autores.</p>
-   <p><b>El círculo de artistas se cerró y luego se reabrió.</b> Para cada década contamos qué parte de sus artistas ya había expuesto en el museo en los quince años anteriores; la ventana fija evita que la cifra crezca solo porque el museo acumula historia. La proporción pasa de ${d(1980).rec} % en los ochenta a ${d(1990).rec} % en los noventa y ${d(2000).rec} % en los dos mil, y baja a ${d(2010).rec} % en los 2010. En los 2020 vuelve a subir (${d(2020).rec} %), pero es una década en curso y con pocos registros. La curva acompaña la concentración curatorial: Miguel González reúne el ${d(1980).mg} %, el ${d(1990).mg} % y el ${d(2000).mg} % de los vínculos de curaduría de esas tres décadas, y en los 2010 ningún curador pasa del ${d(2010).top} %. Los datos muestran que las dos cosas coinciden en el tiempo; no prueban que una cause la otra.</p>
+   <p><b>El círculo de artistas se cerró y luego se reabrió.</b> Para cada década contamos qué parte de sus artistas ya había expuesto en el Museo en los quince años anteriores; la ventana fija evita que la cifra crezca solo porque el Museo acumula historia. La proporción pasa de ${d(1980).rec}&nbsp;% en los ochenta a ${d(1990).rec}&nbsp;% en los noventa y ${d(2000).rec}&nbsp;% en los dos mil, y baja a ${d(2010).rec}&nbsp;% en los 2010. En los 2020 vuelve a subir (${d(2020).rec}&nbsp;%), pero es una década en curso y con pocos registros. La curva acompaña la concentración curatorial: Miguel González reúne el ${d(1980).mg}&nbsp;%, el ${d(1990).mg}&nbsp;% y el ${d(2000).mg}&nbsp;% de los vínculos de curaduría de esas tres décadas, y en los 2010 ningún curador pasa del ${d(2010).top}&nbsp;%. Los datos muestran que las dos cosas coinciden en el tiempo; no prueban que una cause la otra.</p>
    <p><b>Cambió quién financia.</b> En los sesenta y setenta, con pocos registros, los auspiciadores que más se repiten son empresas de la región (Cartón de Colombia, Asocaña, Industria de Licores del Valle, Carvajal, Propal) y representaciones extranjeras (Embajada de Argentina, Consejo Británico, Embajada de Venezuela). Desde los noventa dominan las entidades públicas de cultura: Ministerio de Cultura, Colcultura, Alcaldía y Dirección de Cultura de Cali, Gerencia Cultural del Valle. También crece su número: de ${dn(d(1980).ap,2)} auspiciadores por exposición en los ochenta a ${dn(d(1990).ap,2)} en los noventa y ${dn(d(2000).ap,2)} en los dos mil. Hasta 2006 todas las cifras salen de la misma fuente, la base de datos de 2016; después se mezclan fuentes que registran los apoyos de manera distinta y la cifra deja de ser comparable. Más financiadores por exposición es coherente con exposiciones más costosas y más largas, como muestra el expediente anterior.</p>
-   <p><b>La mayoría pasa una sola vez.</b> De ${fmt(D.nA)} artistas registrados, el ${D.p1} % expone una sola vez en setenta años y solo ${fmt(D.n5)} lo hacen cinco veces o más. Para la mayoría, el museo es un lugar de paso; para un núcleo pequeño, una plataforma a la que se vuelve.</p>`},
+   <p><b>La mayoría pasa una sola vez.</b> De ${fmt(D.nA)} artistas registrados, el ${D.p1}&nbsp;% expone una sola vez en setenta años y solo ${fmt(D.n5)} lo hacen cinco veces o más. Para la mayoría, el Museo es un lugar de paso; para un núcleo pequeño, una plataforma a la que se vuelve.</p>`},
   fig(){const D=CIRC(),L=D.dec.filter(x=>x.d>=1960);
-   return `<div class="cap">Artistas de cada década que ya habían expuesto en el museo en los quince años anteriores (%)</div>${decBars([L.map(x=>x.rec)],L.map(x=>String(x.d).slice(2)),['var(--artista)'])}
+   return `<div class="cap">Artistas de cada década que ya habían expuesto en el Museo en los quince años anteriores (%)</div>${decBars([L.map(x=>x.rec)],L.map(x=>String(x.d).slice(2)),['var(--artista)'],' %')}
    <div class="cap" style="margin-top:14px">Auspiciadores por exposición, por década (1960–2009)</div>${list(D.dec.filter(x=>x.d>=1960&&x.d<=2000).map(x=>[`${x.d}–${String(x.d+9).slice(2)}`,dn(x.ap,2)]))}
-   <div class="cap" style="margin-top:14px">Artistas según cuántas veces exponen en el museo, 1956–2026 (% de ${fmt(D.nA)})</div>${(()=>{const B=D.bins,W=320,rh=22,H=B.length*rh+4,mx=d3.max(B,b=>b.n),lx=46;
-    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="El ${D.p1} % de los artistas expone una sola vez">${B.map((b,i)=>{const w=(W-lx-100)*b.n/mx,y=i*rh+2;
-     return `<text x="${lx-8}" y="${y+14}" text-anchor="end">${b.k}</text><rect x="${lx}" y="${y+3}" width="${Math.max(w,1)}" height="${rh-8}" fill="${i?'var(--muted)':'var(--artista)'}" fill-opacity="${i?.45:1}"><title>${b.k} ${b.k==='1'?'exposición':'exposiciones'}: ${fmt(b.n)} artistas</title></rect><text x="${lx+w+6}" y="${y+14}">${b.p} % · ${fmt(b.n)}</text>`}).join('')}</svg>`})()}`},
+   <div class="cap" style="margin-top:14px">Artistas según cuántas veces exponen en el Museo, 1956–2026 (% de ${fmt(D.nA)})</div>${(()=>{const B=D.bins,W=320,rh=22,H=B.length*rh+4,mx=d3.max(B,b=>b.n),lx=46;
+    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="El ${D.p1}&nbsp;% de los artistas expone una sola vez">${B.map((b,i)=>{const w=(W-lx-100)*b.n/mx,y=i*rh+2;
+     return `<text x="${lx-8}" y="${y+14}" text-anchor="end">${b.k}</text><rect x="${lx}" y="${y+3}" width="${Math.max(w,1)}" height="${rh-8}" fill="${i?'var(--muted)':'var(--artista)'}" fill-opacity="${i?.45:1}"><title>${b.k} ${b.k==='1'?'exposición':'exposiciones'}: ${fmt(b.n)} artistas</title></rect><text x="${lx+w+6}" y="${y+14}">${b.p}&nbsp;% · ${fmt(b.n)}</text>`}).join('')}</svg>`})()}`},
   src:'<b>Fuentes:</b> Base de datos MLT 2016 (hasta 2006) y complemento 2016–2026. Cálculos e interpretación de los autores.',
   gos(){return [{label:'Artistas en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[1,0,0,0]}},{label:'Auspiciadores en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[0,0,0,1]}}]}},
  {id:'comunidades',k:'1956–2026 · Comunidades',t:'Ocho comunidades y quienes las sostienen',
   body(){const K=COMS(),M=K.main,mg=M[0],rest=M.slice(1),two=rest.filter(c=>c.cur.length>1).length,sz=rest.map(c=>c.n);
-   return `<p>Una comunidad es un grupo de agentes que se vinculan más entre sí que con el resto de la red. Para encontrarlas usamos el algoritmo de Louvain sobre la red Curadores → artistas de 1956–2026, en la que cada flecha va de un curador o presentador a un artista y pesa tanto como el número de exposiciones que comparten. El algoritmo propone ${fmt(K.ncom)} comunidades. Aquí presentamos ocho de las más grandes, elegidas por los autores y nombradas por los curadores que las sostienen —los que suman al menos el 30 % de los vínculos del curador principal de cada una— y por los años en que curaron dentro de ella.</p>
-   <p>La de ${mg.name} es, de lejos, la mayor: ${fmt(mg.n)} agentes, entre ellos buena parte de los artistas consagrados que pasaron por el museo. Las otras siete tienen entre ${d3.min(sz)} y ${d3.max(sz)} agentes, y ${two===rest.length?'todas':`${two} de ellas`} las sostienen dos o tres curadores que trabajan juntos. Ordenadas en el tiempo, muestran el paso del curador central a los equipos curatoriales y al curador-artista que describen los expedientes 03 y 05.</p>
-   <p>No todas las comunidades que propone el algoritmo son grupos de trabajo. ${(['Ninguna','Una','Dos','Tres','Cuatro','Cinco','Seis','Siete','Ocho','Nueve'][K.single.length])||K.single.length} de ellas, con más de 30 agentes, se forman alrededor de una sola exposición grande: ${K.single.map(c=>`«${esc(c.ex)}» (${c.y})`).join(', ')}. El algoritmo las separa porque sus artistas casi no vuelven a cruzarse con el resto de la red.${M.filter(c=>c.one>=.6).map(c=>` Entre las ocho, la de ${c.name} se parece a ellas: el ${Math.round(100*c.one)} % de sus vínculos viene de «${esc(c.ex)}» (${c.y}).`).join('')}</p>
-   <p>Louvain parte de un orden aleatorio y puede dar resultados distintos en cada ejecución. Por eso las comunidades se calculan por consenso: corremos el algoritmo 50 veces y dejamos juntos a dos agentes vinculados solo si caen en la misma comunidad en al menos el 70 % de las ejecuciones. Las ocho resisten esa prueba: en promedio, sus vínculos internos quedan juntos en el ${Math.round(100*d3.min(M,c=>c.jm))} % de las ejecuciones o más.${K.evSplit?' Una agrupación que aparece en algunas ejecuciones, la de Álvaro Barrios, Alberto Sierra y Eduardo Serrano —tres de los «cuatro evangelistas» de Wills—, no resiste el consenso: queda como pista, no como hallazgo.':''}</p>`},
+   return `<p>Una comunidad es un grupo de agentes que se vinculan más entre sí que con el resto de la red. Para encontrarlas usamos el algoritmo de Louvain sobre la red Curadores → artistas de 1956–2026, en la que cada flecha va de un curador o presentador a un artista y pesa tanto como el número de exposiciones que comparten. El algoritmo propone ${fmt(K.ncom)} comunidades. Aquí presentamos ocho de las más representativas, elegidas por los autores y nombradas por los curadores que las sostienen —los que suman al menos el 30&nbsp;% de los vínculos del curador principal de cada una— y por los años en que curaron dentro de ella.</p>
+   <p>La de ${mg.name} es, de lejos, la mayor: ${fmt(mg.n)} agentes, entre ellos buena parte de los artistas consagrados que pasaron por el Museo. Las otras siete tienen entre ${d3.min(sz)} y ${d3.max(sz)} agentes, y ${two===rest.length?'todas':`${two} de ellas`} las sostienen dos o tres curadores que trabajan juntos. Ordenadas en el tiempo, muestran el paso del curador central a los equipos curatoriales y al curador-artista que describen los expedientes 03 y 05.</p>
+   <p>No todas las comunidades que propone el algoritmo son grupos de trabajo. ${(['Ninguna','Una','Dos','Tres','Cuatro','Cinco','Seis','Siete','Ocho','Nueve'][K.single.length])||K.single.length} de ellas, con más de 30 agentes, se forman alrededor de una sola exposición grande: ${K.single.map(c=>`«${esc(c.ex)}» (${c.y})`).join(', ')}. El algoritmo las separa porque sus artistas casi no vuelven a cruzarse con el resto de la red.</p>
+   <p>Louvain parte de un orden aleatorio y puede dar resultados distintos en cada ejecución. Por eso las comunidades se calculan por consenso: corremos el algoritmo 50 veces y dejamos juntos a dos agentes vinculados solo si caen en la misma comunidad en al menos el 70&nbsp;% de las ejecuciones. Las ocho resisten esa prueba: en promedio, sus vínculos internos quedan juntos en el ${Math.round(100*d3.min(M,c=>c.jm))}&nbsp;% de las ejecuciones o más.${K.evSplit?' Una agrupación que aparece en algunas ejecuciones, la de Álvaro Barrios, Alberto Sierra y Eduardo Serrano —tres de los «cuatro evangelistas» de Wills—, no resiste el consenso: queda como pista, no como hallazgo.':''}</p>`},
   fig(){const K=COMS(),M=K.main,W=320,rh=34,top=4,H=M.length*rh+top+16,x=d3.scaleLinear([Y0,Y1],[0,W]);let g='';
    M.forEach((c,i)=>{const y=top+i*rh,mx=d3.max(c.yc.values())||1;g+=`<text x="0" y="${y+11}" class="cl">${esc(c.cur.map(([i])=>({'Alejandro Martín Maldonado':'Martín'})[N[i].label]||N[i].label.split(' ').pop()).join(' · '))} · ${c.a===c.b?c.a:c.a+'–'+c.b}</text>`;
      c.yc.forEach((v,yr)=>{g+=`<rect x="${x(yr)}" y="${y+15}" width="${Math.max(W/(Y1-Y0)-.6,1)}" height="11" fill="${c.col}" fill-opacity="${.2+.8*Math.sqrt(v/mx)}"><title>${yr}: ${v} vínculos</title></rect>`})});
    [1960,1980,2000,2020].forEach(t=>{g+=`<text x="${x(t)}" y="${H-2}" text-anchor="middle">${t}</text>`});
    return `<div class="cap">Años en que cada comunidad está activa: vínculos curador → artista dentro de ella. El color es el de la comunidad en la red.</div><svg viewBox="0 0 ${W} ${H}" role="img" class="comstrip">${g}</svg>
-   <div class="cap" style="margin-top:14px">Agentes por comunidad y cohesión: % de ejecuciones en que sus vínculos internos quedan juntos</div>${list(M.map(c=>[esc(c.short),`${fmt(c.n)} · ${Math.round(100*c.jm)} %`]))}`},
-  src:'<b>Fuentes:</b> base de datos MLT 2016 y complemento 2016–2026. Comunidades de consenso de Louvain (50 ejecuciones, umbral del 70 %, resolución 1,0; Lancichinetti y Fortunato 2012) sobre la red Curadores → artistas de 1956–2026, sin dirección y ponderada. Selección, nombres e interpretación de los autores.',
+   <div class="cap" style="margin-top:14px">Agentes por comunidad y cohesión: % de ejecuciones en que sus vínculos internos quedan juntos</div>${list(M.map(c=>[esc(c.short),`${fmt(c.n)} · ${Math.round(100*c.jm)}&nbsp;%`]))}`},
+  src:'<b>Fuentes:</b> base de datos MLT 2016 y complemento 2016–2026. Comunidades de consenso de Louvain (50 ejecuciones, umbral del 70&nbsp;%, resolución 1,0; Lancichinetti y Fortunato 2012) sobre la red Curadores → artistas de 1956–2026, sin dirección y ponderada. Selección, nombres e interpretación de los autores.',
   gos(){return COMS().main.map(c=>({label:c.short,o:{view:'pro',a:Y0,b:Y1,color:'com',com:c.k}}))}}
 ];
 let COMS_=null;function COMS(){if(COMS_)return COMS_;
@@ -1194,7 +1195,7 @@ document.getElementById('idx').addEventListener('keydown',ev=>{if(ev.key==='Ente
 
 // método: confianza y vacíos, calculados sobre la base de datos
 {const ok=EXPOS.filter(n=>!n.conf).length,par=EXPOS.length-ok,sinA=EXPOS.filter(n=>!n.year).length,y19=exIn(2019,2019).length,dur=EXPOS.filter(n=>n.dur!=null).length,sinAg=EXPOS.filter(n=>!n.adj.length).length;
- document.getElementById('conf').innerHTML=`Cada ficha de exposición lleva una marca. <span class="mk">●</span> <b>Documentada</b> (${fmt(ok)}): viene de la base de datos de 2016 o de una página con fechas y agentes explícitos. <span class="mk">○</span> <b>Reconstruida</b> (${fmt(par)}): falta la fecha, la lista de agentes está incompleta o solo se conoce el título en un listado. Las fichas reconstruidas salen del archivo web del museo y de las piezas gráficas; cada una trae su fuente.`;
+ document.getElementById('conf').innerHTML=`Cada ficha de exposición lleva una marca. <span class="mk">●</span> <b>Documentada</b> (${fmt(ok)}): viene de la base de datos de 2016 o de una página con fechas y agentes explícitos. <span class="mk">○</span> <b>Reconstruida</b> (${fmt(par)}): falta la fecha, la lista de agentes está incompleta o solo se conoce el título en un listado. Las fichas reconstruidas salen del archivo web del Museo y de las piezas gráficas; cada una trae su fuente.`;
  document.getElementById('vacios').innerHTML=[`${fmt(sinA)} exposiciones no tienen año; no aparecen en la línea de tiempo ni en las vistas por periodo.`,
   `Solo ${fmt(dur)} de ${fmt(EXPOS.length)} exposiciones tienen fecha de apertura y de cierre completas.`,
   `${fmt(sinAg)} exposiciones no tienen agentes nombrados (por ejemplo, «Varios»).`,
@@ -1255,7 +1256,7 @@ const ids=f=>new Set(N.filter(f).map(n=>n.i));
 const nm=i=>esc(N[i].label);
 const lista=a=>a.length>1?a.slice(0,-1).join(', ')+' y '+a[a.length-1]:a[0]||'';
 // párrafos de los expedientes, tal como están escritos
-function P(id,...k){const x=EXPS.find(e=>e.id===id);if(!x)return'';const d=document.createElement('div');d.innerHTML=x.body();const ps=[...d.querySelectorAll('p')];return k.map(j=>ps[j]?ps[j].outerHTML:'').join('').replace('como muestra el expediente anterior','como muestra el paso siguiente').replace('que describen los expedientes 03 y 05','que se vio en los actos anteriores')}
+function P(id,...k){const x=EXPS.find(e=>e.id===id);if(!x)return'';const d=document.createElement('div');d.innerHTML=x.body();const ps=[...d.querySelectorAll('p')];return k.map(j=>ps[j]?ps[j].outerHTML:'').join('').replace('como muestra el expediente anterior','como muestra el paso siguiente').replace('que describen los expedientes 03 y 05','que se vio en los actos anteriores').replace(' (tabla a la derecha)','').replace(/«Curadores → artistas»/g,'<span class="nw">«Curadores → artistas»</span>')}
 function FIG(id){const x=EXPS.find(e=>e.id===id);return x?`<div class="fig">${x.fig()}</div>`:''}
 
 // ---------- conjuntos para el relato ----------
@@ -1267,6 +1268,10 @@ const bienSet=new Set(BIEN.map(n=>n.i));
 const bienA=new Set();BIEN.forEach(x=>x.adj.forEach(k=>{if(E[k].r===0)bienA.add(E[k].t)}));
 const bienOnce=new Set([...bienA].filter(t=>N[t].adj.every(k=>bienSet.has(E[k].s))));
 const bienBack=new Set([...bienA].filter(t=>!bienOnce.has(t)));
+const bienMulti=[...bienA].filter(t=>N[t].adj.filter(k=>bienSet.has(E[k].s)).length>=2);
+const EV4=['Miguel González','Eduardo Serrano','Alberto Sierra','Álvaro Barrios'].map(byLab).filter(Boolean);
+const curOf=(c,a,b)=>{const s=new Set();c.adj.forEach(k=>{if(E[k].r!==1&&E[k].r!==2)return;const x=N[E[k].s];if(a!=null&&(!x.year||x.year<a||x.year>b))return;x.adj.forEach(q=>{if(E[q].r===0&&E[q].t!==c.i)s.add(E[q].t)})});return s};
+const curEx=c=>c.adj.filter(k=>E[k].r===1).map(k=>N[E[k].s]).filter(x=>x.year).sort((a,b)=>a.year-b.year);
 const topBy=(set,f,k)=>[...set].sort((a,b)=>f(b)-f(a)).slice(0,k);
 const inYears=(i,a,b)=>N[i].adj.some(k=>{const y=N[E[k].s].year;return y>=a&&y<=b});
 const curPres=ids(n=>n.t>0&&n.adj.some(k=>E[k].r===1||E[k].r===2));
@@ -1289,7 +1294,7 @@ const step=o=>S.push(o);
 step({act:'Antes de empezar',t:'Una exposición',mode:'expo',range:[1963,1963],only:['ex.77'],minEx:1,roles:[1,1,1,1],
   labels:()=>[X15.i,...x15A.slice(),...X15.adj.filter(k=>E[k].r>0).map(k=>E[k].t)],ring:X15?[X15.i]:[],
   html:()=>`<p>Empecemos por una sola exposición. En 1963 la casona de San Antonio recibió el ${esc(X15.label)}: ${x15A.length} artistas, una presentadora —Mireya Zawadzki— y un auspiciador, Taxader de Aviación.</p>
-   <p>En esta red cada exposición es un cuadrado y cada persona o entidad que participó en ella es un círculo unido a él. El color dice qué hizo cada quien: <span class="sw" style="--c:var(--artista)"></span>expuso, <span class="sw" style="--c:var(--curador)"></span>curó, <span class="sw" style="--c:var(--presentador)"></span>presentó, <span class="sw" style="--c:var(--apoyo)"></span>apoyó.</p>`,
+   <p>En esta red cada exposición es un cuadrado y cada persona o entidad que participó en ella es un círculo unido a él. El color dice qué hizo cada quien: <span class="nw"><span class="sw" style="--c:var(--artista)"></span>expuso,</span> <span class="nw"><span class="sw" style="--c:var(--curador)"></span>curó,</span> <span class="nw"><span class="sw" style="--c:var(--presentador)"></span>presentó,</span> <span class="nw"><span class="sw" style="--c:var(--apoyo)"></span>apoyó.</span></p>`,
   src:'Catálogo del XV Salón de Artistas Colombianos (1963); base de datos MLT 2016.',link:{view:'red',a:1963,b:1963,sel:'ex.77',mindeg:1,roles:[1,1,1,1]}});
 step({act:'Acto 1 · El origen y la explosión',t:'Un club que expone',mode:'expo',range:[1956,1968],minEx:1,roles:[1,1,1,0],
   ring:X15?[X15.i]:[],hl:()=>new Set([X15.i,...x15A]),soft:true,
@@ -1300,43 +1305,53 @@ step({act:'Acto 1 · El origen y la explosión',t:'Un club que expone',mode:'exp
 step({t:'La I Bienal',mode:'expo',range:[1956,1971],minEx:1,roles:[1,1,1,0],ring:B1?[B1.i]:[],hl:()=>new Set([B1.i,...B1.adj.map(k=>E[k].t)]),
   labels:()=>[B1.i,X15.i],html:()=>P('bienales',0),link:{view:'red',a:1969,b:1986,mindeg:1,sel:B1&&B1.id}});
 step({t:'El estallido',mode:'expo',range:[1956,1986],minEx:1,roles:[1,1,1,0],ring:BIEN.filter(b=>b.year<=1986).map(b=>b.i),
-  labels:()=>BIEN.filter(b=>b.year<=1986).map(b=>b.i),html:()=>P('bienales',1),link:{view:'red',a:1969,b:1986,mindeg:1}});
+  auto:false,labels:()=>BIEN.filter(b=>b.year<=1986).map(b=>b.i),softLab:()=>topBy(new Set(bienMulti),i=>N[i].adj.filter(k=>bienSet.has(E[k].s)).length,60),html:()=>P('bienales',1),link:{view:'red',a:1969,b:1986,mindeg:1}});
 step({t:'Los que pasan una vez',mode:'expo',range:[1956,1986],minEx:1,roles:[1,1,1,0],hl:()=>new Set([...bienOnce,...bienSet]),
   labels:()=>BIEN.filter(b=>b.year<=1986).map(b=>b.i),html:()=>P('bienales',2),link:{view:'red',a:1969,b:1986,mindeg:1}});
 step({t:'Los que vuelven',mode:'expo',range:[1956,Y1],minEx:2,roles:[1,1,1,0],hl:()=>bienBack,
-  labels:()=>topBy(bienBack,i=>nEx[i],10),
+  auto:false,labels:()=>[...bienBack].filter(i=>nEx[i]>=11).sort((a,b)=>nEx[b]-nEx[a]),
   html:()=>{const v=[...bienBack],m=d3.mean(v,i=>nEx[i]),top=new Set(topBy(new Set(AGENTS.map(a=>a.i)),i=>nEx[i],100)),k=v.filter(i=>top.has(i)).length;
-    return `<p>Los otros ${fmt(v.length)} artistas de las bienales sí vuelven. En promedio participan en ${dn(m,1)} exposiciones del museo, y ${k} de ellos están entre los cien agentes con más exposiciones en setenta años.</p><p>Desde aquí la red muestra solo a quienes participaron en dos exposiciones o más.</p>`},
+    return `<p>Los otros ${fmt(v.length)} artistas de las bienales sí vuelven. En promedio participan en ${dn(m,1)} exposiciones del Museo, y ${k} de ellos están entre los cien agentes con más exposiciones en setenta años.</p><p>Desde aquí la red muestra solo a quienes participaron en dos exposiciones o más.</p>`},
   link:{view:'red',a:Y0,b:Y1,mindeg:2}});
 step({act:'Acto 2 · El cambio de poder',t:'Del presentador al curador',mode:'expo',range:[Y0,Y1],minEx:2,roles:[1,1,1,0],hl:()=>new Set([...curPres]),
   labels:()=>topBy(curPres,i=>N[i].adj.filter(k=>E[k].r===1||E[k].r===2).length,8),
   html:()=>P('presentador-curador',1,2)+FIG('presentador-curador'),link:{view:'pro',a:Y0,b:Y1,layout:'t'}});
 step({t:'La exposición desaparece',mode:'pro',range:[Y0,Y1],minEx:2,
   labels:()=>topBy(new Set(curPres),i=>N[i].adj.filter(k=>E[k].r===1||E[k].r===2).length,6),
-  html:()=>`<p>Ahora retiramos las exposiciones. Cada línea va directo de quien curó o presentó una exposición a cada artista que expuso en ella. Es la vista «Curadores → artistas», la que permite ver quién reúne a quién.</p>`,link:{view:'pro',a:Y0,b:Y1}});
+  html:()=>`<p>Ahora retiramos las exposiciones. Cada línea va directo de quien curó o presentó una exposición a cada artista que expuso en ella. Es la vista <span class="nw">«Curadores → artistas»</span>, la que permite ver la relación dinámica y simbiótica, que puede ser de colaboración profesional, diálogo intelectual o el impulso estratégico a la carrera de un artista. El curador se convierte en un intermediario clave en el sistema del arte.</p>`,link:{view:'pro',a:Y0,b:Y1}});
 step({t:'El nodo mayor',mode:'pro',range:[1982,2006],minEx:2,hl:()=>new Set([MG.i,...mgA]),labels:()=>[MG.i],big:[MG.i],
   html:()=>P('miguel-gonzalez',0,2),link:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}});
-step({t:'Cuatro evangelistas',mode:'pro',range:[1982,2006],minEx:2,hl:()=>new Set([MG.i,...mgA]),labels:()=>[MG.i],big:[MG.i],fit:'focus',
-  html:()=>P('miguel-gonzalez',1,3),link:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}});
+step({t:'Cuatro evangelistas',mode:'pro',range:[1977,2007],minEx:2,keep:new Set(EV4.map(n=>n.i)),auto:false,
+  hl:()=>{const s=new Set(EV4.map(n=>n.i));EV4.slice(1).forEach(c=>{curOf(c).forEach(t=>s.add(t))});return s},
+  labels:()=>{const mgS=curOf(EV4[0]),L=EV4.map(n=>n.i);EV4.slice(1).forEach(c=>curOf(c).forEach(t=>{if(mgS.has(t))L.push(t)}));return L},big:EV4.map(n=>n.i),fit:'focus',
+  html:()=>{const [mg,...o]=EV4,mgS=curOf(mg),d=o.map(c=>{const ex=curEx(c),sh=[...curOf(c)].filter(t=>mgS.has(t));return {c,ex,sh}});
+    const fr=d.map(({c,ex})=>`${esc(c.label)} curó ${ex.length===1?'una exposición':ex.length+' exposiciones'} (${ex.length?(ex[0].year===ex[ex.length-1].year?ex[0].year:ex[0].year+'–'+ex[ex.length-1].year):''})`);
+    const sh=d.map(({c,sh})=>`${esc(c.label.split(' ').pop())}, ${sh.length}${sh.length?` (${sh.slice(0,4).map(nm).join(', ')}${sh.length>4?'…':''})`:''}`);
+    const all3=d.length===3?[...curOf(d[0].c)].filter(t=>curOf(d[1].c).has(t)&&curOf(d[2].c).has(t)).length:0;
+    const barr=byLab('Álvaro Barrios'),barrArt=barr?barr.adj.filter(k=>E[k].r===0).length:0;
+    return P('miguel-gonzalez',1)+`<p>Los otros tres también pasan por el Museo: ${lista(fr)}.${barrArt?` Álvaro Barrios, además, expuso como artista en ${barrArt} ${barrArt===1?'exposición':'exposiciones'}.`:''} Los cruces con González se ven en los artistas que comparten: ${lista(sh)}.${all3?'':' Entre los tres no hay ningún artista en común.'}</p>`+P('miguel-gonzalez',3)},link:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}});
 step({t:'El círculo se cierra',mode:'pro',range:[1982,2006],minEx:2,hl:()=>repe,labels:()=>topBy(repe,i=>nEx[i],8),
-  html:()=>{const D=CIRC(),Lr=D.dec.filter(x=>x.d>=1960);return P('circulacion',1)+`<div class="fig"><div class="cap">Artistas de cada década que ya habían expuesto en el museo en los quince años anteriores (%)</div>${decBars([Lr.map(x=>x.rec)],Lr.map(x=>String(x.d).slice(2)),['var(--artista)'])}</div>`},
+  html:()=>{const D=CIRC(),Lr=D.dec.filter(x=>x.d>=1960);return P('circulacion',1)+`<div class="fig"><div class="cap">Artistas de cada década que ya habían expuesto en el Museo en los quince años anteriores (%)</div>${decBars([Lr.map(x=>x.rec)],Lr.map(x=>String(x.d).slice(2)),['var(--artista)'],' %')}</div>`},
   link:{view:'pro',a:1982,b:2006}});
 step({act:'Acto 3 · La metamorfosis institucional',t:'Quién apoya',mode:'expo',range:[Y0,Y1],minEx:2,roles:[1,1,1,1],hl:()=>new Set(spAll),
   labels:()=>[...spEarly.slice(0,4).map(r=>r[0]),...spLate.slice(0,4).map(r=>r[0])],
-  html:()=>P('circulacion',2)+`<div class="fig"><div class="cap">Auspiciadores por exposición, por década</div>${list(CIRC().dec.filter(x=>x.d>=1960&&x.d<=2000).map(x=>[`${x.d}–${String(x.d+9).slice(2)}`,dn(x.ap,2)]))}</div>`,
+  html:()=>{const per=[...spAll].filter(i=>N[i].t===1).length;return P('circulacion',2)+`<p>Colcultura, creada en 1968, se transformó en el Ministerio de Cultura en 1997, con la Ley General de Cultura (Ley 397); en la red son dos nodos distintos. En esta vista también aparecen ${per} personas que apoyaron o financiaron exposiciones: por eso hay nodos de artistas y de presentadores entre los auspiciadores.</p>`+`<div class="fig"><div class="cap">Auspiciadores por exposición, por década</div>${list(CIRC().dec.filter(x=>x.d>=1960&&x.d<=2000).map(x=>[`${x.d}–${String(x.d+9).slice(2)}`,dn(x.ap,2)]))}</div>`},
   link:{view:'red',a:Y0,b:Y1,roles:[0,0,0,1],layout:'t'}});
 step({t:'Más tiempo, más inversión',mode:'expo',range:[Y0,Y1],minEx:2,roles:[1,1,1,0],size:'dur',hl:()=>durSet,
   labels:()=>topBy(durSet,i=>N[i].dur||0,4),html:()=>P('duracion',0,1)+FIG('duracion'),link:{view:'dur'}});
-step({t:'Curadores que también exponen',mode:'pro',range:[2007,Y1],minEx:1,ca:true,hl:()=>CAset,labels:()=>topBy(CAset,i=>N[i].adj.length,10),
+step({t:'Curadores que también exponen',mode:'pro',range:[2007,Y1],minEx:1,ca:true,hl:()=>CAset,auto:false,labels:()=>topBy(CAset,i=>N[i].adj.length,200),
   html:()=>P('expansion',0,1),link:{view:'pro',a:2007,b:2016,color:'rol'}});
-step({t:'Los puentes',mode:'pro',range:[Y0,Y1],minEx:1,ca:true,hl:()=>new Set(BT),labels:()=>BT,big:BT,
+step({t:'Los puentes',mode:'pro',range:[Y0,Y1],minEx:1,ca:true,hl:()=>new Set(BT),auto:false,labels:()=>BT,big:BT,
   html:()=>P('expansion',3),link:{view:'pro',a:Y0,b:Y1}});
 step({act:'Acto 4 · Las comunidades',t:'Las islas',mode:'pro',range:[Y0,Y1],minEx:1,color:'com',
   labels:()=>K8.main.map(c=>c.cur[0][0]),html:()=>P('comunidades',0),link:{view:'pro',a:Y0,b:Y1,color:'com'}});
+const PRO=build({mode:'pro',range:[Y0,Y1],minEx:1}),PDEG=new Map();PRO.links.forEach(l=>{PDEG.set(l.s,(PDEG.get(l.s)||0)+1);PDEG.set(l.t,(PDEG.get(l.t)||0)+1)});
+const EXTRA=[/fresneda/i,/fajardo/i,/manuel lago/i,/powerpaola/i];
+const rolTxt=i=>isCA(i)?'curador-artista':mainRole[i]===1?'curador':mainRole[i]===2?'presentador':mainRole[i]===3?'auspiciador':'artista';
 K8.main.forEach((c,j)=>{const mem=commOf(c.k),ex=[...new Set([...mem].flatMap(i=>N[i].adj.map(k=>E[k].s)))];
   step({t:c.name,k:`Comunidad ${j+1} de ${K8.main.length} · ${c.a===c.b?c.a:c.a+'–'+c.b}`,mode:'pro',range:[Y0,Y1],minEx:1,color:'com',hl:()=>mem,fit:'focus',
-    labels:()=>topBy(mem,i=>N[i].adj.length,12),big:c.cur.map(r=>r[0]),
-    html:()=>(j===0?P('comunidades',1):'')+`<p>${fmt(c.n)} agentes. La sostienen ${lista(c.cur.map(([i])=>nm(i)))}, que curaron dentro de ella ${c.a===c.b?"en "+c.a:"entre "+c.a+" y "+c.b}. La exposición que más vínculos le aporta es «${esc(c.ex)}» (${c.y}).</p>`,
+    labels:()=>[...[...mem].filter(i=>EXTRA.some(r=>r.test(N[i].label))),...topBy(mem,i=>PDEG.get(i)||0,12)],big:c.cur.map(r=>r[0]),
+    html:()=>(j===0?P('comunidades',1):'')+`<p>${fmt(c.n)} agentes. La sostienen ${lista(c.cur.map(([i])=>nm(i)))}, que curaron dentro de ella ${c.a===c.b?"en "+c.a:"entre "+c.a+" y "+c.b}. La exposición que más vínculos le aporta es «${esc(c.ex)}» (${c.y}).</p><div class="fig"><div class="cap">Los diez agentes con más vínculos en la comunidad (centralidad de grado)</div><table class="m"><tbody>${topBy(mem,i=>PDEG.get(i)||0,10).map(i=>`<tr><td>${nm(i)}</td><td>${rolTxt(i)}</td><td>${PDEG.get(i)||0}</td></tr>`).join('')}</tbody></table></div>`,
     link:{view:'pro',a:Y0,b:Y1,color:'com',com:c.k}})});
 step({t:'Lo que el método no ve',mode:'pro',range:[Y0,Y1],minEx:1,color:'com',
   hl:()=>new Set(K8.single.flatMap(c=>[...commOf(c.k)])),labels:()=>K8.single.map(c=>topBy(commOf(c.k),i=>N[i].adj.length,1)[0]),
@@ -1353,7 +1368,8 @@ wrap.innerHTML=S.map((s,i)=>`<div class="cstep" data-i="${i}"><div class="card">
 
 // ---------- simulación ----------
 const SN=new Map();let cur=null,curG=null,F=null,LAB=[],RING=new Set(),BIG=new Set(),gdeg=new Map();
-const sim=d3.forceSimulation().force('link',d3.forceLink().distance(l=>cur&&cur.mode==='pro'?26:20).strength(l=>.5/Math.sqrt(Math.min(l.source.k||1,l.target.k||1))))
+const rng=d3.randomLcg(0.4217);
+const sim=d3.forceSimulation().randomSource(rng).force('link',d3.forceLink().distance(l=>cur&&cur.mode==='pro'?26:20).strength(l=>.5/Math.sqrt(Math.min(l.source.k||1,l.target.k||1))))
   .force('charge',d3.forceManyBody().strength(o=>N[o.i].t===0?-28:-16).distanceMax(320).theta(.95))
   .force('x',d3.forceX(0).strength(.05)).force('y',d3.forceY(0).strength(.05))
   .force('col',d3.forceCollide(o=>rad(o)+1).iterations(1)).alphaDecay(.028).velocityDecay(.38).stop();
@@ -1363,7 +1379,7 @@ function rad(o){const n=N[o.i];
   if(BIG.has(o.i))return Math.max(9,cur&&cur.mode==='pro'?2+Math.sqrt(gdeg.get(o.i)||1)*1.1:2+Math.sqrt(nEx[o.i])*1.1);
   return cur&&cur.mode==='pro'?1.8+Math.sqrt(gdeg.get(o.i)||1)*1.05:1.7+Math.sqrt(Math.min(nEx[o.i],80))*1.05}
 function build(st){
-  const [a,b]=st.range,roles=st.roles||[1,1,1,0],minEx=st.minEx||1,ok=j=>nEx[j]>=minEx,nodes=new Set(),links=[];
+  const [a,b]=st.range,roles=st.roles||[1,1,1,0],minEx=st.minEx||1,ok=j=>nEx[j]>=minEx||(st.keep&&st.keep.has(j)),nodes=new Set(),links=[];
   if(st.mode==='expo'){
     const ex=st.only?st.only.map(id=>byId.get(id)).filter(Boolean):EXPOS.filter(x=>x.year&&x.year>=a&&x.year<=b);
     ex.forEach(x=>{let any=false;x.adj.forEach(k=>{const e=E[k];if(!roles[e.r]||!ok(e.t))return;any=true;nodes.add(e.t);links.push({s:x.i,t:e.t,r:e.r})});if(any||st.only)nodes.add(x.i)});
@@ -1380,12 +1396,12 @@ function setStep(i){
   const fresh=[];g.ids.forEach(i=>{let o=SN.get(i);if(!o||o.a<=0.01&&o.ta===0&&!o.live){o=o||{i,a:0};fresh.push(o);SN.set(i,o)}o.ta=1;o.live=true});
   const R0=Math.sqrt(g.ids.length)*9;
   for(let pass=0;pass<3;pass++)fresh.forEach(o=>{if(o.x!=null&&pass===0)return;const nb=(adj.get(o.i)||[]).map(j=>SN.get(j)).find(p=>p&&p.x!=null&&!fresh.includes(p)||p&&p.x!=null&&pass>0);
-    if(nb){o.x=nb.x+(Math.random()-.5)*14;o.y=nb.y+(Math.random()-.5)*14}else if(pass===2||o.x==null&&pass===2){const a=Math.random()*6.283,r=R0*(.6+Math.random()*.6);o.x=Math.cos(a)*r;o.y=Math.sin(a)*r}});
-  fresh.forEach(o=>{if(o.x==null){const a=Math.random()*6.283,r=R0*(.6+Math.random()*.6);o.x=Math.cos(a)*r;o.y=Math.sin(a)*r}});
+    if(nb){o.x=nb.x+(rng()-.5)*14;o.y=nb.y+(rng()-.5)*14}else if(pass===2||o.x==null&&pass===2){const a=rng()*6.283,r=R0*(.6+rng()*.6);o.x=Math.cos(a)*r;o.y=Math.sin(a)*r}});
+  fresh.forEach(o=>{if(o.x==null){const a=rng()*6.283,r=R0*(.6+rng()*.6);o.x=Math.cos(a)*r;o.y=Math.sin(a)*r}});
   SN.forEach(o=>{if(!keep.has(o.i))o.live=false});
   g.ids.forEach(i=>{SN.get(i).k=gdeg.get(i)||1});
   sim.nodes(g.ids.map(i=>SN.get(i)));sim.force('link').links(g.links.map(l=>({source:SN.get(l.s),target:SN.get(l.t)})));
-  F=st.hl?st.hl():null;LAB=st.labels?st.labels().filter(i=>i!=null):[];autoLab(g.ids);RING=new Set(st.ring||[]);BIG=new Set(st.big||[]);
+  F=st.hl?st.hl():null;LAB=st.labels?st.labels().filter(i=>i!=null):[];if(st.auto===false)AUTO=[];else autoLab(g.ids);if(st.softLab)AUTO=st.softLab();RING=new Set(st.ring||[]);BIG=new Set(st.big||[]);
   sim.force('col').radius(o=>rad(o)+1);
   sim.alpha(fresh.length>g.ids.length*.5?1:.55);
   if(RM){for(let k=0;k<260;k++)sim.tick();SN.forEach(o=>o.a=o.ta);camSnap=true}
@@ -1432,17 +1448,23 @@ function draw(){if(!cur)return;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0
   ctx.globalAlpha=1;
   // rótulos sin superposición
   ctx.font='12px "IBM Plex Sans",sans-serif';ctx.textBaseline='middle';const boxes=[];
-  const LL=[...LAB,...AUTO.filter(i=>!LAB.includes(i))];
-  for(const i of LL){if(i===HOV)continue;const o=SN.get(i);if(!o||o.a<.4||o.x==null)continue;const r=rad(o)*Math.min(1.8,Math.max(.55,k)),X=sx(o.x)+r+4,Y=sy(o.y);
-    const s=N[i].label.length>38?N[i].label.slice(0,36)+'…':N[i].label;const w=ctx.measureText(s).width,bx=[X-2,Y-8,X+w+2,Y+8];
-    if(X+w>W-4||X<4||Y<14||Y>H-6)continue;if(boxes.some(q=>!(bx[2]<q[0]||bx[0]>q[2]||bx[3]<q[1]||bx[1]>q[3])))continue;boxes.push(bx);
-    ctx.globalAlpha=o.a;ctx.lineWidth=3.5;ctx.strokeStyle=C.bg;ctx.strokeText(s,X,Y);ctx.fillStyle=C.fg;ctx.font=(BIG.has(i)||RING.has(i)?'600 ':'')+'12px "IBM Plex Sans",sans-serif';ctx.fillText(s,X,Y);ctx.font='12px "IBM Plex Sans",sans-serif'}
+  const LL=[...new Set([...LAB,...AUTO])];
+  const labSet=new Set(LAB);
+  for(const i of LL){if(i===HOV)continue;const o=SN.get(i);if(!o||o.a<.4||o.x==null)continue;const r=rad(o)*Math.min(1.8,Math.max(.55,k)),cx=sx(o.x),cy=sy(o.y);
+    if(cx<-20||cx>W+20||cy<0||cy>H)continue;const bold=BIG.has(i)||RING.has(i);ctx.font=(bold?'600 ':'')+'12px "IBM Plex Sans",sans-serif';
+    const s=N[i].label.length>44?N[i].label.slice(0,42)+'…':N[i].label,w=ctx.measureText(s).width;
+    const cand=[[cx+r+4,cy,'left'],[cx-r-4,cy,'right'],[cx,cy-r-9,'center'],[cx,cy+r+10,'center']];let pick=null,first=null;
+    for(const [x,y,al] of cand){const x0=al==='left'?x:al==='right'?x-w:x-w/2,bx=[x0-2,y-8,x0+w+2,y+8];if(x0<4||x0+w>W-4||y<14||y>H-6)continue;if(!first)first=[x,y,al,bx];
+      if(!boxes.some(q=>!(bx[2]<q[0]||bx[0]>q[2]||bx[3]<q[1]||bx[1]>q[3]))){pick=[x,y,al,bx];break}}
+    if(!pick){if(!labSet.has(i)||!first)continue;pick=first}
+    boxes.push(pick[3]);ctx.textAlign=pick[2];ctx.globalAlpha=o.a;ctx.lineWidth=3.5;ctx.strokeStyle=C.bg;ctx.strokeText(s,pick[0],pick[1]);ctx.fillStyle=C.fg;ctx.fillText(s,pick[0],pick[1])}
+  ctx.textAlign='left';ctx.font='12px "IBM Plex Sans",sans-serif';
   if(HOV!=null&&SN.has(HOV)){const o=SN.get(HOV),n=N[HOV],r=rad(o)*Math.min(1.8,Math.max(.55,k)),X=sx(o.x),Y=sy(o.y);
     ctx.globalAlpha=.8;ctx.lineWidth=1.2;ctx.strokeStyle=C.fg;for(const l of Ls){if(l.source.i!==HOV&&l.target.i!==HOV)continue;const q=l.source.i===HOV?l.target:l.source;ctx.beginPath();ctx.moveTo(X,Y);ctx.lineTo(sx(q.x),sy(q.y));ctx.stroke()}
     ctx.globalAlpha=1;ctx.beginPath();ctx.arc(X,Y,r+4,0,7);ctx.stroke();
     const s=n.label,sub=n.t===0?`${n.year||''} · ${nArt[HOV]} artistas`:`${nEx[HOV]} ${nEx[HOV]===1?'exposición':'exposiciones'} · ${gdeg.get(HOV)||0} vínculos aquí`;
     ctx.font='600 13px "IBM Plex Sans",sans-serif';const w1=ctx.measureText(s).width;ctx.font='11px "IBM Plex Mono",monospace';const w2=ctx.measureText(sub).width;
-    const bw=Math.max(w1,w2)+16,bh=40;let bx=X+r+8,by=Y-bh/2;if(bx+bw>W-4)bx=X-r-8-bw;by=Math.max(4,Math.min(H-bh-4,by));
+    const bw=Math.max(w1,w2)+16,bh=40;let bx=X+r+8,by=Y-bh/2;if(bx+bw>W-4)bx=X-r-8-bw;bx=Math.max(4,Math.min(W-bw-4,bx));by=Math.max(4,Math.min(H-bh-4,by));
     ctx.fillStyle=C.bg;ctx.globalAlpha=.94;ctx.fillRect(bx,by,bw,bh);ctx.globalAlpha=1;ctx.strokeStyle=C.line;ctx.lineWidth=1;ctx.strokeRect(bx+.5,by+.5,bw-1,bh-1);
     ctx.fillStyle=C.fg;ctx.font='600 13px "IBM Plex Sans",sans-serif';ctx.fillText(s,bx+8,by+13);ctx.fillStyle=C.muted;ctx.font='11px "IBM Plex Mono",monospace';ctx.fillText(sub,bx+8,by+29)}
   ctx.globalAlpha=1}

@@ -5,9 +5,11 @@ def R(a,b,n=1):
     global s
     assert s.count(a)==n,(s.count(a),a[:80]);s=s.replace(a,b)
 # colores: curadores en el naranja de los presentadores; presentadores en amarillo pálido
-for a,b in [('--curador:#c8323c;','--curador:#e08a1e;'),('--presentador:#e08a1e;','--presentador:#c9b04a;')]:
+# paleta v3 (a partir de los colores que propuso Carlos): claro / oscuro
+for a,b in [('--ind:#1b9a9a;','--ind:#005d71;'),('--col:#e2725b;','--col:#ff6b59;'),('--artista:#4f9a2c;','--artista:#1a983f;'),('--curador:#c8323c;','--curador:#e69500;'),('--presentador:#e08a1e;','--presentador:#c9b04a;'),('--apoyo:#7a5fc0;','--apoyo:#464c89;'),('--curart:#8a4fb8;','--curart:#dd4d88;')]:
     R(a,b)
-R('--curador:#ef5a62;','--curador:#f2a443;',2);R('--presentador:#f2a443;','--presentador:#ece08c;',2)
+for a,b in [('--ind:#3cc2c0;','--ind:#3aa6bd;'),('--col:#f08a72;','--col:#ff6b59;'),('--artista:#7cc552;','--artista:#3fbf62;'),('--curador:#ef5a62;','--curador:#ffa600;'),('--presentador:#f2a443;','--presentador:#ece08c;'),('--apoyo:#a08ae0;','--apoyo:#8e94d8;'),('--curart:#b980e6;','--curart:#ef6fa3;')]:
+    R(a,b,2)
 # CSS de páginas y de la cartografía
 R('html:not(.pg-metodo) #metodo{display:none}','''html:not(.pg-metodo) #metodo{display:none}
 html:not(.pg-red) #explorar{display:none}html.pg-red #inicio,html.pg-red main,html.pg-red #carto{display:none}html.pg-red #explorar{display:grid}
@@ -29,6 +31,7 @@ html.pg-metodo #carto{display:none}#expedientes{display:none}
 .card p{margin:0 0 12px;line-height:1.6;font-size:16px}
 .card .src{font-size:12px;color:var(--muted)}
 .card .lk{display:inline-block;margin-top:6px;font-size:13px;color:var(--muted)}.card .lk:hover{color:var(--fg)}
+.card .nw{white-space:nowrap}.card table.m{width:100%;border-collapse:collapse;font-size:13px}.card table.m td{padding:2px 0;border-bottom:1px dotted var(--line)}.card table.m td:nth-child(2){color:var(--muted);font-size:12px}.card table.m td:last-child{text-align:right;font:12px var(--f-data);color:var(--muted)}
 .card .sw{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin:0 4px 0 2px;vertical-align:-1px}
 .card .fig{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:8px 0 10px}
 .card .fig .cap{font-size:12px;color:var(--muted);margin:2px 0 8px}.card .fig .big{font:700 30px/1 var(--f-display)}

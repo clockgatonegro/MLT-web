@@ -63,6 +63,14 @@ for a,b in PER:
     met[key]['evrol']=[len(ca),round(sum(ca)/len(ca),4) if ca else None,len(co),round(sum(co)/len(co),4) if co else None]
     print(key,G.number_of_nodes(),G.number_of_edges(),len(cs),[len(c) for c in cs[:8]])
 from scipy.stats import spearmanr
+# estabilidad de las comunidades de 1956-2026 (última iteración): 30 semillas, Jaccard de la mejor coincidencia frente a la semilla 7
+runs=[nx.community.louvain_communities(U,seed=sd,resolution=1.0) for sd in range(1,31)]
+stab=[]
+for i,c in enumerate(cs):
+    if len(c)<20: continue
+    j=sorted(max(len(c&x)/len(c|x) for x in run) for run in runs)
+    stab.append([i,round(j[15],2),round(j[0],2)])
+print('estabilidad',stab)
 pred=[]
 for i in range(len(PER)-2):
     (ev,dg,_),(ev2,dg2,_)=EV[tuple(PER[i])],EV[tuple(PER[i+1])]
@@ -79,5 +87,5 @@ if os.path.exists(W+'data/piezas_fuentes.csv'):
     for r in csv.DictReader(open(W+'data/piezas_fuentes.csv',encoding='utf-8')):
         i=r['id_expo'].replace('.','')
         if r['id_expo'] in idx: prog.setdefault(r['id_expo'],[]).append([i,1,round(os.path.getsize(W+'programas/piezas/'+i+'.jpg')/1e6,1),r['tipo'],'img'])
-json.dump({'n':nodes,'e':edges,'per':PER,'comm':comm,'met':met,'pred':pred,'prog':prog},open('datos_web.json','w'),ensure_ascii=False,separators=(',',':'))
+json.dump({'n':nodes,'e':edges,'per':PER,'comm':comm,'met':met,'pred':pred,'prog':prog,'stab':stab},open('datos_web.json','w'),ensure_ascii=False,separators=(',',':'))
 import os;print(os.path.getsize('datos_web.json'))

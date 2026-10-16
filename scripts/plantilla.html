@@ -175,6 +175,7 @@ section.s h2{font:700 clamp(26px,3.6vw,38px)/1.05 var(--f-display);letter-spacin
 .idx-head .dl{display:grid;grid-template-columns:repeat(8,1fr);gap:2px;text-align:center}
 .estr2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px 40px;margin:18px 0 6px}.estr2 .estr{margin:0}.estr2 svg.dg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}.estr2 svg.dg.sq{max-width:420px;width:100%;height:auto}
 svg.anim .ph1{fill:var(--muted)}svg.anim .ph2{fill:var(--curador)}
+svg.comstrip text{font:11px var(--f-data);fill:var(--muted)}svg.comstrip text.cl{font:10.5px var(--f-body);fill:var(--fg)}
 .estr{margin:18px 0 6px}.estr figcaption,.dgs figcaption{font-size:13px;color:var(--muted);line-height:1.5;max-width:70ch}
 svg.dg{width:100%;height:auto;display:block}svg.dg text{font:12px var(--f-body);fill:var(--fg)}svg.dg text.em{fill:var(--muted);font-style:italic;font-size:11px}
 .estr svg.dg{max-width:640px}
@@ -239,7 +240,7 @@ html.pg-metodo #metodo{padding-top:24px}
 <main>
 <section class="s wrap" id="expedientes">
   <p class="eyebrow">Expedientes</p>
-  <h2>Siete lecturas de la red</h2>
+  <h2>Ocho lecturas de la red</h2>
   <p class="lede">Cada expediente cruza lo que dice la red con lo que han escrito quienes estudiaron el museo. Las cifras se calculan en vivo sobre la base de datos; el botón abre la red con el filtro correspondiente.</p>
   <div class="exps" id="exps"></div>
 </section>
@@ -622,24 +623,28 @@ function render(){
   const nb=inView?neighbors(focus):null;
   if(state.layout==='t'){const step=pro&&state.range[1]-state.range[0]<25?(state.range[1]-state.range[0]<12?1:5):10;ctx.strokeStyle=`rgba(${C.edge},.08)`;ctx.fillStyle=C.muted;ctx.lineWidth=1/T.k;ctx.font=`${11/T.k}px "IBM Plex Mono",monospace`;ctx.textAlign='center';
     for(let y=Math.ceil(xYear.domain()[0]/step)*step;y<=xYear.domain()[1];y+=step){const x=xYear(y);ctx.beginPath();ctx.moveTo(x,-4000);ctx.lineTo(x,4000);ctx.stroke();ctx.fillText(y,x,(-H/2-T.y)/T.k+38/T.k)}}
+  const CH=!nb&&comOn()?state.comHi:null,cE=CH!=null?comE:0,inC=i=>pComm.get(i)===CH;
   // aristas
-  ctx.lineWidth=.6/T.k;ctx.strokeStyle=`rgba(${C.edge},${E1?(pro?.18:.12)*(1-.92*E1):nb?.035:(pro?.18:.12)})`;ctx.beginPath();
+  ctx.lineWidth=.6/T.k;ctx.strokeStyle=`rgba(${C.edge},${E1?(pro?.18:.12)*(1-.92*E1):nb?.035:(pro?.18:.12)*(1-.85*cE)})`;ctx.beginPath();
   if(pro){for(const l of PL){const a=P(N[l.s]),b=P(N[l.t]);ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)}}
   else{for(const e of VE){const a=P(N[e.s]),b=P(N[e.t]);ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)}}
   ctx.stroke();
-  if(pro&&T.k>.9&&!nb){ctx.fillStyle=`rgba(${C.edge},.35)`;for(const l of PL){arrow(N[l.s],N[l.t])}}
+  if(cE){const col=CH<CAT.length?CAT[CH]:C.muted;ctx.strokeStyle=col;ctx.fillStyle=col;ctx.globalAlpha=.55*cE;ctx.lineWidth=.9/T.k;ctx.beginPath();for(const l of PL){if(inC(l.s)&&inC(l.t)){ctx.moveTo(N[l.s].x,N[l.s].y);ctx.lineTo(N[l.t].x,N[l.t].y)}}ctx.stroke();
+    if(T.k>.9)for(const l of PL){if(inC(l.s)&&inC(l.t))arrow(N[l.s],N[l.t])}ctx.globalAlpha=1}
+  if(pro&&T.k>.9&&!nb&&!cE){ctx.fillStyle=`rgba(${C.edge},.35)`;for(const l of PL){arrow(N[l.s],N[l.t])}}
   if(nb){ctx.lineWidth=(nb.size>60?.7:1.3)/T.k;ctx.globalAlpha=nb.size>60?.45:.9;
     if(pro){for(const l of PL){if(l.s!==focus&&l.t!==focus)continue;const a=P(N[l.s]),b=P(N[l.t]);ctx.strokeStyle=l.s===focus?C.role[1]:C.role[0];ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();ctx.fillStyle=ctx.strokeStyle;arrow(a,b,N[l.t])}}
     else{for(const e of VE){if(e.s!==focus&&e.t!==focus)continue;const a=P(N[e.s]),b=P(N[e.t]);ctx.strokeStyle=C.role[e.r];ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
     ctx.globalAlpha=1}
   // nodos
-  for(const n of nodes){const r=radius(n),p=P(n);ctx.globalAlpha=nb&&!nb.has(n.i)?(E1?1-.95*E1:.16):1;if(ctx.globalAlpha<.02)continue;ctx.fillStyle=color(n);ctx.beginPath();
+  for(const n of nodes){const r=radius(n),p=P(n);ctx.globalAlpha=nb&&!nb.has(n.i)?(E1?1-.95*E1:.16):cE&&!inC(n.i)?1-.93*cE:1;if(ctx.globalAlpha<.02)continue;ctx.fillStyle=color(n);ctx.beginPath();
     if(n.t===0)ctx.rect(p.x-r,p.y-r,2*r,2*r);else ctx.arc(p.x,p.y,r,0,7);ctx.fill()}
   ctx.globalAlpha=1;
   // etiquetas
   ctx.textAlign='left';ctx.textBaseline='middle';
   let lab=[];
   if(nb)nb.forEach(i=>{if(!E1||i===focus||ego.lab.has(i)||i===state.hover)lab.push(N[i])});
+  else if(cE>.4)lab=nodes.filter(n=>inC(n.i)).sort((a,b)=>pdeg(b.i)-pdeg(a.i)).slice(0,T.k>1.5?60:30);
   else if(pro){const thr=T.k>2?2:T.k>1.2?5:10;lab=nodes.filter(n=>pdeg(n.i)>=thr).sort((a,b)=>pdeg(b.i)-pdeg(a.i))}
   else{const thr=T.k>2.2?4:T.k>1.3?12:28;lab=nodes.filter(n=>n.t>0&&deg[n.i]>=thr)}
   for(const n0 of lab.slice(0,E1?260:180)){const n=P(n0),r=radius(n0),me=n0.i===focus;ctx.globalAlpha=E1&&!me?Math.max(.15,E1):1;ctx.font=`${me?'600 ':''}${(me?12.5:11.5)/T.k}px "IBM Plex Sans",sans-serif`;
@@ -675,10 +680,17 @@ cv.addEventListener('pointermove',ev=>{const i=pick(ev);if(i!==state.hover){stat
   if(i==null){tip.hidden=true;return}const n=N[i];
   showTip(ev,n.t===0?`${n.label}${n.year?' · '+n.year:''} · ${MODS[n.mod]}`:state.view==='pro'?`${n.label} · ${pRole.get(i)}`:`${n.label} · ${deg[i]} expos`)});
 cv.addEventListener('pointerleave',()=>{state.hover=null;tip.hidden=true;render()});
-cv.addEventListener('click',ev=>select(pick(ev)));
+cv.addEventListener('click',ev=>{const i=pick(ev);if(i==null&&state.comHi!=null)comClear(true);select(i)});
 document.getElementById('zin').onclick=()=>d3.select(cv).transition().duration(250).call(zoom.scaleBy,1.5);
 document.getElementById('zout').onclick=()=>d3.select(cv).transition().duration(250).call(zoom.scaleBy,1/1.5);
 document.getElementById('zfit').onclick=fit;
+let comE=0,comRaf=0;
+function comOn(){return state.comHi!=null&&state.view==='pro'&&pComm&&`${state.range[0]}-${state.range[1]}`===state.comKey}
+function comFade(to,done){cancelAnimationFrame(comRaf);const e0=comE,t0=performance.now();const st=now=>{const u=Math.min(1,(now-t0)/600);comE=e0+(to-e0)*ease(u);render();if(u<1)comRaf=requestAnimationFrame(st);else if(done)done()};comRaf=requestAnimationFrame(st)}
+function comClear(anim){if(state.comHi==null)return;if(anim)comFade(0,()=>{state.comHi=null;render()});else{cancelAnimationFrame(comRaf);comE=0;state.comHi=null}}
+function fitCom(){const nodes=PN.filter(n=>pComm&&pComm.get(n.i)===state.comHi&&n.x!=null);if(!nodes.length)return fit();const xs=d3.extent(nodes,n=>n.x),ys=d3.extent(nodes,n=>n.y);
+  const k=Math.min(4,.8*Math.min(W/(xs[1]-xs[0]||1),H/(ys[1]-ys[0]||1)));
+  d3.select(cv).transition().duration(650).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity.translate(-k*(xs[0]+xs[1])/2,-k*(ys[0]+ys[1])/2).scale(k))}
 function fit(){const nodes=sim.nodes();if(!nodes.length)return;const xs=d3.extent(nodes,n=>n.x),ys=d3.extent(nodes,n=>n.y);
   const k=Math.min(4,.9*Math.min(W/(xs[1]-xs[0]||1),H/(ys[1]-ys[0]||1)));
   d3.select(cv).transition().duration(400).call(zoom.transform,d3.zoomIdentity.translate(-k*(xs[0]+xs[1])/2,-k*(ys[0]+ys[1])/2).scale(k))}
@@ -869,7 +881,7 @@ new ResizeObserver(()=>drawTimeline()).observe(document.getElementById('tl'));
 function show(){document.querySelectorAll('.v-red,.v-pro,.v-dur').forEach(el=>{el.hidden=!el.classList.contains('v-'+state.view)});document.getElementById('lay-f').disabled=false;
   cv.hidden=state.view==='dur';document.getElementById('dur').toggleAttribute('hidden',state.view!=='dur');document.getElementById('zoomctl').hidden=state.view==='dur';
   ['red','pro','dur'].forEach(v=>document.getElementById('t-'+v).setAttribute('aria-selected',state.view===v))}
-function setView(v){track('cambiar_vista',{vista:v});if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
+function setView(v){track('cambiar_vista',{vista:v});comClear(false);if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
   state.view=v;state.hover=null;
   if(v==='pro'&&state.per<0&&!(state.range[0]===Y0&&state.range[1]===Y1)){}
   show();rebuild(v==='dur'?0:.8);if(v!=='dur')setTimeout(fit,v==='pro'?1400:900);legend()}
@@ -903,7 +915,7 @@ qin.addEventListener('keydown',ev=>{if(ql.hidden&&ev.key!=='Enter')return;
   else if(ev.key==='Escape'){ev.stopPropagation();ql.hidden=true;qin.setAttribute('aria-expanded',false)}});
 ql.addEventListener('mousedown',ev=>{const li=ev.target.closest('li');if(li){ev.preventDefault();qPick(+li.dataset.i)}});
 qin.addEventListener('blur',()=>setTimeout(()=>{ql.hidden=true;qin.setAttribute('aria-expanded',false)},120));
-addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null)});
+addEventListener('keydown',ev=>{if(ev.key==='Escape'){comClear(true);select(null)}});
 
 // arranque
 segPer();show();resize();rebuild(1);
@@ -917,13 +929,14 @@ const MG=AGENTS.find(n=>n.label==='Miguel González'&&n.t===1);
 
 // enlaces profundos: #red?v=pro&a=1993&b=2006&sel=p.3219&r=1110&md=1&l=t&c=rol
 function hashOf(o){const q=new URLSearchParams();q.set('v',o.view||'red');if(o.a)q.set('a',o.a);if(o.b)q.set('b',o.b);if(o.sel)q.set('sel',o.sel);
-  if(o.roles)q.set('r',o.roles.join(''));if(o.mindeg)q.set('md',o.mindeg);if(o.layout)q.set('l',o.layout);if(o.color)q.set('c',o.color);return '#red?'+q}
+  if(o.roles)q.set('r',o.roles.join(''));if(o.mindeg)q.set('md',o.mindeg);if(o.layout)q.set('l',o.layout);if(o.color)q.set('c',o.color);if(o.com!=null)q.set('com',o.com);return '#red?'+q}
 function parseHash(h){if(!h.startsWith('#red?'))return null;const q=new URLSearchParams(h.slice(5)),o={view:q.get('v')||'red'};
   if(!['red','pro','dur'].includes(o.view))o.view='red';
-  if(q.get('a'))o.a=+q.get('a');if(q.get('b'))o.b=+q.get('b');if(q.get('sel'))o.sel=q.get('sel');
+  if(q.get('a'))o.a=+q.get('a');if(q.get('b'))o.b=+q.get('b');if(q.get('sel'))o.sel=q.get('sel');if(/^\d+$/.test(q.get('com')||''))o.com=+q.get('com');
   if(/^[01]{4}$/.test(q.get('r')||''))o.roles=q.get('r').split('').map(Number);if(q.get('md'))o.mindeg=Math.max(1,Math.min(10,+q.get('md')||2));
   if(q.get('l')==='t'||q.get('l')==='f')o.layout=q.get('l');if(q.get('c')==='com'||q.get('c')==='rol')o.color=q.get('c');return o}
 function explore(o,scroll=true){
+  comClear(false);state.comHi=o.com??null;state.comKey=`${o.a??Y0}-${o.b??Y1}`;
   if(state.view==='red')saveNodes(pos.red);if(state.view==='pro')saveNodes(pos.pro);
   state.view=o.view||'red';state.hover=null;state.sel=null;
   const a=Math.max(Y0,o.a||Y0),b=Math.min(Y1,o.b||Y1);state.range=[a,b];state.per=PERS.findIndex(p=>p.a===a&&p.b===b);segPer();
@@ -937,7 +950,7 @@ function explore(o,scroll=true){
   show();rebuild(.9);legend();
   try{history.replaceState(null,'',hashOf(o))}catch(e){}
   if(scroll)document.getElementById('explorar').scrollIntoView({behavior:'smooth',block:'start'});
-  setTimeout(()=>{if(state.view!=='dur')fit();if(target)setTimeout(()=>select(target.i,true),450)},state.view==='pro'?1400:1000);
+  setTimeout(()=>{if(state.view!=='dur'){if(state.comHi!=null){fitCom();comFade(1)}else fit()}if(target)setTimeout(()=>select(target.i,true),450)},state.view==='pro'?1400:1000);
 }
 
 // portada
@@ -1055,8 +1068,40 @@ const EXPS=[
     return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="El ${D.p1} % de los artistas expone una sola vez">${B.map((b,i)=>{const w=(W-lx-100)*b.n/mx,y=i*rh+2;
      return `<text x="${lx-8}" y="${y+14}" text-anchor="end">${b.k}</text><rect x="${lx}" y="${y+3}" width="${Math.max(w,1)}" height="${rh-8}" fill="${i?'var(--muted)':'var(--artista)'}" fill-opacity="${i?.45:1}"><title>${b.k} ${b.k==='1'?'exposición':'exposiciones'}: ${fmt(b.n)} artistas</title></rect><text x="${lx+w+6}" y="${y+14}">${b.p} % · ${fmt(b.n)}</text>`}).join('')}</svg>`})()}`},
   src:'<b>Fuentes:</b> Base de datos MLT 2016 (hasta 2006) y complemento 2016–2026. Cálculos e interpretación de los autores.',
-  gos(){return [{label:'Artistas en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[1,0,0,0]}},{label:'Auspiciadores en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[0,0,0,1]}}]}}
+  gos(){return [{label:'Artistas en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[1,0,0,0]}},{label:'Auspiciadores en el tiempo',o:{view:'red',a:Y0,b:Y1,layout:'t',roles:[0,0,0,1]}}]}},
+ {id:'comunidades',k:'1956–2026 · Comunidades',t:'Ocho comunidades y quienes las sostienen',
+  body(){const K=COMS(),M=K.main,mg=M[0],rest=M.slice(1),two=rest.filter(c=>c.cur.length>1).length,sz=rest.map(c=>c.n);
+   return `<p>Una comunidad es un grupo de agentes que se vinculan más entre sí que con el resto de la red. Para encontrarlas usamos el algoritmo de Louvain sobre la red Curadores → artistas de 1956–2026, en la que cada flecha va de un curador o presentador a un artista y pesa tanto como el número de exposiciones que comparten. El algoritmo propone ${fmt(K.ncom)} comunidades. Aquí presentamos ocho de las más grandes, elegidas por los autores y nombradas por los curadores que las sostienen —los que suman al menos el 30 % de los vínculos del curador principal de cada una— y por los años en que curaron dentro de ella.</p>
+   <p>La de ${mg.name} es, de lejos, la mayor: ${fmt(mg.n)} agentes, entre ellos buena parte de los artistas consagrados que pasaron por el museo. Las otras siete tienen entre ${d3.min(sz)} y ${d3.max(sz)} agentes, y ${two===rest.length?'todas':`${two} de ellas`} las sostienen dos o tres curadores que trabajan juntos. Ordenadas en el tiempo, muestran el paso del curador central a los equipos curatoriales y al curador-artista que describen los expedientes 03 y 05.</p>
+   <p>No todas las comunidades que propone el algoritmo son grupos de trabajo. ${(['Ninguna','Una','Dos','Tres','Cuatro','Cinco','Seis','Siete','Ocho','Nueve'][K.single.length])||K.single.length} de ellas, con más de 30 agentes, se forman alrededor de una sola exposición grande: ${K.single.map(c=>`«${esc(c.ex)}» (${c.y})`).join(', ')}. El algoritmo las separa porque sus artistas casi no vuelven a cruzarse con el resto de la red.${M.filter(c=>c.one>=.6).map(c=>` Entre las ocho, la de ${c.name} se parece a ellas: el ${Math.round(100*c.one)} % de sus vínculos viene de «${esc(c.ex)}» (${c.y}).`).join('')}</p>
+   <p>Louvain parte de un orden aleatorio, así que repetimos el cálculo con 30 semillas distintas. Las ocho comunidades se mantienen: la mediana del índice de Jaccard frente al resultado publicado es de al menos ${dn(d3.min(M,c=>c.jm),2)} en todas${K.ev?`. Una comunidad menor, que reúne a ${K.ev.names} —tres de los «cuatro evangelistas» de Wills, separados de Miguel González—, es inestable: su mediana es de ${dn(K.ev.jm,2)} y en algunas ejecuciones se funde con la de González. Es una pista, no un hallazgo`:''}.</p>`},
+  fig(){const K=COMS(),M=K.main,W=320,rh=34,top=4,H=M.length*rh+top+16,x=d3.scaleLinear([Y0,Y1],[0,W]);let g='';
+   M.forEach((c,i)=>{const y=top+i*rh,mx=d3.max(c.yc.values())||1;g+=`<text x="0" y="${y+11}" class="cl">${esc(c.cur.map(([i])=>({'Alejandro Martín Maldonado':'Martín'})[N[i].label]||N[i].label.split(' ').pop()).join(' · '))} · ${c.a===c.b?c.a:c.a+'–'+c.b}</text>`;
+     c.yc.forEach((v,yr)=>{g+=`<rect x="${x(yr)}" y="${y+15}" width="${Math.max(W/(Y1-Y0)-.6,1)}" height="11" fill="${c.col}" fill-opacity="${.2+.8*Math.sqrt(v/mx)}"><title>${yr}: ${v} vínculos</title></rect>`})});
+   [1960,1980,2000,2020].forEach(t=>{g+=`<text x="${x(t)}" y="${H-2}" text-anchor="middle">${t}</text>`});
+   return `<div class="cap">Años en que cada comunidad está activa: vínculos curador → artista dentro de ella. El color es el de la comunidad en la red.</div><svg viewBox="0 0 ${W} ${H}" role="img" class="comstrip">${g}</svg>
+   <div class="cap" style="margin-top:14px">Agentes por comunidad y estabilidad (mediana de Jaccard en 30 ejecuciones)</div>${list(M.map(c=>[esc(c.short),`${fmt(c.n)} · ${dn(c.jm,2)}`]))}`},
+  src:'<b>Fuentes:</b> base de datos MLT 2016 y complemento 2016–2026. Comunidades de Louvain (resolución 1,0) sobre la red Curadores → artistas de 1956–2026, sin dirección y ponderada. Selección, nombres e interpretación de los autores.',
+  gos(){return COMS().main.map(c=>({label:c.short,o:{view:'pro',a:Y0,b:Y1,color:'com',com:c.k}}))}}
 ];
+let COMS_=null;function COMS(){if(COMS_)return COMS_;
+ const key=`${Y0}-${Y1}`,cm=COMM[key],stab=new Map((RAW.stab||[]).map(r=>[r[0],r])),byc=new Map();
+ const gC=k=>{if(!byc.has(k))byc.set(k,{k,cur:new Map(),yrs:[],ex:new Map(),yc:new Map(),cy:new Map()});return byc.get(k)};
+ EXPOS.forEach(x=>{if(!x.year)return;const R=rolesOf(x);R[1].concat(R[2]).forEach(c=>{const k=cm.get(c);if(k==null)return;R[0].forEach(a=>{if(a===c||cm.get(a)!==k)return;const o=gC(k);
+   o.cur.set(c,(o.cur.get(c)||0)+1);o.ex.set(x.i,(o.ex.get(x.i)||0)+1);o.yc.set(x.year,(o.yc.get(x.year)||0)+1);if(!o.cy.has(c))o.cy.set(c,[]);o.cy.get(c).push(x.year)})})});
+ const size=new Map();cm.forEach(k=>size.set(k,(size.get(k)||0)+1));
+ const sur=s=>{const p=s.split(' ');return p.length>2&&/^(Juan|José|María|Ana|Carlos|Luis)$/.test(p[0])?p.slice(0,3).join(' '):p.slice(0,2).join(' ')};
+ const info=k=>{const o=byc.get(k);if(!o)return null;const cs=[...o.cur].sort((a,b)=>b[1]-a[1]),mx=cs[0][1],cur=cs.filter(c=>c[1]>=.3*mx).slice(0,3);
+   const ys=cur.flatMap(([c])=>o.cy.get(c)),ex=[...o.ex].sort((a,b)=>b[1]-a[1]),tot=d3.sum(ex,e=>e[1]),nm=cur.map(([c])=>N[c].label),j=nm.length>1?nm.slice(0,-1).join(', ')+' y '+nm[nm.length-1]:nm[0];
+   return {k,cur,n:size.get(k),a:d3.min(ys),b:d3.max(ys),name:j,short:cur.map(([c])=>sur(N[c].label)).join(' · '),yc:o.yc,col:k<CAT.length?CAT[k]:C.mod[2],
+     jm:(stab.get(k)||[0,null])[1],ex:N[ex[0][0]].label,y:N[ex[0][0]].year,one:ex[0][1]/tot};};
+ const anchors=['Miguel González','Alejandro Martín Maldonado','Wilson Díaz','Yolanda Chois','Juan Sebastián Ramirez','Lucas Ospina','Melissa Aguilar','Riccardo Giacconi'];
+ const ks=[...new Set(anchors.map(l=>{const n=N.find(m=>m.label===l);return n?cm.get(n.i):null}).filter(k=>k!=null))];
+ const main=ks.map(info).filter(Boolean).sort((a,b)=>a.a-b.a);
+ const single=[...size].filter(([k,n])=>n>30&&!ks.includes(k)).map(([k])=>info(k)).filter(c=>c&&c.one>=.6).sort((a,b)=>a.y-b.y);
+ const ba=N.find(m=>m.label==='Álvaro Barrios'),bk=ba?cm.get(ba.i):null,bi=bk!=null&&!ks.includes(bk)?info(bk):null;
+ const ev=bi&&['Alberto Sierra','Eduardo Serrano'].every(l=>{const n=N.find(m=>m.label===l);return n&&cm.get(n.i)===bk})?{names:'Álvaro Barrios, Alberto Sierra y Eduardo Serrano',jm:bi.jm}:null;
+ return COMS_={main,single,ev,ncom:new Set(cm.values()).size}}
 let CIRC_=null;function CIRC(){if(CIRC_)return CIRC_;
  const art=[];EXPOS.forEach(x=>{if(!x.year)return;rolesOf(x)[0].forEach(t=>art.push([t,x.year,x.i]))});
  const ex=new Map();art.forEach(([t,y,e])=>{if(!ex.has(t))ex.set(t,new Set());ex.get(t).add(e)});const cnt=[...ex.values()].map(s=>s.size);

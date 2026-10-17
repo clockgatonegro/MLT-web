@@ -105,6 +105,7 @@ NAMEFIX = {'adriana castellanos olmedos': 'Adriana Castellanos Olmedo',
            'maritza sanchez h': 'Maritza Sánchez', 'elin grueso': 'Eblin Grueso', 'vanesa sandoval': 'Vanessa Sandoval', 'colectivo nois radio': 'Nois Radio',  # misma persona, confirmado por los autores (15/10/2026)
            'manuel augusto mendes soares': 'Manuel Augusto Soares Mendes'}
 
+ALIAS['jorge ceballos'] = 'p.1383'  # Jorge Ceballos (texto web) es el mismo registro p.1383
 def resolver(nombre, preferir):
     k = norm(nombre)
     if k in NAMEFIX: nombre = NAMEFIX[k]; k = norm(nombre)
@@ -273,17 +274,36 @@ if os.path.exists(TRI):
         no_cruzados[:] = [n for n in no_cruzados if n['id_expo'] not in retirar]
     print('triangulación Cactus:', sum(1 for d in docs.values() if d), 'exposiciones con documento de Cactus |', len(conflictos), 'conflictos |', len(dup), 'duplicados unidos |', len(retirar), 'retiradas')
 
-# ---------- duplicados del catálogo de personas ----------
-# Confirmados por los autores (16/10/2026): «Bernanrdo Salcedo» es Bernardo Salcedo y «Binicio Horta» es Vinicio Horta.
-# «Bernado Salcedo» se une por la misma razón (errata evidente del mismo registro). Las aristas pasan al registro correcto.
-UNIR = {'p.2040': 'p.127', 'p.2042': 'p.127', 'p.2025': 'p.744'}
+# ---------- duplicados y erratas del catálogo de personas ----------
+# Decisiones de los autores (16/10/2026) en fuentes/erratas_decisiones.csv: si la decisión repite uno de los dos nombres,
+# el otro registro se une a ese. Casos especiales escritos a mano abajo. Las aristas pasan al registro que se conserva.
+UNIR, RENOMBRAR = {}, {}
+_ED = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fuentes', 'erratas_decisiones.csv')
+if os.path.exists(_ED):
+    for r in csv.DictReader(open(_ED, encoding='utf-8')):
+        d = r['decision'].strip()
+        if d.startswith('Son personas distintas'): continue
+        if d == r['nombre_a']: UNIR[r['id_b']] = r['id_a']
+        elif d == r['nombre_b']: UNIR[r['id_a']] = r['id_b']
+UNIR.pop('p.1383', None)  # José Ceballos es Jorge Ceballos: se conserva el registro del catálogo con el nombre correcto
+UNIR.update({'p.2040': 'p.127', 'p.2042': 'p.127',        # Bernanrdo / Bernado Salcedo
+             'p.2757': 'p.531',                           # Gertrudis Goldschmidt -> Gertrud Goldschmidt (Gego)
+             'p.2129': 'p.2132',                          # Aloysio -> Aloísio Magalhães
+             'p.2453': 'p.44', 'p.2945': 'p.44',          # María Teresa / Thereza de Patiño -> María Thereza Negreiros
+             'p.2134': 'p.80'})                           # Alnfonso Quijano -> Alfonso Quijano Acero
+RENOMBRAR.update({'p.2132': 'Aloísio Magalhães', 'p.1383': 'Jorge Ceballos', 'p.1246': 'Martha Lucía Hincapié'})
+def _fin(x):
+    while x in UNIR: x = UNIR[x]
+    return x
 _vistos, _nuevas = set(), []
 for a in aristas:
-    a['Target'] = UNIR.get(a['Target'], a['Target'])
+    a['Target'] = _fin(a['Target'])
     k = (a['Source'], a['Target'], a['rol'])
     if k in _vistos: continue
     _vistos.add(k); _nuevas.append(a)
 aristas[:] = _nuevas
+for _k, _v in RENOMBRAR.items():
+    if _k in agentes: agentes[_k]['Label'] = _v
 # ---------- salidas ----------
 grado = collections.Counter(a['Target'] for a in aristas)
 roles_ag = collections.defaultdict(set)

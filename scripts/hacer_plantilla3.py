@@ -74,6 +74,8 @@ R("function explore(o,scroll=true){\n","function explore(o,scroll=true){\n  if(!
 # aviso de pantalla grande: solo en red.html; en la cartografía el relato funciona en el celular
 R("{const mv=document.getElementById('movil');let seen=null;","{const mv=document.documentElement.classList.contains('pg-red')?document.getElementById('movil'):document.createElement('div');let seen=null;")
 R("La red completa se explora mejor en un computador. En el celular puede leer los expedientes y el índice.","La red completa se explora mejor en un computador. En el celular puede seguir el recorrido de la cartografía y el índice.")
+# la portada de la v3 dibuja su propia red de fondo (carto.js)
+R("heroN=VN.slice();heroE=VE.slice();drawHero();setTimeout(()=>{heroLive=false;drawHero()},9000);","")
 # altura de la barra de navegación para el gráfico fijo
 s=s.replace('</body>','</body>')
 s+='\n<script>(function(){const n=document.querySelector(".nav");const f=()=>document.documentElement.style.setProperty("--navh",n.offsetHeight+"px");f();addEventListener("resize",f)})();</script>\n<script>\n'+open('/home/claude/mlt/carto.js',encoding='utf-8').read()+'\n</script>\n'

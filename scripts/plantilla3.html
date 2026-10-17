@@ -470,6 +470,7 @@ if(!rm)new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!on){on=
         <li>Azam, M. y A. de Federico. 2014. «Sociología del arte y análisis de redes sociales». <em>Redes</em> 25 (2): 1–22.</li>
         <li>Becker, Howard S. 1982. <em>Art Worlds</em>. Berkeley: University of California Press.</li>
         <li>Barabási, Albert-László. 2009. «Scale-free networks: a decade and beyond». <em>Science</em> 325 (5939): 412–413.</li>
+        <li>Giuffre, Katherine. 1999. «Sandpiles of Opportunity: Success in the Art World». <em>Social Forces</em> 77 (3): 815–832.</li>
         <li>Granovetter, Mark S. 1973. «The strength of weak ties». <em>American Journal of Sociology</em> 78 (6): 1360–1380.</li>
       </ul>
       <h3>Datos abiertos</h3>
@@ -1217,7 +1218,7 @@ document.getElementById('predtxt').textContent=RAW.pred.map(([a,b,re,rd])=>`${a[
 {const links=[...document.querySelectorAll('.nav a')],io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
  ['expedientes','quien','explorar','metodo'].forEach(id=>io.observe(document.getElementById(id)))}
 
-heroN=VN.slice();heroE=VE.slice();drawHero();setTimeout(()=>{heroLive=false;drawHero()},9000);
+
 {const o=parseHash(location.hash);if(o)setTimeout(()=>explore(o,true),300)}
 </script>
 <script>
@@ -1291,7 +1292,7 @@ const commOf=k=>new Set([...CM].filter(([,c])=>c===k).map(([i])=>i));
 const L=(o)=>`<a class="lk" href="red.html${hashOf(o)}">Abrir esta vista en la red →</a>`;
 const S=[];
 const step=o=>S.push(o);
-step({act:'Antes de empezar',t:'Una exposición',mode:'expo',range:[1963,1963],only:['ex.77'],minEx:1,roles:[1,1,1,1],
+step({act:'Antes de empezar',t:'Una exposición',mode:'expo',range:[1963,1963],only:['ex.77'],minEx:1,roles:[1,1,1,1],dist:95,charge:4,
   labels:()=>[X15.i,...x15A.slice(),...X15.adj.filter(k=>E[k].r>0).map(k=>E[k].t)],ring:X15?[X15.i]:[],
   html:()=>`<p>Empecemos por una sola exposición. En 1963 la casona de San Antonio recibió el ${esc(X15.label)}: ${x15A.length} artistas, una presentadora —Mireya Zawadzki— y un auspiciador, Taxader de Aviación.</p>
    <p>En esta red cada exposición es un cuadrado y cada persona o entidad que participó en ella es un círculo unido a él. El color dice qué hizo cada quien: <span class="nw"><span class="sw" style="--c:var(--artista)"></span>expuso,</span> <span class="nw"><span class="sw" style="--c:var(--curador)"></span>curó,</span> <span class="nw"><span class="sw" style="--c:var(--presentador)"></span>presentó,</span> <span class="nw"><span class="sw" style="--c:var(--apoyo)"></span>apoyó.</span></p>`,
@@ -1309,7 +1310,7 @@ step({t:'El estallido',mode:'expo',range:[1956,1986],minEx:1,roles:[1,1,1,0],rin
 step({t:'Los que pasan una vez',mode:'expo',range:[1956,1986],minEx:1,roles:[1,1,1,0],hl:()=>new Set([...bienOnce,...bienSet]),
   labels:()=>BIEN.filter(b=>b.year<=1986).map(b=>b.i),html:()=>P('bienales',2),link:{view:'red',a:1969,b:1986,mindeg:1}});
 step({t:'Los que vuelven',mode:'expo',range:[1956,Y1],minEx:2,roles:[1,1,1,0],hl:()=>bienBack,
-  auto:false,labels:()=>[...bienBack].filter(i=>nEx[i]>=11).sort((a,b)=>nEx[b]-nEx[a]),
+  labels:()=>topBy(bienBack,i=>nEx[i],10),
   html:()=>{const v=[...bienBack],m=d3.mean(v,i=>nEx[i]),top=new Set(topBy(new Set(AGENTS.map(a=>a.i)),i=>nEx[i],100)),k=v.filter(i=>top.has(i)).length;
     return `<p>Los otros ${fmt(v.length)} artistas de las bienales sí vuelven. En promedio participan en ${dn(m,1)} exposiciones del Museo, y ${k} de ellos están entre los cien agentes con más exposiciones en setenta años.</p><p>Desde aquí la red muestra solo a quienes participaron en dos exposiciones o más.</p>`},
   link:{view:'red',a:Y0,b:Y1,mindeg:2}});
@@ -1323,7 +1324,7 @@ step({t:'El nodo mayor',mode:'pro',range:[1982,2006],minEx:2,hl:()=>new Set([MG.
   html:()=>P('miguel-gonzalez',0,2),link:{view:'pro',a:1993,b:2006,sel:MG&&MG.id}});
 step({t:'Cuatro evangelistas',mode:'pro',range:[1977,2007],minEx:2,keep:new Set(EV4.map(n=>n.i)),auto:false,
   hl:()=>{const s=new Set(EV4.map(n=>n.i));EV4.slice(1).forEach(c=>{curOf(c).forEach(t=>s.add(t))});return s},
-  labels:()=>{const mgS=curOf(EV4[0]),L=EV4.map(n=>n.i);EV4.slice(1).forEach(c=>curOf(c).forEach(t=>{if(mgS.has(t))L.push(t)}));return L},big:EV4.map(n=>n.i),fit:'focus',
+  labels:()=>{const mgS=curOf(EV4[0]),L=EV4.map(n=>n.i);EV4.slice(1).forEach(c=>curOf(c).forEach(t=>{if(mgS.has(t))L.push(t)}));return L.filter(i=>!/jes[uú]s mar[ií]a zamora|luis fernando pel[aá]ez/i.test(N[i].label))},right:/d[eé]bora arango/i,big:EV4.map(n=>n.i),fit:'focus',
   html:()=>{const [mg,...o]=EV4,mgS=curOf(mg),d=o.map(c=>{const ex=curEx(c),sh=[...curOf(c)].filter(t=>mgS.has(t));return {c,ex,sh}});
     const fr=d.map(({c,ex})=>`${esc(c.label)} curó ${ex.length===1?'una exposición':ex.length+' exposiciones'} (${ex.length?(ex[0].year===ex[ex.length-1].year?ex[0].year:ex[0].year+'–'+ex[ex.length-1].year):''})`);
     const sh=d.map(({c,sh})=>`${esc(c.label.split(' ').pop())}, ${sh.length}${sh.length?` (${sh.slice(0,4).map(nm).join(', ')}${sh.length>4?'…':''})`:''}`);
@@ -1369,8 +1370,8 @@ wrap.innerHTML=S.map((s,i)=>`<div class="cstep" data-i="${i}"><div class="card">
 // ---------- simulación ----------
 const SN=new Map();let cur=null,curG=null,F=null,LAB=[],RING=new Set(),BIG=new Set(),gdeg=new Map();
 const rng=d3.randomLcg(0.4217);
-const sim=d3.forceSimulation().randomSource(rng).force('link',d3.forceLink().distance(l=>cur&&cur.mode==='pro'?26:20).strength(l=>.5/Math.sqrt(Math.min(l.source.k||1,l.target.k||1))))
-  .force('charge',d3.forceManyBody().strength(o=>N[o.i].t===0?-28:-16).distanceMax(320).theta(.95))
+const sim=d3.forceSimulation().randomSource(rng).force('link',d3.forceLink().distance(l=>cur&&cur.dist?cur.dist:cur&&cur.mode==='pro'?26:20).strength(l=>.5/Math.sqrt(Math.min(l.source.k||1,l.target.k||1))))
+  .force('charge',d3.forceManyBody().strength(o=>(N[o.i].t===0?-28:-16)*(cur&&cur.charge||1)).distanceMax(320).theta(.95))
   .force('x',d3.forceX(0).strength(.05)).force('y',d3.forceY(0).strength(.05))
   .force('col',d3.forceCollide(o=>rad(o)+1).iterations(1)).alphaDecay(.028).velocityDecay(.38).stop();
 function rad(o){const n=N[o.i];
@@ -1453,7 +1454,7 @@ function draw(){if(!cur)return;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0
   for(const i of LL){if(i===HOV)continue;const o=SN.get(i);if(!o||o.a<.4||o.x==null)continue;const r=rad(o)*Math.min(1.8,Math.max(.55,k)),cx=sx(o.x),cy=sy(o.y);
     if(cx<-20||cx>W+20||cy<0||cy>H)continue;const bold=BIG.has(i)||RING.has(i);ctx.font=(bold?'600 ':'')+'12px "IBM Plex Sans",sans-serif';
     const s=N[i].label.length>44?N[i].label.slice(0,42)+'…':N[i].label,w=ctx.measureText(s).width;
-    const cand=[[cx+r+4,cy,'left'],[cx-r-4,cy,'right'],[cx,cy-r-9,'center'],[cx,cy+r+10,'center']];let pick=null,first=null;
+    const cand=cur.right&&cur.right.test(N[i].label)?[[cx+r+4,cy,'left']]:[[cx+r+4,cy,'left'],[cx-r-4,cy,'right'],[cx,cy-r-9,'center'],[cx,cy+r+10,'center']];let pick=null,first=null;
     for(const [x,y,al] of cand){const x0=al==='left'?x:al==='right'?x-w:x-w/2,bx=[x0-2,y-8,x0+w+2,y+8];if(x0<4||x0+w>W-4||y<14||y>H-6)continue;if(!first)first=[x,y,al,bx];
       if(!boxes.some(q=>!(bx[2]<q[0]||bx[0]>q[2]||bx[3]<q[1]||bx[1]>q[3]))){pick=[x,y,al,bx];break}}
     if(!pick){if(!labSet.has(i)||!first)continue;pick=first}
@@ -1481,6 +1482,22 @@ host.addEventListener('click',ev=>{const b=ev.target.closest('#cql button');if(!
   let set;if(n.t===0)set=new Set([i,...n.adj.map(k=>E[k].t)]);else{set=new Set([i]);sim.force('link').links().forEach(l=>{if(l.source.i===i)set.add(l.target.i);if(l.target.i===i)set.add(l.source.i)})}
   F=set;LAB=[i,...topBy(set,j=>N[j].adj.length,8)];autoLab(sim.nodes().map(o=>o.i));BIG=new Set([i]);if(!SN.has(i)&&n.t===0){location.href='red.html'+hashOf({view:'red',a:n.year||Y0,b:n.year||Y1,sel:n.id,mindeg:1});return}
   cur={...cur,fit:'focus'};kick()});
+// ---------- red de fondo de la portada ----------
+(function(){const hc=document.getElementById('herocv');if(!hc)return;const hx=hc.getContext('2d');
+  const ids=new Set(),hl=[];EXPOS.forEach(x=>x.adj.forEach(k=>{const e=E[k];if(e.r===3||nEx[e.t]<2)return;ids.add(x.i);ids.add(e.t);hl.push([x.i,e.t])}));
+  const r2=d3.randomLcg(0.77),hn=[...ids].map(i=>{const a=r2()*6.283,r=200*Math.sqrt(r2());return {i,x:Math.cos(a)*r,y:Math.sin(a)*r}}),hm=new Map(hn.map(o=>[o.i,o])),hk=hl.map(([a,b])=>({source:hm.get(a),target:hm.get(b)}));
+  const hs=d3.forceSimulation(hn).randomSource(r2).force('link',d3.forceLink(hk).distance(16).strength(.35)).force('charge',d3.forceManyBody().strength(-9).distanceMax(220).theta(.95))
+    .force('x',d3.forceX(0).strength(.06)).force('y',d3.forceY(0).strength(.06)).alphaDecay(.012).alphaTarget(.015).velocityDecay(.5).stop();
+  let on=true,t0=0;
+  function fr(now){if(!on)return;hs.tick();const R=hc.getBoundingClientRect(),d=devicePixelRatio||1;if(!R.width){requestAnimationFrame(fr);return}
+    if(hc.width!==Math.round(R.width*d)){hc.width=Math.round(R.width*d);hc.height=Math.round(R.height*d)}
+    const xs=d3.extent(hn,o=>o.x),ys=d3.extent(hn,o=>o.y),k=Math.min(R.width*(R.width>900?.55:.95)/(xs[1]-xs[0]||1),R.height*.9/(ys[1]-ys[0]||1));
+    hx.setTransform(d,0,0,d,0,0);hx.clearRect(0,0,R.width,R.height);hx.save();hx.translate(R.width*(R.width>900?.66:.5),R.height*.46);hx.scale(k,k);hx.translate(-(xs[0]+xs[1])/2,-(ys[0]+ys[1])/2);
+    hx.lineWidth=.5/k;hx.strokeStyle=`rgba(${C.edge},.08)`;hx.beginPath();for(const l of hk){hx.moveTo(l.source.x,l.source.y);hx.lineTo(l.target.x,l.target.y)}hx.stroke();
+    hx.globalAlpha=.6;for(const o of hn){const n=N[o.i],r=(n.t===0?1.6+Math.sqrt(nArt[o.i])*.5:1.2+Math.sqrt(Math.min(nEx[o.i],60))*.55);hx.fillStyle=n.t===0?C.mod[n.mod]:C.role[mainRole[o.i]];hx.beginPath();if(n.t===0)hx.rect(o.x-r,o.y-r,2*r,2*r);else hx.arc(o.x,o.y,r,0,7);hx.fill()}
+    hx.restore();hx.globalAlpha=1;if(!RM)requestAnimationFrame(fr)}
+  if(RM){for(let i=0;i<300;i++)hs.tick()}
+  new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!on){on=true;requestAnimationFrame(fr)}else if(!v)on=false}).observe(hc);requestAnimationFrame(fr)})();
 // ---------- scroll ----------
 const STEPS=[...document.querySelectorAll('.cstep')];let sraf=0,act=-1;
 function pickStep(){sraf=0;const t=innerHeight*.62;let k=0;STEPS.forEach((el,i)=>{if(el.firstElementChild.getBoundingClientRect().top<t)k=i});

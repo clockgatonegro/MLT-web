@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BG;src:url(node_modules/@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:PS;src:url(node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2)}
+@font-face{font-family:PM;src:url(node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2)}
+html,body{margin:0;width:1200px;height:630px;background:#121816;overflow:hidden}
+canvas{position:absolute;inset:0}
+.t{position:absolute;left:64px;top:0;bottom:0;width:560px;display:flex;flex-direction:column;justify-content:center;color:#e4ebe7}
+.e{font:15px PM;letter-spacing:.14em;text-transform:uppercase;color:#93a39e;margin:0 0 18px}
+h1{font:700 76px/0.98 BG;letter-spacing:-.02em;margin:0 0 22px}
+.n{font:21px/1.4 PS;margin:0 0 26px;color:#e4ebe7}
+.l{display:flex;flex-wrap:wrap;gap:8px 18px;font:15px PS;color:#93a39e;margin:0 0 30px;max-width:520px}
+.l i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:-1px}.l i.s{border-radius:1px}
+.u{font:18px PM;color:#e4ebe7}
+.g{position:absolute;inset:0;background:linear-gradient(90deg,#121816 0%,#121816 38%,rgba(18,24,22,.75) 52%,rgba(18,24,22,0) 70%)}
+</style></head><body><canvas id="c" width="2400" height="1260" style="width:1200px;height:630px"></canvas><div class="g"></div>
+<div class="t"><p class="e">Cartografía · Cali · 1956–2026</p><h1>Red del Museo<br>La Tertulia</h1>
+<p class="n" id="n"></p>
+<p class="l"><span><i class="s" style="background:#3aa6bd"></i>individual</span><span><i class="s" style="background:#ff6b59"></i>colectiva</span><span><i style="background:#3fbf62"></i>artista</span><span><i style="background:#ffa600"></i>curador</span><span><i style="background:#ef6fa3"></i>curador-artista</span><span><i style="background:#8e94d8"></i>auspiciador</span></p>
+<p class="u">mlt.cactus.com.co</p></div>
+<script src="/home/claude/mlt/node_modules/d3/dist/d3.min.js"></script><script src="data.js"></script>
+<script>
+((D)=>{
+const N=D.n,E=D.e,isEx=i=>N[i][2]===0,nx=new Map(),role=new Map();
+const fmt=v=>v.toLocaleString('es-CO');
+document.getElementById('n').textContent=fmt(N.filter((n,i)=>isEx(i)).length)+' exposiciones · '+fmt(N.length-N.filter((n,i)=>isEx(i)).length)+' artistas, curadores, presentadores y auspiciadores';
+E.forEach(([s,t,r])=>{nx.set(t,(nx.get(t)||new Set()).add(s));const R=role.get(t)||[0,0,0,0];R[r]++;role.set(t,R)});
+const ids=new Set(),L=[];E.forEach(([s,t,r])=>{if(nx.get(t).size<2)return;ids.add(s);ids.add(t);L.push({source:s,target:t})});
+const rnd=d3.randomLcg(.31),nodes=[...ids].map(i=>({id:i,x:(rnd()-.5)*400,y:(rnd()-.5)*400})),m=new Map(nodes.map(o=>[o.id,o]));
+const links=L.map(l=>({source:m.get(l.source),target:m.get(l.target)}));
+const sim=d3.forceSimulation(nodes).randomSource(rnd).force('link',d3.forceLink(links).distance(16).strength(.35)).force('charge',d3.forceManyBody().strength(-10).distanceMax(240)).force('x',d3.forceX(0).strength(.06)).force('y',d3.forceY(0).strength(.06)).stop();
+for(let i=0;i<400;i++)sim.tick();
+const c=document.getElementById('c').getContext('2d');c.scale(2,2);
+const xs=d3.extent(nodes,o=>o.x),ys=d3.extent(nodes,o=>o.y),k=Math.min(700/(xs[1]-xs[0]),600/(ys[1]-ys[0]));
+c.translate(830,318);c.scale(k,k);c.translate(-(xs[0]+xs[1])/2,-(ys[0]+ys[1])/2);
+c.lineWidth=.5/k;c.strokeStyle='rgba(228,235,231,.07)';c.beginPath();links.forEach(l=>{c.moveTo(l.source.x,l.source.y);c.lineTo(l.target.x,l.target.y)});c.stroke();
+const MOD=['#3aa6bd','#ff6b59','#5b6662'],ROL=['#3fbf62','#ffa600','#ece08c','#8e94d8'];
+nodes.forEach(o=>{const i=o.id,n=N[i];let col,r;if(isEx(i)){col=MOD[n[7]];const a=E.filter(e=>e[0]===i&&e[2]===0).length;r=1.1+Math.sqrt(a)*.32}
+ else{const R=role.get(i);const art=R[0]>0;col=(R[1]||R[2])&&art?'#ef6fa3':R[1]?ROL[1]:R[2]?ROL[2]:R[0]?ROL[0]:ROL[3];r=1.2+Math.sqrt(Math.min(nx.get(i).size,60))*.6}
+ c.globalAlpha=isEx(i)?.7:.9;c.fillStyle=col;c.beginPath();if(isEx(i))c.rect(o.x-r,o.y-r,2*r,2*r);else c.arc(o.x,o.y,r,0,7);c.fill()});
+document.title='listo'})(window.DD);
+</script></body></html>

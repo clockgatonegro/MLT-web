@@ -69,7 +69,7 @@ step({t:'Los que pasan una vez',mode:'expo',range:[1956,1986],minEx:1,roles:[1,1
 step({t:'Los que vuelven',mode:'expo',range:[1956,Y1],minEx:2,roles:[1,1,1,0],hl:()=>bienBack,
   labels:()=>topBy(bienBack,i=>nEx[i],10),
   html:()=>{const v=[...bienBack],m=d3.mean(v,i=>nEx[i]),top=new Set(topBy(new Set(AGENTS.map(a=>a.i)),i=>nEx[i],100)),k=v.filter(i=>top.has(i)).length;
-    return `<p>Los otros ${fmt(v.length)} artistas de las bienales sí vuelven. En promedio participan en ${dn(m,1)} exposiciones del Museo, y ${k} de ellos están entre los cien agentes con más exposiciones en setenta años.</p><p>Desde aquí la red muestra solo a quienes participaron en dos exposiciones o más.</p>`},
+    return `<p>Los otros ${fmt(v.length)} artistas de las bienales sí vuelven. En promedio participan en ${dn(m,1)} exposiciones del Museo, y ${k} de ellos están entre los cien agentes con más exposiciones en setenta años.</p><p>Giuffre (1999, 815) encontró en los fotógrafos de Nueva York que el éxito en la carrera de un artista está determinado por la permanencia. Pesa más que la aparición esporádica. En el Museo, la mayoría pasa una vez y un núcleo pequeño vuelve.</p><p>Desde aquí la red muestra solo a quienes participaron en dos exposiciones o más.</p>`},
   link:{view:'red',a:Y0,b:Y1,mindeg:2}});
 step({act:'Acto 2 · El cambio de poder',t:'Del presentador al curador',mode:'expo',range:[Y0,Y1],minEx:2,roles:[1,1,1,0],hl:()=>new Set([...curPres]),
   labels:()=>topBy(curPres,i=>N[i].adj.filter(k=>E[k].r===1||E[k].r===2).length,8),

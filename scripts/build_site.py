@@ -7,8 +7,7 @@ URL='https://mlt.cactus.com.co/'
 GH='https://github.com/clockgatonegro/MLT-web'
 import csv as _c
 _na=sum(1 for _ in _c.DictReader(open('/home/claude/mlt/salida/agentes.csv')));_ne=sum(1 for _ in _c.DictReader(open('/home/claude/mlt/salida/exposiciones.csv')))
-DESC=(f'Red interactiva de {_ne} exposiciones y {_na:,}'.replace(',','.')+' artistas, curadores, presentadores y auspiciadores del Museo La Tertulia de Cali, '
-      'de 1956 a 2026. Exposiciones individuales y colectivas, red de curadores y artistas por periodos, y bases de datos abiertas en CSV.')
+DESC=(f'Red interactiva de {_ne} exposiciones y {_na:,}'.replace(',','.')+' artistas, curadores y auspiciadores del Museo La Tertulia de Cali, 1956–2026. Datos abiertos.')
 ld={"@context":"https://schema.org","@type":"Dataset","name":"Red del Museo La Tertulia, Cali (1956–2026)",
  "description":DESC,"url":URL,"sameAs":GH,"inLanguage":"es","isAccessibleForFree":True,
  "creator":[{"@type":"Person","name":"Juan Fernando Correa"},{"@type":"Person","name":"Carlos Dussán"}],
@@ -32,15 +31,15 @@ head=f'''<!doctype html>
 <meta property="og:title" content="Red del Museo La Tertulia · Cali, 1956–2026">
 <meta property="og:description" content="{DESC}">
 <meta property="og:url" content="{URL}">
-<meta property="og:image" content="{URL}og-image.jpg">
-<meta property="og:image:secure_url" content="{URL}og-image.jpg">
+<meta property="og:image" content="{URL}og-mlt-2026.jpg">
+<meta property="og:image:secure_url" content="{URL}og-mlt-2026.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Red de exposiciones y agentes del Museo La Tertulia">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Red del Museo La Tertulia · Cali, 1956–2026">
 <meta name="twitter:description" content="{DESC}">
-<meta name="twitter:image" content="{URL}og-image.jpg">
+<meta name="twitter:image" content="{URL}og-mlt-2026.jpg">
 <!-- Verificación de Google Search Console: pegue aquí la etiqueta que le entregue Search Console -->
 <!-- <meta name="google-site-verification" content="CÓDIGO"> -->
 <!-- Google Analytics 4 con modo de consentimiento: sin cookies hasta que la persona acepte -->

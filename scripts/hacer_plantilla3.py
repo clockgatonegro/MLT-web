@@ -53,7 +53,7 @@ R('''  <a href="#expedientes">Expedientes</a>
   <a href="red.html" class="pgr">Explorar la red</a>''')
 # portada: título, entradilla y un solo llamado
 i=s.index('    <p class="lede">Setenta años');j=s.index('  </div>\n</header>',i)
-s=s[:i]+'''    <p class="lede3">Un viaje interactivo por las redes que se forman después de 70 años de exposiciones: quién expuso, quién curó, quién presentó y con quién coincidió. Cada exposición une a las personas que la hicieron posible. Juntas dibujan la historia de un museo y del arte de la ciudad.</p>
+s=s[:i]+'''    <p class="lede3">Un viaje interactivo por las redes que se formaron durante 70 años de exposiciones: quién expuso, quién curó, quién presentó y con quién coincidió. Cada exposición une a las personas que la hicieron posible. Juntas dibujan la historia de un museo y de la circulación del arte de la ciudad.</p>
     <div class="nums" id="nums"></div>
     <div class="cta"><a class="btn" href="#carto">Empezar el recorrido ↓</a><a class="btn ghost" href="red.html">Explorar la red</a></div>
 '''+s[j:]
@@ -76,8 +76,28 @@ R("{const mv=document.getElementById('movil');let seen=null;","{const mv=documen
 R("La red completa se explora mejor en un computador. En el celular puede leer los expedientes y el índice.","La red completa se explora mejor en un computador. En el celular puede seguir el recorrido de la cartografía y el índice.")
 # la portada de la v3 dibuja su propia red de fondo (carto.js)
 R("heroN=VN.slice();heroE=VE.slice();drawHero();setTimeout(()=>{heroLive=false;drawHero()},9000);","")
+# Método con el ritmo pausado del recorrido: bloques con aire, una sola columna de lectura y aparición al hacer scroll
+R('html.pg-metodo #metodo{padding-top:24px}','''html.pg-metodo #metodo{padding-top:24px}
+html.pg-metodo #metodo>.lede{margin-bottom:6vh}
+html.pg-metodo #metodo .estr2{margin:4vh 0 14vh}
+html.pg-metodo #metodo .mh{margin-top:0;padding-top:16px}
+html.pg-metodo #metodo .dgs,html.pg-metodo #metodo .arq-n{margin-bottom:14vh}
+html.pg-metodo #metodo .cols2{display:block;max-width:72ch}
+html.pg-metodo #metodo .cols2 h3{margin-top:9vh;padding-top:14px;border-top:1px solid var(--line)}
+html.pg-metodo #metodo .cols2>div:first-child>h3:first-child{margin-top:0}
+html.pg-metodo #metodo .ask{margin-top:12vh}
+html.pg-metodo .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+html.pg-metodo .rv.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html.pg-metodo .rv{opacity:1;transform:none;transition:none}}''')
+REVEAL='''<script>(function(){if(!document.documentElement.classList.contains('pg-metodo')||!('IntersectionObserver' in window))return;
+ const M=document.getElementById('metodo');if(!M)return;
+ const T=[...M.querySelectorAll(':scope>.lede,:scope>.estr2>figure,:scope>.mh,:scope>.dgs>figure,:scope>.arq-l,:scope>.arq,:scope>.arq-n,.cols2>div>*,:scope>.ask')];
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{rootMargin:'0px 0px -12% 0px'});
+ T.forEach(el=>{el.classList.add('rv');const p=el.parentElement;if(p.classList.contains('dgs')||p.classList.contains('estr2'))el.style.transitionDelay=(0.12*[...p.children].indexOf(el))+'s';io.observe(el)});
+})();</script>
+'''
 # altura de la barra de navegación para el gráfico fijo
 s=s.replace('</body>','</body>')
-s+='\n<script>(function(){const n=document.querySelector(".nav");const f=()=>document.documentElement.style.setProperty("--navh",n.offsetHeight+"px");f();addEventListener("resize",f)})();</script>\n<script>\n'+open('/home/claude/mlt/carto.js',encoding='utf-8').read()+'\n</script>\n'
+s+='\n'+REVEAL+'<script>(function(){const n=document.querySelector(".nav");const f=()=>document.documentElement.style.setProperty("--navh",n.offsetHeight+"px");f();addEventListener("resize",f)})();</script>\n<script>\n'+open('/home/claude/mlt/carto.js',encoding='utf-8').read()+'\n</script>\n'
 open('/home/claude/mlt/plantilla3.html','w',encoding='utf-8').write(s)
 print('plantilla3 ok')
